@@ -1,0 +1,631 @@
+import React, { useEffect, useState, useContext } from 'react';
+import { Nav, Form } from 'react-bootstrap'
+import Link from 'next/link';
+import Topbar from './Topbar';
+import Sidebar from './Sidebar'
+import "../js/main.js"
+import $ from 'jquery'
+import Pageloader from './Pageloader';
+import useHttp from '../hooks/use-http';
+
+
+import LoanContext from '../store/loan-context';
+
+
+
+
+const Home = (props) => {
+
+//   if (typeof window !== 'undefined') {
+//   console.log('You are on the browser')
+// const token = localStorage.getItem("access_token")
+// const loanCtx = useContext(LoanContext)
+// loanCtx.getLoans(token)
+// } else {
+//   console.log('You are on the server')
+// }
+// const token = localStorage.getItem("access_token")
+// const loanCtx = useContext(LoanContext)
+// loanCtx.getLoans(token)
+
+// console.log(localStorage.getItem("accesstoken"))
+// Get 
+
+
+  const [notify, setnotify] = useState("")
+  const [notify2, setnotify2] = useState("")
+  const [notify3, setnotify3] = useState("")
+  const [email, setemail] = useState("")
+  const [loantype, setloantype] = useState("")
+  const [duedate, setduedate] = useState("")
+  const [loanstatus, setloanstatus] = useState("")
+  const [loanamount, setloanamount] = useState(0)
+  const [loanrequestdate, setloanrequestdate] = useState("DD/MM/YYYY")
+  const [paymentsFilter, setPaymentsFilter] = useState("")
+  const [currentLoanId, setCurrentLoanId] = useState("")
+  const [ walletBalance, setWalletBalance] = useState(0)
+
+
+  // GET WALLET DETAILS
+  const { sendRequest:fetchWallet }  = useHttp();
+  useEffect(() => {
+    // document.getElementById("transferbutton").disabled = true;
+    const providusid = localStorage.getItem("providusid")
+    $(".overlay").fadeIn(1);
+    const transformWallet = ((data) => {
+      console.log(data)
+      setWalletBalance(data.balance)
+ 
+      $(".overlay").fadeOut(0);
+
+  })
+
+
+  fetchWallet({
+      url: `https://credisol-app.herokuapp.com/v1/wallet/${providusid}/virtual_accounts/`,
+      method: "GET",
+      headers: { 
+          'Content-Type': 'application/json',
+          "Authorization": "Bearer " + localStorage.getItem("access_token")
+      }
+  }, transformWallet)
+  }, [])
+  // GET WALLET DETAILS
+
+
+  // GET LOANS
+  const { isLoading, error, sendRequest:fetchLoans }  = useHttp();
+  useEffect(() => {
+    // document.getElementById("transferbutton").disabled = true;
+    $(".overlay").fadeIn(1);
+    const transformLoans = ((data) => {
+      console.log(data)
+      if (data != "" && data[0].status !== "cleared") {
+        $(".boxc").css({ 'display': 'inline-block' });
+        $(".boxb").css({ 'display': 'none' });
+
+        // setloanstatus("Pending")
+
+        if (data[0].offer_code === "RO-VF-PF") {
+          setloantype("Travel loan")
+          let amount = parseInt(data[0].balance).toLocaleString()
+          setloanamount(amount)
+
+          var defaultDates = data[0].created_at
+          var d = new Date(defaultDates).toString();
+          var actualdate = d.split(' ').splice(0, 5).join(' ')
+          var status = (data[0].status).toUpperCase();
+          setloanrequestdate(actualdate)
+          setloanstatus(status)
+          setCurrentLoanId("/repay/?id=" + data[0].loan_id)
+        }
+
+        else if (data[0].offer_code === "RO-BL-BL") {
+          setloantype("Business loan")
+          let amount = parseInt(data[0].balance).toLocaleString()
+          setloanamount(amount)
+
+          var defaultDates = data[0].created_at
+          var d = new Date(defaultDates).toString();
+          var actualdate = d.split(' ').splice(0, 5).join(' ')
+          var status = (data[0].status).toUpperCase();
+          setloanrequestdate(actualdate)
+          setloanstatus(status)
+          setCurrentLoanId("/repay/?id=" + data[0].loan_id)
+        }
+      }
+      $(".overlay").fadeOut(0);
+
+  })
+
+
+  fetchLoans({
+      url: 'https://credisol-app.herokuapp.com/v1/loans/all/',
+      method: "GET",
+      headers: { 
+          'Content-Type': 'application/json',
+          "Authorization": "Bearer " + localStorage.getItem("access_token")
+      }
+  }, transformLoans)
+  }, [])
+  // GET LOANS
+
+  // FILTER TRANSACTIONS
+  const filterTransaction = (e) => {
+    console.log(e.target.value)
+    setPaymentsFilter(e.target.value)
+  }
+    // FILTER TRANSACTIONS
+
+  // GET TRANSACTIONS
+  useEffect(() => {
+    $(".overlay").fadeIn(1);
+    $('#records_table').empty()
+
+    if (paymentsFilter === "") {
+      var settingsthree = {
+        "url": "https://credisol-app.herokuapp.com/v1/payments",
+        "method": "GET",
+        "timeout": 0,
+
+        "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token") },
+        error: function (xhr, status, error) {
+          console.log(xhr)
+
+        },
+      }
+
+      $.ajax(settingsthree).done(function (responsethree) {
+        console.log(responsethree)
+        if (responsethree != "") {
+
+          $(".homepagenotransactions").css({ 'display': 'none' });
+          $(".homepagetransactions").css({ 'display': 'block' });
+
+          $.each(responsethree, function (i) {
+
+            var table = document.getElementById('records_table');
+            // console.log(table)
+            var tr = document.createElement('tr');
+            var defaultDates = responsethree[i].transaction_date
+            var d = new Date(defaultDates).toString();
+            var actualdate = d.split(' ').splice(0, 5).join(' ')
+
+            let loantype
+            let amount
+            let arrow
+
+            if (responsethree[i].offer_type_code === "RO-VF-PF") {
+              loantype = "Travel loan";
+            }
+
+            else if (responsethree[i].offer_type_code === "RO-BL-BL") {
+              loantype = "Business loan";
+            }
+
+            if (responsethree[i].purpose === "disbursement") {
+              arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
+            }
+
+            else if (responsethree[i].purpose === "repayment") {
+              arrow = "<i class='fas fa-long-arrow-alt-right makegreen'></i>"
+            }
+
+
+
+
+            var td1 = document.createElement('td');
+            td1.innerHTML = arrow
+            var td2 = document.createElement('td');
+            td2.innerText = responsethree[i].id;
+            var td3 = document.createElement('td');
+            td3.innerHTML = "<span class='loanhistorytype'>" + loantype + "</span> " + "<br/>" + "<span class='loanhistorydate'>" + actualdate + "</span> "
+            var td4 = document.createElement('td');
+            td4.innerHTML = "<span class='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].amount).toLocaleString() + "</span> "
+            var td5 = document.createElement('td');
+            td5.innerHTML = "<span class='loanhistorytype loanstatushistory'>" + responsethree[i].purpose + "</span>";
+            // var td5 = document.createElement('td');
+            // td5.innerHTML = "<span class='loanhistorytype'> View more</span>" 
+
+
+
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            tr.appendChild(td5);
+
+
+
+            table.appendChild(tr);
+
+
+
+            //   td6.onclick = function () {
+
+            // setViewShow(true)
+            // setUserId(td1.innerText)
+            // setUserName(td2.innerText)
+            //   };
+
+            //   td7.onclick = function () {
+
+            // setEditShow(true)
+            // setUserId(td1.innerText)
+            // setUserName(td2.innerText)
+            //   };
+          });
+          $(".overlay").fadeOut(0);
+          // TRANSACTIONS
+        }
+
+        else {
+          $(".homepagenotransactions").css({ 'display': 'block' });
+          $(".homepagetransactions").css({ 'display': 'none' });
+        }
+
+
+
+        $(".overlay").fadeOut(0);
+
+
+      })
+
+    }
+
+    else {
+      var settingsthree = {
+        "url": "https://credisol-app.herokuapp.com/v1/payments?loan_offer_code=" + paymentsFilter,
+        "method": "GET",
+        "timeout": 0,
+
+        "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token") },
+        error: function (xhr, status, error) {
+          console.log(xhr)
+
+        },
+      }
+
+      $.ajax(settingsthree).done(function (responsethree) {
+        console.log(responsethree)
+        if (responsethree != "") {
+
+          $(".homepagenotransactions").css({ 'display': 'none' });
+          $(".homepagetransactions").css({ 'display': 'block' });
+
+          $.each(responsethree, function (i) {
+
+            var table = document.getElementById('records_table');
+            // console.log(table)
+            var tr = document.createElement('tr');
+            var defaultDates = responsethree[i].transaction_date
+            var d = new Date(defaultDates).toString();
+            var actualdate = d.split(' ').splice(0, 5).join(' ')
+
+            let loantype
+            let amount
+            let arrow
+
+            if (responsethree[i].offer_type_code === "RO-VF-PF") {
+              loantype = "Travel loan";
+            }
+
+            else if (responsethree[i].offer_type_code === "RO-BL-BL") {
+              loantype = "Business loan";
+            }
+
+            if (responsethree[i].purpose === "disbursement") {
+              arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
+            }
+
+            else if (responsethree[i].purpose === "repayment") {
+              arrow = "<i class='fas fa-long-arrow-alt-right makegreen'></i>"
+            }
+
+
+
+
+            var td1 = document.createElement('td');
+            td1.innerHTML = arrow
+            var td2 = document.createElement('td');
+            td2.innerText = responsethree[i].id;
+            var td3 = document.createElement('td');
+            td3.innerHTML = "<span class='loanhistorytype'>" + loantype + "</span> " + "<br/>" + "<span class='loanhistorydate'>" + actualdate + "</span> "
+            var td4 = document.createElement('td');
+            td4.innerHTML = "<span class='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].amount).toLocaleString() + "</span> "
+            var td5 = document.createElement('td');
+            td5.innerHTML = "<span class='loanhistorytype loanstatushistory'>" + responsethree[i].purpose + "</span>";
+            // var td5 = document.createElement('td');
+            // td5.innerHTML = "<span class='loanhistorytype'> View more</span>" 
+
+
+
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+            tr.appendChild(td5);
+
+
+
+            table.appendChild(tr);
+
+
+
+            //   td6.onclick = function () {
+
+            // setViewShow(true)
+            // setUserId(td1.innerText)
+            // setUserName(td2.innerText)
+            //   };
+
+            //   td7.onclick = function () {
+
+            // setEditShow(true)
+            // setUserId(td1.innerText)
+            // setUserName(td2.innerText)
+            //   };
+          });
+
+          // TRANSACTIONS
+        }
+
+        else {
+          $(".homepagenotransactions").css({ 'display': 'block' });
+          $(".homepagetransactions").css({ 'display': 'none' });
+        }
+
+
+
+        $(".overlay").fadeOut(0);
+
+
+      })
+
+    }
+
+
+
+  }, [paymentsFilter])
+  // GET TRANSACTIONS
+
+
+  return (
+
+    <div>
+      <Pageloader />
+      <div class="row thesidebarrow">
+        <div class="col-md-2 thesidebar">
+          <Sidebar/>
+        </div>
+
+        <div class="col-md-10 thesidebarrow">
+          <Topbar />
+
+
+          {/* <div className="row ">
+              <div className="col-md-1">
+                  </div>
+
+                  <div className="col-md-3 boxa">
+                  <p class="loansareavailable">Loans are available </p>
+                <p className="loansareavailablenote">You have loans waiting for you. Book a loan<br/> and get disbursed in few minutes</p>
+               <p style={{textAlign:"center"}}><img className="" src="images/addloan.svg"/></p>
+               
+                  </div>
+
+                  <div className="col-md-1">
+                  </div>
+
+                  <div className="col-md-3 boxa">
+                  <p class="loansareavailable">Loans are available </p>
+                <p className="loansareavailablenote">You have loans waiting for you. Book a loan<br/> and get disbursed in few minutes</p>
+               <p style={{textAlign:"center"}}><img className="" src="images/addloan.svg"/></p>
+                  </div>
+
+                  <div className="col-md-1">
+                  </div>
+
+                  <div className="col-md-3 boxa">
+                  <p class="loansareavailable">Loans are available </p>
+                <p className="loansareavailablenote">You have loans waiting for you. Book a loan<br/> and get disbursed in few minutes</p>
+               <p style={{textAlign:"center"}}><img className="" src="images/addloan.svg"/></p>
+                  </div>
+
+
+              </div> */}
+
+          <div class="outer">
+            <div className="boxa">
+              <p class="loansareavailable2" style={{ paddingLeft: "20px" }}>Wallet </p>
+              <div style={{ marginTop: "20px" }}>
+                <p class="amount" style={{ color: "#000", paddingLeft: "20px" }}>&#8358; {walletBalance}</p>
+              </div>
+              <Link href="/transfer" className="homepagetransferbutton" eventKey="10">
+                <button id="transferbutton" className="bookaloanbutton" style={{ marginLeft: "20px", marginTop: "27px", marginBottom: "20px" }}>Transfer <i class="fas fa-long-arrow-alt-right"></i></button>
+              </Link>
+
+            </div>
+
+
+
+            <div className="boxb">
+              <p class="loansareavailable2" style={{ paddingLeft: "20px" }}>Loans are available </p>
+              <p className="loansareavailablenote2" style={{ paddingLeft: "20px" }}>You have loans waiting for you. Apply for a loan<br /> and get disbursed in few minutes</p>
+              <Link href="/loan" eventKey="10">
+                <button className="bookaloanbutton" style={{ marginLeft: "20px", marginTop: "27px" }}>Apply for a loan <i class="fas fa-long-arrow-alt-right"></i></button>
+              </Link>
+
+            </div>
+
+
+            <div className="boxc" id="boxc">
+              <div class="row" style={{ marginTop: "24px" }}>
+                <div className="col-md-4 col-4">
+                  <p style={{ color: "#FFF", textAlign: "center", fontSize: "12px" }}>{loanstatus}</p>
+                </div>
+                <div className="col-md-4 col-4">
+                  <p style={{ color: "#FFF", textAlign: "center", fontSize: "12px" }}>{duedate}</p>
+                </div>
+                <div className="col-md-4 col-4">
+                  <p style={{ color: "#FFF", textAlign: "center", fontSize: "12px" }}>{loantype}</p>
+                </div>
+              </div>
+              <div style={{ marginTop: "20px" }}>
+                <p class="amount" style={{ color: "#FFF", paddingLeft: "20px" }}>&#8358; {loanamount}</p>
+              </div>
+
+              <div style={{ marginTop: "40px" }}>
+                <p style={{ color: "#FFF", paddingLeft: "20px", fontSize: "12px" }}> {loanrequestdate}
+
+                  <span style={{ float: "right" }}>
+
+                    <Link className="" href={currentLoanId} eventKey="6" activeClassName="is-active" >
+                      <button className="paynowbutton" style={{ float: "right" }}>Repay <i class="fas fa-long-arrow-alt-right"></i></button>
+                    </Link>
+
+
+                  </span>
+                </p>
+              </div>
+            </div>
+
+
+          </div>
+          <hr style={{ marginTop: "60px" }} />
+
+
+          <div class="row">
+            <div class="col-md-6 quickservicesrow">
+              <p className="quickservices">Quick Services</p>
+              <div className="row">
+
+
+                <div className="col-md-2 col-3 qloan1">
+                  <p style={{ textAlign: "center" }}>
+                    <img className="" src="images/quickloan.svg" /></p>
+                  <Link href="/loan" eventKey="10">
+                    <p className="quickloan">Quick Loan</p>
+                  </Link>
+                </div>
+
+
+
+
+                {/* <div className="col-md-2 col-3 qloan2">
+    <p style={{textAlign:"center"}}><img className="" src="images/addpayment.svg"/></p>
+    <Nav.Link as={Link} to="/transfer" eventKey="10">
+    <p className="quickloan">Transfer</p>
+    </Nav.Link>
+    </div> */}
+
+
+
+
+                <div className="col-md-2 col-3 qloan3">
+                <p className="quickloan" style={{ textAlign: "center" }}>
+                <img className="" src="images/support2.svg" />
+                </p>
+                  <Link href="/support" eventKey="10">
+                  <p className="quickloan" style={{ textAlign: "center" }}>
+                       Support
+                    
+                       </p>
+                  </Link>
+               
+                </div>
+
+
+
+
+                <div className="col-md-2 col-3 qloan4">
+                <p className="quickloan" style={{ textAlign: "center" }}>
+                <img className="" src="images/loanhistory.svg" />
+                </p>
+                  <Link href="/history" eventKey="10">
+                    <p className="quickloan" style={{ textAlign: "center" }}>
+                      History
+                      </p>
+
+                  </Link>
+                </div>
+
+
+              </div>
+              <hr style={{ marginTop: "60px" }} />
+
+              <div class="">
+                {/* <Row>
+<div className="col-md-6 col-6 homepage1box2">
+<img className='img-fluid' style={{width:"", height:""}} src="images/phoneimg.svg" alt="" />
+</div>
+
+                  <div className="col-md-6 col-6">
+                      <h1 class="box7herotitle">
+                      Credisol coming soon to your<br/>
+                      mobile devices.
+                      </h1>
+
+
+</div>
+                  
+
+
+                </Row> */}
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div className="row">
+                <div className="col-md-2 col-4">
+                  <p className="quickservices transactionsmobile">Transactions </p>
+                </div>
+
+                <div style={{ marginTop: "30px" }} className="col-md-4 col-4 homeallloansbar">
+
+                  <Form.Select className="transactionsselect" size="lg" onChange={filterTransaction}>
+                    <option value="">All loans</option>
+                    <option value="RO-VF-PF">Proof of Funds</option>
+                    <option value="RO-BL-BL">Business Loan</option>
+
+                  </Form.Select>
+
+                </div>
+
+                <div className="col-md-4"></div>
+              </div>
+              <div className='homepagenotransactions'>
+                <p style={{ textAlign: "center" }}><img className="" src="images/noloan.svg" /></p>
+                <p class="loansareavailable">You dont have any<br />transaction yet</p>
+                <p class="loansareavailablenote">Access any of our available loans at very low <br />interest rate to begin</p>
+              </div>
+
+              <div className='homepagetransactions'>
+                <table class="table css-serial homepagetransactionstable" >
+                  <thead class="thead-dark">
+                    <tr class="ippisschedulehead">
+
+                      <th class="ippiscol0" scope="col"></th>
+                      <th class="ippiscol0" scope="col">Transaction ID</th>
+
+                      <th class="ippiscol0" scope="col">TYPE/DATE</th>
+                      <th class="ippiscol0" scope="col">AMOUNT</th>
+                      <th class="ippiscol0" scope="col">PURPOSE</th>
+                      {/* <th class="ippiscol0" scope="col">ACTION</th> */}
+
+
+
+
+
+                    </tr>
+                  </thead>
+                  <tbody id="records_table">
+                  </tbody>
+                </table>
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+  )
+
+
+}
+
+
+export { Home as default }
