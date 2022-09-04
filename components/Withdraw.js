@@ -237,13 +237,13 @@ window.location.replace("/home");
       
       <div>
           <Pageloader/>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -251,8 +251,8 @@ window.location.replace("/home");
  
     <div className="col-md-4 tabs webapptabs  withdrawstepone">
     <Link className="goback" href="/transfer"  eventKey="2" activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <img className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
+                <img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -277,14 +277,14 @@ window.location.replace("/home");
   </Form.Group>
 
 
-  <p class="" style={{ color:"#DD3737", fontWeight:"bold",textAlign:"center"}}>{notify}</p>
+  <p className="" style={{ color:"#DD3737", fontWeight:"bold",textAlign:"center"}}>{notify}</p>
 
 
   
-<p class="" style={{textAlign:"center"}} >
+<p className="" style={{textAlign:"center"}} >
 <button  className="loanbutton" onClick={nextstep1}>Withdraw 
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 
 </button>
@@ -320,10 +320,10 @@ window.location.replace("/home");
         </div>
 </div>
 
-<p class="" style={{marginTop:"10px"}} >
+<p className="" style={{marginTop:"10px"}} >
 <button  className="editloanbutton" onClick={ gohome}>Go back to dashboard
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 </button>
 </p>
