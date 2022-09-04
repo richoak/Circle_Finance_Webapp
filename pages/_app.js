@@ -18,18 +18,16 @@ function MyApp({ Component, pageProps, router }) {
     <Head>
     <title>Credisol</title>
 <meta name="description" content='Credisol' />
-
-  // Responsive meta tag
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  //  bootstrap CDN
+
   <link 
   rel="stylesheet" 
   href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
   integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
   crossorigin="anonymous"/>
   
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;402&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;402&display=swap" rel="stylesheet"  crossorigin="anonymous"/>
 
 
   <link
