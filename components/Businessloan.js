@@ -24,17 +24,17 @@ const Businessloan = () => {
       
       <div>
                 {/* <Pageloader/> */}
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
               <Link className="goback" href="/loanproducts"  activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
 
@@ -45,7 +45,7 @@ const Businessloan = () => {
 </div>
 
 <div className="col-md-3 col-6">
-<p > <span class="loansareavailable2 ">Business Loan</span> <br/><span  className="loansareavailablenote2">For Business name.</span></p>  
+<p > <span className="loansareavailable2 ">Business Loan</span> <br/><span  className="loansareavailablenote2">For Business name.</span></p>  
 
 </div>
 
@@ -65,7 +65,7 @@ const Businessloan = () => {
 </div>
 
 <div className="col-md-3 col-6">
-<p > <span class="loansareavailable2">Business Loan</span> <br/><span  className="loansareavailablenote2">For Limited Company.</span></p>  
+<p > <span className="loansareavailable2">Business Loan</span> <br/><span  className="loansareavailablenote2">For Limited Company.</span></p>  
 
 </div>
 

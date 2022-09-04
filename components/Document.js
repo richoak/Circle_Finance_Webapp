@@ -92,13 +92,13 @@ const addbank = () =>{
     return (
       
       <div>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -106,19 +106,19 @@ const addbank = () =>{
  
     <div className="col-md-10 tabs webapptabs paymenttabs">
     <Link className="goback" href="/profileoptions"  activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"20px"}}><img className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}><img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
               <div className="row director1row">
 
 <div className="col-md-5">
-<p class="wallethead" >Legal ID </p>
+<p className="wallethead" >Legal ID </p>
     <div className="row">
         <div className="col-md-12">
 
-        <div class="form-group">
+        <div className="form-group">
 <label for="sel1" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Select your ID type</label>
-<select class="form-control" id="sel1">
+<select className="form-control" id="sel1">
 <option>- Select Purpose -</option>
 <option>1</option>
 <option>2</option>
@@ -128,12 +128,12 @@ const addbank = () =>{
 </div>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>ID Number</Form.Label>
+<Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>ID Number</Form.Label>
   <Form.Control   id="emailaddress" width="60px" type="text" placeholder="Input organization" />
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Date Issued</Form.Label>
+<Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Date Issued</Form.Label>
   <Form.Control   id="emailaddress" width="60px" type="text" placeholder="Input organization" />
 </Form.Group>
 
@@ -147,8 +147,8 @@ const addbank = () =>{
 </div>
 
 <div className="col-md-5">
-<p class="wallethead" >Upload documents </p>
-<div class="pprow2">
+<p className="wallethead" >Upload documents </p>
+<div className="pprow2">
 <div className="row">
     <div className="col-md-6 col-6">
     <img width="150px" src="images/passport.svg"/>
@@ -167,10 +167,10 @@ const addbank = () =>{
 
     </div>
 </div>
-<p class="" style={{textAlign:"center"}} >
+<p className="" style={{textAlign:"center"}} >
 <button  className="loanbutton">Save changes
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 
 </button>

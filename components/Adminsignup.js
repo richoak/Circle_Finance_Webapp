@@ -375,13 +375,13 @@ setpin1(pin1)
           <Row>
             <div className="col-md-6 homepage1box fordesktoponly">
               <p style={{ textAlign: "center" }} ><img class="mainimagemobile" src="images/signupbg.svg" /></p>
-              <h1 class="homepageherotitle fordesktoponly">
+              <h1 className="homepageherotitle fordesktoponly">
                 Seamless loans now at the lowest interest rates.
               </h1>
 
-              <h1 class="homepageherotitle formobileonly">
+              <h1 className="homepageherotitle formobileonly">
                 Get seamless loans at
-                the <span class="spanred">lowest</span> interest rates.
+                the <span className="spanred">lowest</span> interest rates.
               </h1>
               <p style={{ textAlign: "center" }} className="homepagesubtitle fordesktoponly hideipad">
                 We take care of you financially, assisting you with funds and the best business advice to grow and scale your business at affordable interest rates.
@@ -414,7 +414,7 @@ setpin1(pin1)
               <div className="registerbox1">
 
 
-                <h1 class="letsgetstarted">
+                <h1 className="letsgetstarted">
                   Hi! Let`s get started
                 </h1>
                 <p className="homepagesubtitle fordesktoponly hideipad">
@@ -444,8 +444,8 @@ setpin1(pin1)
                 </Form.Group> */}
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "20px", paddingBottom: "0px" }}>Your Email Address (@rich-oak.com)</Form.Label>
-                  <div class="row">
+                  <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px", paddingBottom: "0px" }}>Your Email Address (@rich-oak.com)</Form.Label>
+                  <div className="row">
                     <div className="col-md-1 col-1">
                       <img style={{ marginTop: "8px" }} src="/images/sms.svg"></img>
                     </div>
@@ -457,13 +457,13 @@ setpin1(pin1)
 
                 </Form.Group>
 
-                <p class="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify}</p>
+                <p className="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify}</p>
 
-                <p class="" style={{ textAlign: "center" }}>
+                <p className="" style={{ textAlign: "center" }}>
 
                   <button onClick={register1} className="continuebutton accessbutton2">Continue
-                    <div class="spinner-border spinner-border-sm" role="status">
-                      <span class="sr-only">Loading...</span>
+                    <div className="spinner-border spinner-border-sm" role="status">
+                      <span className="sr-only">Loading...</span>
                     </div>
 
                   </button>
@@ -476,10 +476,10 @@ setpin1(pin1)
 
               <div className="registerbox2">
 
-                <h1 class="letsgetstartedstepheading">
+                <h1 className="letsgetstartedstepheading">
                   Step 1/3
                 </h1>
-                <h1 class="letsgetstarted">
+                <h1 className="letsgetstarted">
                   Create your account
                 </h1>
                 <p className="homepagesubtitle fordesktoponly hideipad" style={{ fontSize: "13px" }}>
@@ -496,8 +496,8 @@ setpin1(pin1)
 
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "0px", paddingBottom: "0px" }}>Your first name</Form.Label>
-                  <div class="row">
+                  <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "0px", paddingBottom: "0px" }}>Your first name</Form.Label>
+                  <div className="row">
                     <div className="col-md-1 col-1">
                       <img style={{ marginTop: "8px" }} src="/images/user.svg"></img>
                     </div>
@@ -509,8 +509,8 @@ setpin1(pin1)
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Your last name</Form.Label>
-                  <div class="row">
+                  <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Your last name</Form.Label>
+                  <div className="row">
                     <div className="col-md-1 col-1">
                       <img style={{ marginTop: "8px" }} src="/images/user.svg"></img>
                     </div>
@@ -523,7 +523,7 @@ setpin1(pin1)
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Phone</Form.Label>
-                  <div class="row">
+                  <div className="row">
                     <div className="col-md-1 col-1">
                       <img style={{ marginTop: "8px" }} src="/images/user.svg"></img>
                     </div>
@@ -534,9 +534,9 @@ setpin1(pin1)
                   </div>
                 </Form.Group>
 
-                <div class="form-group">
+                <div className="form-group">
   <label for="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Select Role</label>
-  <select class="form-control" id="role">
+  <select className="form-control" id="role">
     <option>- Select Role -</option>
     <option  value="CO">Credit Officer</option>
     <option value="HOC">Head of Department</option>
@@ -546,8 +546,8 @@ setpin1(pin1)
 </div>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Password</Form.Label>
-                  <div class="row">
+                  <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Password</Form.Label>
+                  <div className="row">
                     <div className="col-md-1 col-1">
                       <img style={{ marginTop: "8px" }} src="/images/lock.svg"></img>
                     </div>
@@ -557,20 +557,20 @@ setpin1(pin1)
                     </div>
                   </div>
                 </Form.Group>
-                <p className=" instruction2" style={{ color: "#666666", paddingTop: "30px" }}><i class="fas fa-check-circle circle1"></i> Use from 8 characters</p>
-                <p className="instruction2" style={{ color: "#666666" }}><i class="fas fa-check-circle circle2"></i> Use at least 1 uppercase letter</p>
-                <p className="instruction2" style={{ color: "#666666" }}><i class="fas fa-check-circle circle3"></i> Use at least 1 numeric value</p>
-                <p className=" instruction2" style={{ color: "#666666" }}><i class="fas fa-check-circle circle4"></i> Use a combination of numbers and English letters</p>
+                <p className=" instruction2" style={{ color: "#666666", paddingTop: "30px" }}><i className="fas fa-check-circle circle1"></i> Use from 8 characters</p>
+                <p className="instruction2" style={{ color: "#666666" }}><i className="fas fa-check-circle circle2"></i> Use at least 1 uppercase letter</p>
+                <p className="instruction2" style={{ color: "#666666" }}><i className="fas fa-check-circle circle3"></i> Use at least 1 numeric value</p>
+                <p className=" instruction2" style={{ color: "#666666" }}><i className="fas fa-check-circle circle4"></i> Use a combination of numbers and English letters</p>
 
                 <p style={{ color: "#666666" }} className="byselecting"> By selecting agree and continue button below, I agree to the  <span style={{ color: "#DD3737" }}>Terms of services</span> and the  <span style={{ color: "#DD3737" }}>Privacy Policy</span>.</p>
 
-                <p class="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify2}</p>
+                <p className="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify2}</p>
 
-                <p class="" style={{ textAlign: "center" }}>
+                <p className="" style={{ textAlign: "center" }}>
 
                   <button onClick={register2} id="agreebutton" className="accessbutton3">Agree and Continue
-                    <div class="spinner-border spinner-border-sm" role="status">
-                      <span class="sr-only">Loading...</span>
+                    <div className="spinner-border spinner-border-sm" role="status">
+                      <span className="sr-only">Loading...</span>
                     </div>
 
                   </button>
@@ -583,10 +583,10 @@ setpin1(pin1)
 
               <div className="registerbox3">
 
-                <h1 class="letsgetstartedstepheading fordesktoponly">
+                <h1 className="letsgetstartedstepheading fordesktoponly">
                   {/* Step 2/3 */}
                 </h1>
-                <h1 style={{ textAlign: "center" }} class="letsgetstarted">
+                <h1 style={{ textAlign: "center" }} className="letsgetstarted">
                   OTP Request
                 </h1>
                 <p style={{ textAlign: "center" }} className="homepagesubtitle fordesktoponly hideipad">
@@ -607,10 +607,10 @@ setpin1(pin1)
 
                 <div class="row otp-screen" id="otp-screen">
 
-                  <input type="text" class="otp1" id="otpstep1one"  placeholder="0" maxlength="1" />
-                  <input type="text" class="otp1" id="otpstep1two" placeholder="0" maxlength="1" />
-                  <input type="text" class="otp1" id="otpstep1three" placeholder="0" maxlength="1" />
-                  <input type="text" class="otp1" id="otpstep1four" placeholder="0" maxlength="1" />
+                  <input type="text" className="otp1" id="otpstep1one"  placeholder="0" maxlength="1" />
+                  <input type="text" className="otp1" id="otpstep1two" placeholder="0" maxlength="1" />
+                  <input type="text" className="otp1" id="otpstep1three" placeholder="0" maxlength="1" />
+                  <input type="text" className="otp1" id="otpstep1four" placeholder="0" maxlength="1" />
 
 
                 </div>
@@ -620,13 +620,13 @@ setpin1(pin1)
 
 
 
-                <p class="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify3}</p>
+                <p className="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify3}</p>
 
-                <p class="" style={{ textAlign: "center" }}>
+                <p className="" style={{ textAlign: "center" }}>
 
                   <button onClick={register3} className="continuebutton accessbutton">Verify and continue
-                    <div class="spinner-border spinner-border-sm" role="status">
-                      <span class="sr-only">Loading...</span>
+                    <div className="spinner-border spinner-border-sm" role="status">
+                      <span className="sr-only">Loading...</span>
                     </div>
 
                   </button>
@@ -640,10 +640,10 @@ setpin1(pin1)
 
               <div className="registerbox4">
 
-                <h1 class="letsgetstartedstepheading fordesktoponly">
+                <h1 className="letsgetstartedstepheading fordesktoponly">
                   {/* Step 2/3 */}
                 </h1>
-                <h1 style={{ textAlign: "center" }} class="letsgetstarted">
+                <h1 style={{ textAlign: "center" }} className="letsgetstarted">
                   Secure your transactions
                 </h1>
                 <p style={{ textAlign: "center" }} className="homepagesubtitle fordesktoponly hideipad">
@@ -662,12 +662,12 @@ setpin1(pin1)
 
 
 
-                <div class="row otp-screen" id="otp-screen2">
+                <div className="row otp-screen" id="otp-screen2">
 
-                  <input type="text" class="otp2" id="otpstep2one"  placeholder="0" maxlength="1" />
-                  <input type="text" class="otp2" id="otpstep2two"  placeholder="0" maxlength="1" />
-                  <input type="text" class="otp2" id="otpstep2three"  placeholder="0" maxlength="1" />
-                  <input type="text" class="otp2" id="otpstep2four"  placeholder="0" maxlength="1" />
+                  <input type="text" className="otp2" id="otpstep2one"  placeholder="0" maxlength="1" />
+                  <input type="text" className="otp2" id="otpstep2two"  placeholder="0" maxlength="1" />
+                  <input type="text" className="otp2" id="otpstep2three"  placeholder="0" maxlength="1" />
+                  <input type="text" className="otp2" id="otpstep2four"  placeholder="0" maxlength="1" />
 
 
                 </div>
@@ -677,13 +677,13 @@ setpin1(pin1)
 
 
 
-                <p class="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify3}</p>
+                <p className="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify3}</p>
 
-                <p class="" style={{ textAlign: "center" }}>
+                <p className="" style={{ textAlign: "center" }}>
 
                   <button onClick={register4} className="continuebutton accessbutton">Continue
-                    <div class="spinner-border spinner-border-sm" role="status">
-                      <span class="sr-only">Loading...</span>
+                    <div className="spinner-border spinner-border-sm" role="status">
+                      <span className="sr-only">Loading...</span>
                     </div>
 
                   </button>
@@ -697,10 +697,10 @@ setpin1(pin1)
 
               <div className="registerbox5">
 
-                <h1 class="letsgetstartedstepheading fordesktoponly">
+                <h1 className="letsgetstartedstepheading fordesktoponly">
                   {/* Step 2/3 */}
                 </h1>
-                <h1 style={{ textAlign: "center" }} class="letsgetstarted">
+                <h1 style={{ textAlign: "center" }} className="letsgetstarted">
                   Account Created
                 </h1>
                 <p style={{ textAlign: "center" }} className="homepagesubtitle fordesktoponly hideipad">
@@ -725,11 +725,11 @@ setpin1(pin1)
 
 
 
-                <p class="" style={{ textAlign: "center" }}>
+                <p className="" style={{ textAlign: "center" }}>
 
                   <button onClick={register5} className="accessbutton">Continue
-                    <div class="spinner-border spinner-border-sm" role="status">
-                      <span class="sr-only">Loading...</span>
+                    <div className="spinner-border spinner-border-sm" role="status">
+                      <span className="sr-only">Loading...</span>
                     </div>
 
                   </button>

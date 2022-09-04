@@ -94,14 +94,14 @@ const updatepinpage= () =>{
     return (
       
       <div>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
