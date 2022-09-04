@@ -487,7 +487,7 @@ window.location.replace("/home");
  
     <div className="col-md-4 tabs webapptabs  loanapplystepone">
     <Link className="goback" href="/loanproducts"  eventKey="2" activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"0px"}}>
+              <p class="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
                 <img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
               </Link>
 

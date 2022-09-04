@@ -44,7 +44,7 @@ const Travelloan = () => {
     return(
         <div className="tab-buttons">
         {buttons.map(button =>{
-           return <button className={ button === activeTab? 'tabactive': ''} onClick={()=>changeTab(button)}>{button}</button>
+           return <button key={button} className={ button === activeTab? 'tabactive': ''} onClick={()=>changeTab(button)}>{button}</button>
         })}
         </div>
       
@@ -332,13 +332,13 @@ window.location.replace("/home");
       
       <div>
           <Pageloader/>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -350,8 +350,8 @@ window.location.replace("/home");
 <div className="col-md-4  tabs webapptabs loanapplystepone">
     
 <Link className="goback" href="/loanproducts"  eventKey="2" activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"0px"}}>
-                <img className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
+                <img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
               </Link>
        
 

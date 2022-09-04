@@ -34,11 +34,11 @@ const Businessloan = () => {
               <Topbar/>
 
               <Link className="goback" href="/loanproducts"  activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"20px"}}><img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p class="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
               </Link>
 
 
-<Link className="" href="/businessname" id="availableloanoptions"  activeClassName="is-active" >
+<Link className="" href="/loanproducts/businessname" id="availableloanoptions"  activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1 col-3">
 <img style={{float:"right"}} className="" src="/images/consumerloans.svg"/>
@@ -58,7 +58,7 @@ const Businessloan = () => {
 <hr className="hrmarginright900"/>
 
 
-<Link className="" href="/limited" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
+<Link className="" href="/loanproducts/limited" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1 col-3">
 <img style={{float:"right"}} className="" src="/images/businessloans.svg"/>

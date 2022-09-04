@@ -49,19 +49,22 @@ const Loanproducts = () => {
               <Topbar/>
 
               <Link className="goback" href="/loan"   activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p class="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}>
+                <img className="" src="./images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
               </Link>
 
 
-{!loanExist && <div>
-  <Link className="" href="/businessloan" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
+{
+!loanExist && <div>
+  <Link className="" href="/loanproducts/businessloan" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1">
 <img style={{float:"right"}} className="" src="/images/businessloans.svg"/>
 </div>
 
 <div className="col-md-3">
-<p > <span class="loansareavailable2">Business and Corporate Loans</span> <br/><span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
+<p > <span class="loansareavailable2">Business and Corporate Loans</span> <br/>
+<span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
 
 </div>
 
@@ -72,7 +75,8 @@ const Loanproducts = () => {
 </div>
 </Link>
 <hr className="hrmarginright900"/>
-  </div>}
+  </div>
+  }
 
   {!loanExist && <div>
     <div className="row loanproductoptions" >
@@ -80,7 +84,7 @@ const Loanproducts = () => {
 <img style={{float:"right"}} className="" src="/images/travelloans.svg"/>
 </div>
 
-<Link className="" href="/travelloan" id="availableloanoptions3" eventKey="2" activeClassName="is-active" >
+<Link className="" href="/loanproducts/travelloan" id="availableloanoptions3" eventKey="2" activeClassName="is-active" >
 <div className="col-md-3">
 <p > <span class="loansareavailable2">Travel Loans</span> <br/><span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
 </div>
