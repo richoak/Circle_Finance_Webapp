@@ -70,17 +70,17 @@ const History = () => {
             var td1 = document.createElement('td');
             td1.innerText = responsethree[i].loan_id;
             var td2 = document.createElement('td');
-            td2.innerHTML = "<span class='loanhistorytype'>" + loantype +"</span> "+ "<br/>" +  "<span class='loanhistorydate'>" + actualdate +"</span> "
+            td2.innerHTML = "<span className='loanhistorytype'>" + loantype +"</span> "+ "<br/>" +  "<span className='loanhistorydate'>" + actualdate +"</span> "
             var td3 = document.createElement('td');
-            td3.innerHTML =    "<span class='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].principal).toLocaleString()  +"</span> " + "<br/>" + "<span class='loanhistorydate'>" + responsethree[i].duration + " months / " + "4%" +"</span> "
+            td3.innerHTML =    "<span className='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].principal).toLocaleString()  +"</span> " + "<br/>" + "<span class='loanhistorydate'>" + responsethree[i].duration + " months / " + "4%" +"</span> "
             var td4 = document.createElement('td');
-            td4.innerHTML =  "<span class='loanhistorytype loanstatushistory'>"+ responsethree[i].status  +"</span>" ;
+            td4.innerHTML =  "<span className='loanhistorytype loanstatushistory'>"+ responsethree[i].status  +"</span>" ;
 
             if(responsethree[i].status === "pending"){
               viewstatement = "No statement"
             }
             else{
-              viewstatement = `<a target='_blank' href=/statement?loanid=${td1.innerText} class='loanhistorytype statementlink'> View statement</a>`
+              viewstatement = `<a target='_blank' href=/statement?loanid=${td1.innerText} className='loanhistorytype statementlink'> View statement</a>`
             }
             var td5 = document.createElement('td');
             td5.innerHTML = viewstatement        
@@ -168,17 +168,17 @@ const History = () => {
             var td1 = document.createElement('td');
             td1.innerText = responsethree[i].loan_id;
             var td2 = document.createElement('td');
-            td2.innerHTML = "<span class='loanhistorytype'>" + loantype +"</span> "+ "<br/>" +  "<span class='loanhistorydate'>" + actualdate +"</span> "
+            td2.innerHTML = "<span className='loanhistorytype'>" + loantype +"</span> "+ "<br/>" +  "<span className='loanhistorydate'>" + actualdate +"</span> "
             var td3 = document.createElement('td');
-            td3.innerHTML =    "<span class='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].principal).toLocaleString()  +"</span> " + "<br/>" + "<span class='loanhistorydate'>" + responsethree[i].duration + " months / " + "4%" +"</span> "
+            td3.innerHTML =    "<span className='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].principal).toLocaleString()  +"</span> " + "<br/>" + "<span class='loanhistorydate'>" + responsethree[i].duration + " months / " + "4%" +"</span> "
             var td4 = document.createElement('td');
-            td4.innerHTML =  "<span class='loanhistorytype loanstatushistory'>"+ responsethree[i].status  +"</span>" ;
+            td4.innerHTML =  "<span className='loanhistorytype loanstatushistory'>"+ responsethree[i].status  +"</span>" ;
 
             if(responsethree[i].status === "pending"){
               viewstatement = "No statement"
             }
             else{
-              viewstatement = `<a target='_blank' href=/statement?loanid=${td1.innerText} class='loanhistorytype statementlink'> View statement</a>`
+              viewstatement = `<a target='_blank' href=/statement?loanid=${td1.innerText} className='loanhistorytype statementlink'> View statement</a>`
             }
             var td5 = document.createElement('td');
             td5.innerHTML = viewstatement
@@ -235,8 +235,8 @@ const History = () => {
       
       <div>
                 <Pageloader/>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
@@ -245,11 +245,11 @@ const History = () => {
               <Topbar/>
 
               <Link className="goback" href="/loan"  eventKey="2" activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
 
-              <div class="col-md-6">
+              <div className="col-md-6">
 
               <Form.Select onChange={filterTransaction} 
               className="transactionsselect" 
@@ -263,17 +263,17 @@ const History = () => {
 
 </Form.Select>
 
-              <table class="table css-serial historytable" >
-            <thead class="thead-dark">
-              <tr class="ippisschedulehead">
+              <table className="table css-serial historytable" >
+            <thead className="thead-dark">
+              <tr className="ippisschedulehead">
              
       
-                <th class="ippiscol0" scope="col">ID</th>
+                <th className="ippiscol0" scope="col">ID</th>
       
-                <th class="ippiscol0" scope="col">TYPE/DATE</th>
-                <th class="ippiscol0" scope="col">AMOUNT/DURATION/INTEREST RATE</th>
-                <th class="ippiscol0" scope="col">STATUS</th>
-                <th class="ippiscol0" scope="col">STATEMENT</th>
+                <th className="ippiscol0" scope="col">TYPE/DATE</th>
+                <th className="ippiscol0" scope="col">AMOUNT/DURATION/INTEREST RATE</th>
+                <th className="ippiscol0" scope="col">STATUS</th>
+                <th className="ippiscol0" scope="col">STATEMENT</th>
         
             
       

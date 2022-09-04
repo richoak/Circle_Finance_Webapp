@@ -184,11 +184,11 @@ const Home = (props) => {
             }
 
             if (responsethree[i].purpose === "disbursement") {
-              arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
+              arrow = "<i className='fas fa-long-arrow-alt-left makered'></i>"
             }
 
             else if (responsethree[i].purpose === "repayment") {
-              arrow = "<i class='fas fa-long-arrow-alt-right makegreen'></i>"
+              arrow = "<i className='fas fa-long-arrow-alt-right makegreen'></i>"
             }
 
 
@@ -199,11 +199,11 @@ const Home = (props) => {
             var td2 = document.createElement('td');
             td2.innerText = responsethree[i].id;
             var td3 = document.createElement('td');
-            td3.innerHTML = "<span class='loanhistorytype'>" + loantype + "</span> " + "<br/>" + "<span class='loanhistorydate'>" + actualdate + "</span> "
+            td3.innerHTML = "<span className='loanhistorytype'>" + loantype + "</span> " + "<br/>" + "<span className='loanhistorydate'>" + actualdate + "</span> "
             var td4 = document.createElement('td');
-            td4.innerHTML = "<span class='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].amount).toLocaleString() + "</span> "
+            td4.innerHTML = "<span className='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].amount).toLocaleString() + "</span> "
             var td5 = document.createElement('td');
-            td5.innerHTML = "<span class='loanhistorytype loanstatushistory'>" + responsethree[i].purpose + "</span>";
+            td5.innerHTML = "<span className='loanhistorytype loanstatushistory'>" + responsethree[i].purpose + "</span>";
             // var td5 = document.createElement('td');
             // td5.innerHTML = "<span class='loanhistorytype'> View more</span>" 
 
@@ -296,11 +296,11 @@ const Home = (props) => {
             }
 
             if (responsethree[i].purpose === "disbursement") {
-              arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
+              arrow = "<i className='fas fa-long-arrow-alt-left makered'></i>"
             }
 
             else if (responsethree[i].purpose === "repayment") {
-              arrow = "<i class='fas fa-long-arrow-alt-right makegreen'></i>"
+              arrow = "<i className='fas fa-long-arrow-alt-right makegreen'></i>"
             }
 
 
@@ -311,11 +311,11 @@ const Home = (props) => {
             var td2 = document.createElement('td');
             td2.innerText = responsethree[i].id;
             var td3 = document.createElement('td');
-            td3.innerHTML = "<span class='loanhistorytype'>" + loantype + "</span> " + "<br/>" + "<span class='loanhistorydate'>" + actualdate + "</span> "
+            td3.innerHTML = "<span className='loanhistorytype'>" + loantype + "</span> " + "<br/>" + "<span className='loanhistorydate'>" + actualdate + "</span> "
             var td4 = document.createElement('td');
-            td4.innerHTML = "<span class='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].amount).toLocaleString() + "</span> "
+            td4.innerHTML = "<span className='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].amount).toLocaleString() + "</span> "
             var td5 = document.createElement('td');
-            td5.innerHTML = "<span class='loanhistorytype loanstatushistory'>" + responsethree[i].purpose + "</span>";
+            td5.innerHTML = "<span className='loanhistorytype loanstatushistory'>" + responsethree[i].purpose + "</span>";
             // var td5 = document.createElement('td');
             // td5.innerHTML = "<span class='loanhistorytype'> View more</span>" 
 
@@ -376,12 +376,12 @@ const Home = (props) => {
 
     <div>
       <Pageloader />
-      <div class="row thesidebarrow">
-        <div class="col-md-2 thesidebar">
+      <div className="row thesidebarrow">
+        <div className="col-md-2 thesidebar">
           <Sidebar/>
         </div>
 
-        <div class="col-md-10 thesidebarrow">
+        <div className="col-md-10 thesidebarrow">
           <Topbar />
 
 
@@ -417,14 +417,14 @@ const Home = (props) => {
 
               </div> */}
 
-          <div class="outer">
+          <div className="outer">
             <div className="boxa">
-              <p class="loansareavailable2" style={{ paddingLeft: "20px" }}>Wallet </p>
+              <p className="loansareavailable2" style={{ paddingLeft: "20px" }}>Wallet </p>
               <div style={{ marginTop: "20px" }}>
-                <p class="amount" style={{ color: "#000", paddingLeft: "20px" }}>&#8358; {walletBalance}</p>
+                <p className="amount" style={{ color: "#000", paddingLeft: "20px" }}>&#8358; {walletBalance}</p>
               </div>
               <Link href="/transfer" className="homepagetransferbutton" eventKey="10">
-                <button id="transferbutton" className="bookaloanbutton" style={{ marginLeft: "20px", marginTop: "27px", marginBottom: "20px" }}>Transfer <i class="fas fa-long-arrow-alt-right"></i></button>
+                <button id="transferbutton" className="bookaloanbutton" style={{ marginLeft: "20px", marginTop: "27px", marginBottom: "20px" }}>Transfer <i className="fas fa-long-arrow-alt-right"></i></button>
               </Link>
 
             </div>
@@ -432,17 +432,17 @@ const Home = (props) => {
 
 
             <div className="boxb">
-              <p class="loansareavailable2" style={{ paddingLeft: "20px" }}>Loans are available </p>
+              <p className="loansareavailable2" style={{ paddingLeft: "20px" }}>Loans are available </p>
               <p className="loansareavailablenote2" style={{ paddingLeft: "20px" }}>You have loans waiting for you. Apply for a loan<br /> and get disbursed in few minutes</p>
               <Link href="/loan" eventKey="10">
-                <button className="bookaloanbutton" style={{ marginLeft: "20px", marginTop: "27px" }}>Apply for a loan <i class="fas fa-long-arrow-alt-right"></i></button>
+                <button className="bookaloanbutton" style={{ marginLeft: "20px", marginTop: "27px" }}>Apply for a loan <i className="fas fa-long-arrow-alt-right"></i></button>
               </Link>
 
             </div>
 
 
             <div className="boxc" id="boxc">
-              <div class="row" style={{ marginTop: "24px" }}>
+              <div className="row" style={{ marginTop: "24px" }}>
                 <div className="col-md-4 col-4">
                   <p style={{ color: "#FFF", textAlign: "center", fontSize: "12px" }}>{loanstatus}</p>
                 </div>
@@ -454,7 +454,7 @@ const Home = (props) => {
                 </div>
               </div>
               <div style={{ marginTop: "20px" }}>
-                <p class="amount" style={{ color: "#FFF", paddingLeft: "20px" }}>&#8358; {loanamount}</p>
+                <p className="amount" style={{ color: "#FFF", paddingLeft: "20px" }}>&#8358; {loanamount}</p>
               </div>
 
               <div style={{ marginTop: "40px" }}>
@@ -463,7 +463,7 @@ const Home = (props) => {
                   <span style={{ float: "right" }}>
 
                     <Link className="" href={currentLoanId} eventKey="6" activeClassName="is-active" >
-                      <button className="paynowbutton" style={{ float: "right" }}>Repay <i class="fas fa-long-arrow-alt-right"></i></button>
+                      <button className="paynowbutton" style={{ float: "right" }}>Repay <i className="fas fa-long-arrow-alt-right"></i></button>
                     </Link>
 
 
@@ -477,8 +477,8 @@ const Home = (props) => {
           <hr style={{ marginTop: "60px" }} />
 
 
-          <div class="row">
-            <div class="col-md-6 quickservicesrow">
+          <div className="row">
+            <div className="col-md-6 quickservicesrow">
               <p className="quickservices">Quick Services</p>
               <div className="row">
 
@@ -536,7 +536,7 @@ const Home = (props) => {
               </div>
               <hr style={{ marginTop: "60px" }} />
 
-              <div class="">
+              <div className="">
                 {/* <Row>
 <div className="col-md-6 col-6 homepage1box2">
 <img className='img-fluid' style={{width:"", height:""}} src="images/phoneimg.svg" alt="" />
@@ -557,7 +557,7 @@ const Home = (props) => {
               </div>
             </div>
 
-            <div class="col-md-6">
+            <div className="col-md-6">
               <div className="row">
                 <div className="col-md-2 col-4">
                   <p className="quickservices transactionsmobile">Transactions </p>
@@ -578,21 +578,21 @@ const Home = (props) => {
               </div>
               <div className='homepagenotransactions'>
                 <p style={{ textAlign: "center" }}><img className="" src="images/noloan.svg" /></p>
-                <p class="loansareavailable">You dont have any<br />transaction yet</p>
-                <p class="loansareavailablenote">Access any of our available loans at very low <br />interest rate to begin</p>
+                <p className="loansareavailable">You dont have any<br />transaction yet</p>
+                <p className="loansareavailablenote">Access any of our available loans at very low <br />interest rate to begin</p>
               </div>
 
               <div className='homepagetransactions'>
-                <table class="table css-serial homepagetransactionstable" >
-                  <thead class="thead-dark">
-                    <tr class="ippisschedulehead">
+                <table className="table css-serial homepagetransactionstable" >
+                  <thead className="thead-dark">
+                    <tr className="ippisschedulehead">
 
-                      <th class="ippiscol0" scope="col"></th>
-                      <th class="ippiscol0" scope="col">Transaction ID</th>
+                      <th className="ippiscol0" scope="col"></th>
+                      <th className="ippiscol0" scope="col">Transaction ID</th>
 
-                      <th class="ippiscol0" scope="col">TYPE/DATE</th>
-                      <th class="ippiscol0" scope="col">AMOUNT</th>
-                      <th class="ippiscol0" scope="col">PURPOSE</th>
+                      <th className="ippiscol0" scope="col">TYPE/DATE</th>
+                      <th className="ippiscol0" scope="col">AMOUNT</th>
+                      <th className="ippiscol0" scope="col">PURPOSE</th>
                       {/* <th class="ippiscol0" scope="col">ACTION</th> */}
 
 

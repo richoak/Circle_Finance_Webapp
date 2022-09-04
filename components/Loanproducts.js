@@ -39,18 +39,18 @@ const Loanproducts = () => {
       
       <div>
                 <Pageloader/>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
               <Link className="goback" href="/loan"   activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}>
-                <img className="" src="./images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}>
+                <img className="" src="./images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
 
@@ -63,7 +63,7 @@ const Loanproducts = () => {
 </div>
 
 <div className="col-md-3">
-<p > <span class="loansareavailable2">Business and Corporate Loans</span> <br/>
+<p > <span className="loansareavailable2">Business and Corporate Loans</span> <br/>
 <span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
 
 </div>
@@ -86,7 +86,7 @@ const Loanproducts = () => {
 
 <Link className="" href="/loanproducts/travelloan" id="availableloanoptions3" eventKey="2" activeClassName="is-active" >
 <div className="col-md-3">
-<p > <span class="loansareavailable2">Travel Loans</span> <br/><span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
+<p > <span className="loansareavailable2">Travel Loans</span> <br/><span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
 </div>
 </Link>
 
@@ -106,7 +106,7 @@ const Loanproducts = () => {
 </div>
 
 <div className="col-md-3 col-8" >
-<p > <span class="loansareavailable2">Pending Loan</span> <br/><span  className="loansareavailablenote2">
+<p > <span className="loansareavailable2">Pending Loan</span> <br/><span  className="loansareavailablenote2">
   You have a pending loan and can`t request for a new one.
   </span></p>  
 </div>

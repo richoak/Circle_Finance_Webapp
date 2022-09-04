@@ -173,13 +173,13 @@ const Payments = () => {
       
       <div>
         <Pageloader/>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -190,7 +190,7 @@ const Payments = () => {
 
     <div className="row director1row">
     <div className="col-md-6">
-    <p class="wallethead" >Your Credisol Wallet Details </p>
+    <p className="wallethead" >Your Credisol Wallet Details </p>
         <div className="row">
             {/* <div className="col-md-2 col-3">
             <img className="walleticon" src="/images/ppicture.svg"/>
@@ -221,9 +221,9 @@ const Payments = () => {
     </div>
  
     <div className="col-md-6">
-    <p class="wallethead walletheadmobile" >Your Bank Details </p>
+    <p className="wallethead walletheadmobile" >Your Bank Details </p>
    
-    <div class="paymentbox1">
+    <div className="paymentbox1">
     <div className="row">
             {/* <div className="col-md-1 col-1">
             <img width="40px" className="" src="/images/ppicture.svg"/>
@@ -253,13 +253,13 @@ const Payments = () => {
 
         </div>
 
-        <div class="paymentbox2">
+        <div className="paymentbox2">
         {/* <p  className="bankdetailstitle">Bank details</p>
         <hr/> */}
 
-        <div class="form-group">
+        <div className="form-group">
   <label for="sel1" style={{color:"#666666",paddingTop:"0px",paddingBottom:"10px"}}>Select Your Bank</label>
-  <select class="form-control" id="bank">
+  <select className="form-control" id="bank">
     <option>- Select Bank -</option>
     <option value="citibank">Citibank</option>
           <option value="diamond">Diamond Bank</option>
@@ -286,16 +286,16 @@ const Payments = () => {
 
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Your Account Number </Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Your Account Number </Form.Label>
       <Form.Control   id="accountnumber" width="60px" type="number" placeholder="Input Account Number" />
   </Form.Group>
 
-        <p class="verifyname" >{firstname} {lastname} </p>
-        <p class="" style={{ color:"#DD3737", fontWeight:"bold",textAlign:"center"}}>{notify}</p>
-<p class="" style={{marginTop:"10px", textAlign:"center"}} >
+        <p className="verifyname" >{firstname} {lastname} </p>
+        <p className="" style={{ color:"#DD3737", fontWeight:"bold",textAlign:"center"}}>{notify}</p>
+<p className="" style={{marginTop:"10px", textAlign:"center"}} >
 <button  className="editloanbutton" onClick={ addbank}>Add bank account
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 </button>
 </p>

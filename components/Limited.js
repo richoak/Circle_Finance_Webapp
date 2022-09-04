@@ -473,13 +473,13 @@ window.location.replace("/home");
       
       <div>
           <Pageloader/>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -493,54 +493,54 @@ window.location.replace("/home");
 
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Business Name</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Business Name</Form.Label>
       <Form.Control   id="businessname" width="60px" type="text" placeholder="Business Name" ref={businessnameRef}/>
   </Form.Group>
    
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>RC Number</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>RC Number</Form.Label>
       <Form.Control   id="rcnumber" width="60px" type="number" placeholder="Input RC Number" ref={rcnumberRef} />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Number of Directors/Shareholders</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Number of Directors/Shareholders</Form.Label>
       <Form.Control   id="noofdirectors" width="60px" type="number" placeholder="Enter Organization" ref={noofdirectorsRef} />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-  <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Director 1 First and Last Name</Form.Label>
+  <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Director 1 First and Last Name</Form.Label>
     <Form.Control   id="director1name" width="60px" type="text" value={firstname} placeholder="Enter first name and last name here" disabled/>
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-  <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Director 1 BVN</Form.Label>
+  <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Director 1 BVN</Form.Label>
     <Form.Control   id="director1bvn" width="60px" type="text" value={bvn} placeholder="Enter BVN" disabled/>
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-  <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Director 2 First and Last Name</Form.Label>
+  <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Director 2 First and Last Name</Form.Label>
     <Form.Control   id="director2name" width="60px" type="text" placeholder="Enter  firstname and lastname" />
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-  <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Director 2 BVN</Form.Label>
+  <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Director 2 BVN</Form.Label>
     <Form.Control   id="director2bvn" width="60px" type="text" placeholder="Enter BVN" />
 </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Date of Registration</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Date of Registration</Form.Label>
       <Form.Control   id="registrationdate" width="60px" type="date" placeholder="" />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>City of Incorporation</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>City of Incorporation</Form.Label>
       <Form.Control   id="city" width="60px" type="text" placeholder="City of Incorporation" ref={cityRef}/>
   </Form.Group>
-  <p class="" style={{ color:"#DD3737", fontWeight:"bold",textAlign:"center"}}>{notify}</p>
-<p class="" style={{textAlign:"center"}} >
+  <p className="" style={{ color:"#DD3737", fontWeight:"bold",textAlign:"center"}}>{notify}</p>
+<p className="" style={{textAlign:"center"}} >
 <button  className="loanbutton" onClick={nextstep1}>Continue 
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 
 </button>
@@ -557,28 +557,28 @@ window.location.replace("/home");
 <div className="col-md-4 tabs loanapplysteptwo">
     
               <p onClick={gobacktostep1} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"5px"}}>Annual Turnover (&#8358;) </Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"5px"}}>Annual Turnover (&#8358;) </Form.Label>
       <Form.Control   id="annualturnover" width="60px" type="number" placeholder="Annual turnover" ref={annualRef}/>
   </Form.Group>
 
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"5px"}}>Loan Amount (&#8358;) </Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"5px"}}>Loan Amount (&#8358;) </Form.Label>
       <Form.Control   id="loanamount" width="60px" type="number" placeholder="Input Amount" ref={amountRef}/>
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"5px"}}>Loan Purpose  </Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"5px"}}>Loan Purpose  </Form.Label>
       <Form.Control   id="loanpurpose" width="60px" type="text" placeholder="Loan Purpose" ref={purposeRef}/>
   </Form.Group>
 
   <div class="form-group">
   <label for="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Duration</label>
-  <select class="form-control" id="loanduration" ref={durationRef}>
+  <select className="form-control" id="loanduration" ref={durationRef}>
   <option value="">- Select Duration -</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -591,11 +591,11 @@ window.location.replace("/home");
     <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"5px"}}>Loan Purpose (&#8358;) </Form.Label>
       <Form.Control   id="emailaddress" width="60px" type="text" placeholder="Input Amount" />
   </Form.Group> */}
-    <p class="" style={{ color:"#DD3737", fontWeight:"bold",textAlign:"center"}}>{notify2}</p>
-  <p class="" style={{textAlign:"center"}} >
+    <p className="" style={{ color:"#DD3737", fontWeight:"bold",textAlign:"center"}}>{notify2}</p>
+  <p className="" style={{textAlign:"center"}} >
 <button  className="loanbutton" onClick={nextstep2}>Continue to file uploads
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 
 </button>
@@ -604,7 +604,7 @@ window.location.replace("/home");
 
 <div className="col-md-12 loanapplystepthree">
 <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 {/* <p  className="loansareavailablenote2 summarynote">Business/Management Profile</p>
 <div class="form-group">
@@ -614,7 +614,7 @@ window.location.replace("/home");
 <div className="row">
 
     <div className="col-md-2 col-6">
-    <div class="image-upload empimgupload">
+    <div className="image-upload empimgupload">
   <label for="file">
     <img class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="certificate"  width="183" height="100" src={certificate} />
@@ -624,9 +624,9 @@ window.location.replace("/home");
     </div>
 
     <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
-    <div class="image-upload empimgupload">
+    <div className="image-upload empimgupload">
   <label for="file2">
-    <img class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <img className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="collateral"  width="183" height="100" src={collateral} />
   </label>
   <input type="file" id="file2" onChange= {(e)=> setcollateral(e.target.files[0])}></input>
@@ -641,7 +641,7 @@ window.location.replace("/home");
 <div className="row">
 
 <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
-    <div class="image-upload empimgupload">
+    <div className="image-upload empimgupload">
   <label for="file4">
     <img class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="photograph"  width="183" height="100" src={photograph} />
@@ -652,9 +652,9 @@ window.location.replace("/home");
 </div>
 
 <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
-    <div class="image-upload empimgupload">
+    <div className="image-upload empimgupload">
   <label for="file5">
-    <img class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <img className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="identification"  width="183" height="100" src={identification} />
   </label>
   <input type="file" id="file5" onChange= {(e)=> setidentification(e.target.files[0])}></input>
@@ -669,9 +669,9 @@ window.location.replace("/home");
 
 <div className="row">
 <div className="col-md-3" style={{marginLeft:"0px"}}>
-    <div class="image-upload empimgupload">
+    <div className="image-upload empimgupload">
   <label for="file3">
-    <img class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <img className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="ownership"  width="183" height="100" src={ownership} />
   </label>
   <input type="file" id="file3" onChange= {(e)=> setownership(e.target.files[0])}></input>
@@ -708,11 +708,11 @@ window.location.replace("/home");
   </Form.Group>
         </div>
 </div> */}
-  <p class="" style={{ color:"#DD3737", fontWeight:"bold"}}>{notify2}</p>
-  <p class="" style={{textAlign:""}} >
+  <p className="" style={{ color:"#DD3737", fontWeight:"bold"}}>{notify2}</p>
+  <p className="" style={{textAlign:""}} >
 <button  className="loanbutton" onClick={nextstep3}>Finalize loan application
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 </button>
 </p>
@@ -746,10 +746,10 @@ window.location.replace("/home");
         </div>
 </div>
 
-<p class="" style={{marginTop:"10px"}} >
+<p className="" style={{marginTop:"10px"}} >
 <button  className="editloanbutton" onClick={ gohome}>Go back to dashboard
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 </button>
 </p>

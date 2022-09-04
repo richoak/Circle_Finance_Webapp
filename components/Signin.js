@@ -345,13 +345,13 @@ const Login = () => {
           <Row>
             <div className="col-md-6 homepage1box fordesktoponly">
               <p style={{ textAlign: "center" }} ><img src="images/signupbg.svg" /></p>
-              <h1 class="homepageherotitle fordesktoponly">
+              <h1 className="homepageherotitle fordesktoponly">
                 Seamless loans now at the lowest interest rates.
               </h1>
 
-              <h1 class="homepageherotitle formobileonly">
+              <h1 className="homepageherotitle formobileonly">
                 Get seamless loans at
-                the <span class="spanred">lowest</span> interest rates.
+                the <span className="spanred">lowest</span> interest rates.
               </h1>
               <p style={{ textAlign: "center" }} className="homepagesubtitle fordesktoponly hideipad">
                 We take care of you financially, assisting you with funds and the best business advice to grow and scale your business at affordable interest rates.
@@ -384,7 +384,7 @@ const Login = () => {
               <div className="signinbox1">
 
 
-                <h1 class="letsgetstarted ">
+                <h1 className="letsgetstarted ">
                   Welcome back !
                 </h1>
                 <p className="homepagesubtitle fordesktoponly hideipad">
@@ -401,8 +401,8 @@ const Login = () => {
 
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Your Email Address</Form.Label>
-                  <div class="row">
+                  <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Your Email Address</Form.Label>
+                  <div className="row">
                     <div className="col-md-1 col-1">
                       <img style={{ marginTop: "8px" }} src="/images/sms.svg"></img>
                     </div>
@@ -415,8 +415,8 @@ const Login = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Password</Form.Label>
-                  <div class="row">
+                  <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Password</Form.Label>
+                  <div className="row">
                     <div className="col-md-1 col-1">
                       <img style={{ marginTop: "8px" }} src="/images/lock.svg"></img>
                     </div>
@@ -427,13 +427,13 @@ const Login = () => {
                   </div>
                 </Form.Group>
 
-                <p class="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify}</p>
+                <p className="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify}</p>
 
-                <p class="" style={{ textAlign: "center" }}>
+                <p className="" style={{ textAlign: "center" }}>
 
                   <button style={{ marginTop: "25px", marginBottom: "20px" }} onClick={signin} className="continuebutton accessbutton">Login
-                    <div class="spinner-border spinner-border-sm" role="status">
-                      <span class="sr-only">Loading...</span>
+                    <div className="spinner-border spinner-border-sm" role="status">
+                      <span className="sr-only">Loading...</span>
                     </div>
 
                   </button>
@@ -463,8 +463,8 @@ const Login = () => {
 
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Your Email Address</Form.Label>
-                  <div class="row">
+                  <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Your Email Address</Form.Label>
+                  <div className="row">
                     <div className="col-md-1 col-1">
                       <img style={{ marginTop: "8px" }} src="/images/sms.svg"></img>
                     </div>
@@ -478,9 +478,9 @@ const Login = () => {
 
 
 
-                <p class="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify}</p>
+                <p className="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify}</p>
 
-                <p class="" style={{ textAlign: "center" }}>
+                <p className="" style={{ textAlign: "center" }}>
 
                   {/* <button style={{marginTop:"25px", marginBottom:"20px"}} onClick={forgotpassword1}  className="continuebutton accessbutton">Next
     <div class="spinner-border spinner-border-sm" role="status">
@@ -490,8 +490,8 @@ const Login = () => {
      </button> */}
 
                   <button style={{ marginTop: "25px", marginBottom: "20px" }} onClick={forgotpassword1} className="continuebutton accessbutton">Continue
-                    <div class="spinner-border spinner-border-sm" role="status">
-                      <span class="sr-only">Loading...</span>
+                    <div className="spinner-border spinner-border-sm" role="status">
+                      <span className="sr-only">Loading...</span>
                     </div>
 
                   </button>
@@ -522,12 +522,12 @@ const Login = () => {
                 </p>
 
 
-                <div class="row otp-screen" id="otp-screen">
+                <div className="row otp-screen" id="otp-screen">
 
-                  <input type="text" class="otp1" id="otpstep1one" placeholder="0" maxlength="1" />
-                  <input type="text" class="otp1" id="otpstep1two" placeholder="0" maxlength="1" />
-                  <input type="text" class="otp1" id="otpstep1three" placeholder="0" maxlength="1" />
-                  <input type="text" class="otp1" id="otpstep1four" placeholder="0" maxlength="1" />
+                  <input type="text" className="otp1" id="otpstep1one" placeholder="0" maxlength="1" />
+                  <input type="text" className="otp1" id="otpstep1two" placeholder="0" maxlength="1" />
+                  <input type="text" className="otp1" id="otpstep1three" placeholder="0" maxlength="1" />
+                  <input type="text" className="otp1" id="otpstep1four" placeholder="0" maxlength="1" />
 
 
                 </div>
@@ -548,8 +548,8 @@ const Login = () => {
 
 
                   <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>New Password</Form.Label>
-                    <div class="row">
+                    <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>New Password</Form.Label>
+                    <div className="row">
                       <div className="col-md-1 col-1">
                         <img style={{ marginTop: "8px" }} src="/images/lock.svg"></img>
                       </div>
@@ -561,8 +561,8 @@ const Login = () => {
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Confirm Password</Form.Label>
-                    <div class="row">
+                    <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Confirm Password</Form.Label>
+                    <div className="row">
                       <div className="col-md-1 col-1">
                         <img style={{ marginTop: "8px" }} src="/images/lock.svg"></img>
                       </div>
@@ -572,19 +572,19 @@ const Login = () => {
                       </div>
                     </div>
                   </Form.Group>
-                  <p className=" instruction2" style={{ color: "#666666", paddingTop: "30px" }}><i class="fas fa-check-circle circle1"></i> Use from 8 characters</p>
-                  <p className="instruction2" style={{ color: "#666666" }}><i class="fas fa-check-circle circle2"></i> Use at least 1 uppercase letter</p>
-                  <p className="instruction2" style={{ color: "#666666" }}><i class="fas fa-check-circle circle3"></i> Use at least 1 numeric value</p>
-                  <p className=" instruction2" style={{ color: "#666666" }}><i class="fas fa-check-circle circle4"></i> Use a combination of numbers and English letters</p>
+                  <p className=" instruction2" style={{ color: "#666666", paddingTop: "30px" }}><i className="fas fa-check-circle circle1"></i> Use from 8 characters</p>
+                  <p className="instruction2" style={{ color: "#666666" }}><i className="fas fa-check-circle circle2"></i> Use at least 1 uppercase letter</p>
+                  <p className="instruction2" style={{ color: "#666666" }}><i className="fas fa-check-circle circle3"></i> Use at least 1 numeric value</p>
+                  <p className=" instruction2" style={{ color: "#666666" }}><i className="fas fa-check-circle circle4"></i> Use a combination of numbers and English letters</p>
 
 
-                  <p class="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify}</p>
+                  <p className="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify}</p>
 
-                  <p class="" style={{ textAlign: "center" }}>
+                  <p className="" style={{ textAlign: "center" }}>
 
                     <button style={{ marginTop: "25px", marginBottom: "20px" }} onClick={forgotpassword2} className="continuebutton accessbutton">Next
-                      <div class="spinner-border spinner-border-sm" role="status">
-                        <span class="sr-only">Loading...</span>
+                      <div className="spinner-border spinner-border-sm" role="status">
+                        <span className="sr-only">Loading...</span>
                       </div>
 
                     </button>
@@ -623,11 +623,11 @@ const Login = () => {
 
 
 
-                <p class="" style={{ textAlign: "center" }}>
+                <p className="" style={{ textAlign: "center" }}>
 
                   <button style={{ marginTop: "25px", marginBottom: "20px" }} onClick={gobackforgotpassword2} className="continuebutton accessbutton">Sign In
-                    <div class="spinner-border spinner-border-sm" role="status">
-                      <span class="sr-only">Loading...</span>
+                    <div className="spinner-border spinner-border-sm" role="status">
+                      <span className="sr-only">Loading...</span>
                     </div>
 
                   </button>

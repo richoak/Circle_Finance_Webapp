@@ -256,23 +256,23 @@ window.location.replace("/home");
               </Link>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Wallet Balnce</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Wallet Balnce</Form.Label>
       <Form.Control   id="" width="60px" type="text" ref={walletRef} value={walletBalance} placeholder="Amount to withdraw" disabled/>
   </Form.Group>
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Amount to withdraw</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Amount to withdraw</Form.Label>
       <Form.Control   id="amount" width="60px" ref={amountRef} type="text" placeholder="Amount to withdraw" />
   </Form.Group>
    
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Destination Bank</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Destination Bank</Form.Label>
       <Form.Control className="makeuppercase"  id="bank" ref={destinationRef} width="60px" type="text" value={bank} disabled/>
   </Form.Group>
 
 
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>For security reasons, please enter your pin</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>For security reasons, please enter your pin</Form.Label>
       <Form.Control   id="pin" width="60px" type="password" ref={pinRef} placeholder="Security pin" />
   </Form.Group>
 

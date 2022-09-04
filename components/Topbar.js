@@ -113,22 +113,22 @@ const continueButton = () => {
   return (
     <header>
 
-      <Modal show={show} class="theactivatedmodal">
+      <Modal show={show} className="theactivatedmodal">
 
-        <Modal.Body class="activatemodalbody">
+        <Modal.Body className="activatemodalbody">
           <p style={{ textAlign: "center" }}><img className="" src="images/warning.svg" /></p>
-          <p style={{ textAlign: "center" }} class="loansareavailable2">Your account is yet to be activated </p>
+          <p style={{ textAlign: "center" }} className="loansareavailable2">Your account is yet to be activated </p>
           <p className="loansareavailablenote2" style={{ textAlign: "center" }}>
             Your profile is incomplete. Fill up the necessary information<br /> to verify and gain full access to your account.
           </p>
 
 
-          <p class="" style={{ textAlign: "center" }}>
+          <p className="" style={{ textAlign: "center" }}>
             <Link href="/profile" eventKey="1" activeClassName="is-active">
               <button style={{ marginTop: "40px", }} className="activatedbutton" onClick={continueButton}>
                 Continue
-                <div class="spinner-border spinner-border-sm" role="status">
-                        <span class="sr-only">Loading...</span>
+                <div className="spinner-border spinner-border-sm" role="status">
+                        <span className="sr-only">Loading...</span>
                       </div>
               </button>
             </Link>
@@ -138,17 +138,17 @@ const continueButton = () => {
 
       </Modal>
 
-      <Modal show={show2} class="theactivatedmodal">
+      <Modal show={show2} className="theactivatedmodal">
 
-        <Modal.Body class="activatemodalbody">
+        <Modal.Body className="activatemodalbody">
           <p style={{ textAlign: "center" }}><img className="" src="images/warning.svg" /></p>
-          <p style={{ textAlign: "center" }} class="loansareavailable2">Your account is yet to be activated </p>
+          <p style={{ textAlign: "center" }} className="loansareavailable2">Your account is yet to be activated </p>
           <p className="loansareavailablenote2" style={{ textAlign: "center" }}>
             Your profile is incomplete. Fill up the necessary information<br /> to verify and gain full access to your account.
           </p>
 
 
-          <p class="" style={{ textAlign: "center" }}>
+          <p className="" style={{ textAlign: "center" }}>
             <Link href="/payments" eventKey="1" activeClassName="is-active" >
               <button style={{ marginTop: "40px", }} className="activatedbutton">
                 Continue
@@ -215,24 +215,24 @@ const continueButton = () => {
 
 
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light thenavbar">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light thenavbar">
         <p className='username1'>
-          <span class="username">Hi </span>
-          <span class="usernamespan">{firstname}</span>
-          <br /><span class="usernamespan2">{greeting}</span></p>
+          <span className="username">Hi </span>
+          <span className="usernamespan">{firstname}</span>
+          <br /><span className="usernamespan2">{greeting}</span></p>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
 
           </ul>
 
 
 
-          <ul class="navbar-nav">
+          <ul className="navbar-nav">
             <Link href="/home" eventKey="1" activeClassName="is-active" >
               <p className='thenavbarmenu thenavbarmenumobile  thenavbarmenumobile1'>
                 <img className="" src="images/home.svg" /> <span className="thenavbarmenuspan">   Home</span> </p>
@@ -278,29 +278,29 @@ const continueButton = () => {
       </li> */}
 
 
-            <li class="nav-item dropdown dropdownmobile">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li className="nav-item dropdown dropdownmobile">
+              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
               </a>
 
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link href="/settings" eventKey="10">
-                  <a class="dropdown-item" href="#"> <img class="avatarnavbar" src="/images/setting-2.svg" /> Settings</a>
+                  <a className="dropdown-item" href="#"> <img className="avatarnavbar" src="/images/setting-2.svg" /> Settings</a>
                 </Link>
 
                 <Link href="/profileoptions" eventKey="10">
-                  <a class="dropdown-item" href="#"> <img class="avatarnavbar" src="/images/user2.svg" /> Account</a>
+                  <a className="dropdown-item" href="#"> <img className="avatarnavbar" src="/images/user2.svg" /> Account</a>
                 </Link>
 
                 <Link href="/" eventKey="10">
-                  <a class="dropdown-item" href="#"> <img class="avatarnavbar" src="/images/logout.svg" /> Sign out</a>
+                  <a className="dropdown-item" href="#"> <img className="avatarnavbar" src="/images/logout.svg" /> Sign out</a>
                 </Link>
 
               </div>
             </li>
 
-            <li class="nav-item dropdownmobile">
-              <a class="nav-link" href="#"> <img class="avatar" src="/images/user.svg" /></a>
+            <li className="nav-item dropdownmobile">
+              <a className="nav-link" href="#"> <img className="avatar" src="/images/user.svg" /></a>
 
             </li>
           </ul>

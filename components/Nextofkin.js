@@ -173,13 +173,13 @@ else{
       
       <div>
                <Pageloader/>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -187,31 +187,31 @@ else{
  
     <div className="col-md-10 tabs webapptabs paymenttabs">
     <Link className="goback" href="/profileoptions"  activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"20px"}}>
-                <img className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}>
+                <img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span>
                 </p>
               </Link>
 
               <div className="row director1row">
 
 <div className="col-md-5 ">
-<p class="wallethead" >NOK personal information </p>
+<p className="wallethead" >NOK personal information </p>
     <div className="row">
         <div className="col-md-12">
         <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>First Name</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>First Name</Form.Label>
       <Form.Control   id="firstname" width="60px" type="text" placeholder="Input firstname"  />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Last Name</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Last Name</Form.Label>
       <Form.Control   id="lastname" width="60px"  type="text" placeholder="Input lastname"/>
   </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Gender</Form.Label>
-<div class="form-group">
-<select class="form-control" id="gender">
+<Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Gender</Form.Label>
+<div className="form-group">
+<select className="form-control" id="gender">
 <option>- Select Gender -</option>
 <option value="m">Male</option>
 <option value="f">Female</option>
@@ -221,7 +221,7 @@ else{
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Relationship</Form.Label>
+<Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Relationship</Form.Label>
   <Form.Control   id="relationship" width="60px" type="text" placeholder="Input relationship" />
 </Form.Group>
 
@@ -233,32 +233,32 @@ else{
 </div>
 
 <div className="col-md-5">
-<p class="wallethead  uploadempdocmobile" >NOK contact information </p>
-<div class="pprow2">
+<p className="wallethead  uploadempdocmobile" >NOK contact information </p>
+<div className="pprow2">
 <div className="">
 <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Email Address</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Email Address</Form.Label>
       <Form.Control   id="emailaddress" width="60px"   type="text" placeholder="Input email" />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Phone Number</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Phone Number</Form.Label>
       <Form.Control   id="phonenumber" width="60px"  type="text" placeholder="Input phone number" />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Residential Address</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Residential Address</Form.Label>
       <Form.Control   id="residentialaddress" width="60px" type="text" placeholder="Input residential address" />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>State of Residence</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>State of Residence</Form.Label>
       {/* <Form.Control   id="stateofresidence" value={stateofresidence} width="60px" type="text" placeholder="Input state of residence" /> */}
   
   
   
-      <div class="form-group">
-<select class="form-control" id="stateofresidence" >
+      <div className="form-group">
+<select className="form-control" id="stateofresidence" >
 <option>- Select State -</option>
 <option value="AB">Abia</option>
     <option value="AD">Adamawa</option>
@@ -316,11 +316,11 @@ else{
 
     </div>
 </div>
-<p class="" style={{textAlign:"center", color:"#DD3737", fontWeight:"bold"}}>{notify}</p>
-<p class="" style={{textAlign:"center"}} >
+<p className="" style={{textAlign:"center", color:"#DD3737", fontWeight:"bold"}}>{notify}</p>
+<p className="" style={{textAlign:"center"}} >
 <button  className="loanbutton" onClick={savechanges}>Save changes
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 
 </button>

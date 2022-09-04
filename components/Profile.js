@@ -218,13 +218,13 @@ const savechanges = () => {
       
       <div>
                 <Pageloader/>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -232,15 +232,15 @@ const savechanges = () => {
  
     <div className="col-md-10 tabs webapptabs paymenttabs">
     <Link className="goback" href="/profileoptions"  eventKey="2" activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"20px"}}><img className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}><img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
               <div className="row director1row">
   <div className="col-md-2 col-12">
     <p className="mobilecenterpicture">
-    <div class="image-upload">
+    <div className="image-upload">
   <label for="file">
-    <img class="" style={{marginBottom:"0px", cursor:"pointer "}} 
+    <img className="" style={{marginBottom:"0px", cursor:"pointer "}} 
      id="profilepictureid" width="40"  src={ profilepicture} />
   </label>
   <input type="file" id="file" onChange= {(e)=> setprofilepicture(e.target.files[0])}></input>
@@ -251,29 +251,29 @@ const savechanges = () => {
 
   </div>
     <div className="col-md-5">
-    <p class="wallethead" >Personal Information </p>
+    <p className="wallethead" >Personal Information </p>
         <div className="row">
             <div className="col-md-12">
             <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>First Name</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>First Name</Form.Label>
       <Form.Control   id="emailaddress" width="60px" value={firstname} type="text" placeholder=""disabled />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Last Name</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Last Name</Form.Label>
       <Form.Control   id="emailaddress" width="60px" value={lastname}  type="text" placeholder="" disabled/>
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Date of Birth</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Date of Birth</Form.Label>
       <Form.Control   id="dateofbirth" value={dateofbirth} width="60px"  type="date" placeholder="Input date of birth" />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Marital Status</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Marital Status</Form.Label>
       {/* <Form.Control   id="emailaddress" width="60px" type="text" placeholder="Input organization" /> */}
-      <div class="form-group">
-<select class="form-control" id="maritalstatus"  value={maritalstatus}>
+      <div className="form-group">
+<select className="form-control" id="maritalstatus"  value={maritalstatus}>
 <option>- Select Status -</option>
 <option value="s">Single</option>
 <option value="m">Married</option>
@@ -283,7 +283,7 @@ const savechanges = () => {
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>BVN</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>BVN</Form.Label>
       <Form.Control   id="bvn" value={bvn}  width="60px" type="text" maxlength="11" placeholder="Input BVN" />
   </Form.Group>
             </div>
@@ -293,32 +293,32 @@ const savechanges = () => {
     </div>
 
     <div className="col-md-5">
-    <p class="wallethead" >Contact Information </p>
-    <div class="pprow2">
+    <p className="wallethead" >Contact Information </p>
+    <div className="pprow2">
     <div className="">
     <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Email Address</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Email Address</Form.Label>
       <Form.Control   id="emailaddress" width="60px" value={email}  type="text" placeholder="Input organization"disabled />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Phone Number</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Phone Number</Form.Label>
       <Form.Control   id="emailaddress" width="60px" value={phone}  type="text" placeholder="Input phone number" disabled/>
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Residential Address</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Residential Address</Form.Label>
       <Form.Control   id="residentialaddress" value={residentialaddress} width="60px" type="text" placeholder="Input residential address" />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>State of Residence</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>State of Residence</Form.Label>
       {/* <Form.Control   id="stateofresidence" value={stateofresidence} width="60px" type="text" placeholder="Input state of residence" /> */}
   
   
   
-      <div class="form-group">
-<select class="form-control" id="stateofresidence"  value={stateofresidence}>
+      <div className="form-group">
+<select className="form-control" id="stateofresidence"  value={stateofresidence}>
 <option>- Select State -</option>
 <option value="AB">Abia</option>
     <option value="AD">Adamawa</option>
@@ -375,11 +375,11 @@ const savechanges = () => {
 
         </div>
 </div>
-<p class="" style={{textAlign:"center", color:"#DD3737", fontWeight:"bold"}}>{notify}</p>
-<p class="" style={{textAlign:"center"}} >
+<p className="" style={{textAlign:"center", color:"#DD3737", fontWeight:"bold"}}>{notify}</p>
+<p className="" style={{textAlign:"center"}} >
 <button  className="loanbutton" onClick={savechanges}>Save changes
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 
 </button>

@@ -40,13 +40,13 @@ const addbank = () =>{
     return (
       
       <div>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -57,7 +57,7 @@ const addbank = () =>{
 
     <div className="row director1row">
     <div className="col-md-5 ">
-    <p class="wallethead" >Contact us </p>
+    <p className="wallethead" >Contact us </p>
 
     <div className="row">
             <div className="col-md-1 col-1"><img width="40px" src="/images/phone.svg"/></div>
@@ -147,7 +147,7 @@ const addbank = () =>{
     </div>
 
     <div className="col-md-6 col-12 smrow2">
-    <p class="wallethead faqmobile" >Frequently asked questions </p>
+    <p className="wallethead faqmobile" >Frequently asked questions </p>
     <div className="row">
             <div className="col-md-1 col-1"><img width="35px" src="/images/question.svg"/></div>
             <div className="col-md-10 col-10"><p className="faqtext">This section will help give you insights and answers to some of our most commonly asked questions. </p></div>

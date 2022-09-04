@@ -64,17 +64,17 @@ const Transfer = () => {
       
       <div>
                 {/* <Pageloader/> */}
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
               <Link className="goback" href="/home"  eventKey="2" activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><img className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
 
@@ -105,7 +105,7 @@ const Transfer = () => {
 </div>
 
 <div className="col-md-3">
-<p > <span class="loansareavailable2">Transfer to Wallet</span> <br/><span  className="loansareavailablenote2">Transfer money to your wallet to repay a loan</span></p>  
+<p > <span className="loansareavailable2">Transfer to Wallet</span> <br/><span  className="loansareavailablenote2">Transfer money to your wallet to repay a loan</span></p>  
 
 </div>
 
@@ -127,7 +127,7 @@ const Transfer = () => {
 <Link className="" href="/withdraw" id="availableloanoptions3" eventKey="2" activeClassName="is-active" >
 
 <div className="col-md-3">
-<p > <span class="loansareavailable2">Withdraw to bank</span> <br/><span  className="loansareavailablenote2">Receive money in minutes </span></p>  
+<p > <span className="loansareavailable2">Withdraw to bank</span> <br/><span  className="loansareavailablenote2">Receive money in minutes </span></p>  
 
 </div>
 </Link>

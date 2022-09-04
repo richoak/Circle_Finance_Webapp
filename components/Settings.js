@@ -263,13 +263,13 @@ else{
     return (
       
       <div>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -282,7 +282,7 @@ else{
       <div className="" onClick={updatepasswordpage}  activeClassName="is-active" >
 <div className="row loanproductoptions">
 <div className="col-md-3 col-10">
-<p > <span class="loansareavailable2 ">Update Password</span> <br/><span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
+<p > <span className="loansareavailable2 ">Update Password</span> <br/><span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
 
 </div>
 
@@ -299,7 +299,7 @@ else{
 <div className="" onClick={updatepinpage} activeClassName="is-active" >
 <div className="row loanproductoptions" style={{marginTop:"30px"}}>
 <div className="col-md-3 col-10">
-<p > <span class="loansareavailable2 ">Update Pin</span> <br/><span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
+<p > <span className="loansareavailable2 ">Update Pin</span> <br/><span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
 
 </div>
 
@@ -315,16 +315,16 @@ else{
 <div className="mobilesettings">
 <div className="password2 ">
       <Link  style={{marginBottom:"45px"}} className="" href="/settings"  eventKey="2" activeClassName="is-active" >
-              <p class="" style={{paddingLeft:"0px"}}>
-                <img className="" src="images/arrow-left.svg"/> <span class="gobackp" style={{fontWeight:"bold",}}>Back</span></p>
+              <p className="" style={{paddingLeft:"0px"}}>
+                <img className="" src="images/arrow-left.svg"/> <span className="gobackp" style={{fontWeight:"bold",}}>Back</span></p>
               </Link>
 
-      <p class="" style={{fontWeight:"bold"}}>Update your Password</p>  
+      <p className="" style={{fontWeight:"bold"}}>Update your Password</p>  
       <p className='createapassword'>Create a new password that has not been used for <br/>your Credisol account before.</p>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Your Old Password</Form.Label>
-<div class="row">
+<Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Your Old Password</Form.Label>
+<div className="row">
 <div className="col-md-1 col-1 lock">
 <img style={{marginTop:"8px"}} src="/images/lock.svg"></img>
 </div>
@@ -336,8 +336,8 @@ else{
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Your New Password</Form.Label>
-<div class="row">
+<Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Your New Password</Form.Label>
+<div className="row">
 <div className="col-md-1 col-1 lock">
 <img style={{marginTop:"8px"}} src="/images/lock.svg"></img>
 </div>
@@ -349,8 +349,8 @@ else{
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Confirm Password</Form.Label>
-<div class="row">
+<Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Confirm Password</Form.Label>
+<div className="row">
 <div className="col-md-1 col-1 lock">
 <img style={{marginTop:"8px"}} src="/images/lock.svg"></img>
 </div>
@@ -360,15 +360,15 @@ else{
 </div>
 </div>
 </Form.Group>
-<p className=" instruction2"  style={{color:"#666666", paddingTop:"30px"}}><i class="fas fa-check-circle circle1"></i> Use from 8 characters</p>
-<p  className="instruction2" style={{color:"#666666"}}><i class="fas fa-check-circle circle2"></i> Use at least 1 uppercase letter</p>
-<p  className="instruction2" style={{color:"#666666"}}><i class="fas fa-check-circle circle3"></i> Use at least 1 numeric value</p>
-<p  className=" instruction2" style={{color:"#666666"}}><i class="fas fa-check-circle circle4"></i> Use a combination of numbers and English letters</p>
+<p className=" instruction2"  style={{color:"#666666", paddingTop:"30px"}}><i className="fas fa-check-circle circle1"></i> Use from 8 characters</p>
+<p  className="instruction2" style={{color:"#666666"}}><i className="fas fa-check-circle circle2"></i> Use at least 1 uppercase letter</p>
+<p  className="instruction2" style={{color:"#666666"}}><i className="fas fa-check-circle circle3"></i> Use at least 1 numeric value</p>
+<p  className=" instruction2" style={{color:"#666666"}}><i className="fas fa-check-circle circle4"></i> Use a combination of numbers and English letters</p>
 
-<p class="" style={{ color:"#DD3737", fontWeight:"bold"}}>{notify}</p>
+<p className="" style={{ color:"#DD3737", fontWeight:"bold"}}>{notify}</p>
 <button  id="agreebutton" className="settingscontinuebutton"onClick={changepassword}>Change password
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 
 </button>
@@ -380,36 +380,36 @@ else{
 
       <div className="pin2">
       <Link  style={{marginBottom:"25px"}} className="" href="/settings"  eventKey="2" activeClassName="is-active" >
-              <p class="" style={{paddingLeft:"0px"}}>
-                <img className="" src="images/arrow-left.svg"/> <span class="gobackp" style={{fontWeight:"bold",}}>Back</span></p>
+              <p className="" style={{paddingLeft:"0px"}}>
+                <img className="" src="images/arrow-left.svg"/> <span className="gobackp" style={{fontWeight:"bold",}}>Back</span></p>
               </Link>
 
-      <p class="" style={{fontWeight:"",marginTop:"40px"}}>Old Pin</p>  
-      <div class="row otp-screen" id="otp-screen" style={{marginTop:"0px"}}>
+      <p className="" style={{fontWeight:"",marginTop:"40px"}}>Old Pin</p>  
+      <div className="row otp-screen" id="otp-screen" style={{marginTop:"0px"}}>
 
-                  <input type="number" class="otp1" id="otpstep1one"  placeholder="0" maxlength="1" />
-                  <input type="number" class="otp1" id="otpstep1two" placeholder="0" maxlength="1" />
-                  <input type="number" class="otp1" id="otpstep1three" placeholder="0" maxlength="1" />
-                  <input type="number" class="otp1" id="otpstep1four" placeholder="0" maxlength="1" />
-
- 
-</div>
-
-<p class="" style={{fontWeight:""}}>New Pin</p>  
-      <div class="row otp-screen" id="otp-screen2"  style={{marginTop:"0px"}}>
-
-                  <input type="number" class="otp2" id="otpstep2one"  placeholder="0" maxlength="1" />
-                  <input type="number" class="otp2" id="otpstep2two"  placeholder="0" maxlength="1" />
-                  <input type="number" class="otp2" id="otpstep2three"  placeholder="0" maxlength="1" />
-                  <input type="number" class="otp2" id="otpstep2four"  placeholder="0" maxlength="1" />
+                  <input type="number" className="otp1" id="otpstep1one"  placeholder="0" maxlength="1" />
+                  <input type="number" className="otp1" id="otpstep1two" placeholder="0" maxlength="1" />
+                  <input type="number" className="otp1" id="otpstep1three" placeholder="0" maxlength="1" />
+                  <input type="number" className="otp1" id="otpstep1four" placeholder="0" maxlength="1" />
 
  
 </div>
-<p class="" style={{ color:"#DD3737", fontWeight:"bold"}}>{notify}</p>
+
+<p className="" style={{fontWeight:""}}>New Pin</p>  
+      <div className="row otp-screen" id="otp-screen2"  style={{marginTop:"0px"}}>
+
+                  <input type="number" className="otp2" id="otpstep2one"  placeholder="0" maxlength="1" />
+                  <input type="number" className="otp2" id="otpstep2two"  placeholder="0" maxlength="1" />
+                  <input type="number" className="otp2" id="otpstep2three"  placeholder="0" maxlength="1" />
+                  <input type="number" className="otp2" id="otpstep2four"  placeholder="0" maxlength="1" />
+
+ 
+</div>
+<p className="" style={{ color:"#DD3737", fontWeight:"bold"}}>{notify}</p>
 <p style={{textAlign:""}}>
 <button  id="agreebutton" className="settingscontinuebutton" onClick={savechanges}>Continue 
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 
 </button>

@@ -124,13 +124,13 @@ window.location.replace("/home");
     return (
       
       <div>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -138,26 +138,26 @@ window.location.replace("/home");
  
     <div className="col-md-4 tabs webapptabs  loanapplystepone">
     <Link className="goback" href="/loan/loanproducts"   eventKey="2" activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
+                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
-<Tabs class="">
-  <Tab class="accounttablabel" label="Government">
+<Tabs className="">
+  <Tab className="accounttablabel" label="Government">
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Input Organization</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Input Organization</Form.Label>
       <Form.Control   id="emailaddress" width="60px" type="text" placeholder="Input organization" />
   </Form.Group>
    
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Your IPPIS Number</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Your IPPIS Number</Form.Label>
       <Form.Control   id="emailaddress" width="60px" type="text" placeholder="Input IPPIS number" />
   </Form.Group>
 
-<p class="" style={{textAlign:"center"}} >
+<p className="" style={{textAlign:"center"}} >
 <button  className="loanbutton" onClick={nextstep1}>Continue 
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 
 </button>
@@ -166,7 +166,7 @@ window.location.replace("/home");
 
   <Tab   label="Private">
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Input Organization</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Input Organization</Form.Label>
       <Form.Control   id="emailaddress" width="60px" type="text" placeholder="Input Organization" />
   </Form.Group>
    
@@ -175,10 +175,10 @@ window.location.replace("/home");
       <Form.Control   id="emailaddress" width="60px" type="text" placeholder="Your IPPIS Number" />
   </Form.Group> */}
 
-<p class="" style={{textAlign:"center"}}>
+<p className="" style={{textAlign:"center"}}>
 <button  className="loanbutton" onClick={nextstep1}>Continue 
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 
 </button>
@@ -190,13 +190,13 @@ window.location.replace("/home");
 
 <div className="col-md-4 loanapplysteptwo">
     
-              <p onClick={gobacktostep1} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p onClick={gobacktostep1} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
+                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 
-  <div class="form-group">
+  <div className="form-group">
   <label for="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Purpose</label>
-  <select class="form-control" id="sel1">
+  <select className="form-control" id="sel1">
     <option>- Select Purpose -</option>
     <option>1</option>
     <option>2</option>
@@ -206,13 +206,13 @@ window.location.replace("/home");
 </div>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Your Net Earnings (&#8358;) </Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Your Net Earnings (&#8358;) </Form.Label>
       <Form.Control   id="emailaddress" width="60px" type="text" placeholder="Input Net Earnings" />
   </Form.Group>
 
-  <div class="form-group">
+  <div className="form-group">
   <label for="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Duration</label>
-  <select class="form-control" id="sel1">
+  <select className="form-control" id="sel1">
   <option>- Select Duration -</option>
     <option>1</option>
     <option>2</option>
@@ -224,14 +224,14 @@ window.location.replace("/home");
 
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Amount (&#8358;) </Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Amount (&#8358;) </Form.Label>
       <Form.Control   id="emailaddress" width="60px" type="text" placeholder="Input Amount" />
   </Form.Group>
 
-  <p class="" style={{textAlign:"center"}} >
+  <p className="" style={{textAlign:"center"}} >
 <button  className="loanbutton" onClick={nextstep2}>Continue 
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 
 </button>
@@ -240,42 +240,42 @@ window.location.replace("/home");
 
 <div className="col-md-5 loanapplystepthree">
 <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 <p  className="loansareavailablenote2 summarynote">Here is a summary of your loan application</p>
 <div className="row summarybox">
     <div className="col-md-6 summarydiv1">
         <p  className="loansareavailablenote2">Loan amount</p>
-        <p class="summaryhead">200,000.00</p>
+        <p className="summaryhead">200,000.00</p>
         <p  className="loansareavailablenote2">Loan duration</p>
-        <p class="summaryhead">1 Month(s)</p>
+        <p className="summaryhead">1 Month(s)</p>
         <p  className="loansareavailablenote2">Loan interest</p>
-        <p class="summaryhead">16.0%</p>
+        <p className="summaryhead">16.0%</p>
         <p  className="loansareavailablenote2">Loan repayment</p>
-        <p class="summaryhead">204,000.00</p>
+        <p className="summaryhead">204,000.00</p>
     </div>
 
     <div className="col-md-6"style={{paddingLeft:"50px"}}>
     <p  className="loansareavailablenote2">Loan Type</p>
-    <p class="summaryhead">Consumer Loan</p>
+    <p className="summaryhead">Consumer Loan</p>
     <p  className="loansareavailablenote2">Start Date</p>
-    <p class="summaryhead">21-May-2022</p>
+    <p className="summaryhead">21-May-2022</p>
         <p  className="loansareavailablenote2">Fee</p>
-        <p class="summaryhead">10,000.00</p>
+        <p className="summaryhead">10,000.00</p>
         </div>
 </div>
-  <p class="" style={{textAlign:"center"}} >
+  <p className="" style={{textAlign:"center"}} >
 <button  className="loanbutton" onClick={nextstep3}>Finalize loan application
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 </button>
 </p>
 
-<p class="" style={{textAlign:"center"}} >
+<p className="" style={{textAlign:"center"}} >
 <button  className="editloanbutton" onClick={ gobacktostep2}>Edit loan application
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 </button>
 </p>
@@ -286,7 +286,7 @@ window.location.replace("/home");
 
 <div className="col-md-9 loanapplystepfour">
 <p onClick={gobacktostep3} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 <div className="row">
     <div className="col-md-2">
@@ -308,10 +308,10 @@ window.location.replace("/home");
 
 </div>
 
-  <p class="" style={{marginTop:"30px"}} >
+  <p className="" style={{marginTop:"30px"}} >
 <button  className="loanbutton" onClick={submitbutton}>Submit loan application
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 </button>
 </p>
@@ -340,10 +340,10 @@ window.location.replace("/home");
         </div>
 </div>
 
-<p class="" style={{marginTop:"10px"}} >
+<p className="" style={{marginTop:"10px"}} >
 <button  className="editloanbutton" onClick={ gohome}>Go back to dashboard
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 </button>
 </p>

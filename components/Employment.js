@@ -283,13 +283,13 @@ const Employment = () => {
       
       <div>
         <Pageloader/>
-          <div class="row thesidebarrow">
-          <div class="col-md-2 thesidebar">
+          <div className="row thesidebarrow">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -297,19 +297,19 @@ const Employment = () => {
  
     <div className="col-md-10 tabs webapptabs paymenttabs">
     <Link className="goback" href="/profileoptions"  eventKey="2" activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"20px"}}><img className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}><img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
               <div className="row director1row">
 
 <div className="col-md-5">
-<p class="wallethead" >Employment status </p>
+<p className="wallethead" >Employment status </p>
     <div className="row">
         <div className="col-md-12">
 
-        <div class="form-group">
+        <div className="form-group">
 <label for="sel1" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Employment Type</label>
-<select class="form-control" id="employmenttype">
+<select className="form-control" id="employmenttype">
 <option>- Select Employment Type -</option>
 <option value="cs">Civil Servant</option>
 <option value="ncs">Non Civil Servant</option>
@@ -319,33 +319,33 @@ const Employment = () => {
 </div>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Input Organization</Form.Label>
+<Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Input Organization</Form.Label>
   <Form.Control   id="organization" width="60px" type="text" placeholder="Input organization" />
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>IPPIS Number</Form.Label>
+<Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>IPPIS Number</Form.Label>
   <Form.Control   id="ippis" width="60px" type="number" placeholder="IPPIS Number" />
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Job Title</Form.Label>
+<Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Job Title</Form.Label>
   <Form.Control   id="title" width="60px" type="text" placeholder="Input job title" />
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Office Address</Form.Label>
+<Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Office Address</Form.Label>
   <Form.Control   id="office" width="60px" type="text" placeholder="Input office adddress" />
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>State</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>State</Form.Label>
       {/* <Form.Control   id="stateofresidence" value={stateofresidence} width="60px" type="text" placeholder="Input state of residence" /> */}
   
   
   
-      <div class="form-group">
-<select class="form-control" id="state">
+      <div className="form-group">
+<select className="form-control" id="state">
 <option>- Select State -</option>
 <option value="AB">Abia</option>
     <option value="AD">Adamawa</option>
@@ -397,16 +397,16 @@ const Employment = () => {
 </div>
 
 <div className="col-md-5">
-<p class="wallethead uploadempdocmobile" >Upload documents </p>
-<div class="pprow2">
+<p className="wallethead uploadempdocmobile" >Upload documents </p>
+<div className="pprow2">
 <div className="row">
     <div className="col-md-6 col-6">
 
     <span className="loansareavailablenote2 mobileuploadimagetext" style={{textAlign:"center",fontSize:"15px"}}>{notify2}</span>
 
-    <div class="image-upload empimgupload">
+    <div className="image-upload empimgupload">
   <label for="file">
-    <img class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <img className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="staffidcardid"  width="183" height="100" src={ staffidcard} />
   </label>
   <input type="file" id="file" onChange= {(e)=> setstaffidcard(e.target.files[0])}></input>
@@ -415,9 +415,9 @@ const Employment = () => {
 
     <div className="col-md-6 col-6">
     <span className="loansareavailablenote2 mobileuploadimagetext" style={{textAlign:"center",fontSize:"15px"}}>{notify3}</span>
-    <div class="image-upload empimgupload">
+    <div className="image-upload empimgupload">
   <label for="file2">
-    <img class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <img className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="photographid" width="183" height="100" src={ photograph} />
   </label>
   <input type="file" id="file2" onChange= {(e)=> setphotograph(e.target.files[0])}></input>
@@ -435,20 +435,20 @@ const Employment = () => {
     </div>
 </div>
 
-<p class=""style={{textAlign:"center", color:"#DD3737", fontWeight:"bold"}}>{notify}</p>
+<p className=""style={{textAlign:"center", color:"#DD3737", fontWeight:"bold"}}>{notify}</p>
 
 <p className="saveemploymentbutton" style={{textAlign:"center"}}  onClick={savechanges}  >
 <button  className="loanbutton">Save employment details
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 </button>
 </p>
 
 <p className="editemploymentbutton" style={{textAlign:"center"}}  onClick={editchanges}  >
 <button  className="loanbutton">Edit employment detail
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 </button>
 </p>

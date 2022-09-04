@@ -49,14 +49,14 @@ const Repay = () => {
     return (
       
       <div>
-          <div class="row thesidebarrow">
+          <div className="row thesidebarrow">
 
-          <div class="col-md-2 thesidebar">
+          <div className="col-md-2 thesidebar">
           <Sidebar/>
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
            
@@ -65,8 +65,8 @@ const Repay = () => {
 <div className="col-md-5 repaystepone">
 
 <Link className="goback" href="/home"  eventKey="2" activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
+                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
        
 
@@ -76,25 +76,25 @@ const Repay = () => {
 <div className="row summarybox">
     <div className="col-md-6 summarydiv1">
         <p  className="loansareavailablenote2">Loan amount</p>
-        <p class="summaryhead">{amount}</p>
+        <p className="summaryhead">{amount}</p>
         <p  className="loansareavailablenote2">Loan duration</p>
-        <p class="summaryhead">{duration} Month(s)</p>
+        <p className="summaryhead">{duration} Month(s)</p>
         {/* <p  className="loansareavailablenote2">Loan repayment</p> */}
         {/* <p class="summaryhead">N204,000.00</p> */}
     </div>
 
     <div className="col-md-6"style={{paddingLeft:"50px"}}>
     <p  className="loansareavailablenote2">Loan Type</p>
-    <p class="summaryhead">{loantype}</p>
+    <p className="summaryhead">{loantype}</p>
     <p  className="loansareavailablenote2">Start Date</p>
-    <p class="summaryhead">{startDate}</p>
+    <p className="summaryhead">{startDate}</p>
     
         </div>
 </div>
-  <p class="" style={{textAlign:"center"}} >
+  <p className="" style={{textAlign:"center"}} >
 <button  className="loanbutton" >Repay
-<div class="spinner-border spinner-border-sm" role="status">
-<span class="sr-only">Loading...</span>
+<div className="spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
 </div>
 </button>
 </p>

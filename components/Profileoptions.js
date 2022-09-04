@@ -27,7 +27,7 @@ const Profileoptions = () => {
 
 </div>
 
-              <div class="col-md-10">
+              <div className="col-md-10">
               <Topbar/>
 
          
@@ -40,7 +40,7 @@ const Profileoptions = () => {
 </div>
 
 <div className="col-md-3 col-6">
-<p > <span class="loansareavailable2 ">Personal details</span> <br/><span  className="loansareavailablenote2">Update your personal details</span></p>  
+<p > <span className="loansareavailable2 ">Personal details</span> <br/><span  className="loansareavailablenote2">Update your personal details</span></p>  
 
 </div>
 
@@ -60,7 +60,7 @@ const Profileoptions = () => {
 </div>
 
 <div className="col-md-3 col-6">
-<p > <span class="loansareavailable2">Next of Kin</span> <br/><span  className="loansareavailablenote2">Update your NOK`s` details</span></p>  
+<p > <span className="loansareavailable2">Next of Kin</span> <br/><span  className="loansareavailablenote2">Update your NOK`s` details</span></p>  
 
 </div>
 

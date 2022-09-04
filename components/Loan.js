@@ -23,24 +23,24 @@ console.log(authCtx.isLoggedIn)
    return (
 
       <div>
-         <div class="row thesidebarrow">
-            <div class="col-md-2 thesidebar">
+         <div className="row thesidebarrow">
+            <div className="col-md-2 thesidebar">
                <Sidebar />
 
             </div>
 
-            <div class="col-md-10">
+            <div className="col-md-10">
                <Topbar />
 
 
-               <div class="row">
+               <div className="row">
 
                   <div className="col-md-3 loanboxes" style={{cursor:"pointer"}}>
                      
                         <img className="dashhomecard" src="./images/loanproducts.svg" />
                         <Link href="/loanproducts" eventKey="10">
                         <div className="webappdetailsbg">
-                           <p class="loanproductstitle">Loans products </p>
+                           <p className="loanproductstitle">Loans products </p>
                            <p className="loansareavailablenote2" style={{ paddingLeft: "0px" }}>
                               The various loan products available<br /> to our Credisol customers
                            </p>
@@ -55,7 +55,7 @@ console.log(authCtx.isLoggedIn)
                         <img className="dashhomecard" src="./images/loanhistory1.svg" />
                         <Link href="/loan/history" eventKey="10">
                         <div className="webappdetailsbg">
-                           <p class="loanproductstitle">Loans history </p>
+                           <p className="loanproductstitle">Loans history </p>
                            <p className="loansareavailablenote2" style={{ paddingLeft: "0px" }}>
                               Fill up the necessary information to verify<br /> and have full access to your account.
                            </p>
@@ -70,7 +70,7 @@ console.log(authCtx.isLoggedIn)
                         <img className="dashhomecard" src="./images/accountofficer.svg" />
                         <Link href="/loan/accountofficer" eventKey="10">
                         <div className="webappdetailsbg">
-                           <p class="loanproductstitle">Account officer </p>
+                           <p className="loanproductstitle">Account officer </p>
                            <p className="loansareavailablenote2" style={{ paddingLeft: "0px" }}>
                               Speak to a credit officer today to access a<br />  loan and make the most of it.
                            </p>

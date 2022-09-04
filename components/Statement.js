@@ -167,11 +167,11 @@ const sum = finalarray.reduce((accumulator, object) => {
       <div>
                 <Pageloader/>
         
-          <div class="row">
-              <div class="col-md-3">
+          <div className="row">
+              <div className="col-md-3">
               </div>
            
-              <div style={{marginLeft:"70px"}} class="col-md-5"  ref={ref}>
+              <div style={{marginLeft:"70px"}} className="col-md-5"  ref={ref}>
               <p className=""> <img className="brandlogo navbarlogostatement" src="images/logo.svg"/>
               <br/>
               <span className= "statementdescription">Plot 1072</span>
@@ -200,15 +200,15 @@ const sum = finalarray.reduce((accumulator, object) => {
             <p className="statementfloatright">Number of Transactions: </p> */}
        
         
-              <table class="table css-serial historytable" >
-            <thead class="thead-dark">
-              <tr class="ippisschedulehead">
+              <table className="table css-serial historytable" >
+            <thead className="thead-dark">
+              <tr className="ippisschedulehead">
              
-              <th class="ippiscol0" scope="col">DATE</th>
-              <th class="ippiscol0" scope="col">DESCRIPTION</th>
-                <th class="ippiscol0" scope="col">TRANSACTION ID</th>
+              <th className="ippiscol0" scope="col">DATE</th>
+              <th className="ippiscol0" scope="col">DESCRIPTION</th>
+                <th className="ippiscol0" scope="col">TRANSACTION ID</th>
                
-                <th class="ippiscol0" scope="col">AMOUNT</th>
+                <th className="ippiscol0" scope="col">AMOUNT</th>
                
                 {/* <th class="ippiscol0" scope="col">STATEMENT</th> */}
         
@@ -223,11 +223,11 @@ const sum = finalarray.reduce((accumulator, object) => {
           </table>
 
           <Pdf targetRef={ref} filename="Credisol Statement.pdf">
-        {({ toPdf }) => <button className="bookaloanbutton" onClick={toPdf}>Download Pdf <i style={{marginLeft:"10px"}} class="fas fa-download"></i></button>}
+        {({ toPdf }) => <button className="bookaloanbutton" onClick={toPdf}>Download Pdf <i style={{marginLeft:"10px"}} className="fas fa-download"></i></button>}
       </Pdf>
                 </div>
 
-                <div class="col-md-3">
+                <div className="col-md-3">
             
                   </div>
           </div>
