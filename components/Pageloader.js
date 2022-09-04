@@ -7,12 +7,12 @@ const Pageloader = () => {
     //   });
 
     return (
-<div class="overlay">
-  <div class="wrapperpl">
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+<div className="overlay">
+  <div className="wrapperpl">
+    <div className="box"></div>
+    <div className="box"></div>
+    <div className="box"></div>
+    <div className="box"></div>
   </div>
 </div>
     )
