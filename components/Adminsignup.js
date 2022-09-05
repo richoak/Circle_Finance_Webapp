@@ -606,7 +606,7 @@ setpin1(pin1)
 
 
 
-                <div class="row otp-screen" id="otp-screen">
+                <div className="row otp-screen" id="otp-screen">
 
                   <input type="text" className="otp1" id="otpstep1one"  placeholder="0" maxLength="1" />
                   <input type="text" className="otp1" id="otpstep1two" placeholder="0" maxLength="1" />

@@ -488,7 +488,7 @@ const durationRef = useRef()
             <div className="col-md-4 tabs loanapplysteptwo">
 
               <p onClick={gobacktostep1} className="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
-                <Image className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" /> <span className="gobackp">Back</span></p>
 
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -507,7 +507,7 @@ const durationRef = useRef()
                 <Form.Control id="loanpurpose" width="60px" type="text" placeholder="Loan Purpose" ref={purposeRef}/>
               </Form.Group>
 
-              <div class="form-group">
+              <div className="form-group">
                 <label htmlFor="sel1" style={{ color: "#666666", paddingTop: "20px", paddingBottom: "10px" }}>Loan Duration</label>
                 <select className="form-control" id="loanduration" ref={durationRef}>
                   <option value="">- Select Duration -</option>
@@ -535,7 +535,7 @@ const durationRef = useRef()
 
             <div className="col-md-12 loanapplystepthree">
               <p onClick={gobacktostep2} className="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
-                <Image className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" /> <span className="gobackp">Back</span></p>
 
               {/* <p  className="loansareavailablenote2 summarynote">Business/Management Profile</p>
 <div class="form-group">
