@@ -286,22 +286,22 @@ const continueButton = () => {
 
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link href="/settings" eventKey="10">
-                  <a className="dropdown-item" href="#"> <Image className="avatarnavbar" src="/images/setting-2.svg" layout='fill'/> Settings</a>
+                  <a className="dropdown-item" > <Image className="avatarnavbar" src="/images/setting-2.svg" height="20" width="20"/> Settings</a>
                 </Link>
 
                 <Link href="/profileoptions" eventKey="10">
-                  <a className="dropdown-item" href="#"> <Image className="avatarnavbar" src="/images/user2.svg" layout='fill'/> Account</a>
+                  <a className="dropdown-item" > <Image className="avatarnavbar" src="/images/user2.svg" height="20" width="20"/> Account</a>
                 </Link>
 
                 <Link href="/" eventKey="10">
-                  <a className="dropdown-item" href="#"> <Image className="avatarnavbar" src="/images/logout.svg" layout='fill'/> Sign out</a>
+                  <a className="dropdown-item" > <Image className="avatarnavbar" src="/images/logout.svg" height="20" width="20"/> Sign out</a>
                 </Link>
 
               </div>
             </li>
 
             <li className="nav-item dropdownmobile">
-              <a className="nav-link" href="#"> <Image className="avatar" src="/images/user.svg" layout='fill' /></a>
+              <a className="nav-link" href="#"> <Image className="avatar" src="/images/user.svg" width="24" height="24" /></a>
 
             </li>
           </ul>

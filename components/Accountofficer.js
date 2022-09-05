@@ -52,7 +52,7 @@ const Accountofficer = () => {
           <Topbar />
 
           <Link className="goback" href="/loan" activeClassName="is-active" >
-            <p className="loansareavailable2 " style={{ paddingLeft: "20px", cursor:"pointer" }}><image className="" src="/images/arrow-left.svg" /> <span className="gobackp">Back</span></p>
+            <p className="loansareavailable2 " style={{ paddingLeft: "20px", cursor:"pointer" }}><image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
           </Link>
 
           <div className="row" style={{ marginLeft: "0px" }}>
@@ -73,7 +73,7 @@ const Accountofficer = () => {
               <p className="" style={{ textAlign: "center" }} >
                 <a href={phone}>
                   <button className="callbutton">
-                    <Image className="" src="/images/call.svg" />
+                    <Image className="" src="/images/call.svg" height="24" width="24"/>
                     <span style={{ fontWeight: "bold", paddingLeft: "10px", }}>{phone} </span>
 
                   </button>
@@ -82,8 +82,8 @@ const Accountofficer = () => {
 
               <p className="" style={{ textAlign: "center" }} >
                 <a href={email}>
-                  <button className="emailbutton"><Image className="" src="/images/sms.svg" layout="fill" />
-
+                  <button className="emailbutton">
+                    <Image className="" src="/images/sms.svg" height="24" width="24" />
                     <span style={{ fontWeight: "bold", paddingLeft: "10px" }}> Send an email
 
                     </span>

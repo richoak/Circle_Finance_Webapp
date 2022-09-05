@@ -257,7 +257,7 @@ const Login = () => {
         <div>
           <Row>
             <div className="col-md-6 homepage1box fordesktoponly">
-              <p style={{ textAlign: "center" }} ><Image src="/images/signupbg.svg" layout="fill" /></p>
+              <p style={{ textAlign: "center" }} ><Image src="/images/signupbg.svg"width="375" height="309" /></p>
               <h1 className="homepageherotitle fordesktoponly">
                 Seamless loans now at the lowest interest rates.
               </h1>

@@ -485,7 +485,7 @@ const Home = (props) => {
 
                 <div className="col-md-2 col-3 qloan1">
                   <p style={{ textAlign: "center" }}>
-                    <Image className="" src="/images/quickloan.svg" layout='fill'/></p>
+                    <Image className="" src="/images/quickloan.svg" width="24" height="24"/></p>
                   <Link href="/loan" eventKey="10">
                     <p className="quickloan">Quick Loan</p>
                   </Link>
@@ -506,7 +506,7 @@ const Home = (props) => {
 
                 <div className="col-md-2 col-3 qloan3">
                 <p className="quickloan" style={{ textAlign: "center" }}>
-                <Image className="" src="/images/support2.svg" layout='fill'/>
+                <Image className="" src="/images/support2.svg" width="24" height="24"/>
                 </p>
                   <Link href="/support" eventKey="10">
                   <p className="quickloan" style={{ textAlign: "center" }}>
@@ -522,7 +522,7 @@ const Home = (props) => {
 
                 <div className="col-md-2 col-3 qloan4">
                 <p className="quickloan" style={{ textAlign: "center" }}>
-                <Image className="" src="/images/loanhistory.svg" layout='fill'/>
+                <Image className="" src="/images/loanhistory.svg" width="24" height="24"/>
                 </p>
                   <Link href="/history" eventKey="10">
                     <p className="quickloan" style={{ textAlign: "center" }}>
@@ -577,7 +577,7 @@ const Home = (props) => {
                 <div className="col-md-4"></div>
               </div>
               <div className='homepagenotransactions'>
-                <p style={{ textAlign: "center" }}><Image className="" src="/images/noloan.svg" width="20" height="20" layout='fill'/></p>
+                <p style={{ textAlign: "center" }}><Image className="" src="/images/noloan.svg" width="104" height="105"/></p>
                 <p className="loansareavailable">You dont have any<br />transaction yet</p>
                 <p className="loansareavailablenote">Access any of our available loans at very low <br />interest rate to begin</p>
               </div>

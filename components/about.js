@@ -109,7 +109,7 @@ const updatepinpage= () =>{
 <div className="row" style={{marginTop:"50px"}}>
  
     <div className="col-md-2 tabs">
-    <p className=""> <Image className="" width="100" src="images/logo.svg"/></p>
+    <p className=""> <Image className="" width="100" height="20" src="/images/logo.svg"/></p>
     <p  className="" style={{fontSize:"14px", color:"#808080"}}>&copy; Credisol.</p>
 
 </div>

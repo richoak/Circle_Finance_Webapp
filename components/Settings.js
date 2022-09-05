@@ -288,7 +288,7 @@ else{
 </div>
 
 <div className="col-md-1 col-1">
- <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 
 {/* <hr/> */}
@@ -305,7 +305,7 @@ else{
 </div>
 
 <div className="col-md-1 col-1">
- <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 {/* <hr/> */}
 </div>
@@ -317,7 +317,7 @@ else{
 <div className="password2 ">
       <Link  style={{marginBottom:"45px"}} className="" href="/settings"  eventKey="2" activeClassName="is-active" >
               <p className="" style={{paddingLeft:"0px"}}>
-                <Image className="" src="images/arrow-left.svg"/> <span className="gobackp" style={{fontWeight:"bold",}}>Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp" style={{fontWeight:"bold",}}>Back</span></p>
               </Link>
 
       <p className="" style={{fontWeight:"bold"}}>Update your Password</p>  
@@ -327,7 +327,7 @@ else{
 <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Your Old Password</Form.Label>
 <div className="row">
 <div className="col-md-1 col-1 lock">
-<Image style={{marginTop:"8px"}} src="/images/lock.svg" layout="fill" />
+<Image style={{marginTop:"8px"}} src="/images/lock.svg" height="24" width="24" />
 </div>
 <div className="col-md-3 col-10">
 <Form.Control   id="oldpassword"  type="password" placeholder="Enter your password" />
@@ -382,7 +382,7 @@ else{
       <div className="pin2">
       <Link  style={{marginBottom:"25px"}} className="" href="/settings"  eventKey="2" activeClassName="is-active" >
               <p className="" style={{paddingLeft:"0px"}}>
-                <Image className="" src="images/arrow-left.svg"/> <span className="gobackp" style={{fontWeight:"bold",}}>Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp" style={{fontWeight:"bold",}}>Back</span></p>
               </Link>
 
       <p className="" style={{fontWeight:"",marginTop:"40px"}}>Old Pin</p>  

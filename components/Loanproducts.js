@@ -51,7 +51,7 @@ const Loanproducts = () => {
 
               <Link className="goback" href="/loan"   activeClassName="is-active" >
               <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}>
-                <Image className="" src="./images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
               </Link>
 
 
@@ -60,7 +60,7 @@ const Loanproducts = () => {
   <Link className="" href="/loanproducts/businessloan" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1">
-<Image style={{float:"right"}} className="" src="/images/businessloans.svg"/>
+<Image style={{float:"right"}} className="" src="/images/businessloans.svg" height="48" width="48"/>
 </div>
 
 <div className="col-md-3">
@@ -70,7 +70,7 @@ const Loanproducts = () => {
 </div>
 
 <div className="col-md-1">
-<Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg"/>
+<Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 
 </div>
@@ -82,7 +82,7 @@ const Loanproducts = () => {
   {!loanExist && <div>
     <div className="row loanproductoptions" >
 <div className="col-md-1">
-<Image style={{float:"right"}} className="" src="/images/travelloans.svg"/>
+<Image style={{float:"right"}} className="" src="/images/travelloans.svg" height="48" width="48"/>
 </div>
 
 <Link className="" href="/loanproducts/travelloan" id="availableloanoptions3" eventKey="2" activeClassName="is-active" >
@@ -92,7 +92,7 @@ const Loanproducts = () => {
 </Link>
 
 <div className="col-md-1">
- <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 
 

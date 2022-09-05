@@ -439,7 +439,7 @@ const durationRef = useRef()
             <div className="col-md-4 tabs webapptabs  loanapplystepone">
               <Link className="goback" href="/loanproducts" eventKey="2" activeClassName="is-active" >
                 <p className="loansareavailable2 " style={{ paddingLeft: "0px" }}>
-                  <Image className="" src="/images/arrow-left.svg" /> <span className="gobackp">Back</span></p>
+                  <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
               </Link>
 
 
@@ -488,7 +488,7 @@ const durationRef = useRef()
             <div className="col-md-4 tabs loanapplysteptwo">
 
               <p onClick={gobacktostep1} className="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
-                <Image className="" src="/images/arrow-left.svg" /> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
 
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -535,7 +535,7 @@ const durationRef = useRef()
 
             <div className="col-md-12 loanapplystepthree">
               <p onClick={gobacktostep2} className="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
-                <Image className="" src="/images/arrow-left.svg" /> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" height="24" width="24" /> <span className="gobackp">Back</span></p>
 
               {/* <p  className="loansareavailablenote2 summarynote">Business/Management Profile</p>
 <div class="form-group">
@@ -666,7 +666,7 @@ const durationRef = useRef()
               <hr />
               <div className="row successbox">
                 <div className="col-md-2 col-2">
-                  <Image className="mobilesuccess" src="images/tick-circle.svg" />
+                  <Image className="mobilesuccess" src="/images/tick-circle.svg" height="56" width="56"/>
                 </div>
 
                 <div className="col-md-6 col-10" style={{ paddingLeft: "0px" }}>
