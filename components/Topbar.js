@@ -3,6 +3,7 @@ import { Container, NavDropdown, Nav, Navbar, Form, FormControl, Button, Modal, 
 import $ from "jquery"
 // import { Link } from 'react-router-dom';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import "../js/main.js"
 const Topbar = () => {
@@ -116,7 +117,7 @@ const continueButton = () => {
       <Modal show={show} className="theactivatedmodal">
 
         <Modal.Body className="activatemodalbody">
-          <p style={{ textAlign: "center" }}><img className="" src="images/warning.svg" /></p>
+          <p style={{ textAlign: "center" }}><Image className="" src="/images/warning.svg" /></p>
           <p style={{ textAlign: "center" }} className="loansareavailable2">Your account is yet to be activated </p>
           <p className="loansareavailablenote2" style={{ textAlign: "center" }}>
             Your profile is incomplete. Fill up the necessary information<br /> to verify and gain full access to your account.
@@ -141,7 +142,7 @@ const continueButton = () => {
       <Modal show={show2} className="theactivatedmodal">
 
         <Modal.Body className="activatemodalbody">
-          <p style={{ textAlign: "center" }}><img className="" src="images/warning.svg" /></p>
+          <p style={{ textAlign: "center" }}><Image className="" src="/images/warning.svg" /></p>
           <p style={{ textAlign: "center" }} className="loansareavailable2">Your account is yet to be activated </p>
           <p className="loansareavailablenote2" style={{ textAlign: "center" }}>
             Your profile is incomplete. Fill up the necessary information<br /> to verify and gain full access to your account.
@@ -177,27 +178,27 @@ const continueButton = () => {
         navbarScroll
       >
         <Nav.Link>
-        <p className='thenavbarmenu thenavbarmenumobile  thenavbarmenumobile1'> <img className="" src="images/home.svg"/> <span className="thenavbarmenuspan">   Home</span> </p>
+        <p className='thenavbarmenu thenavbarmenumobile  thenavbarmenumobile1'> <Image className="" src="images/home.svg"/> <span className="thenavbarmenuspan">   Home</span> </p>
             </Link>
 
             <Nav.Link>
-            <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/loans.svg"/> <span className="thenavbarmenuspan"> Loans</span></p>
+            <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="images/loans.svg"/> <span className="thenavbarmenuspan"> Loans</span></p>
             </Link>
 
             <Nav.Link>
-            <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/payments.svg"/><span className="thenavbarmenuspan"> Payments</span></p>
+            <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="images/payments.svg"/><span className="thenavbarmenuspan"> Payments</span></p>
             </Link>
 
             <Nav.Link>
-            <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/support.svg"/><span className="thenavbarmenuspan"> Support</span></p>
+            <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="images/support.svg"/><span className="thenavbarmenuspan"> Support</span></p>
             </Link>
 
             <Nav.Link>
-            <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/referrals.svg"/> <span className="thenavbarmenuspan">Referrals</span></p>
+            <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="images/referrals.svg"/> <span className="thenavbarmenuspan">Referrals</span></p>
             </Link>
 
             <Nav.Link>
-            <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/about.svg"/> <span className="thenavbarmenuspan">About Credisol</span></p>
+            <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="images/about.svg"/> <span className="thenavbarmenuspan">About Credisol</span></p>
             </Link>
 
             <ul class="navbar-nav mr-auto">
@@ -235,37 +236,37 @@ const continueButton = () => {
           <ul className="navbar-nav">
             <Link href="/home" eventKey="1" activeClassName="is-active" >
               <p className='thenavbarmenu thenavbarmenumobile  thenavbarmenumobile1'>
-                <img className="" src="images/home.svg" /> <span className="thenavbarmenuspan">   Home</span> </p>
+                <Image className="" src="/images/home.svg" layout='fill'/> <span className="thenavbarmenuspan">   Home</span> </p>
             </Link>
 
             <Link href="/loan" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/loans.svg" /> <span className="thenavbarmenuspan"> Loans <img style={{ float: "right" }} className="" src="images/arrow-right2.svg" /></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/loans.svg" layout='fill'/> <span className="thenavbarmenuspan"> Loans <Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
             </Link>
 
             <Link href="/payments" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/payments.svg" /><span className="thenavbarmenuspan"> Payments <img style={{ float: "right" }} className="" src="images/arrow-right2.svg" /></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/payments.svg" layout='fill'/><span className="thenavbarmenuspan"> Payments <Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
             </Link>
 
             <Link href="/profileoptions" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/user2.svg" /> <span className="thenavbarmenuspan"> Profile <img style={{ float: "right" }} className="" src="images/arrow-right2.svg" /></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/user2.svg" layout='fill'/> <span className="thenavbarmenuspan"> Profile <Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
             </Link>
 
             <Link href="/settings" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/setting-2.svg" /><span className="thenavbarmenuspan"> Settings <img style={{ float: "right" }} className="" src="images/arrow-right2.svg" /></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/setting-2.svg" layout='fill'/><span className="thenavbarmenuspan"> Settings <Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
             </Link>
 
 
             <Link href="/support" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/support.svg" /><span className="thenavbarmenuspan"> Support <img style={{ float: "right" }} className="" src="images/arrow-right2.svg" /></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/support.svg" layout='fill'/><span className="thenavbarmenuspan"> Support <Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
             </Link>
 
 
             <Link href="/about" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/about.svg" /> <span className="thenavbarmenuspan">About Credisol<img style={{ float: "right" }} className="" src="images/arrow-right2.svg" /></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/about.svg" layout='fill'/> <span className="thenavbarmenuspan">About Credisol<Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
             </Link>
 
             <Link href="/" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><img className="" src="images/logout.svg" /> <span className="thenavbarmenuspan">Sign Out</span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/logout.svg" layout='fill'/> <span className="thenavbarmenuspan">Sign Out</span></p>
             </Link>
 
 
@@ -273,7 +274,7 @@ const continueButton = () => {
 
             {/* <li class="nav-item  rightnavmenu notify notifybell">
       <a class="nav-link" href="#">
-      <img width="24px" src="/images/notification.svg"/>
+      <Image width="24px" src="/images/notification.svg"/>
       </a>
       </li> */}
 
@@ -285,22 +286,22 @@ const continueButton = () => {
 
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <Link href="/settings" eventKey="10">
-                  <a className="dropdown-item" href="#"> <img className="avatarnavbar" src="/images/setting-2.svg" /> Settings</a>
+                  <a className="dropdown-item" href="#"> <Image className="avatarnavbar" src="/images/setting-2.svg" layout='fill'/> Settings</a>
                 </Link>
 
                 <Link href="/profileoptions" eventKey="10">
-                  <a className="dropdown-item" href="#"> <img className="avatarnavbar" src="/images/user2.svg" /> Account</a>
+                  <a className="dropdown-item" href="#"> <Image className="avatarnavbar" src="/images/user2.svg" layout='fill'/> Account</a>
                 </Link>
 
                 <Link href="/" eventKey="10">
-                  <a className="dropdown-item" href="#"> <img className="avatarnavbar" src="/images/logout.svg" /> Sign out</a>
+                  <a className="dropdown-item" href="#"> <Image className="avatarnavbar" src="/images/logout.svg" layout='fill'/> Sign out</a>
                 </Link>
 
               </div>
             </li>
 
             <li className="nav-item dropdownmobile">
-              <a className="nav-link" href="#"> <img className="avatar" src="/images/user.svg" /></a>
+              <a className="nav-link" href="#"> <Image className="avatar" src="/images/user.svg" layout='fill' /></a>
 
             </li>
           </ul>

@@ -108,7 +108,7 @@ const updatepinpage= () =>{
 <div className="row" style={{marginTop:"50px"}}>
  
     <div className="col-md-2 tabs">
-    <p className=""> <img className="" width="100" src="images/logo.svg"/></p>
+    <p className=""> <Image className="" width="100" src="images/logo.svg"/></p>
     <p  className="" style={{fontSize:"14px", color:"#808080"}}>&copy; Credisol.</p>
 
 </div>
@@ -120,7 +120,7 @@ const updatepinpage= () =>{
 <div className="col-md-5 col-10">
 <p class="outerlinks">
   <span class="viewour">View our Terms and Conditions </span>  
-  <img style={{float:"right"}} className="abouthr" src="images/arrow-right.svg"/></p>  
+  <Image style={{float:"right"}} className="abouthr" src="images/arrow-right.svg"/></p>  
 </div>
 
 </div>
@@ -133,7 +133,7 @@ const updatepinpage= () =>{
 <div className="col-md-5 col-10">
 <p class="outerlinks">
   <span class="viewour"> View our Privacy and Policy</span>  
-  <img style={{float:"right"}} className="abouthr" src="images/arrow-right.svg"/></p>  
+  <Image style={{float:"right"}} className="abouthr" src="images/arrow-right.svg"/></p>  
 </div>
 
 </div>

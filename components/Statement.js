@@ -172,7 +172,7 @@ const sum = finalarray.reduce((accumulator, object) => {
               </div>
            
               <div style={{marginLeft:"70px"}} className="col-md-5"  ref={ref}>
-              <p className=""> <img className="brandlogo navbarlogostatement" src="images/logo.svg"/>
+              <p className=""> <Image className="brandlogo navbarlogostatement" src="images/logo.svg"/>
               <br/>
               <span className= "statementdescription">Plot 1072</span>
               <br/>

@@ -3,6 +3,7 @@ import { Container, Row, Button, Nav, Form, Accordion, Col } from 'react-bootstr
 import { Link } from 'react-router-dom';
 // import Footer from './Footer';
 import Header from './Header';
+import Image from 'next/image';
 
 import "../js/main.js"
 import $ from 'jquery'
@@ -344,7 +345,7 @@ const Login = () => {
         <div>
           <Row>
             <div className="col-md-6 homepage1box fordesktoponly">
-              <p style={{ textAlign: "center" }} ><img src="images/signupbg.svg" /></p>
+              <p style={{ textAlign: "center" }} ><Image src="/images/signupbg.svg" layout="fill" /></p>
               <h1 className="homepageherotitle fordesktoponly">
                 Seamless loans now at the lowest interest rates.
               </h1>
@@ -368,12 +369,12 @@ const Login = () => {
               {/* <div class="accessbuttons">
                   <a target="_blank" href="http://app.credisol.com"><button className="accessbutton sidebyside" >Get access to loans</button></a> 
                     <a href="#faq">
-                      <p className="createaccountbuttons learnmore sidebyside" onMouseEnter={rotatedown} onMouseLeave={stoprotatedown} >Learn more  <img style={RotateDown}  src="images/rightarrow.png"/></p>
+                      <p className="createaccountbuttons learnmore sidebyside" onMouseEnter={rotatedown} onMouseLeave={stoprotatedown} >Learn more  <Image style={RotateDown}  src="images/rightarrow.png"/></p>
                       </a>
                  
                   </div> */}
 
-              {/* <img className='disbursedimg' src="images/loans.png" alt="" /> */}
+              {/* <Image className='disbursedimg' src="images/loans.png" alt="" /> */}
 
             </div>
 
@@ -404,7 +405,7 @@ const Login = () => {
                   <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Your Email Address</Form.Label>
                   <div className="row">
                     <div className="col-md-1 col-1">
-                      <img style={{ marginTop: "8px" }} src="/images/sms.svg"></img>
+                      <Image style={{ marginTop: "8px" }} src="/images/sms.svg" layout="fill" />
                     </div>
                     <div className="col-md-11 col-11">
                       <Form.Control ref={emailRef} id="emailaddress" type="text" placeholder="Enter your email address" />
@@ -418,7 +419,7 @@ const Login = () => {
                   <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Password</Form.Label>
                   <div className="row">
                     <div className="col-md-1 col-1">
-                      <img style={{ marginTop: "8px" }} src="/images/lock.svg"></img>
+                      <Image style={{ marginTop: "8px" }} src="/images/lock.svg" layout="fill" />
                     </div>
                     <div className="col-md-11 col-11">
                       <Form.Control ref={passwordRef} id="password" type="password" placeholder="Enter your password" />
@@ -466,7 +467,7 @@ const Login = () => {
                   <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Your Email Address</Form.Label>
                   <div className="row">
                     <div className="col-md-1 col-1">
-                      <img style={{ marginTop: "8px" }} src="/images/sms.svg"></img>
+                      <Image style={{ marginTop: "8px" }} src="/images/sms.svg" layout="fill" />
                     </div>
                     <div className="col-md-11 col-11">
                       <Form.Control id="resetemailaddress" type="text" placeholder="Enter your email address" />
@@ -551,7 +552,7 @@ const Login = () => {
                     <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>New Password</Form.Label>
                     <div className="row">
                       <div className="col-md-1 col-1">
-                        <img style={{ marginTop: "8px" }} src="/images/lock.svg"></img>
+                        <Image style={{ marginTop: "8px" }} src="/images/lock.svg" layout="fill" />
                       </div>
                       <div className="col-md-11 col-11">
                         <Form.Control id="newpassword" onKeyUp={inputpassword} type="password" placeholder="Enter your password" />
@@ -564,7 +565,7 @@ const Login = () => {
                     <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Confirm Password</Form.Label>
                     <div className="row">
                       <div className="col-md-1 col-1">
-                        <img style={{ marginTop: "8px" }} src="/images/lock.svg"></img>
+                        <Image style={{ marginTop: "8px" }} src="/images/lock.svg" layout="fill" />
                       </div>
                       <div className="col-md-11 col-11">
                         <Form.Control id="confirmpassword" type="password" placeholder="Enter your password" />

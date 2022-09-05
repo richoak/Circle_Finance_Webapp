@@ -60,7 +60,7 @@ const addbank = () =>{
     <p className="wallethead" >Contact us </p>
 
     <div className="row">
-            <div className="col-md-1 col-1"><img width="40px" src="/images/phone.svg"/></div>
+            <div className="col-md-1 col-1"><Image width="40px" src="/images/phone.svg"/></div>
             <div className="col-md-8 col-8">
             <a href="tel:07061875167">
               <p className="phone">
@@ -72,7 +72,7 @@ const addbank = () =>{
 
         <div className="row" style={{paddingTop:"15px"}}>
             <div className="col-md-1 col-1">
-            <img width="40px" src="/images/email.svg"/>
+            <Image width="40px" src="/images/email.svg"/>
             </div>
 
             <div className="col-md-8 col-9">
@@ -99,7 +99,7 @@ const addbank = () =>{
             <div className="col-md-3 col-4">
            
             <a target="_blank" href="https://www.google.com/maps/place/Rich-Oak,+Abuja"
-                       style={{textDecoration:"none", color:"#666666"}} > <img width="24px" src="/images/location.svg"/></a>
+                       style={{textDecoration:"none", color:"#666666"}} > <Image width="24px" src="/images/location.svg"/></a>
             </div>
 
         </div>
@@ -109,7 +109,7 @@ const addbank = () =>{
 <div className="row">
     <div className="col-md-6 col-4">
     <div className="row">
-            <div className="col-md-1"><img width="12px" src="/images/facebook.svg"/></div>
+            <div className="col-md-1"><Image width="12px" src="/images/facebook.svg"/></div>
            <div className="col-md-8">
            <a style={{textDecoration:"none"}} target="_blank" href="https://facebook.com/credi-sol">
              <p className="smtext">Facebook </p>
@@ -120,7 +120,7 @@ const addbank = () =>{
 
     <div className="col-md-6 col-4">
     <div className="row">
-            <div className="col-md-1"><img width="15px" src="/images/instagram.svg"/></div>
+            <div className="col-md-1"><Image width="15px" src="/images/instagram.svg"/></div>
             
             <div className="col-md-8">
             <a style={{textDecoration:"none"}} target="_blank" href="https://facebook.com/credi-sol">
@@ -132,7 +132,7 @@ const addbank = () =>{
 
     <div className="col-md-6 col-4">
     <div className="row">
-            <div className="col-md-1"><img width="15px" src="/images/twitter.svg"/></div>
+            <div className="col-md-1"><Image width="15px" src="/images/twitter.svg"/></div>
             <div className="col-md-8">
             <a style={{textDecoration:"none"}} target="_blank" href="https://twitter.com/credi-sol">
               <p className="smtext">Twitter </p>
@@ -149,7 +149,7 @@ const addbank = () =>{
     <div className="col-md-6 col-12 smrow2">
     <p className="wallethead faqmobile" >Frequently asked questions </p>
     <div className="row">
-            <div className="col-md-1 col-1"><img width="35px" src="/images/question.svg"/></div>
+            <div className="col-md-1 col-1"><Image width="35px" src="/images/question.svg"/></div>
             <div className="col-md-10 col-10"><p className="faqtext">This section will help give you insights and answers to some of our most commonly asked questions. </p></div>
         </div>
 

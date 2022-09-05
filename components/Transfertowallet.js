@@ -90,7 +90,7 @@ window.location.replace("/home");
 
     <Link className="goback" href="/transfer"  eventKey="2" activeClassName="is-active" >
               <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
 
@@ -157,13 +157,13 @@ onClick={copyClipboard }
 
 <div className="col-md-5 withdrawsteptwo">
 {/* <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+                <Image className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
         */}
 <p  className="bookingnote">Withdrawal request received</p>
 <hr/>
 <div className="row successbox">
     <div className="col-md-2 col-2">
-    <img className="mobilesuccess" src="images/tick-circle.svg"/>
+    <Image className="mobilesuccess" src="images/tick-circle.svg"/>
     </div>
 
     <div className="col-md-6 col-10"style={{paddingLeft:"0px"}}>

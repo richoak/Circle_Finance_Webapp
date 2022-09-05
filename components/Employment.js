@@ -297,7 +297,7 @@ const Employment = () => {
  
     <div className="col-md-10 tabs webapptabs paymenttabs">
     <Link className="goback" href="/profileoptions"  eventKey="2" activeClassName="is-active" >
-              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}><img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}><Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
               <div className="row director1row">
@@ -406,7 +406,7 @@ const Employment = () => {
 
     <div className="image-upload empimgupload">
   <label for="file">
-    <img className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="staffidcardid"  width="183" height="100" src={ staffidcard} />
   </label>
   <input type="file" id="file" onChange= {(e)=> setstaffidcard(e.target.files[0])}></input>
@@ -417,7 +417,7 @@ const Employment = () => {
     <span className="loansareavailablenote2 mobileuploadimagetext" style={{textAlign:"center",fontSize:"15px"}}>{notify3}</span>
     <div className="image-upload empimgupload">
   <label for="file2">
-    <img className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="photographid" width="183" height="100" src={ photograph} />
   </label>
   <input type="file" id="file2" onChange= {(e)=> setphotograph(e.target.files[0])}></input>

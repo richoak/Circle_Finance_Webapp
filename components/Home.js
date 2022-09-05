@@ -8,7 +8,7 @@ import $ from 'jquery'
 import Pageloader from './Pageloader';
 import useHttp from '../hooks/use-http';
 
-
+import Image from 'next/image';
 import LoanContext from '../store/loan-context';
 
 
@@ -392,7 +392,7 @@ const Home = (props) => {
                   <div className="col-md-3 boxa">
                   <p class="loansareavailable">Loans are available </p>
                 <p className="loansareavailablenote">You have loans waiting for you. Book a loan<br/> and get disbursed in few minutes</p>
-               <p style={{textAlign:"center"}}><img className="" src="images/addloan.svg"/></p>
+               <p style={{textAlign:"center"}}><Image className="" src="images/addloan.svg"/></p>
                
                   </div>
 
@@ -402,7 +402,7 @@ const Home = (props) => {
                   <div className="col-md-3 boxa">
                   <p class="loansareavailable">Loans are available </p>
                 <p className="loansareavailablenote">You have loans waiting for you. Book a loan<br/> and get disbursed in few minutes</p>
-               <p style={{textAlign:"center"}}><img className="" src="images/addloan.svg"/></p>
+               <p style={{textAlign:"center"}}><Image className="" src="images/addloan.svg"/></p>
                   </div>
 
                   <div className="col-md-1">
@@ -411,7 +411,7 @@ const Home = (props) => {
                   <div className="col-md-3 boxa">
                   <p class="loansareavailable">Loans are available </p>
                 <p className="loansareavailablenote">You have loans waiting for you. Book a loan<br/> and get disbursed in few minutes</p>
-               <p style={{textAlign:"center"}}><img className="" src="images/addloan.svg"/></p>
+               <p style={{textAlign:"center"}}><Image className="" src="images/addloan.svg"/></p>
                   </div>
 
 
@@ -485,7 +485,7 @@ const Home = (props) => {
 
                 <div className="col-md-2 col-3 qloan1">
                   <p style={{ textAlign: "center" }}>
-                    <img className="" src="images/quickloan.svg" /></p>
+                    <Image className="" src="/images/quickloan.svg" layout='fill'/></p>
                   <Link href="/loan" eventKey="10">
                     <p className="quickloan">Quick Loan</p>
                   </Link>
@@ -495,7 +495,7 @@ const Home = (props) => {
 
 
                 {/* <div className="col-md-2 col-3 qloan2">
-    <p style={{textAlign:"center"}}><img className="" src="images/addpayment.svg"/></p>
+    <p style={{textAlign:"center"}}><Image className="" src="images/addpayment.svg"/></p>
     <Nav.Link as={Link} to="/transfer" eventKey="10">
     <p className="quickloan">Transfer</p>
     </Nav.Link>
@@ -506,7 +506,7 @@ const Home = (props) => {
 
                 <div className="col-md-2 col-3 qloan3">
                 <p className="quickloan" style={{ textAlign: "center" }}>
-                <img className="" src="images/support2.svg" />
+                <Image className="" src="/images/support2.svg" layout='fill'/>
                 </p>
                   <Link href="/support" eventKey="10">
                   <p className="quickloan" style={{ textAlign: "center" }}>
@@ -522,7 +522,7 @@ const Home = (props) => {
 
                 <div className="col-md-2 col-3 qloan4">
                 <p className="quickloan" style={{ textAlign: "center" }}>
-                <img className="" src="images/loanhistory.svg" />
+                <Image className="" src="/images/loanhistory.svg" layout='fill'/>
                 </p>
                   <Link href="/history" eventKey="10">
                     <p className="quickloan" style={{ textAlign: "center" }}>
@@ -539,7 +539,7 @@ const Home = (props) => {
               <div className="">
                 {/* <Row>
 <div className="col-md-6 col-6 homepage1box2">
-<img className='img-fluid' style={{width:"", height:""}} src="images/phoneimg.svg" alt="" />
+<Image className='img-fluid' style={{width:"", height:""}} src="images/phoneimg.svg" alt="" />
 </div>
 
                   <div className="col-md-6 col-6">
@@ -577,7 +577,7 @@ const Home = (props) => {
                 <div className="col-md-4"></div>
               </div>
               <div className='homepagenotransactions'>
-                <p style={{ textAlign: "center" }}><img className="" src="images/noloan.svg" /></p>
+                <p style={{ textAlign: "center" }}><Image className="" src="/images/noloan.svg" width="20" height="20" layout='fill'/></p>
                 <p className="loansareavailable">You dont have any<br />transaction yet</p>
                 <p className="loansareavailablenote">Access any of our available loans at very low <br />interest rate to begin</p>
               </div>

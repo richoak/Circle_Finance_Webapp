@@ -36,7 +36,7 @@ const Profileoptions = () => {
 <Link className="" href="/profile"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions">
 <div className="col-md-1 col-3">
-<img style={{float:"right"}} className="" src="images/consumerloans.svg"/>
+<Image style={{float:"right"}} className="" src="images/consumerloans.svg"/>
 </div>
 
 <div className="col-md-3 col-6">
@@ -45,7 +45,7 @@ const Profileoptions = () => {
 </div>
 
 <div className="col-md-1 col-3">
- <img style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
 </div>
 {/* <hr/> */}
 </div>
@@ -56,7 +56,7 @@ const Profileoptions = () => {
 <Link className="" href="/nextofkin"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions">
 <div className="col-md-1 col-3">
-<img style={{float:"right"}} className="" src="images/businessloans.svg"/>
+<Image style={{float:"right"}} className="" src="images/businessloans.svg"/>
 </div>
 
 <div className="col-md-3 col-6">
@@ -65,7 +65,7 @@ const Profileoptions = () => {
 </div>
 
 <div className="col-md-1 col-3">
- <img style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
 </div>
 {/* <hr/> */}
 </div>
@@ -77,7 +77,7 @@ const Profileoptions = () => {
 {/* <Nav.Link className="" as={Link} to="/employment"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions">
 <div className="col-md-1 col-3">
-<img style={{float:"right"}} className="" src="images/travelloans.svg"/>
+<Image style={{float:"right"}} className="" src="images/travelloans.svg"/>
 </div>
 
 <div className="col-md-3 col-6">
@@ -86,7 +86,7 @@ const Profileoptions = () => {
 </div>
 
 <div className="col-md-3 col-3">
- <img style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
 </div>
 <hr/>
 </div>
@@ -96,7 +96,7 @@ const Profileoptions = () => {
 {/* <Nav.Link className="" as={Link} to="/document"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions">
 <div className="col-md-1 col-3">
-<img style={{float:"right"}} className="" src="images/travelloans.svg"/>
+<Image style={{float:"right"}} className="" src="images/travelloans.svg"/>
 </div>
 
 <div className="col-md-3 col-6">
@@ -105,7 +105,7 @@ const Profileoptions = () => {
 </div>
 
 <div className="col-md-1 col-3">
- <img style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
 </div>
 <hr/>
 </div>

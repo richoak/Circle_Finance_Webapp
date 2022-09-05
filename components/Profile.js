@@ -232,7 +232,7 @@ const savechanges = () => {
  
     <div className="col-md-10 tabs webapptabs paymenttabs">
     <Link className="goback" href="/profileoptions"  eventKey="2" activeClassName="is-active" >
-              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}><img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}><Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
               <div className="row director1row">
@@ -240,7 +240,7 @@ const savechanges = () => {
     <p className="mobilecenterpicture">
     <div className="image-upload">
   <label for="file">
-    <img className="" style={{marginBottom:"0px", cursor:"pointer "}} 
+    <Image className="" style={{marginBottom:"0px", cursor:"pointer "}} 
      id="profilepictureid" width="40"  src={ profilepicture} />
   </label>
   <input type="file" id="file" onChange= {(e)=> setprofilepicture(e.target.files[0])}></input>

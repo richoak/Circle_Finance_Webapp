@@ -351,7 +351,7 @@ window.location.replace("/home");
     
 <Link className="goback" href="/loanproducts"  eventKey="2" activeClassName="is-active" >
               <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
               </Link>
        
 
@@ -662,7 +662,7 @@ window.location.replace("/home");
 
 <div className="col-md-5 loanapplystepthree">
 <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 <p  className="loansareavailablenote2 summarynote">Here is a summary of your loan application</p>
 
@@ -708,13 +708,13 @@ window.location.replace("/home");
 
 <div className="col-md-9 loanapplystepfour">
 <p onClick={gobacktostep3} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 <div className="row">
     <div className="col-md-2 col-4">
     <div className="image-upload empimgupload">
   <label for="file">
-    <img className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="passport"  width="183" height="100" src={ passport} />
   </label>
   <input type="file" id="file" onChange= {(e)=> setpassport(e.target.files[0])}></input>
@@ -724,7 +724,7 @@ window.location.replace("/home");
     <div className="col-md-2 col-4" style={{marginLeft:"20px"}}>
     <div className="image-upload empimgupload">
   <label for="file2">
-    <img className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="additionaldocument"  width="183" height="100" src={additionaldocument} />
   </label>
   <input type="file" id="file2" onChange= {(e)=> setadditionaldocument(e.target.files[0])}></input>
@@ -755,13 +755,13 @@ window.location.replace("/home");
 
 <div className="col-md-5 loanapplystepfive">
 {/* <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+                <Image className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
         */}
 <p  className="bookingnote">Booking received</p>
 <hr/>
 <div className="row successbox">
     <div className="col-md-2 col-2">
-    <img className="mobilesuccess" src="images/tick-circle.svg"/>
+    <Image className="mobilesuccess" src="images/tick-circle.svg"/>
     </div>
 
     <div className="col-md-6 col-10"style={{paddingLeft:"0px"}}>

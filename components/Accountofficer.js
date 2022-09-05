@@ -37,7 +37,7 @@ const Accountofficer = () => {
           "Authorization": "Bearer " + localStorage.getItem("access_token")
       }
   }, transformData)
-  }, [])
+  }, [fetchAccountOfficer])
 
   return (
 
@@ -52,7 +52,7 @@ const Accountofficer = () => {
           <Topbar />
 
           <Link className="goback" href="/loan" activeClassName="is-active" >
-            <p className="loansareavailable2 " style={{ paddingLeft: "20px", cursor:"pointer" }}><img className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
+            <p className="loansareavailable2 " style={{ paddingLeft: "20px", cursor:"pointer" }}><image className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
           </Link>
 
           <div className="row" style={{ marginLeft: "0px" }}>
@@ -73,7 +73,7 @@ const Accountofficer = () => {
               <p className="" style={{ textAlign: "center" }} >
                 <a href={phone}>
                   <button className="callbutton">
-                    <img className="" src="/images/call.svg" />
+                    <Image className="" src="/images/call.svg" />
                     <span style={{ fontWeight: "bold", paddingLeft: "10px", }}>{phone} </span>
 
                   </button>
@@ -82,7 +82,7 @@ const Accountofficer = () => {
 
               <p className="" style={{ textAlign: "center" }} >
                 <a href={email}>
-                  <button className="emailbutton"><img className="" src="/images/sms.svg" />
+                  <button className="emailbutton"><Image className="" src="/images/sms.svg" layout="fill" />
 
                     <span style={{ fontWeight: "bold", paddingLeft: "10px" }}> Send an email
 

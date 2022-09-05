@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container, NavDropdown, Nav, Navbar, Form, FormControl,Button, Row, Offcanvas } from 'react-bootstrap'
-
+import Image from 'next/image';
 
 import "../js/main.js"
 const Header = () => {
@@ -13,7 +13,7 @@ return(
 
 <Navbar bg="light" expand="lg">
   <Container fluid>
-    <Navbar.Brand href="/"><img className="brandlogo" src="images/logo.svg"/></Navbar.Brand>
+    <Navbar.Brand href="/"><Image className="brandlogo" layout='fill' src="/images/logo.svg" /></Navbar.Brand>
 
 
     {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -32,7 +32,7 @@ return(
 
           </div>
             <div className="col-md-2 col-2">
-            <img style={{width:"", height:""}} src="images/user2.svg" alt="" />
+            <Image style={{width:"", height:""}} src="images/user2.svg" alt="" />
             </div>
             <div className="col-md-8 col-8">
             <h1 className='navbarhead'>Consumer loans</h1>
@@ -52,7 +52,7 @@ return(
 
           </div>
             <div className="col-md-2 col-2">
-            <img style={{width:"", height:""}} src="images/travel.svg" alt="" />
+            <Image style={{width:"", height:""}} src="images/travel.svg" alt="" />
             </div>
             <div className="col-md-8 col-8">
             <h1 className='navbarhead'>Travel loans</h1>
@@ -71,7 +71,7 @@ return(
 
           </div>
             <div className="col-md-2 col-2">
-            <img style={{width:"", height:""}} src="images/business.svg" alt="" />
+            <Image style={{width:"", height:""}} src="images/business.svg" alt="" />
             </div>
             <div className="col-md-8 col-8">
             <h1 className='navbarhead'>Business and company loans</h1>
@@ -94,7 +94,7 @@ return(
 
           </div>
             <div className="col-md-2 col-2">
-            <img style={{width:"", height:""}} src="images/user2.svg" alt="" />
+            <Image style={{width:"", height:""}} src="images/user2.svg" alt="" />
             </div>
             <div className="col-md-8 col-8">
             <h1 className='navbarhead'>Frequently Asked Questions </h1>
@@ -112,7 +112,7 @@ return(
 
           </div>
             <div className="col-md-2 col-2">
-            <img style={{width:"", height:""}} src="images/user2.svg" alt="" />
+            <Image style={{width:"", height:""}} src="images/user2.svg" alt="" />
             </div>
             <div className="col-md-8 col-8">
             <h1 className='navbarhead'>Contact Us</h1>

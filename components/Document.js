@@ -106,7 +106,7 @@ const addbank = () =>{
  
     <div className="col-md-10 tabs webapptabs paymenttabs">
     <Link className="goback" href="/profileoptions"  activeClassName="is-active" >
-              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}><img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}><Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
               <div className="row director1row">
@@ -151,11 +151,11 @@ const addbank = () =>{
 <div className="pprow2">
 <div className="row">
     <div className="col-md-6 col-6">
-    <img width="150px" src="images/passport.svg"/>
+    <Image width="150px" src="images/passport.svg"/>
     </div>
 
     <div className="col-md-6 col-6">
-    <img width="150px" src="images/passport.svg"/>
+    <Image width="150px" src="images/passport.svg"/>
         </div>
 
 

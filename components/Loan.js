@@ -37,7 +37,7 @@ console.log(authCtx.isLoggedIn)
 
                   <div className="col-md-3 loanboxes" style={{cursor:"pointer"}}>
                      
-                        <img className="dashhomecard" src="./images/loanproducts.svg" />
+                        <Image className="dashhomecard" src="./images/loanproducts.svg" />
                         <Link href="/loanproducts" eventKey="10">
                         <div className="webappdetailsbg">
                            <p className="loanproductstitle">Loans products </p>
@@ -52,7 +52,7 @@ console.log(authCtx.isLoggedIn)
                   <div className="col-md-3 loanboxes" style={{cursor:"pointer"}}>
                     
 
-                        <img className="dashhomecard" src="./images/loanhistory1.svg" />
+                        <Image className="dashhomecard" src="./images/loanhistory1.svg" />
                         <Link href="/loan/history" eventKey="10">
                         <div className="webappdetailsbg">
                            <p className="loanproductstitle">Loans history </p>
@@ -67,7 +67,7 @@ console.log(authCtx.isLoggedIn)
                   <div className="col-md-3 loanboxes" style={{cursor:"pointer"}}>
                      
 
-                        <img className="dashhomecard" src="./images/accountofficer.svg" />
+                        <Image className="dashhomecard" src="./images/accountofficer.svg" />
                         <Link href="/loan/accountofficer" eventKey="10">
                         <div className="webappdetailsbg">
                            <p className="loanproductstitle">Account officer </p>
@@ -81,7 +81,7 @@ console.log(authCtx.isLoggedIn)
                   {/* <div className="col-md-3">
     <Nav.Link as={Link} to="/loantopup" eventKey="10">
  
- <img className="dashhomecard" src="./images/loantopup.svg"/>
+ <Image className="dashhomecard" src="./images/loantopup.svg"/>
  <div className="webappdetailsbg">
  <p class="loanproductstitle">Loan top up </p>
  <p className="loansareavailablenote2" style={{paddingLeft:"0px"}}>

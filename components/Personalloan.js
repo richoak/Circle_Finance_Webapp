@@ -139,7 +139,7 @@ window.location.replace("/home");
     <div className="col-md-4 tabs webapptabs  loanapplystepone">
     <Link className="goback" href="/loan/loanproducts"   eventKey="2" activeClassName="is-active" >
               <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
 <Tabs className="">
@@ -191,7 +191,7 @@ window.location.replace("/home");
 <div className="col-md-4 loanapplysteptwo">
     
               <p onClick={gobacktostep1} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 
   <div className="form-group">
@@ -240,7 +240,7 @@ window.location.replace("/home");
 
 <div className="col-md-5 loanapplystepthree">
 <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 <p  className="loansareavailablenote2 summarynote">Here is a summary of your loan application</p>
 <div className="row summarybox">
@@ -286,23 +286,23 @@ window.location.replace("/home");
 
 <div className="col-md-9 loanapplystepfour">
 <p onClick={gobacktostep3} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 <div className="row">
     <div className="col-md-2">
-    <img className="" src="/images/employmentletter.svg"/>
+    <Image className="" src="/images/employmentletter.svg"/>
     </div>
 
     <div className="col-md-2" style={{marginLeft:"20px"}}>
-    <img className="" src="/images/photograph1.svg"/>
+    <Image className="" src="/images/photograph1.svg"/>
 </div>
 
 <div className="col-md-2"  style={{marginLeft:"20px"}}>
-<img className="" src="/images/photograph2.svg"/>
+<Image className="" src="/images/photograph2.svg"/>
 </div>
 
 <div className="col-md-2" style={{marginLeft:"20px"}}>
-<img className="" src="/images/photograph3.svg"/>
+<Image className="" src="/images/photograph3.svg"/>
 </div>
 
 
@@ -323,13 +323,13 @@ window.location.replace("/home");
 
 <div className="col-md-5 loanapplystepfive">
 {/* <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+                <Image className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
         */}
 <p  className="bookingnote">Booking received</p>
 <hr/>
 <div className="row successbox">
     <div className="col-md-2">
-    <img className="" src="/images/tick-circle.svg"/>
+    <Image className="" src="/images/tick-circle.svg"/>
     </div>
 
     <div className="col-md-6"style={{paddingLeft:"0px"}}>

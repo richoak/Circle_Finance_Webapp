@@ -74,14 +74,14 @@ const Transfer = () => {
               <Topbar/>
 
               <Link className="goback" href="/home"  eventKey="2" activeClassName="is-active" >
-              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
 
 {/* <Nav.Link className="" as={Link} to="/personalloan" id="availableloanoptions" eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1">
-<img style={{float:"right"}} className="" src="images/consumerloans.svg"/>
+<Image style={{float:"right"}} className="" src="images/consumerloans.svg"/>
 </div>
 
 <div className="col-md-3 col-4">
@@ -90,7 +90,7 @@ const Transfer = () => {
 </div>
 
 <div className="col-md-1">
- <img style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
 </div>
 <hr/>
 </div>
@@ -101,7 +101,7 @@ const Transfer = () => {
 <Link className="" href="/transfertowallet" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1">
-<img style={{float:"right"}} className="" src="images/businessloans.svg"/>
+<Image style={{float:"right"}} className="" src="images/businessloans.svg"/>
 </div>
 
 <div className="col-md-3">
@@ -110,7 +110,7 @@ const Transfer = () => {
 </div>
 
 <div className="col-md-1">
- <img style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
 </div>
 {/* <hr/> */}
 </div>
@@ -121,7 +121,7 @@ const Transfer = () => {
 
 <div className="row loanproductoptions" >
 <div className="col-md-1">
-<img style={{float:"right"}} className="" src="images/travelloans.svg"/>
+<Image style={{float:"right"}} className="" src="images/travelloans.svg"/>
 </div>
 
 <Link className="" href="/withdraw" id="availableloanoptions3" eventKey="2" activeClassName="is-active" >
@@ -132,7 +132,7 @@ const Transfer = () => {
 </div>
 </Link>
 <div className="col-md-1">
- <img style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
 </div>
 {/* <hr/> */}
 </div>

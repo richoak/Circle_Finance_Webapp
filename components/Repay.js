@@ -66,7 +66,7 @@ const Repay = () => {
 
 <Link className="goback" href="/home"  eventKey="2" activeClassName="is-active" >
               <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
        
 

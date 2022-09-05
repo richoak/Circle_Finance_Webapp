@@ -193,7 +193,7 @@ const Payments = () => {
     <p className="wallethead" >Your Credisol Wallet Details </p>
         <div className="row">
             {/* <div className="col-md-2 col-3">
-            <img className="walleticon" src="/images/ppicture.svg"/>
+            <Image className="walleticon" src="/images/ppicture.svg"/>
             </div> */}
 
             <div className="col-md-9 col-9">
@@ -226,7 +226,7 @@ const Payments = () => {
     <div className="paymentbox1">
     <div className="row">
             {/* <div className="col-md-1 col-1">
-            <img width="40px" className="" src="/images/ppicture.svg"/>
+            <Image width="40px" className="" src="/images/ppicture.svg"/>
             </div> */}
 
             <div className="col-md-4 col-4">
@@ -244,7 +244,7 @@ const Payments = () => {
             </div>
 
             {/* <div className="col-md-1 col-1">
-                <p className="walletname">    <img src="/images/hamburger.svg"/></p>
+                <p className="walletname">    <Image src="/images/hamburger.svg"/></p>
              
             </div> */}
   
@@ -300,7 +300,7 @@ const Payments = () => {
 </button>
 </p>
   
-{/* <p className="security">     <img src="/images/lock2.svg"/> Your details are being transferred through a secured encyrpted channel.</p> */}
+{/* <p className="security">     <Image src="/images/lock2.svg"/> Your details are being transferred through a secured encyrpted channel.</p> */}
 
   
         

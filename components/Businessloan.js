@@ -34,14 +34,14 @@ const Businessloan = () => {
               <Topbar/>
 
               <Link className="goback" href="/loanproducts"  activeClassName="is-active" >
-              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><img className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
 
 <Link className="" href="/loanproducts/businessname" id="availableloanoptions"  activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1 col-3">
-<img style={{float:"right"}} className="" src="/images/consumerloans.svg"/>
+<Image style={{float:"right"}} className="" src="/images/consumerloans.svg"/>
 </div>
 
 <div className="col-md-3 col-6">
@@ -50,7 +50,7 @@ const Businessloan = () => {
 </div>
 
 <div className="col-md-1 col-1">
- <img style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg"/>
 </div>
 {/* <hr/> */}
 </div>
@@ -61,7 +61,7 @@ const Businessloan = () => {
 <Link className="" href="/loanproducts/limited" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1 col-3">
-<img style={{float:"right"}} className="" src="/images/businessloans.svg"/>
+<Image style={{float:"right"}} className="" src="/images/businessloans.svg"/>
 </div>
 
 <div className="col-md-3 col-6">
@@ -70,7 +70,7 @@ const Businessloan = () => {
 </div>
 
 <div className="col-md-1 col-1">
- <img style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg"/>
 </div>
 {/* <hr/> */}
 </div>
@@ -82,7 +82,7 @@ const Businessloan = () => {
 <Nav.Link className="" as={Link} to="/travelloan" id="availableloanoptions3" eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1">
-<img style={{float:"right"}} className="" src="images/travelloans.svg"/>
+<Image style={{float:"right"}} className="" src="images/travelloans.svg"/>
 </div>
 
 <div className="col-md-3">
@@ -91,7 +91,7 @@ const Businessloan = () => {
 </div>
 
 <div className="col-md-1">
- <img style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
 </div>
 <hr/>
 </div>

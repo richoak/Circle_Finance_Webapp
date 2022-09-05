@@ -439,7 +439,7 @@ const durationRef = useRef()
             <div className="col-md-4 tabs webapptabs  loanapplystepone">
               <Link className="goback" href="/loanproducts" eventKey="2" activeClassName="is-active" >
                 <p class="loansareavailable2 " style={{ paddingLeft: "0px" }}>
-                  <img className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
+                  <Image className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
               </Link>
 
 
@@ -488,7 +488,7 @@ const durationRef = useRef()
             <div className="col-md-4 tabs loanapplysteptwo">
 
               <p onClick={gobacktostep1} class="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
-                <img className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
 
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -535,7 +535,7 @@ const durationRef = useRef()
 
             <div className="col-md-12 loanapplystepthree">
               <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
-                <img className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
 
               {/* <p  className="loansareavailablenote2 summarynote">Business/Management Profile</p>
 <div class="form-group">
@@ -547,7 +547,7 @@ const durationRef = useRef()
                 <div className="col-md-2 col-6">
                   <div class="image-upload empimgupload">
                     <label for="file">
-                      <img class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
+                      <Image class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
                         id="certificate" width="183" height="100" src={certificate} />
                     </label>
                     <input type="file" id="file" onChange={(e) => setcertificate(e.target.files[0])}></input>
@@ -557,7 +557,7 @@ const durationRef = useRef()
                 <div className="col-md-2 col-6" style={{ marginLeft: "0px" }}>
                   <div class="image-upload empimgupload">
                     <label for="file2">
-                      <img class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
+                      <Image class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
                         id="collateral" width="183" height="100" src={collateral} />
                     </label>
                     <input type="file" id="file2" onChange={(e) => setcollateral(e.target.files[0])}></input>
@@ -574,7 +574,7 @@ const durationRef = useRef()
                 <div className="col-md-2 col-6" style={{ marginLeft: "0px" }}>
                   <div class="image-upload empimgupload">
                     <label for="file4">
-                      <img class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
+                      <Image class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
                         id="photograph" width="183" height="100" src={photograph} />
                     </label>
                     <input type="file" id="file4" onChange={(e) => setphotograph(e.target.files[0])}></input>
@@ -585,7 +585,7 @@ const durationRef = useRef()
                 <div className="col-md-2 col-6" style={{ marginLeft: "0px" }}>
                   <div class="image-upload empimgupload">
                     <label for="file5">
-                      <img class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
+                      <Image class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
                         id="identification" width="183" height="100" src={identification} />
                     </label>
                     <input type="file" id="file5" onChange={(e) => setidentification(e.target.files[0])}></input>
@@ -598,7 +598,7 @@ const durationRef = useRef()
                 <div className="col-md-3 col-6" style={{ marginLeft: "0px" }}>
                   <div class="image-upload empimgupload">
                     <label for="file3">
-                      <img class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
+                      <Image class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
                         id="ownership" width="183" height="100" src={ownership} />
                     </label>
                     <input type="file" id="file3" onChange={(e) => setownership(e.target.files[0])}></input>
@@ -660,13 +660,13 @@ const durationRef = useRef()
 
             <div className="col-md-5 loanapplystepfive">
               {/* <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <img className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+                <Image className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
         */}
               <p className="bookingnote">Booking received</p>
               <hr />
               <div className="row successbox">
                 <div className="col-md-2 col-2">
-                  <img className="mobilesuccess" src="images/tick-circle.svg" />
+                  <Image className="mobilesuccess" src="images/tick-circle.svg" />
                 </div>
 
                 <div className="col-md-6 col-10" style={{ paddingLeft: "0px" }}>

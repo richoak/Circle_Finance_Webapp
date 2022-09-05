@@ -188,7 +188,7 @@ else{
     <div className="col-md-10 tabs webapptabs paymenttabs">
     <Link className="goback" href="/profileoptions"  activeClassName="is-active" >
               <p className="loansareavailable2 " style={{paddingLeft:"20px"}}>
-                <img className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span>
+                <Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span>
                 </p>
               </Link>
 

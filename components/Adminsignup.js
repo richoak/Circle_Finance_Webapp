@@ -3,6 +3,7 @@ import { Container, Row, Button, Nav, Form, Accordion, Col } from 'react-bootstr
 import Link from 'next/link';
 
 import Header from './Header';
+import Image from 'next/image';
 
 import "../js/main.js"
 import $ from 'jquery'
@@ -374,7 +375,7 @@ setpin1(pin1)
         <div>
           <Row>
             <div className="col-md-6 homepage1box fordesktoponly">
-              <p style={{ textAlign: "center" }} ><img class="mainimagemobile" src="images/signupbg.svg" /></p>
+              <p style={{ textAlign: "center" }} ><Image className="mainimagemobile" src="/images/signupbg.svg" layout="fill" /></p>
               <h1 className="homepageherotitle fordesktoponly">
                 Seamless loans now at the lowest interest rates.
               </h1>
@@ -398,12 +399,12 @@ setpin1(pin1)
               {/* <div class="accessbuttons">
                   <a target="_blank" href="http://app.credisol.com"><button className="accessbutton sidebyside" >Get access to loans</button></a> 
                     <a href="#faq">
-                      <p className="createaccountbuttons learnmore sidebyside" onMouseEnter={rotatedown} onMouseLeave={stoprotatedown} >Learn more  <img style={RotateDown}  src="images/rightarrow.png"/></p>
+                      <p className="createaccountbuttons learnmore sidebyside" onMouseEnter={rotatedown} onMouseLeave={stoprotatedown} >Learn more  <Image style={RotateDown}  src="images/rightarrow.png"/></p>
                       </a>
                  
                   </div> */}
 
-              {/* <img className='disbursedimg' src="images/loans.png" alt="" /> */}
+              {/* <Image className='disbursedimg' src="images/loans.png" alt="" /> */}
 
             </div>
 
@@ -433,7 +434,7 @@ setpin1(pin1)
                   <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "20px", paddingBottom: "0px" }}>Your Phone Number</Form.Label>
                   <div class="row">
                     <div className="col-md-1 col-1">
-                      <img style={{ marginTop: "8px" }} src="/images/sms.svg"></img>
+                      <Image style={{ marginTop: "8px" }} src="/images/sms.svg"></img>
                     </div>
                     <div className="col-md-11 col-11">
                       <Form.Control id="phonenumber" onKeyDown={inputemail} type="text" placeholder="Enter your email address" />
@@ -447,7 +448,7 @@ setpin1(pin1)
                   <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px", paddingBottom: "0px" }}>Your Email Address (@rich-oak.com)</Form.Label>
                   <div className="row">
                     <div className="col-md-1 col-1">
-                      <img style={{ marginTop: "8px" }} src="/images/sms.svg"></img>
+                      <Image style={{ marginTop: "8px" }} src="/images/sms.svg" layout="fill" />
                     </div>
                     <div className="col-md-11 col-11">
                       <Form.Control id="emailaddress" onKeyDown={inputemail} type="text" placeholder="Enter a '@rich-oak.com' email "/>
@@ -499,7 +500,7 @@ setpin1(pin1)
                   <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "0px", paddingBottom: "0px" }}>Your first name</Form.Label>
                   <div className="row">
                     <div className="col-md-1 col-1">
-                      <img style={{ marginTop: "8px" }} src="/images/user.svg"></img>
+                      <Image style={{ marginTop: "8px" }} src="/images/user.svg" layout="fill" />
                     </div>
                     <div className="col-md-11 col-11">
                       <Form.Control id="firstname" onKeyDown={inputemail} type="text" placeholder="Enter your first name" />
@@ -512,7 +513,7 @@ setpin1(pin1)
                   <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Your last name</Form.Label>
                   <div className="row">
                     <div className="col-md-1 col-1">
-                      <img style={{ marginTop: "8px" }} src="/images/user.svg"></img>
+                      <Image style={{ marginTop: "8px" }} src="/images/user.svg" layout="fill"  />
                     </div>
                     <div className="col-md-11 col-11">
                       <Form.Control id="lastname" onKeyDown={inputemail} type="text" placeholder="Enter your last name" />
@@ -525,7 +526,7 @@ setpin1(pin1)
                   <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Phone</Form.Label>
                   <div className="row">
                     <div className="col-md-1 col-1">
-                      <img style={{ marginTop: "8px" }} src="/images/user.svg"></img>
+                      <Image style={{ marginTop: "8px" }} src="/images/user.svg" layout="fill" />
                     </div>
                     <div className="col-md-11 col-11">
                       <Form.Control id="phone" onKeyDown={inputemail} type="tel" placeholder="Enter your phone number" />
@@ -549,7 +550,7 @@ setpin1(pin1)
                   <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Password</Form.Label>
                   <div className="row">
                     <div className="col-md-1 col-1">
-                      <img style={{ marginTop: "8px" }} src="/images/lock.svg"></img>
+                      <Image style={{ marginTop: "8px" }} src="/images/lock.svg" layout="fill" />
                     </div>
                     <div className="col-md-11 col-11">
                       <Form.Control id="password" onKeyUp={inputpassword} type="password" placeholder="Enter your password" />
