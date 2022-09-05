@@ -52,7 +52,7 @@ const Accountofficer = () => {
           <Topbar />
 
           <Link className="goback" href="/loan" activeClassName="is-active" >
-            <p className="loansareavailable2 " style={{ paddingLeft: "20px", cursor:"pointer" }}><image className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
+            <p className="loansareavailable2 " style={{ paddingLeft: "20px", cursor:"pointer" }}><image className="" src="/images/arrow-left.svg" /> <span className="gobackp">Back</span></p>
           </Link>
 
           <div className="row" style={{ marginLeft: "0px" }}>

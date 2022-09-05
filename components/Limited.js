@@ -577,7 +577,7 @@ window.location.replace("/home");
       <Form.Control   id="loanpurpose" width="60px" type="text" placeholder="Loan Purpose" ref={purposeRef}/>
   </Form.Group>
 
-  <div class="form-group">
+  <div className="form-group">
   <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Duration</label>
   <select className="form-control" id="loanduration" ref={durationRef}>
   <option value="">- Select Duration -</option>
@@ -604,7 +604,7 @@ window.location.replace("/home");
 </div>
 
 <div className="col-md-12 loanapplystepthree">
-<p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
+<p onClick={gobacktostep2} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 {/* <p  className="loansareavailablenote2 summarynote">Business/Management Profile</p>
