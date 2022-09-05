@@ -11,7 +11,7 @@ import AuthContext from '../store/auth-context';
 import { useRouter } from 'next/router';
 import useHttp from '../hooks/use-http';
 
-const SignIn = () => {
+const Login = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
   const router = useRouter();
@@ -589,4 +589,4 @@ const SignIn = () => {
 }
 
 
-export { SignIn as default }
+export { Login as default }

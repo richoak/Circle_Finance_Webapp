@@ -1,6 +1,6 @@
 import React, {Fragment} from "react"
 import Head from "next/head"
-import SignIn from "../components/SignIn"
+import Login from "../components/SignIn"
 
 
 const SignInPage = () => {
@@ -12,7 +12,7 @@ const SignInPage = () => {
     name="description" 
     content="Quick Loans"/>  
     </Head>  
-    <SignIn/>
+    <Login/>
 </Fragment>
    
   )
