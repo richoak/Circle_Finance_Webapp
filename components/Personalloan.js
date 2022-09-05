@@ -240,7 +240,7 @@ window.location.replace("/home");
 </div>
 
 <div className="col-md-5 loanapplystepthree">
-<p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
+<p onClick={gobacktostep2} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 <p  className="loansareavailablenote2 summarynote">Here is a summary of your loan application</p>
@@ -286,7 +286,7 @@ window.location.replace("/home");
 </div>
 
 <div className="col-md-9 loanapplystepfour">
-<p onClick={gobacktostep3} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
+<p onClick={gobacktostep3} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 <div className="row">

@@ -657,10 +657,10 @@ setpin1(pin1)
 
                 <div className="row otp-screen" id="otp-screen2">
 
-                  <input type="text" className="otp2" id="otpstep2one"  placeholder="0" maxlength="1" />
-                  <input type="text" className="otp2" id="otpstep2two"  placeholder="0" maxlength="1" />
-                  <input type="text" className="otp2" id="otpstep2three"  placeholder="0" maxlength="1" />
-                  <input type="text" className="otp2" id="otpstep2four"  placeholder="0" maxlength="1" />
+                  <input type="text" className="otp2" id="otpstep2one"  placeholder="0" maxLength="1" />
+                  <input type="text" className="otp2" id="otpstep2two"  placeholder="0" maxLength="1" />
+                  <input type="text" className="otp2" id="otpstep2three"  placeholder="0" maxLength="1" />
+                  <input type="text" className="otp2" id="otpstep2four"  placeholder="0" maxLength="1" />
 
 
                 </div>

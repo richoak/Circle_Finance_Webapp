@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Form } from 'react-bootstrap'
 import Link from 'next/link';
-
+import Image from 'next/image';
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
 
@@ -424,13 +424,13 @@ const durationRef = useRef()
 
     <div>
       <Pageloader />
-      <div class="row thesidebarrow">
-        <div class="col-md-2 thesidebar">
+      <div className="row thesidebarrow">
+        <div className="col-md-2 thesidebar">
           <Sidebar />
 
         </div>
 
-        <div class="col-md-10">
+        <div className="col-md-10">
           <Topbar />
 
 
@@ -438,18 +438,18 @@ const durationRef = useRef()
 
             <div className="col-md-4 tabs webapptabs  loanapplystepone">
               <Link className="goback" href="/loanproducts" eventKey="2" activeClassName="is-active" >
-                <p class="loansareavailable2 " style={{ paddingLeft: "0px" }}>
-                  <Image className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
+                <p className="loansareavailable2 " style={{ paddingLeft: "0px" }}>
+                  <Image className="" src="/images/arrow-left.svg" /> <span className="gobackp">Back</span></p>
               </Link>
 
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "0px", paddingBottom: "0px" }}>Business Name</Form.Label>
+                <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "0px", paddingBottom: "0px" }}>Business Name</Form.Label>
                 <Form.Control id="businessname" width="60px" type="text" placeholder="Business Name" ref={businessnameRef} />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>RC Number</Form.Label>
+                <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>RC Number</Form.Label>
                 <Form.Control id="rcnumber" width="60px" type="number" placeholder="Input RC Number" ref={rcnumberRef} />
               </Form.Group>
 
@@ -459,19 +459,19 @@ const durationRef = useRef()
   </Form.Group> */}
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Date of Registration</Form.Label>
+                <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Date of Registration</Form.Label>
                 <Form.Control id="registrationdate" width="60px" type="date" placeholder="" ref={registrationRef} />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>City of Incorporation</Form.Label>
+                <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>City of Incorporation</Form.Label>
                 <Form.Control id="city" width="60px" type="text" placeholder="City of Incorporation"ref={cityRef} />
               </Form.Group>
-              <p class="" style={{ color: "#DD3737", fontWeight: "bold", textAlign: "center" }}>{notify}</p>
-              <p class="" style={{ textAlign: "center" }} >
+              <p className="" style={{ color: "#DD3737", fontWeight: "bold", textAlign: "center" }}>{notify}</p>
+              <p className="" style={{ textAlign: "center" }} >
                 <button className="loanbutton" onClick={nextstep1}>Continue
-                  <div class="spinner-border spinner-border-sm" role="status">
-                    <span class="sr-only">Loading...</span>
+                  <div className="spinner-border spinner-border-sm" role="status">
+                    <span className="sr-only">Loading...</span>
                   </div>
 
                 </button>
@@ -487,29 +487,29 @@ const durationRef = useRef()
 
             <div className="col-md-4 tabs loanapplysteptwo">
 
-              <p onClick={gobacktostep1} class="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
+              <p onClick={gobacktostep1} className="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
                 <Image className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
 
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "5px" }}>Annual Turnover (&#8358;) </Form.Label>
+                <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "5px" }}>Annual Turnover (&#8358;) </Form.Label>
                 <Form.Control id="annualturnover" width="60px" type="number" placeholder="Annual turnover" ref={annualRef}/>
               </Form.Group>
 
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "5px" }}>Loan Amount (&#8358;) </Form.Label>
+                <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "5px" }}>Loan Amount (&#8358;) </Form.Label>
                 <Form.Control id="loanamount" width="60px" type="number" placeholder="Input Amount" ref={amountRef}/>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label class="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "5px" }}>Loan Purpose  </Form.Label>
+                <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "5px" }}>Loan Purpose  </Form.Label>
                 <Form.Control id="loanpurpose" width="60px" type="text" placeholder="Loan Purpose" ref={purposeRef}/>
               </Form.Group>
 
               <div class="form-group">
-                <label for="sel1" style={{ color: "#666666", paddingTop: "20px", paddingBottom: "10px" }}>Loan Duration</label>
-                <select class="form-control" id="loanduration" ref={durationRef}>
+                <label htmlFor="sel1" style={{ color: "#666666", paddingTop: "20px", paddingBottom: "10px" }}>Loan Duration</label>
+                <select className="form-control" id="loanduration" ref={durationRef}>
                   <option value="">- Select Duration -</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -522,11 +522,11 @@ const durationRef = useRef()
     <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"5px"}}>Loan Purpose (&#8358;) </Form.Label>
       <Form.Control   id="emailaddress" width="60px" type="text" placeholder="Input Amount" />
   </Form.Group> */}
-              <p class="" style={{ color: "#DD3737", fontWeight: "bold", textAlign: "center" }}>{notify2}</p>
-              <p class="" style={{ textAlign: "center" }} >
+              <p className="" style={{ color: "#DD3737", fontWeight: "bold", textAlign: "center" }}>{notify2}</p>
+              <p className="" style={{ textAlign: "center" }} >
                 <button className="loanbutton" onClick={nextstep2}>Continue to file uploads
-                  <div class="spinner-border spinner-border-sm" role="status">
-                    <span class="sr-only">Loading...</span>
+                  <div className="spinner-border spinner-border-sm" role="status">
+                    <span className="sr-only">Loading...</span>
                   </div>
 
                 </button>
@@ -534,7 +534,7 @@ const durationRef = useRef()
             </div>
 
             <div className="col-md-12 loanapplystepthree">
-              <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
+              <p onClick={gobacktostep2} className="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
                 <Image className="" src="/images/arrow-left.svg" /> <span class="gobackp">Back</span></p>
 
               {/* <p  className="loansareavailablenote2 summarynote">Business/Management Profile</p>
@@ -545,9 +545,9 @@ const durationRef = useRef()
               <div className="row">
 
                 <div className="col-md-2 col-6">
-                  <div class="image-upload empimgupload">
-                    <label for="file">
-                      <Image class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
+                  <div className="image-upload empimgupload">
+                    <label htmlFor="file">
+                      <Image className="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
                         id="certificate" width="183" height="100" src={certificate} />
                     </label>
                     <input type="file" id="file" onChange={(e) => setcertificate(e.target.files[0])}></input>
@@ -555,9 +555,9 @@ const durationRef = useRef()
                 </div>
 
                 <div className="col-md-2 col-6" style={{ marginLeft: "0px" }}>
-                  <div class="image-upload empimgupload">
-                    <label for="file2">
-                      <Image class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
+                  <div className="image-upload empimgupload">
+                    <label htmlFor="file2">
+                      <Image className="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
                         id="collateral" width="183" height="100" src={collateral} />
                     </label>
                     <input type="file" id="file2" onChange={(e) => setcollateral(e.target.files[0])}></input>
@@ -572,9 +572,9 @@ const durationRef = useRef()
               <div className="row">
 
                 <div className="col-md-2 col-6" style={{ marginLeft: "0px" }}>
-                  <div class="image-upload empimgupload">
-                    <label for="file4">
-                      <Image class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
+                  <div className="image-upload empimgupload">
+                    <label htmlFor="file4">
+                      <Image className="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
                         id="photograph" width="183" height="100" src={photograph} />
                     </label>
                     <input type="file" id="file4" onChange={(e) => setphotograph(e.target.files[0])}></input>
@@ -583,9 +583,9 @@ const durationRef = useRef()
                 </div>
 
                 <div className="col-md-2 col-6" style={{ marginLeft: "0px" }}>
-                  <div class="image-upload empimgupload">
-                    <label for="file5">
-                      <Image class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
+                  <div className="image-upload empimgupload">
+                    <label htmlFor="file5">
+                      <Image className="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
                         id="identification" width="183" height="100" src={identification} />
                     </label>
                     <input type="file" id="file5" onChange={(e) => setidentification(e.target.files[0])}></input>
@@ -596,9 +596,9 @@ const durationRef = useRef()
 
               <div className="row">
                 <div className="col-md-3 col-6" style={{ marginLeft: "0px" }}>
-                  <div class="image-upload empimgupload">
-                    <label for="file3">
-                      <Image class="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
+                  <div className="image-upload empimgupload">
+                    <label htmlFor="file3">
+                      <Image className="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
                         id="ownership" width="183" height="100" src={ownership} />
                     </label>
                     <input type="file" id="file3" onChange={(e) => setownership(e.target.files[0])}></input>
@@ -639,11 +639,11 @@ const durationRef = useRef()
   </Form.Group>
         </div>
 </div> */}
-              <p class="mobilenotify" style={{ color: "#DD3737", fontWeight: "bold" }}>{notify2}</p>
-              <p class="" style={{ textAlign: "" }} >
+              <p className="mobilenotify" style={{ color: "#DD3737", fontWeight: "bold" }}>{notify2}</p>
+              <p className="" style={{ textAlign: "" }} >
                 <button className="loanbutton" onClick={nextstep3}>Finalize loan application
-                  <div class="spinner-border spinner-border-sm" role="status">
-                    <span class="sr-only">Loading...</span>
+                  <div className="spinner-border spinner-border-sm" role="status">
+                    <span className="sr-only">Loading...</span>
                   </div>
                 </button>
               </p>
@@ -677,10 +677,10 @@ const durationRef = useRef()
                 </div>
               </div>
 
-              <p class="" style={{ marginTop: "10px" }} >
+              <p className="" style={{ marginTop: "10px" }} >
                 <button className="editloanbutton" onClick={gohome}>Go back to dashboard
-                  <div class="spinner-border spinner-border-sm" role="status">
-                    <span class="sr-only">Loading...</span>
+                  <div className="spinner-border spinner-border-sm" role="status">
+                    <span className="sr-only">Loading...</span>
                   </div>
                 </button>
               </p>

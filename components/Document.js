@@ -43,7 +43,7 @@ const Document = () => {
     return(
         <div className="tab-buttons">
         {buttons.map(button =>{
-           return <button className={ button === activeTab? 'tabactive': ''} onClick={()=>changeTab(button)}>{button}</button>
+           return <button key={button} className={ button === activeTab? 'tabactive': ''} onClick={()=>changeTab(button)}>{button}</button>
         })}
         </div>
       
@@ -117,7 +117,7 @@ const addbank = () =>{
         <div className="col-md-12">
 
         <div className="form-group">
-<label for="sel1" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Select your ID type</label>
+<label htmlFor="sel1" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Select your ID type</label>
 <select className="form-control" id="sel1">
 <option>- Select Purpose -</option>
 <option>1</option>

@@ -308,7 +308,7 @@ const Employment = () => {
         <div className="col-md-12">
 
         <div className="form-group">
-<label for="sel1" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Employment Type</label>
+<label htmlFor="sel1" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Employment Type</label>
 <select className="form-control" id="employmenttype">
 <option>- Select Employment Type -</option>
 <option value="cs">Civil Servant</option>
@@ -405,7 +405,7 @@ const Employment = () => {
     <span className="loansareavailablenote2 mobileuploadimagetext" style={{textAlign:"center",fontSize:"15px"}}>{notify2}</span>
 
     <div className="image-upload empimgupload">
-  <label for="file">
+  <label htmlFor="file">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="staffidcardid"  width="183" height="100" src={ staffidcard} />
   </label>
@@ -416,7 +416,7 @@ const Employment = () => {
     <div className="col-md-6 col-6">
     <span className="loansareavailablenote2 mobileuploadimagetext" style={{textAlign:"center",fontSize:"15px"}}>{notify3}</span>
     <div className="image-upload empimgupload">
-  <label for="file2">
+  <label htmlFor="file2">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="photographid" width="183" height="100" src={ photograph} />
   </label>

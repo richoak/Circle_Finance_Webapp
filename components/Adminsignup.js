@@ -349,7 +349,7 @@ setpin1(pin1)
     return (
       <div className="tab-buttons">
         {buttons.map(button => {
-          return <button className={button === activeTab ? 'tabactive' : ''} onClick={() => changeTab(button)}>{button}</button>
+          return <button key={button} className={button === activeTab ? 'tabactive' : ''} onClick={() => changeTab(button)}>{button}</button>
         })}
       </div>
 
@@ -536,7 +536,7 @@ setpin1(pin1)
                 </Form.Group>
 
                 <div className="form-group">
-  <label for="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Select Role</label>
+  <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Select Role</label>
   <select className="form-control" id="role">
     <option>- Select Role -</option>
     <option  value="CO">Credit Officer</option>
@@ -608,10 +608,10 @@ setpin1(pin1)
 
                 <div class="row otp-screen" id="otp-screen">
 
-                  <input type="text" className="otp1" id="otpstep1one"  placeholder="0" maxlength="1" />
-                  <input type="text" className="otp1" id="otpstep1two" placeholder="0" maxlength="1" />
-                  <input type="text" className="otp1" id="otpstep1three" placeholder="0" maxlength="1" />
-                  <input type="text" className="otp1" id="otpstep1four" placeholder="0" maxlength="1" />
+                  <input type="text" className="otp1" id="otpstep1one"  placeholder="0" maxLength="1" />
+                  <input type="text" className="otp1" id="otpstep1two" placeholder="0" maxLength="1" />
+                  <input type="text" className="otp1" id="otpstep1three" placeholder="0" maxLength="1" />
+                  <input type="text" className="otp1" id="otpstep1four" placeholder="0" maxLength="1" />
 
 
                 </div>
@@ -665,10 +665,10 @@ setpin1(pin1)
 
                 <div className="row otp-screen" id="otp-screen2">
 
-                  <input type="text" className="otp2" id="otpstep2one"  placeholder="0" maxlength="1" />
-                  <input type="text" className="otp2" id="otpstep2two"  placeholder="0" maxlength="1" />
-                  <input type="text" className="otp2" id="otpstep2three"  placeholder="0" maxlength="1" />
-                  <input type="text" className="otp2" id="otpstep2four"  placeholder="0" maxlength="1" />
+                  <input type="text" className="otp2" id="otpstep2one"  placeholder="0" maxLength="1" />
+                  <input type="text" className="otp2" id="otpstep2two"  placeholder="0" maxLength="1" />
+                  <input type="text" className="otp2" id="otpstep2three"  placeholder="0" maxLength="1" />
+                  <input type="text" className="otp2" id="otpstep2four"  placeholder="0" maxLength="1" />
 
 
                 </div>

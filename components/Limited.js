@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
+import Image from 'next/image';
 
 import "../js/main.js"
 import $ from 'jquery'
@@ -487,7 +488,7 @@ window.location.replace("/home");
  
     <div className="col-md-4 tabs webapptabs  loanapplystepone">
     <Link className="goback" href="/loanproducts"  eventKey="2" activeClassName="is-active" >
-              <p class="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
+              <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
                 <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
@@ -577,7 +578,7 @@ window.location.replace("/home");
   </Form.Group>
 
   <div class="form-group">
-  <label for="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Duration</label>
+  <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Duration</label>
   <select className="form-control" id="loanduration" ref={durationRef}>
   <option value="">- Select Duration -</option>
     <option value="1">1</option>
@@ -615,7 +616,7 @@ window.location.replace("/home");
 
     <div className="col-md-2 col-6">
     <div className="image-upload empimgupload">
-  <label for="file">
+  <label htmlFor="file">
     <Image class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="certificate"  width="183" height="100" src={certificate} />
   </label>
@@ -625,7 +626,7 @@ window.location.replace("/home");
 
     <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
     <div className="image-upload empimgupload">
-  <label for="file2">
+  <label htmlFor="file2">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="collateral"  width="183" height="100" src={collateral} />
   </label>
@@ -642,7 +643,7 @@ window.location.replace("/home");
 
 <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
     <div className="image-upload empimgupload">
-  <label for="file4">
+  <label htmlFor="file4">
     <Image class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="photograph"  width="183" height="100" src={photograph} />
   </label>
@@ -653,7 +654,7 @@ window.location.replace("/home");
 
 <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
     <div className="image-upload empimgupload">
-  <label for="file5">
+  <label htmlFor="file5">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="identification"  width="183" height="100" src={identification} />
   </label>
@@ -670,7 +671,7 @@ window.location.replace("/home");
 <div className="row">
 <div className="col-md-3" style={{marginLeft:"0px"}}>
     <div className="image-upload empimgupload">
-  <label for="file3">
+  <label htmlFor="file3">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="ownership"  width="183" height="100" src={ownership} />
   </label>
