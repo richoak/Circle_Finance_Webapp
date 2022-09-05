@@ -5,6 +5,7 @@ import Topbar from './Topbar';
 import Sidebar from './Sidebar'
 import "../js/main.js"
 import $ from 'jquery'
+import Image from 'next/image';
 
 const About = () => {
 
@@ -42,7 +43,7 @@ const About = () => {
     return(
         <div className="tab-buttons">
         {buttons.map(button =>{
-           return <button className={ button === activeTab? 'tabactive': ''} onClick={()=>changeTab(button)}>{button}</button>
+           return <button key={button} className={ button === activeTab? 'tabactive': ''} onClick={()=>changeTab(button)}>{button}</button>
         })}
         </div>
       
