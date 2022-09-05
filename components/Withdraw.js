@@ -8,6 +8,7 @@ import "../js/main.js"
 import $ from 'jquery'
 import Pageloader from './Pageloader';
 import useHttp from '../hooks/use-http';
+import Image from 'next/image';
 
 
 const Withdraw = () => {

@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
+import Image from 'next/image';
 
 import "../js/main.js"
 import $ from 'jquery'
@@ -351,12 +352,12 @@ window.location.replace("/home");
     
 <Link className="goback" href="/loanproducts"  eventKey="2" activeClassName="is-active" >
               <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <Image className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
        
 
   <div className="form-group">
-  <label for="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Country of visit</label>
+  <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Country of visit</label>
   <select className="form-control" id="country">
     <option value="">- Select Country -</option>
     <option value="Afghanistan">Afghanistan</option>
@@ -612,7 +613,7 @@ window.location.replace("/home");
   </Form.Group>
 
 <div className="form-group">
-  <label for="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Select Foreign Currency</label>
+  <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Select Foreign Currency</label>
   <select className="form-control" id="currency">
     <option>- Select Currency -</option>
     <option value="dollar">Dollars</option>
@@ -633,7 +634,7 @@ window.location.replace("/home");
   </Form.Group>
 
   <div class="form-group">
-  <label for="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Loan Duration</label>
+  <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Loan Duration</label>
   <select className="form-control" id="duration">
   <option value="">- Select Duration -</option>
     <option value="1">1</option>
@@ -713,7 +714,7 @@ window.location.replace("/home");
 <div className="row">
     <div className="col-md-2 col-4">
     <div className="image-upload empimgupload">
-  <label for="file">
+  <label htmlFor="file">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="passport"  width="183" height="100" src={ passport} />
   </label>
@@ -723,7 +724,7 @@ window.location.replace("/home");
 
     <div className="col-md-2 col-4" style={{marginLeft:"20px"}}>
     <div className="image-upload empimgupload">
-  <label for="file2">
+  <label htmlFor="file2">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="additionaldocument"  width="183" height="100" src={additionaldocument} />
   </label>
