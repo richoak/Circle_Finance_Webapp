@@ -633,7 +633,7 @@ window.location.replace("/home");
       <Form.Control   id="amountforeign" width="60px" type="number" placeholder="Input amount in foreign currency" />
   </Form.Group>
 
-  <div class="form-group">
+  <div className="form-group">
   <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Loan Duration</label>
   <select className="form-control" id="duration">
   <option value="">- Select Duration -</option>
@@ -662,7 +662,7 @@ window.location.replace("/home");
 </div>
 
 <div className="col-md-5 loanapplystepthree">
-<p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
+<p onClick={gobacktostep2} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 <p  className="loansareavailablenote2 summarynote">Here is a summary of your loan application</p>
