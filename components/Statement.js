@@ -11,8 +11,8 @@ import Image from 'next/image';
 
 import Pageloader from './Pageloader';
 
-import Pdf from "react-to-pdf";
-const ref = React.createRef();
+// import Pdf from "react-to-pdf";
+// const ref = React.createRef();
 const options = {
     // orientation: 'landscape',
     // unit: 'in',
@@ -223,9 +223,9 @@ const sum = finalarray.reduce((accumulator, object) => {
             </tbody>
           </table>
 
-          <Pdf targetRef={ref} filename="Credisol Statement.pdf">
+          {/* <Pdf targetRef={ref} filename="Credisol Statement.pdf">
         {({ toPdf }) => <button className="bookaloanbutton" onClick={toPdf}>Download Pdf <i style={{marginLeft:"10px"}} className="fas fa-download"></i></button>}
-      </Pdf>
+      </Pdf> */}
                 </div>
 
                 <div className="col-md-3">
