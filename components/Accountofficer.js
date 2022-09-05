@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 
 import Topbar from './Topbar';
-
+import Image from 'next/image';
 import "../js/main.js"
 import $ from 'jquery'
 import Pageloader from './Pageloader';

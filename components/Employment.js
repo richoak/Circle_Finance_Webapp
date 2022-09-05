@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useReducer} from 'react';
 import {Container, Row,Button, Nav, Form, Accordion, Col} from 'react-bootstrap'
 import Link from 'next/link';
-
+import Image from 'next/image';
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
 

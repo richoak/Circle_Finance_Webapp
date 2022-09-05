@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
 import Pageloader from './Pageloader';
+import Image from 'next/image';
 
 import "../js/main.js"
 import $ from 'jquery'
@@ -239,7 +240,7 @@ const savechanges = () => {
   <div className="col-md-2 col-12">
     <p className="mobilecenterpicture">
     <div className="image-upload">
-  <label for="file">
+  <label htmlFor="file">
     <Image className="" style={{marginBottom:"0px", cursor:"pointer "}} 
      id="profilepictureid" width="40"  src={ profilepicture} />
   </label>

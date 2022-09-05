@@ -3,6 +3,7 @@ import { Container, Row, Button, Nav, Form, Accordion, Col } from 'react-bootstr
 import { Link } from 'react-router-dom';
 
 import Header from './Header';
+import Image from 'next/image';
 
 import "../js/main.js"
 import $ from 'jquery'
@@ -352,7 +353,7 @@ setpin1(pin1)
     return (
       <div className="tab-buttons">
         {buttons.map(button => {
-          return <button className={button === activeTab ? 'tabactive' : ''} onClick={() => changeTab(button)}>{button}</button>
+          return <button key={button} className={button === activeTab ? 'tabactive' : ''} onClick={() => changeTab(button)}>{button}</button>
         })}
       </div>
 
@@ -599,10 +600,10 @@ setpin1(pin1)
 
                 <div className="row otp-screen" id="otp-screen">
 
-                  <input type="text" className="otp1" id="otpstep1one"  placeholder="0" maxlength="1" />
-                  <input type="text" className="otp1" id="otpstep1two" placeholder="0" maxlength="1" />
-                  <input type="text" className="otp1" id="otpstep1three" placeholder="0" maxlength="1" />
-                  <input type="text" className="otp1" id="otpstep1four" placeholder="0" maxlength="1" />
+                  <input type="text" className="otp1" id="otpstep1one"  placeholder="0" maxLength="1" />
+                  <input type="text" className="otp1" id="otpstep1two" placeholder="0" maxLength="1" />
+                  <input type="text" className="otp1" id="otpstep1three" placeholder="0" maxLength="1" />
+                  <input type="text" className="otp1" id="otpstep1four" placeholder="0" maxLength="1" />
 
 
                 </div>

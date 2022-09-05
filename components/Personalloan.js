@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
+import Image from 'next/image';
 
 import "../js/main.js"
 import $ from 'jquery'
@@ -43,7 +44,7 @@ const Personalloan = () => {
     return(
         <div className="tab-buttons">
         {buttons.map(button =>{
-           return <button className={ button === activeTab? 'tabactive': ''} onClick={()=>changeTab(button)}>{button}</button>
+           return <button key={button} className={ button === activeTab? 'tabactive': ''} onClick={()=>changeTab(button)}>{button}</button>
         })}
         </div>
       
@@ -195,7 +196,7 @@ window.location.replace("/home");
        
 
   <div className="form-group">
-  <label for="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Purpose</label>
+  <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Purpose</label>
   <select className="form-control" id="sel1">
     <option>- Select Purpose -</option>
     <option>1</option>
@@ -211,7 +212,7 @@ window.location.replace("/home");
   </Form.Group>
 
   <div className="form-group">
-  <label for="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Duration</label>
+  <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"10px"}}>Loan Duration</label>
   <select className="form-control" id="sel1">
   <option>- Select Duration -</option>
     <option>1</option>

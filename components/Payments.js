@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useReducer} from 'react';
 import {Container, Row,Button, Nav, Form, Accordion, Col} from 'react-bootstrap'
 import Link from 'next/link';
+import Image from 'next/image';
 
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
@@ -48,7 +49,7 @@ const Payments = () => {
     return(
         <div className="tab-buttons">
         {buttons.map(button =>{
-           return <button className={ button === activeTab? 'tabactive': ''} onClick={()=>changeTab(button)}>{button}</button>
+           return <button key={button} className={ button === activeTab? 'tabactive': ''} onClick={()=>changeTab(button)}>{button}</button>
         })}
         </div>
       
@@ -258,7 +259,7 @@ const Payments = () => {
         <hr/> */}
 
         <div className="form-group">
-  <label for="sel1" style={{color:"#666666",paddingTop:"0px",paddingBottom:"10px"}}>Select Your Bank</label>
+  <label htmlFor="sel1" style={{color:"#666666",paddingTop:"0px",paddingBottom:"10px"}}>Select Your Bank</label>
   <select className="form-control" id="bank">
     <option>- Select Bank -</option>
     <option value="citibank">Citibank</option>

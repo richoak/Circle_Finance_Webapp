@@ -319,7 +319,7 @@ const Login = () => {
     return (
       <div className="tab-buttons">
         {buttons.map(button => {
-          return <button className={button === activeTab ? 'tabactive' : ''} onClick={() => changeTab(button)}>{button}</button>
+          return <button key={button} className={button === activeTab ? 'tabactive' : ''} onClick={() => changeTab(button)}>{button}</button>
         })}
       </div>
 
@@ -440,7 +440,9 @@ const Login = () => {
                   </button>
 
                 </p>
-                <p>No Account? <a href="/signup" style={{ textDecoration: "none" }}> <span style={{ color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px" }}>Sign up now</span></a> <span style={{ float: "right", color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px", cursor: "pointer" }} onClick={forgotpassword0} >Forgot password</span></p>
+                <p>No Account? 
+                  <Link href="/signup" style={{ textDecoration: "none" }}> 
+                  <span style={{ color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px" }}>Sign up now</span></Link> <span style={{ float: "right", color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px", cursor: "pointer" }} onClick={forgotpassword0} >Forgot password</span></p>
 
               </div>
 
@@ -525,10 +527,10 @@ const Login = () => {
 
                 <div className="row otp-screen" id="otp-screen">
 
-                  <input type="text" className="otp1" id="otpstep1one" placeholder="0" maxlength="1" />
-                  <input type="text" className="otp1" id="otpstep1two" placeholder="0" maxlength="1" />
-                  <input type="text" className="otp1" id="otpstep1three" placeholder="0" maxlength="1" />
-                  <input type="text" className="otp1" id="otpstep1four" placeholder="0" maxlength="1" />
+                  <input type="text" className="otp1" id="otpstep1one" placeholder="0" maxLength="1" />
+                  <input type="text" className="otp1" id="otpstep1two" placeholder="0" maxLength="1" />
+                  <input type="text" className="otp1" id="otpstep1three" placeholder="0" maxLength="1" />
+                  <input type="text" className="otp1" id="otpstep1four" placeholder="0" maxLength="1" />
 
 
                 </div>

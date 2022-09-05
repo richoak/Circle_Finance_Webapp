@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
-
+import Image from 'next/image';
 import "../js/main.js"
 import $ from 'jquery'
 

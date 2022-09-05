@@ -488,7 +488,7 @@ window.location.replace("/home");
     <div className="col-md-4 tabs webapptabs  loanapplystepone">
     <Link className="goback" href="/loanproducts"  eventKey="2" activeClassName="is-active" >
               <p class="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <Image className="" src="/images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
               </Link>
 
 
@@ -556,7 +556,7 @@ window.location.replace("/home");
 
 <div className="col-md-4 tabs loanapplysteptwo">
     
-              <p onClick={gobacktostep1} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
+              <p onClick={gobacktostep1} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
        
 

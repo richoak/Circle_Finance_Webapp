@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useReducer} from 'react';
 import {Container, Row,Button, Nav, Form, Accordion, Col} from 'react-bootstrap'
 import Link from 'next/link';
+import Image from 'next/image';
 
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
@@ -387,10 +388,10 @@ else{
       <p className="" style={{fontWeight:"",marginTop:"40px"}}>Old Pin</p>  
       <div className="row otp-screen" id="otp-screen" style={{marginTop:"0px"}}>
 
-                  <input type="number" className="otp1" id="otpstep1one"  placeholder="0" maxlength="1" />
-                  <input type="number" className="otp1" id="otpstep1two" placeholder="0" maxlength="1" />
-                  <input type="number" className="otp1" id="otpstep1three" placeholder="0" maxlength="1" />
-                  <input type="number" className="otp1" id="otpstep1four" placeholder="0" maxlength="1" />
+                  <input type="number" className="otp1" id="otpstep1one"  placeholder="0" maxLength="1" />
+                  <input type="number" className="otp1" id="otpstep1two" placeholder="0" maxLength="1" />
+                  <input type="number" className="otp1" id="otpstep1three" placeholder="0" maxLength="1" />
+                  <input type="number" className="otp1" id="otpstep1four" placeholder="0" maxLength="1" />
 
  
 </div>
@@ -398,10 +399,10 @@ else{
 <p className="" style={{fontWeight:""}}>New Pin</p>  
       <div className="row otp-screen" id="otp-screen2"  style={{marginTop:"0px"}}>
 
-                  <input type="number" className="otp2" id="otpstep2one"  placeholder="0" maxlength="1" />
-                  <input type="number" className="otp2" id="otpstep2two"  placeholder="0" maxlength="1" />
-                  <input type="number" className="otp2" id="otpstep2three"  placeholder="0" maxlength="1" />
-                  <input type="number" className="otp2" id="otpstep2four"  placeholder="0" maxlength="1" />
+                  <input type="number" className="otp2" id="otpstep2one"  placeholder="0" maxLength="1" />
+                  <input type="number" className="otp2" id="otpstep2two"  placeholder="0" maxLength="1" />
+                  <input type="number" className="otp2" id="otpstep2three"  placeholder="0" maxLength="1" />
+                  <input type="number" className="otp2" id="otpstep2four"  placeholder="0" maxLength="1" />
 
  
 </div>
