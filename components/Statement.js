@@ -12,7 +12,7 @@ import Image from 'next/image';
 import Pageloader from './Pageloader';
 
 // import Pdf from "react-to-pdf";
-// const ref = React.createRef();
+const ref = React.createRef();
 const options = {
     // orientation: 'landscape',
     // unit: 'in',
