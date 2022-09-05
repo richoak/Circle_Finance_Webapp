@@ -297,7 +297,7 @@ else{
 </div>
 
 <hr className="hrmarginright800"/>
-<div className="" onClick={updatepinpage} activeClassName="is-active" >
+<div className="" onClick={updatepinpage}  >
 <div className="row loanproductoptions" style={{marginTop:"30px"}}>
 <div className="col-md-3 col-10">
 <p > <span className="loansareavailable2 ">Update Pin</span> <br/><span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
