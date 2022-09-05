@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext, useRef } from 'react';
 import { Container, Row, Button, Nav, Form, Accordion, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 // import Footer from './Footer';
 import Header from './Header';
 import Image from 'next/image';
@@ -293,6 +293,12 @@ const SignIn = () => {
             <div className="col-md-1">
 
             </div>
+
+
+
+
+
+
             
             <div className="col-md-4 forgotpassword0">
               <div className="signinbox1">
@@ -355,11 +361,22 @@ const SignIn = () => {
                 </p>
                 <p>No Account? 
                   <Link href="/signup" style={{ textDecoration: "none" }}> 
-                  <span style={{ color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px" }}>Sign up now</span></Link> <span style={{ float: "right", color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px", cursor: "pointer" }} onClick={forgotpassword0} >Forgot password</span></p>
+                  <span style={{ color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px" }}>
+                    Sign up now</span></Link> <span style={{ float: "right", color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px", cursor: "pointer" }} 
+                    onClick={forgotpassword0} >Forgot password</span>
+                    </p>
 
               </div>
 
             </div>
+
+
+
+
+
+
+
+
 
             <div className="col-md-4  forgotpassword1">
               <div className="signinbox1">
