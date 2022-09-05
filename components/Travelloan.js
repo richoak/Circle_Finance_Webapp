@@ -413,7 +413,7 @@ window.location.replace("/home");
                 <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
                 <option value="Cook Islands">Cook Islands</option>
                 <option value="Costa Rica">Costa Rica</option>
-                <option value="Cote D'ivoire">Cote D'ivoire</option>
+                <option value="Cote Divoire">Cote Divoire</option>
                 <option value="Croatia">Croatia</option>
                 <option value="Cuba">Cuba</option>
                 <option value="Cyprus">Cyprus</option>
@@ -475,11 +475,11 @@ window.location.replace("/home");
                 <option value="Kazakhstan">Kazakhstan</option>
                 <option value="Kenya">Kenya</option>
                 <option value="Kiribati">Kiribati</option>
-                <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+                <option value="Korea Democratic Peoples Republic of">Korea Democratic Peoples Republic of</option>
                 <option value="Korea, Republic of">Korea, Republic of</option>
                 <option value="Kuwait">Kuwait</option>
                 <option value="Kyrgyzstan">Kyrgyzstan</option>
-                <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+                <option value="Lao Peoples Democratic Republic">Lao Peoples Democratic Republic</option>
                 <option value="Latvia">Latvia</option>
                 <option value="Lebanon">Lebanon</option>
                 <option value="Lesotho">Lesotho</option>

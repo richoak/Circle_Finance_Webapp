@@ -7,7 +7,7 @@ import Sidebar from './Sidebar'
 import "../js/main.js"
 import $ from 'jquery'
 import Pageloader from './Pageloader';
-
+import Image from 'next/image';
 
 const Transfertowallet = () => {
   

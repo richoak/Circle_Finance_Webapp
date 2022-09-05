@@ -7,6 +7,7 @@ import Sidebar from './Sidebar'
 // import "../stylesheets/style.css"
 import "../js/main.js"
 import $ from 'jquery'
+import Image from 'next/image';
 
 import Pageloader from './Pageloader';
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useReducer} from 'react';
 import {Container, Row,Button, Nav, Form, Accordion, Col} from 'react-bootstrap'
 import Link from 'next/link';
+import Image from 'next/image';
 
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
@@ -98,7 +99,7 @@ const addbank = () =>{
 
             <div className="col-md-3 col-4">
            
-            <a target="_blank" href="https://www.google.com/maps/place/Rich-Oak,+Abuja"
+            <a target="_blank" href="https://www.google.com/maps/place/Rich-Oak,+Abuja" rel="noreferrer"
                        style={{textDecoration:"none", color:"#666666"}} > <Image width="24px" src="/images/location.svg"/></a>
             </div>
 
@@ -111,7 +112,7 @@ const addbank = () =>{
     <div className="row">
             <div className="col-md-1"><Image width="12px" src="/images/facebook.svg"/></div>
            <div className="col-md-8">
-           <a style={{textDecoration:"none"}} target="_blank" href="https://facebook.com/credi-sol">
+           <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://facebook.com/credi-sol">
              <p className="smtext">Facebook </p>
              </a>
              </div>
@@ -123,7 +124,7 @@ const addbank = () =>{
             <div className="col-md-1"><Image width="15px" src="/images/instagram.svg"/></div>
             
             <div className="col-md-8">
-            <a style={{textDecoration:"none"}} target="_blank" href="https://facebook.com/credi-sol">
+            <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://facebook.com/credi-sol">
               <p className="smtext">Instagram </p>
               </a>
               </div>
@@ -134,7 +135,7 @@ const addbank = () =>{
     <div className="row">
             <div className="col-md-1"><Image width="15px" src="/images/twitter.svg"/></div>
             <div className="col-md-8">
-            <a style={{textDecoration:"none"}} target="_blank" href="https://twitter.com/credi-sol">
+            <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://twitter.com/credi-sol">
               <p className="smtext">Twitter </p>
               </a>
               </div>
