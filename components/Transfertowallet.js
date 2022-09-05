@@ -99,7 +99,7 @@ window.location.replace("/home");
     <Link className="goback" href="/transfer"  eventKey="2" activeClassName="is-active" >
     <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
                 {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
-                <span className=""><i class="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
                 </p>
            
               </Link>
