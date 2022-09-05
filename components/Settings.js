@@ -280,7 +280,7 @@ else{
 
     <div className="password1">
 
-      <div className="" onClick={updatepasswordpage}  activeClassName="is-active" >
+      <div className="" onClick={updatepasswordpage}  >
 <div className="row loanproductoptions">
 <div className="col-md-3 col-10">
 <p > <span className="loansareavailable2 ">Update Password</span> <br/><span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
