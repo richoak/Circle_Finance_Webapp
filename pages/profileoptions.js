@@ -1,6 +1,6 @@
 import React, {Fragment} from "react"
 import Head from "next/head"
-import Profileoptions from "../components/profileoptions"
+import Profileoptions from "../components/Profileoptions"
 
 const ProfileOptionsPage = () => {
   return (

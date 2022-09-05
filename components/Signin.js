@@ -11,46 +11,16 @@ import AuthContext from '../store/auth-context';
 import { useRouter } from 'next/router';
 import useHttp from '../hooks/use-http';
 
-const Login = () => {
+const SignIn = () => {
   const emailRef = useRef()
   const passwordRef = useRef()
-
-  // const emailInput = emailRef.current.value
-  // const passwordInput = passwordRef.current.value
-
   const router = useRouter();
   const authCtx = useContext(AuthContext)
-
-
-  // $(function () {
-  //   $('.example-popover').popover({
-  //     container: 'body'
-  //   })
-  // })
-
-
   const [notify, setnotify] = useState("")
   const [notify2, setnotify2] = useState("")
   const [notify3, setnotify3] = useState("")
   const [email, setemail] = useState("")
   const [uid, setuid] = useState("")
-
-
-  // $(".loanapplystepthree").slideDown();
-  // $(".loanapplystepthree").css({ 'display': 'none' });
-  // $(".loanapplystepfour").toggle( "slide" );
-  // $(document).ready(function () {
-  //   let otp = document.querySelector('#otp-screen');
-
-  //   for (let pin of otp.children) {
-  //     pin.onkeyup = function () {
-  //       if (pin.nextElementSibling) {
-  //         pin.nextElementSibling.focus();
-  //       }
-  //     }
-  //   }
-  // });
-
 
   const forgotpassword0 = () => {
     setnotify("")
@@ -278,64 +248,6 @@ const Login = () => {
    
 } 
     }
-
-  
-
-
-  // TABS
-  class Tabs extends React.Component {
-    state = {
-      activeTab: this.props.children[0].props.label
-
-    }
-    changeTab = (tab) => {
-
-      this.setState({ activeTab: tab });
-
-    };
-    render() {
-
-      let content;
-      let buttons = [];
-      return (
-        <div>
-          {React.Children.map(this.props.children, child => {
-            buttons.push(child.props.label)
-            if (child.props.label === this.state.activeTab) content = child.props.children
-          })}
-
-          <TabButtons activeTab={this.state.activeTab} buttons={buttons} changeTab={this.changeTab} />
-          <div className="tab-content">{content}</div>
-
-        </div>
-      );
-    }
-  }
-
-  const TabButtons = ({ buttons, changeTab, activeTab }) => {
-
-
-
-    return (
-      <div className="tab-buttons">
-        {buttons.map(button => {
-          return <button key={button} className={button === activeTab ? 'tabactive' : ''} onClick={() => changeTab(button)}>{button}</button>
-        })}
-      </div>
-
-    )
-  }
-
-  const Tab = props => {
-    return (
-      <React.Fragment>
-        {props.children}
-      </React.Fragment>
-    )
-  }
-
-  // TABS
-
 
   return (
 
@@ -659,4 +571,4 @@ const Login = () => {
 }
 
 
-export { Login as default }
+export { SignIn as default }
