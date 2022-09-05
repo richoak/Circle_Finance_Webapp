@@ -34,14 +34,19 @@ const Businessloan = () => {
               <Topbar/>
 
               <Link className="goback" href="/loanproducts"  activeClassName="is-active" >
-              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i class="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
               </Link>
 
 
 <Link className="" href="/loanproducts/businessname" id="availableloanoptions"  activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1 col-3">
-<Image style={{float:"right"}} className="" src="/images/consumerloans.svg" height="48" width="48"/>
+<p style={{float:"right"}} >
+<Image  className="" src="/images/consumerloans.svg" height="48" width="48"/>
+  </p>
 </div>
 
 <div className="col-md-3 col-6">
@@ -61,7 +66,9 @@ const Businessloan = () => {
 <Link className="" href="/loanproducts/limited" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1 col-3">
-<Image style={{float:"right"}} className="" src="/images/businessloans.svg" height="48" width="48"/>
+  <p style={{float:"right"}} >
+  <Image className="" src="/images/businessloans.svg" height="48" width="48"/>
+  </p>
 </div>
 
 <div className="col-md-3 col-6">

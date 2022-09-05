@@ -61,9 +61,14 @@ const addbank = () =>{
     <p className="wallethead" >Contact us </p>
 
     <div className="row">
-            <div className="col-md-1 col-1"><Image  src="/images/phone.svg" width="40" height="40"/></div>
+            <div className="col-md-1 col-1">
+              <p style={{float:"right", marginLeft:"20px"}}>
+              <Image  src="/images/phone.svg" layout='fill'/>
+              </p>
+            
+              </div>
             <div className="col-md-8 col-8">
-            <a href="tel:07061875167">
+            <a href="tel:07061875167" style={{textDecoration:"none"}}>
               <p className="phone">
               +234 901 685 4815 
               </p>
@@ -73,7 +78,7 @@ const addbank = () =>{
 
         <div className="row" style={{paddingTop:"15px"}}>
             <div className="col-md-1 col-1">
-            <Image  src="/images/email.svg" width="40" height="40"/>
+            <Image  src="/images/email.svg" layout='fill'/>
             </div>
 
             <div className="col-md-8 col-9">
@@ -108,9 +113,11 @@ const addbank = () =>{
 <p className="smtitle">Visit our social media pages</p>
 
 <div className="row">
-    <div className="col-md-6 col-4">
+    <div className="col-md-4 col-4">
     <div className="row">
-            <div className="col-md-1"><Image width="12" height="19.2" src="/images/facebook.svg"/></div>
+            <div className="col-md-1">
+              {/* <Image layout='fill' height="10" src="/images/facebook.svg"/> */}
+              </div>
            <div className="col-md-8">
            <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://facebook.com/credi-sol">
              <p className="smtext">Facebook </p>
@@ -119,9 +126,11 @@ const addbank = () =>{
         </div>
     </div>
 
-    <div className="col-md-6 col-4">
+    <div className="col-md-4 col-4">
     <div className="row">
-            <div className="col-md-1"><Image width="15px" height="15px" src="/images/instagram.svg"/></div>
+            <div className="col-md-1">
+              {/* <Image  layout='fill' src="/images/instagram.svg"/> */}
+              </div>
             
             <div className="col-md-8">
             <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://facebook.com/credi-sol">
@@ -131,9 +140,11 @@ const addbank = () =>{
         </div>
     </div>
 
-    <div className="col-md-6 col-4">
+    <div className="col-md-4 col-4">
     <div className="row">
-            <div className="col-md-1"><Image width="15" height="15" src="/images/twitter.svg"/></div>
+            <div className="col-md-1">
+              {/* <Image  layout='fill' src="/images/twitter.svg"/> */}
+              </div>
             <div className="col-md-8">
             <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://twitter.com/credi-sol">
               <p className="smtext">Twitter </p>

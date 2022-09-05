@@ -252,8 +252,10 @@ window.location.replace("/home");
  
     <div className="col-md-4 tabs webapptabs  withdrawstepone">
     <Link className="goback" href="/transfer"  eventKey="2" activeClassName="is-active" >
-              <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
+    <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i class="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
               </Link>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">

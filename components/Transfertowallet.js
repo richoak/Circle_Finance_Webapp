@@ -18,6 +18,14 @@ const afterCopy = <div> Copied!</div>
 
   const [notify, setnotify] = useState("")
   const [clipboardText, setClipboardText] = useState(beforeCopy)
+  const [ accNumber, setAccNumber ] = useState("")
+
+  useEffect(() => {
+    setAccNumber(localStorage.getItem("providusaccountnumber"))
+
+  }, [])
+  
+
   const copyClipboard = () => {
     navigator.clipboard.writeText('0127602360')
   
@@ -89,14 +97,17 @@ window.location.replace("/home");
 
 
     <Link className="goback" href="/transfer"  eventKey="2" activeClassName="is-active" >
-              <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
+    <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i class="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
+           
               </Link>
 
 
 <div className="transfertobox">
     <h4 style={{color:"#2D3748", fontSize:"10px"}}>ACCOUNT NUMBER</h4>
-    <h4 style={{color:"#1A202C", fontSize:"1.875rem"}}>0127602360</h4>
+    <h4 style={{color:"#1A202C", fontSize:"1.875rem"}}>{accNumber}</h4>
     <h4 style={{color:"#718096", fontSize:"13px", paddingTop:"3px"}}>Providus Bank</h4>
 </div>
 <div className="transfertobox2">
