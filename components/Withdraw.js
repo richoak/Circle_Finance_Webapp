@@ -253,7 +253,7 @@ window.location.replace("/home");
     <div className="col-md-4 tabs webapptabs  withdrawstepone">
     <Link className="goback" href="/transfer"  eventKey="2" activeClassName="is-active" >
               <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
               </Link>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -310,7 +310,7 @@ window.location.replace("/home");
 <hr/>
 <div className="row successbox">
     <div className="col-md-2 col-2">
-    <Image className="mobilesuccess" src="images/tick-circle.svg"/>
+    <Image className="mobilesuccess" src="/images/tick-circle.svg" height="56" width="56"/>
     </div>
 
     <div className="col-md-6 col-10"style={{paddingLeft:"0px"}}>

@@ -75,7 +75,7 @@ const Transfer = () => {
               <Topbar/>
 
               <Link className="goback" href="/home"  eventKey="2" activeClassName="is-active" >
-              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+              <p className="loansareavailable2 " style={{paddingLeft:"20px", cursor:"pointer"}}><Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
               </Link>
 
 
@@ -102,7 +102,7 @@ const Transfer = () => {
 <Link className="" href="/transfertowallet" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions" >
 <div className="col-md-1">
-<Image style={{float:"right"}} className="" src="images/businessloans.svg"/>
+<Image style={{float:"right"}} className="" src="/images/businessloans.svg" height="48" width="48"/>
 </div>
 
 <div className="col-md-3">
@@ -111,7 +111,7 @@ const Transfer = () => {
 </div>
 
 <div className="col-md-1">
- <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 {/* <hr/> */}
 </div>
@@ -122,7 +122,7 @@ const Transfer = () => {
 
 <div className="row loanproductoptions" >
 <div className="col-md-1">
-<Image style={{float:"right"}} className="" src="images/travelloans.svg"/>
+<Image style={{float:"right"}} className="" src="/images/travelloans.svg" height="48" width="48"/>
 </div>
 
 <Link className="" href="/withdraw" id="availableloanoptions3" eventKey="2" activeClassName="is-active" >
@@ -133,7 +133,7 @@ const Transfer = () => {
 </div>
 </Link>
 <div className="col-md-1">
- <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 {/* <hr/> */}
 </div>
