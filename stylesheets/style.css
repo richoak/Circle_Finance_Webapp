@@ -456,6 +456,10 @@
         display:none
     }
 
+    #thenavbarmenumobile{
+        display:none
+    }
+
 
     .username1{
         font-size:18px;
@@ -891,6 +895,9 @@
             display:block;
             padding-bottom:30px
         }
+        /* #thenavbarmenumobile{
+            display:block
+        } */
 
         .thenavbarmenu{
             margin-left:0px;
