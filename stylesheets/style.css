@@ -152,7 +152,8 @@
     }
 
     .statementlink{
-        color:#000!important
+        color:#000!important;
+        text-decoration:none
     }
 
     .loanhistorydate{

@@ -70,17 +70,17 @@ const History = () => {
             var td1 = document.createElement('td');
             td1.innerText = responsethree[i].loan_id;
             var td2 = document.createElement('td');
-            td2.innerHTML = "<span className='loanhistorytype'>" + loantype +"</span> "+ "<br/>" +  "<span className='loanhistorydate'>" + actualdate +"</span> "
+            td2.innerHTML = "<span className='loanhistorytype'>" + loantype +"</span> "+ "<br/>" +  "<span class='loanhistorydate'>" + actualdate +"</span> "
             var td3 = document.createElement('td');
             td3.innerHTML =    "<span className='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].principal).toLocaleString()  +"</span> " + "<br/>" + "<span class='loanhistorydate'>" + responsethree[i].duration + " months / " + "4%" +"</span> "
             var td4 = document.createElement('td');
-            td4.innerHTML =  "<span className='loanhistorytype loanstatushistory'>"+ responsethree[i].status  +"</span>" ;
+            td4.innerHTML =  "<span class='loanhistorytype loanstatushistory'>"+ responsethree[i].status  +"</span>" ;
 
             if(responsethree[i].status === "pending"){
               viewstatement = "No statement"
             }
             else{
-              viewstatement = `<a target='_blank' href=/statement?loanid=${td1.innerText} className='loanhistorytype statementlink'> View statement</a>`
+              viewstatement = `<Link target='_blank' href=/statement?loanid=${td1.innerText} class='loanhistorytype statementlink'> View statement</Link>`
             }
             var td5 = document.createElement('td');
             td5.innerHTML = viewstatement        
