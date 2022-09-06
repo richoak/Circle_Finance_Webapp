@@ -37,7 +37,10 @@ const Profileoptions = () => {
 <Link className="" href="/profile"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions">
 <div className="col-md-1 col-3">
-<Image style={{float:"right"}} className="" src="images/consumerloans.svg"/>
+  <p style={{float:"right"}}>
+  <Image  className="" src="/images/consumerloans.svg" width="48" height="48"/>
+
+  </p>
 </div>
 
 <div className="col-md-3 col-6">
@@ -46,7 +49,7 @@ const Profileoptions = () => {
 </div>
 
 <div className="col-md-1 col-3">
- <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" width="24" height="24"/>
 </div>
 {/* <hr/> */}
 </div>
@@ -57,7 +60,11 @@ const Profileoptions = () => {
 <Link className="" href="/nextofkin"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions">
 <div className="col-md-1 col-3">
-<Image style={{float:"right"}} className="" src="images/businessloans.svg"/>
+  <p style={{float:"right"}} > 
+  <Image style={{float:"right"}} className="" src="/images/businessloans.svg" width="48" height="48"/>
+
+
+  </p>
 </div>
 
 <div className="col-md-3 col-6">
@@ -66,7 +73,7 @@ const Profileoptions = () => {
 </div>
 
 <div className="col-md-1 col-3">
- <Image style={{marginTop:"10px"}} className="" src="images/arrow-right.svg"/>
+ <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" width="24" height="24"/>
 </div>
 {/* <hr/> */}
 </div>

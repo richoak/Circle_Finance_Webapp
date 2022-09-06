@@ -359,9 +359,10 @@ const Login = () => {
                   </button>
 
                 </p>
-                <p>No Account? 
+                <p style={{fontSize:"14px", }}>No Account? 
+
                   <Link href="/signup" style={{ textDecoration: "none" }}> 
-                  <span style={{ color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px" }}>
+                  <span style={{paddingLeft:"5px", color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px", cursor:"pointer" }}>
                     Sign up now</span></Link> <span style={{ float: "right", color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px", cursor: "pointer" }} 
                     onClick={forgotpassword0} >Forgot password</span>
                     </p>

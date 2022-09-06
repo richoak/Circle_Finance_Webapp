@@ -259,9 +259,10 @@ window.location.replace("/home");
               </Link>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Wallet Balnce</Form.Label>
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Wallet Balance</Form.Label>
       <Form.Control   id="" width="60px" type="text" ref={walletRef} value={walletBalance} placeholder="Amount to withdraw" disabled/>
   </Form.Group>
+  
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Amount to withdraw</Form.Label>
       <Form.Control   id="amount" width="60px" ref={amountRef} type="text" placeholder="Amount to withdraw" />

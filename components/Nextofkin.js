@@ -155,7 +155,7 @@ else{
     error: function (xhr, status, error) {
       console.log(xhr)
       if(xhr.status === 400){
-        setnotify("Enter a valid E-mail address/Phone Number")
+        setnotify("Invalid Phone Number")
       }
     },
   }
@@ -188,8 +188,9 @@ else{
  
     <div className="col-md-10 tabs webapptabs paymenttabs">
     <Link className="goback" href="/profileoptions"  activeClassName="is-active" >
-              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}>
-                <Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span>
+    <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
                 </p>
               </Link>
 

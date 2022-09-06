@@ -348,7 +348,7 @@ window.location.replace("/home");
 
 
 
-<div className="col-md-4  tabs webapptabs loanapplystepone">
+<div className="col-md-4 col-11  tabs webapptabs loanapplystepone">
     
 <Link className="goback" href="/loanproducts"  eventKey="2" activeClassName="is-active" >
 <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
@@ -663,7 +663,7 @@ window.location.replace("/home");
 <br/>
 </div>
 
-<div className="col-md-5 loanapplystepthree">
+<div className="col-md-5 col-11 loanapplystepthree">
 <p onClick={gobacktostep2} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
        
@@ -709,13 +709,14 @@ window.location.replace("/home");
 
 </div>
 
-<div className="col-md-9 loanapplystepfour">
+<div className="col-md-9 col-11 loanapplystepfour">
 <p onClick={gobacktostep3} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
        
 <div className="row">
-    <div className="col-md-2 col-4">
+    <div className="col-md-2 col-5">
     <div className="image-upload empimgupload">
+    <p style={{fontSize:"12px"}}>- International Passport</p>
   <label htmlFor="file">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="passport"  width="183" height="100" src={ passport} />
@@ -724,8 +725,9 @@ window.location.replace("/home");
 </div>
     </div>
 
-    <div className="col-md-2 col-4" style={{marginLeft:"20px"}}>
+    <div className="col-md-2 col-5" style={{marginLeft:"20px"}}>
     <div className="image-upload empimgupload">
+    <p style={{fontSize:"12px"}}>- Signed offer letter</p>
   <label htmlFor="file2">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="additionaldocument"  width="183" height="100" src={additionaldocument} />
@@ -756,7 +758,7 @@ window.location.replace("/home");
 
 </div>
 
-<div className="col-md-5 loanapplystepfive">
+<div className="col-md-5 col-11 loanapplystepfive">
 {/* <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
         */}

@@ -36,7 +36,7 @@ console.log(authCtx.isLoggedIn)
 
                <div className="row">
 
-                  <div className="col-md-3 loanboxes" style={{cursor:"pointer"}}>
+                  {/* <div className="col-md-3 col-12 loanboxes" style={{cursor:"pointer"}}>
                      
                         <Image className="dashhomecard" src="/images/loanproducts.svg" width="290" height="136"/>
                         <Link href="/loanproducts" eventKey="10">
@@ -50,7 +50,7 @@ console.log(authCtx.isLoggedIn)
                      </Link>
                   </div>
 
-                  <div className="col-md-3 loanboxes" style={{cursor:"pointer"}}>
+                  <div className="col-md-3 col-12 loanboxes" style={{cursor:"pointer"}}>
                     
 
                         <Image className="dashhomecard" src="/images/loanhistory1.svg"  width="290" height="136" />
@@ -65,7 +65,7 @@ console.log(authCtx.isLoggedIn)
                   </div>
 
 
-                  <div className="col-md-3 loanboxes" style={{cursor:"pointer"}}>
+                  <div className="col-md-3 col-12 loanboxes" style={{cursor:"pointer"}}>
                      
 
                         <Image className="dashhomecard" src="/images/accountofficer.svg"  width="290" height="136" />
@@ -77,26 +77,85 @@ console.log(authCtx.isLoggedIn)
                            </p>
                         </div>
                      </Link>
-                  </div>
+                  </div> */}
 
-                  {/* <div className="col-md-3">
-    <Nav.Link as={Link} to="/loantopup" eventKey="10">
- 
- <Image className="dashhomecard" src="./images/loantopup.svg"/>
- <div className="webappdetailsbg">
- <p class="loanproductstitle">Loan top up </p>
- <p className="loansareavailablenote2" style={{paddingLeft:"0px"}}>
- Have a running loan, but have a pressing<br/> financial need? Apply for a top up loan.
-</p>
+    
+                  <div>
+  <Link className="" href="/loanproducts" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
+<div className="row loanproductoptions" >
+<div className="col-md-1 col-3">
+  <p style={{float:"right"}} >
+  <Image className="" src="/images/businessloans.svg" height="48" width="48"/>
+  </p>
+</div>
+
+<div className="col-md-3 col-7">
+<p > <span className="loansareavailable2">Loan Products</span> <br/>
+<span  className="loansareavailablenote2"> The various loan products available to our Credisol customers</span></p>  
+
+</div>
+
+<div className="col-md-1 col-2">
+<Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
+</div>
+
+</div>
+</Link>
+<hr className="hrmarginright900"/>
+  </div>
 
 
+  
 
+  <div>
+  <Link className="" href="/loan/history" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
+<div className="row loanproductoptions" >
+<div className="col-md-1 col-3">
+  <p style={{float:"right"}} >
+  <Image className="" src="/images/businessloans.svg" height="48" width="48"/>
+  </p>
+</div>
 
- </div>
- </Nav.Link>
-    </div> */}
+<div className="col-md-3 col-7">
+<p > <span className="loansareavailable2">Loan History</span> <br/>
+<span  className="loansareavailablenote2"> Fill up the necessary information to verify and have full access to your account.</span></p>  
 
+</div>
 
+<div className="col-md-1 col-2">
+<Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
+</div>
+
+</div>
+</Link>
+<hr className="hrmarginright900"/>
+  </div>
+
+  <div>
+  <Link className="" href="/loan/accountofficer" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
+<div className="row loanproductoptions" >
+<div className="col-md-1 col-3">
+  <p style={{float:"right"}} >
+  <Image className="" src="/images/businessloans.svg" height="48" width="48"/>
+  </p>
+</div>
+
+<div className="col-md-3 col-7">
+<p > <span className="loansareavailable2">Account Officer</span> <br/>
+<span  className="loansareavailablenote2">  Speak to a credit officer today to access a loan and make the most of it.</span></p>  
+
+</div>
+
+<div className="col-md-1 col-2">
+<Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
+</div>
+
+</div>
+</Link>
+<hr className="hrmarginright900"/>
+  </div>
+
+  
 
 
                </div>

@@ -45,7 +45,11 @@ const annualRef = useRef();
 const amountRef = useRef();
 const purposeRef = useRef();
 const durationRef = useRef()
+
+const director2name = useRef()
+const director2bvn = useRef()
 const noofdirectorsRef = useRef()
+const dateRef = useRef()
 
 
     // UPLOAD CERTIFICATE
@@ -231,7 +235,7 @@ const noofdirectorsRef = useRef()
   // GET LOAN OFFER ID
   useEffect(() =>{
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/loans/offers/proof_of_funds/",
+      "url": "https://credisol-app.herokuapp.com/v1/loans/offers/business_loan/",
       "method": "GET",
       "timeout": 0,
       "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
@@ -244,7 +248,7 @@ const noofdirectorsRef = useRef()
     $.ajax(settingsthree).done(function (responsethree) {
       console.log(responsethree)
       // setLoanofferid(responsethree.id)
-      setLoanofferid("3")
+      setLoanofferid(responsethree.id)
       $(".overlay").fadeOut(0);
     })
   },[])
@@ -354,7 +358,7 @@ const nextstep3 = () =>{
       setnotify2("Processing...")
       
 
-      
+      console.log(dateRef.current.value)
       const obj ={
      
         // "country_of_visit" : document.getElementById("country").value,
@@ -373,7 +377,7 @@ const nextstep3 = () =>{
         "registration_type" : "ltd",
         "name_of_business" : businessnameRef.current.value,
         "reg_number" : rcnumberRef.current.value,
-        "registration_date" : registrationRef.current.value,
+        "registration_date" : dateRef.current.value,
         "number_of_directors" : parseInt(document.getElementById("noofdirectors").value),
         "city_of_incorporation" : cityRef.current.value,
        
@@ -486,7 +490,7 @@ window.location.replace("/home");
            
 <div className="row">
  
-    <div className="col-md-4 tabs webapptabs  loanapplystepone">
+    <div className="col-md-4 col-11 tabs webapptabs  loanapplystepone">
     <Link className="goback" href="/loanproducts/businessloan"  eventKey="2" activeClassName="is-active" >
     <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
                 {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
@@ -522,17 +526,17 @@ window.location.replace("/home");
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
   <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Director 2 First and Last Name</Form.Label>
-    <Form.Control   id="director2name" width="60px" type="text" placeholder="Enter  firstname and lastname" />
+    <Form.Control   id="director2name" width="60px" type="text" ref={director2name} placeholder="Enter  firstname and lastname" />
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
   <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Director 2 BVN</Form.Label>
-    <Form.Control   id="director2bvn" width="60px" type="text" placeholder="Enter BVN" />
+    <Form.Control   id="director2bvn" width="60px" type="text" ref={director2bvn} placeholder="Enter BVN" />
 </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Date of Registration</Form.Label>
-      <Form.Control   id="registrationdate" width="60px" type="date" placeholder="" />
+      <Form.Control   id="registrationdate" width="60px" type="date" ref={dateRef} placeholder="" />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -557,7 +561,7 @@ window.location.replace("/home");
 </div>
 
 
-<div className="col-md-4 tabs loanapplysteptwo">
+<div className="col-md-4 col-11 tabs loanapplysteptwo">
     
               <p onClick={gobacktostep1} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
@@ -605,7 +609,7 @@ window.location.replace("/home");
 </p>
 </div>
 
-<div className="col-md-12 loanapplystepthree">
+<div className="col-md-12 col-10 loanapplystepthree">
 <p onClick={gobacktostep2} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
        
@@ -618,6 +622,7 @@ window.location.replace("/home");
 
     <div className="col-md-2 col-6">
     <div className="image-upload empimgupload">
+    <p style={{fontSize:"12px"}}>- CAC Certificate</p>
   <label htmlFor="file">
     <Image class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="certificate"  width="183" height="100" src={certificate} />
@@ -627,7 +632,9 @@ window.location.replace("/home");
     </div>
 
     <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
+  
     <div className="image-upload empimgupload">
+    <p style={{fontSize:"12px"}}>- Collateral</p>
   <label htmlFor="file2">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="collateral"  width="183" height="100" src={collateral} />
@@ -645,6 +652,7 @@ window.location.replace("/home");
 
 <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
     <div className="image-upload empimgupload">
+    <p style={{fontSize:"12px"}}>- Photograph</p>
   <label htmlFor="file4">
     <Image class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="photograph"  width="183" height="100" src={photograph} />
@@ -656,6 +664,7 @@ window.location.replace("/home");
 
 <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
     <div className="image-upload empimgupload">
+    <p style={{fontSize:"12px"}}>- Means of identification</p>
   <label htmlFor="file5">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="identification"  width="183" height="100" src={identification} />
@@ -673,6 +682,7 @@ window.location.replace("/home");
 <div className="row">
 <div className="col-md-3" style={{marginLeft:"0px"}}>
     <div className="image-upload empimgupload">
+    <p style={{fontSize:"12px"}}>- Collateral Ownership</p>
   <label htmlFor="file3">
     <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="ownership"  width="183" height="100" src={ownership} />
@@ -730,7 +740,7 @@ window.location.replace("/home");
 
 
 
-<div className="col-md-5 loanapplystepfive">
+<div className="col-md-5 col-10 loanapplystepfive">
 {/* <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
         */}

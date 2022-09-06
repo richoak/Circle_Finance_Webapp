@@ -117,7 +117,7 @@ const continueButton = () => {
       <Modal show={show} className="theactivatedmodal">
 
         <Modal.Body className="activatemodalbody">
-          <p style={{ textAlign: "center" }}><Image className="" src="/images/warning.svg" /></p>
+          <p style={{ textAlign: "center" }}><Image className="" src="/images/warning.svg" width="104" height="104" /></p>
           <p style={{ textAlign: "center" }} className="loansareavailable2">Your account is yet to be activated </p>
           <p className="loansareavailablenote2" style={{ textAlign: "center" }}>
             Your profile is incomplete. Fill up the necessary information<br /> to verify and gain full access to your account.
@@ -142,7 +142,7 @@ const continueButton = () => {
       <Modal show={show2} className="theactivatedmodal">
 
         <Modal.Body className="activatemodalbody">
-          <p style={{ textAlign: "center" }}><Image className="" src="/images/warning.svg" /></p>
+          <p style={{ textAlign: "center" }}><Image className="" src="/images/warning.svg" width="104" height="104" /></p>
           <p style={{ textAlign: "center" }} className="loansareavailable2">Your account is yet to be activated </p>
           <p className="loansareavailablenote2" style={{ textAlign: "center" }}>
             Your profile is incomplete. Fill up the necessary information<br /> to verify and gain full access to your account.
@@ -236,37 +236,71 @@ const continueButton = () => {
           <ul className="navbar-nav">
             <Link href="/home" eventKey="1" activeClassName="is-active" >
               <p className='thenavbarmenu thenavbarmenumobile  thenavbarmenumobile1'>
-                <Image className="" src="/images/home.svg" layout='fill'/> <span className="thenavbarmenuspan">   Home</span> </p>
+                <Image style={{marginTop:"0px"}} className="" src="/images/home.svg" width="20" height="20"/> <span className="thenavbarmenuspan">   Home</span> </p>
             </Link>
 
             <Link href="/loan" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/loans.svg" layout='fill'/> <span className="thenavbarmenuspan"> Loans <Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/loans.svg" width="24" height="24"/> <span className="thenavbarmenuspan"> Loans 
+              <p style={{ float: "right" }} >
+              <Image className="" src="/images/arrow-right2.svg" width="24" height="24"/>
+
+              </p>
+              </span>
+              </p>
             </Link>
 
             <Link href="/payments" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/payments.svg" layout='fill'/><span className="thenavbarmenuspan"> Payments <Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/payments.svg" width="24" height="24"/><span className="thenavbarmenuspan"> Payments 
+              <p style={{ float: "right" }}>
+              <Image  className="" src="/images/arrow-right2.svg" width="24" height="24"/>
+              </p>
+             
+              </span>
+              </p>
             </Link>
 
             <Link href="/profileoptions" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/user2.svg" layout='fill'/> <span className="thenavbarmenuspan"> Profile <Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/user2.svg" width="24" height="24"/> <span className="thenavbarmenuspan"> Profile 
+              <p style={{ float: "right" }}>
+              <Image  className="" src="/images/arrow-right2.svg" width="24" height="24"/>
+              </p>
+             
+              </span></p>
             </Link>
 
             <Link href="/settings" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/setting-2.svg" layout='fill'/><span className="thenavbarmenuspan"> Settings <Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/setting-2.svg" width="24" height="24"/><span className="thenavbarmenuspan"> Settings
+               <p style={{ float: "right" }} >
+               <Image className="" src="/images/arrow-right2.svg" width="24" height="24"/>
+               </p>
+              
+               </span></p>
             </Link>
 
 
             <Link href="/support" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/support.svg" layout='fill'/><span className="thenavbarmenuspan"> Support <Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/support.svg" width="24" height="24"/><span className="thenavbarmenuspan"> Support 
+              <p style={{ float: "right" }}>
+              <Image  className="" src="/images/arrow-right2.svg" width="24" height="24"/>
+              </p>
+             
+              </span></p>
             </Link>
 
 
             <Link href="/about" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/about.svg" layout='fill'/> <span className="thenavbarmenuspan">About Credisol<Image style={{ float: "right" }} className="" src="/images/arrow-right2.svg" layout='fill'/></span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/about.svg" width="24" height="24"/> <span className="thenavbarmenuspan">About Credisol
+              <p style={{ float: "right" }} >
+              <Image className="" src="/images/arrow-right2.svg" width="24" height="24"/>
+              </p>
+              
+              </span></p>
             </Link>
 
             <Link href="/" eventKey="1" activeClassName="is-active" >
-              <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/logout.svg" layout='fill'/> <span className="thenavbarmenuspan">Sign Out</span></p>
+              <p className='thenavbarmenu thenavbarmenumobile'>
+                <Image className="" src="/images/logout.svg" width="24" height="24"/> <span className="thenavbarmenuspan">Sign Out</span>
+                </p>
             </Link>
 
 

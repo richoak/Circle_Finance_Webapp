@@ -486,8 +486,8 @@ const Home = (props) => {
                 <div className="col-md-2 col-3 qloan1">
                   <p style={{ textAlign: "center" }}>
                     <Image className="" src="/images/quickloan.svg" width="24" height="24"/></p>
-                  <Link href="/loan" eventKey="10">
-                    <p className="quickloan">Quick Loan</p>
+                  <Link href="/loan" eventKey="10" style={{cursor:"pointer"}}>
+                    <p style={{cursor:"pointer"}} className="quickloan">Quick Loan</p>
                   </Link>
                 </div>
 
@@ -509,7 +509,7 @@ const Home = (props) => {
                 <Image className="" src="/images/support2.svg" width="24" height="24"/>
                 </p>
                   <Link href="/support" eventKey="10">
-                  <p className="quickloan" style={{ textAlign: "center" }}>
+                  <p  className="quickloan" style={{ textAlign: "center", cursor:"pointer" }}>
                        Support
                     
                        </p>
@@ -524,8 +524,8 @@ const Home = (props) => {
                 <p className="quickloan" style={{ textAlign: "center" }}>
                 <Image className="" src="/images/loanhistory.svg" width="24" height="24"/>
                 </p>
-                  <Link href="/history" eventKey="10">
-                    <p className="quickloan" style={{ textAlign: "center" }}>
+                  <Link href="/loan/history" eventKey="10">
+                    <p className="quickloan" style={{ textAlign: "center", cursor:"pointer" }}>
                       History
                       </p>
 

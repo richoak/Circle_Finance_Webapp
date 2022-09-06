@@ -104,19 +104,19 @@ const Transfer = () => {
 
 <Link className="" href="/transfertowallet" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions" >
-<div className="col-md-1">
+<div className="col-md-1 col-3">
   <p style={{float:"right"}}>
   <Image  className="" src="/images/businessloans.svg" height="48" width="48"/>
   </p>
 
 </div>
 
-<div className="col-md-3">
+<div className="col-md-3 col-7">
 <p > <span className="loansareavailable2">Transfer to Wallet</span> <br/><span  className="loansareavailablenote2">Transfer money to your wallet to repay a loan</span></p>  
 
 </div>
 
-<div className="col-md-1">
+<div className="col-md-1 col-2">
  <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 {/* <hr/> */}
@@ -127,7 +127,7 @@ const Transfer = () => {
 
 
 <div className="row loanproductoptions" >
-<div className="col-md-1">
+<div className="col-md-1 col-3">
 <p style={{float:"right"}}>
 <Image className="" src="/images/travelloans.svg" height="48" width="48"/>
 </p>
@@ -135,13 +135,13 @@ const Transfer = () => {
 
 <Link className="" href="/withdraw" id="availableloanoptions3" eventKey="2" activeClassName="is-active" >
 
-<div className="col-md-3">
+<div className="col-md-3 col-7">
 <p > <span className="loansareavailable2">Withdraw to bank</span> <br/>
 <span  className="loansareavailablenote2">Receive money in minutes </span></p>  
 
 </div>
 </Link>
-<div className="col-md-1">
+<div className="col-md-1 col-2">
  <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 {/* <hr/> */}

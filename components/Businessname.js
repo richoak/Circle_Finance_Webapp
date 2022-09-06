@@ -200,7 +200,7 @@ const durationRef = useRef()
   // GET LOAN OFFER ID
   useEffect(() => {
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/loans/offers/proof_of_funds/",
+      "url": "https://credisol-app.herokuapp.com/v1/loans/offers/business_loan/",
       "method": "GET",
       "timeout": 0,
       "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token") },
@@ -213,7 +213,7 @@ const durationRef = useRef()
     $.ajax(settingsthree).done(function (responsethree) {
       console.log(responsethree)
       // setLoanofferid(responsethree.id)
-      setLoanofferid("3")
+      setLoanofferid(responsethree.id)
       $(".overlay").fadeOut(0);
     })
   }, [])
@@ -312,7 +312,7 @@ const durationRef = useRef()
     else {
       setnotify2("Processing...")
 
-
+console.log(loanofferid)
 
       const obj = {
         "user": localStorage.getItem("userid"),
@@ -363,7 +363,7 @@ const durationRef = useRef()
 
       console.log(JSON.stringify(obj))
       var settingsthree = {
-        "url": "https://credisol-app.herokuapp.com/v1/business_loans/",
+        "url": 'https://credisol-app.herokuapp.com/v1/business_loans/',
         "method": "POST",
         "timeout": 0,
         "headers": {
@@ -436,7 +436,7 @@ const durationRef = useRef()
 
           <div className="row">
 
-            <div className="col-md-4 tabs webapptabs  loanapplystepone">
+            <div className="col-md-4 col-11 tabs webapptabs  loanapplystepone">
               <Link className="goback" href="/loanproducts/businessloan" eventKey="2" activeClassName="is-active" >
               <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
                 {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
@@ -487,10 +487,17 @@ const durationRef = useRef()
             </div>
 
 
-            <div className="col-md-4 tabs loanapplysteptwo">
+            <div className="col-md-4  col-11  tabs loanapplysteptwo">
 
-              <p onClick={gobacktostep1} className="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
-                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
+              {/* <p onClick={gobacktostep1} className="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
+                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/>
+                 <span className="gobackp">Back</span>
+                 </p> */}
+
+                 <p onClick={gobacktostep1}  className="loansareavailable2 goback" style={{paddingLeft:"0px", cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
 
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -535,10 +542,13 @@ const durationRef = useRef()
               </p>
             </div>
 
-            <div className="col-md-12 loanapplystepthree">
-              <p onClick={gobacktostep2} className="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
-                <Image className="" src="/images/arrow-left.svg" height="24" width="24" /> <span className="gobackp">Back</span></p>
+            <div className="col-md-12  col-11  loanapplystepthree">
+        
 
+                <p onClick={gobacktostep2}  className="loansareavailable2 goback" style={{paddingLeft:"0px", cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
               {/* <p  className="loansareavailablenote2 summarynote">Business/Management Profile</p>
 <div class="form-group">
     <textarea class="l" id="" rows="7" cols="70"></textarea>
@@ -547,6 +557,7 @@ const durationRef = useRef()
               <div className="row">
 
                 <div className="col-md-2 col-6">
+                  <p style={{fontSize:"12px"}}>- CAC Certificate</p>
                   <div className="image-upload empimgupload">
                     <label htmlFor="file">
                       <Image className="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
@@ -557,6 +568,8 @@ const durationRef = useRef()
                 </div>
 
                 <div className="col-md-2 col-6" style={{ marginLeft: "0px" }}>
+                <p style={{fontSize:"12px"}}>- Proof of collareral</p>
+
                   <div className="image-upload empimgupload">
                     <label htmlFor="file2">
                       <Image className="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
@@ -574,6 +587,9 @@ const durationRef = useRef()
               <div className="row">
 
                 <div className="col-md-2 col-6" style={{ marginLeft: "0px" }}>
+                  
+                <p style={{fontSize:"12px"}}>- Recent Photograph</p>
+
                   <div className="image-upload empimgupload">
                     <label htmlFor="file4">
                       <Image className="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
@@ -585,6 +601,8 @@ const durationRef = useRef()
                 </div>
 
                 <div className="col-md-2 col-6" style={{ marginLeft: "0px" }}>
+                <p style={{fontSize:"12px"}}>- Means of identification</p>
+
                   <div className="image-upload empimgupload">
                     <label htmlFor="file5">
                       <Image className="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
@@ -598,6 +616,8 @@ const durationRef = useRef()
 
               <div className="row">
                 <div className="col-md-3 col-6" style={{ marginLeft: "0px" }}>
+                <p style={{fontSize:"12px"}}>- Ownership of collateral</p>
+
                   <div className="image-upload empimgupload">
                     <label htmlFor="file3">
                       <Image className="mobileuploadimages" style={{ marginBottom: "40px", cursor: "pointer " }}
@@ -660,7 +680,7 @@ const durationRef = useRef()
 
 
 
-            <div className="col-md-5 loanapplystepfive">
+            <div className="col-md-5 col-11 loanapplystepfive">
               {/* <p onClick={gobacktostep2} class="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
                 <Image className="" src="images/arrow-left.svg"/> <span class="gobackp">Back</span></p>
         */}

@@ -161,7 +161,7 @@ const addbank = () =>{
     <div className="col-md-6 col-12 smrow2">
     <p className="wallethead faqmobile" >Frequently asked questions </p>
     <div className="row">
-            <div className="col-md-1 col-1"><Image width="45" height="45" src="/images/question.svg"/></div>
+            <div className="col-md-1 col-1"><Image layout='fill' src="/images/question.svg"/></div>
             <div className="col-md-10 col-10"><p className="faqtext">This section will help give you insights and answers to some of our most commonly asked questions. </p></div>
         </div>
 

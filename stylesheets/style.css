@@ -1996,7 +1996,7 @@ background-position:right center;
 }
 
 .loanboxes{
-    max-width:70%
+    /* max-width:100% */
 }
 
 .smtext{
@@ -2160,6 +2160,25 @@ background-position:right center;
         margin-right:0px
       }
 
+      .transfertobox{
+        margin-right:30px
+    }
+
+    .transfertobox2{
+        margin-right:30px
+    }
+
+
+
+      .loanboxes{
+        margin-top:30px
+      }
+
+      .homepage1box2{
+        padding-left:30px;
+        padding-right:30px
+      }
+
       .hrmarginright900{
         margin-right:0px
       }
@@ -2250,6 +2269,9 @@ background-position:right center;
 }
 .signinbox1{
     margin-top: 30px;
+    margin-left:20px;
+    margin-right:20px;
+
   }
 
 .letsgetstarted{
@@ -2424,7 +2446,8 @@ button{
 }
 
 .dashhomecard{
-    margin-left:40px;
+    margin-left:40px!important;
+    display:none
 }
 
 .webappdetailsbg{

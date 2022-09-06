@@ -60,6 +60,7 @@ const Profile = () => {
       console.log(profilepictureurl)
       if(data.error){
         document.getElementById("profilepictureid").src = "/images/user.svg"
+        
         $(".overlay").fadeOut(0);
       }
       else{
@@ -127,7 +128,13 @@ const Profile = () => {
       setbvn(response.bvn)
       setmaritalstatus(response.marital_status)
       setstateofresidence(response.state_of_residence)
-      setprofilepicture(response.profile_picture)
+      
+      if(response.profile_picture === null){
+        setprofilepicture("")
+      }
+      else{
+        setprofilepicture(response.profile_picture)
+      }
       $(".overlay").fadeOut(1500);
     })
   
@@ -233,7 +240,11 @@ const savechanges = () => {
  
     <div className="col-md-10 tabs webapptabs paymenttabs">
     <Link className="goback" href="/profileoptions"  eventKey="2" activeClassName="is-active" >
-              <p className="loansareavailable2 " style={{paddingLeft:"20px"}}><Image className="" src="images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+    <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
+           
               </Link>
 
               <div className="row director1row">
@@ -242,7 +253,7 @@ const savechanges = () => {
     <div className="image-upload">
   <label htmlFor="file">
     <Image className="" style={{marginBottom:"0px", cursor:"pointer "}} 
-     id="profilepictureid" width="40"  src={ profilepicture} />
+     id="profilepictureid" width="40" height="40"  src={ profilepicture} />
   </label>
   <input type="file" id="file" onChange= {(e)=> setprofilepicture(e.target.files[0])}></input>
 </div>

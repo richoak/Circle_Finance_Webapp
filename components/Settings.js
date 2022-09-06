@@ -44,6 +44,20 @@ const Settings = () => {
   //   }
   // });
 
+  const goback1= () =>{
+
+    $(".password2").slideDown();
+    $(".password2").css({ 'display': 'none' });
+    $(".password1").toggle( "slide" );
+}
+
+const goback2= () =>{
+
+  $(".pin2").slideDown();
+  $(".pin2").css({ 'display': 'none' });
+  $(".password1").toggle( "slide" );
+}
+
   const updatepasswordpage= () =>{
 
     $(".password1").slideDown();
@@ -287,7 +301,7 @@ else{
 
 </div>
 
-<div className="col-md-1 col-1">
+<div className="col-md-1 col-2">
  <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 
@@ -304,7 +318,7 @@ else{
 
 </div>
 
-<div className="col-md-1 col-1">
+<div className="col-md-1 col-2">
  <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 {/* <hr/> */}
@@ -315,10 +329,12 @@ else{
       </div>
 <div className="mobilesettings">
 <div className="password2 ">
-      <Link  style={{marginBottom:"45px"}} className="" href="/settings"  eventKey="2" activeClassName="is-active" >
-              <p className="" style={{paddingLeft:"0px"}}>
-                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp" style={{fontWeight:"bold",}}>Back</span></p>
-              </Link>
+      {/* <Link  style={{marginBottom:"45px"}}  className="" href="/settings"  eventKey="2" activeClassName="is-active" > */}
+      <p className="loansareavailable2" onClick={goback1} style={{paddingLeft:"0px", cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
+              {/* </Link> */}
 
       <p className="" style={{fontWeight:"bold"}}>Update your Password</p>  
       <p className='createapassword'>Create a new password that has not been used for <br/>your Credisol account before.</p>
@@ -381,8 +397,10 @@ else{
 
       <div className="pin2">
       <Link  style={{marginBottom:"25px"}} className="" href="/settings"  eventKey="2" activeClassName="is-active" >
-              <p className="" style={{paddingLeft:"0px"}}>
-                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp" style={{fontWeight:"bold",}}>Back</span></p>
+      <p className="loansareavailable2" onClick={goback2} style={{paddingLeft:"0px", cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
               </Link>
 
       <p className="" style={{fontWeight:"",marginTop:"40px"}}>Old Pin</p>  

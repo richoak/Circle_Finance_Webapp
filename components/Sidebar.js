@@ -42,7 +42,7 @@ const Sidebar = () => {
         <Link className="" href="/about" activeClassName="is-active" >
           <p className={router.pathname == "/about" ? "thenavbarmenu thenavbaractive" : "thenavbarmenu"}>
            <Image className="" src="/images/about.svg" width="24" height="24"/> 
-          <span className={router.pathname == "/about" ? "thenavbarmenuspan thenavbarmenuspanactive" : "thenavbarmenuspan"}>   About Credisol</span>
+          <span className={router.pathname == "/about" ? "thenavbarmenuspan thenavbarmenuspanactive" : "thenavbarmenuspan"}>   About</span>
            </p>
         </Link>
         

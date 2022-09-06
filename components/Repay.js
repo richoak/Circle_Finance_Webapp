@@ -35,10 +35,15 @@ const Repay = () => {
 
       $.ajax(settingsthree).done(function (responsethree) {
         console.log(responsethree)
-        setAmount("N" + parseInt(responsethree.balance).toLocaleString())
+        var defaultDates = responsethree.created_at
+        var d = new Date(defaultDates).toString();
+        var actualdate = d.split(' ').splice(0, 5).join(' ')
+        var actualdate2 = d.split(' ').splice(3, 1).join(' ')
+      
+        setAmount("N" + parseInt(responsethree.principal).toLocaleString())
         setDuration(responsethree.duration)
         setLoanType(responsethree.offer_name)
-        setStartDate(responsethree.created_at)
+        setStartDate(actualdate)
 
         console.log(amount)
       })
@@ -63,11 +68,11 @@ const Repay = () => {
            
 <div className="row">
  
-<div className="col-md-5 repaystepone">
+<div className="col-md-5 col-10 repaystepone">
 
 <Link className="goback" href="/home"  eventKey="2" activeClassName="is-active" >
               <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
-                <Image className="" src="/images/arrow-left.svg"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" width="24" height="24"/> <span className="gobackp">Back</span></p>
               </Link>
        
 
@@ -75,7 +80,7 @@ const Repay = () => {
 
 <p  className="loansareavailablenote2 summarynote">Here is a summary of your loan application</p>
 <div className="row summarybox">
-    <div className="col-md-6 summarydiv1">
+    <div className="col-md-6 col-6 summarydiv1">
         <p  className="loansareavailablenote2">Loan amount</p>
         <p className="summaryhead">{amount}</p>
         <p  className="loansareavailablenote2">Loan duration</p>
@@ -84,7 +89,7 @@ const Repay = () => {
         {/* <p class="summaryhead">N204,000.00</p> */}
     </div>
 
-    <div className="col-md-6"style={{paddingLeft:"50px"}}>
+    <div className="col-md-6 col-6"style={{paddingLeft:"50px"}}>
     <p  className="loansareavailablenote2">Loan Type</p>
     <p className="summaryhead">{loantype}</p>
     <p  className="loansareavailablenote2">Start Date</p>

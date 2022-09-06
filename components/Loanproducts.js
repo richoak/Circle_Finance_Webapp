@@ -61,19 +61,19 @@ const Loanproducts = () => {
 !loanExist && <div>
   <Link className="" href="/loanproducts/businessloan" id="availableloanoptions2"  eventKey="2" activeClassName="is-active" >
 <div className="row loanproductoptions" >
-<div className="col-md-1">
+<div className="col-md-1 col-3">
   <p style={{float:"right"}} >
   <Image className="" src="/images/businessloans.svg" height="48" width="48"/>
   </p>
 </div>
 
-<div className="col-md-3">
+<div className="col-md-3 col-7">
 <p > <span className="loansareavailable2">Business and Corporate Loans</span> <br/>
 <span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
 
 </div>
 
-<div className="col-md-1">
+<div className="col-md-1 col-2">
 <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 
@@ -85,7 +85,7 @@ const Loanproducts = () => {
 
   {!loanExist && <div>
     <div className="row loanproductoptions" >
-<div className="col-md-1">
+<div className="col-md-1 col-3">
 <p style={{float:"right"}} >
 <Image className="" src="/images/travelloans.svg" height="48" width="48"/>
 
@@ -93,12 +93,12 @@ const Loanproducts = () => {
 </div>
 
 <Link className="" href="/loanproducts/travelloan" id="availableloanoptions3" eventKey="2" activeClassName="is-active" >
-<div className="col-md-3">
+<div className="col-md-3 col-7">
 <p > <span className="loansareavailable2">Travel Loans</span> <br/><span  className="loansareavailablenote2">Personal loans available for individuals</span></p>  
 </div>
 </Link>
 
-<div className="col-md-1">
+<div className="col-md-1 col-2">
  <Image style={{marginTop:"10px"}} className="" src="/images/arrow-right.svg" height="24" width="24"/>
 </div>
 
@@ -109,8 +109,8 @@ const Loanproducts = () => {
 
   {loanExist && <div>
     <div className="row loanproductoptions">
-<div className="col-md-1 col-3">
-<Image style={{float:"right"}} className="" src="/images/consumerloans.svg"/>
+<div className="col-md-1  col-2">
+<Image style={{float:"right"}} className="" src="/images/consumerloans.svg" height="48" width="48"/>
 </div>
 
 <div className="col-md-3 col-8" >
