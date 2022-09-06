@@ -2182,7 +2182,9 @@ background-position:right center;
     .transfertobox2{
         margin-right:30px
     }
-
+    #thenavbarmenumobile{
+        display:block
+    }
 
 
       .loanboxes{

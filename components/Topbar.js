@@ -233,7 +233,7 @@ const continueButton = () => {
 
 
 
-          <ul className="navbar-nav" id="">
+          <ul className="navbar-nav" id="thenavbarmenumobile">
             <Link href="/home" eventKey="1" activeClassName="is-active" >
               <p className='thenavbarmenu thenavbarmenumobile  thenavbarmenumobile1'>
                 <Image style={{marginTop:"0px"}} className="" src="/images/home.svg" width="20" height="20"/> <span className="thenavbarmenuspan">   Home</span> </p>

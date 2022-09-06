@@ -311,7 +311,7 @@ const Home = (props) => {
             var td2 = document.createElement('td');
             td2.innerText = responsethree[i].id;
             var td3 = document.createElement('td');
-            td3.innerHTML = "<span class='loanhistorytype'>" + loantype + "</span> " + "<br/>" + "<span class='loanhistorydate'>" + actualdate + "</span> "
+            td3.innerHTML = "<span class='loanhistorytype'>" + loantype + "</span> " + "<br/>" + "<span className='loanhistorydate'>" + actualdate + "</span> "
             var td4 = document.createElement('td');
             td4.innerHTML = "<span class='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].amount).toLocaleString() + "</span> "
             var td5 = document.createElement('td');
