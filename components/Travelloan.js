@@ -636,7 +636,7 @@ window.location.replace("/home");
   </Form.Group>
 
   <div className="form-group">
-  <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Loan Duration</label>
+  <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Loan Duration (Months)</label>
   <select className="form-control" id="duration">
   <option value="">- Select Duration -</option>
     <option value="1">1</option>

@@ -127,7 +127,17 @@ const Login = () => {
 
     }
   }
-
+  useEffect(() => {
+    let otp = document.querySelector('#otp-screen');
+  
+    for (let pin of otp.children) {
+      pin.onkeyup = function () {
+        if (pin.nextElementSibling) {
+          pin.nextElementSibling.focus();
+        }
+      }
+    }
+  })
 
   const forgotpassword2 = () => {
 
@@ -406,7 +416,12 @@ const Login = () => {
                   <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Your Email Address</Form.Label>
                   <div className="row">
                     <div className="col-md-1 col-1">
-                      <Image style={{ marginTop: "8px" }} src="/images/sms.svg" layout="fill" />
+                      {/* <Image style={{ marginTop: "8px" }} src="/images/sms.svg" layout="fill" /> */}
+                      <div className="loginlock" >
+                      <Image style={{ marginTop: "8px" }} 
+                      src="/images/sms.svg" width="24" height="24"
+                      />
+                      </div>
                     </div>
                     <div className="col-md-11 col-11">
                       <Form.Control id="resetemailaddress" type="text" placeholder="Enter your email address" />

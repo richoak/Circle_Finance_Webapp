@@ -138,7 +138,6 @@ const Withdraw = () => {
   
   const nextstep1 = () => {
     localStorage.getItem('pin')
-    console.log(pinRef.current.value)
     if(amountRef.current.value === ""){
       setnotify("Input an amount")
   }
@@ -149,6 +148,10 @@ const Withdraw = () => {
 
 else if(pinRef.current.value === ""){
   setnotify("Input your 4 digit pin")
+}
+
+else if (amountRef.current.value > walletRef.current.value ){
+  setnotify("You do not have enough to make this transfer")
 }
 
 else if(pinRef.current.value !==  localStorage.getItem("pin")){
@@ -205,6 +208,8 @@ else if(pinRef.current.value !==  localStorage.getItem("pin")){
       ,
       error: function (xhr, status, error) {
         console.log(xhr)
+        setnotify("An error occured, Please try again")
+           $(".spinner-border").css({ 'display': 'none' });
         // if(xhr.status === 401){
         //   window.location.replace("/");
         // }

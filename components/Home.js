@@ -311,11 +311,11 @@ const Home = (props) => {
             var td2 = document.createElement('td');
             td2.innerText = responsethree[i].id;
             var td3 = document.createElement('td');
-            td3.innerHTML = "<span className='loanhistorytype'>" + loantype + "</span> " + "<br/>" + "<span className='loanhistorydate'>" + actualdate + "</span> "
+            td3.innerHTML = "<span class='loanhistorytype'>" + loantype + "</span> " + "<br/>" + "<span class='loanhistorydate'>" + actualdate + "</span> "
             var td4 = document.createElement('td');
-            td4.innerHTML = "<span className='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].amount).toLocaleString() + "</span> "
+            td4.innerHTML = "<span class='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].amount).toLocaleString() + "</span> "
             var td5 = document.createElement('td');
-            td5.innerHTML = "<span className='loanhistorytype loanstatushistory'>" + responsethree[i].purpose + "</span>";
+            td5.innerHTML = "<span class='loanhistorytype loanstatushistory'>" + responsethree[i].purpose + "</span>";
             // var td5 = document.createElement('td');
             // td5.innerHTML = "<span class='loanhistorytype'> View more</span>" 
 

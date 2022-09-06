@@ -336,15 +336,15 @@ else{
                 </p>
               {/* </Link> */}
 
-      <p className="" style={{fontWeight:"bold"}}>Update your Password</p>  
+      <p className="" style={{fontWeight:"bold", marginTop:"20px"}}>Update your Password</p>  
       <p className='createapassword'>Create a new password that has not been used for <br/>your Credisol account before.</p>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
 <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Your Old Password</Form.Label>
 <div className="row">
-<div className="col-md-1 col-1 lock">
+{/* <div className="col-md-1 col-1 lock">
 <Image style={{marginTop:"8px"}} src="/images/lock.svg" height="24" width="24" />
-</div>
+</div> */}
 <div className="col-md-3 col-10">
 <Form.Control   id="oldpassword"  type="password" placeholder="Enter your password" />
 
@@ -355,9 +355,9 @@ else{
 <Form.Group className="mb-3" controlId="formBasicEmail">
 <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Your New Password</Form.Label>
 <div className="row">
-<div className="col-md-1 col-1 lock">
+{/* <div className="col-md-1 col-1 lock">
 <Image style={{marginTop:"8px"}} src="/images/lock.svg" layout="fill" />
-</div>
+</div> */}
 <div className="col-md-3 col-10">
 <Form.Control   id="newpassword"  type="password" placeholder="Enter your password" />
 
@@ -368,9 +368,9 @@ else{
 <Form.Group className="mb-3" controlId="formBasicEmail">
 <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"10px",paddingBottom:"0px"}}>Confirm Password</Form.Label>
 <div className="row">
-<div className="col-md-1 col-1 lock">
+{/* <div className="col-md-1 col-1 lock">
 <Image style={{marginTop:"8px"}} src="/images/lock.svg" layout="fill" />
-</div>
+</div> */}
 <div className="col-md-3 col-10">
 <Form.Control   id="confirmpassword" onKeyUp={inputpassword}  type="password" placeholder="Enter your password" />
 

@@ -160,6 +160,7 @@ const Payments = () => {
       
       $.ajax(settingsthree).done(function (responsethree) {
         console.log(responsethree)
+        localStorage.setItem("accountnumber", responsethree.account_number)
         window.location.replace("/payments");
       })
     }

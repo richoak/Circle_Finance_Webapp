@@ -110,7 +110,9 @@ const Loanproducts = () => {
   {loanExist && <div>
     <div className="row loanproductoptions">
 <div className="col-md-1  col-2">
-<Image style={{float:"right"}} className="" src="/images/consumerloans.svg" height="48" width="48"/>
+<p style={{float:"right"}} >
+<Image className="" src="/images/consumerloans.svg" height="48" width="48"/>
+</p>
 </div>
 
 <div className="col-md-3 col-8" >
