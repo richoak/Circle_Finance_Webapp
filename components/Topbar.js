@@ -233,13 +233,13 @@ const continueButton = () => {
 
 
 
-          <ul className="navbar-nav" id="thenavbarmenumobile">
-            <Link href="/home" eventKey="1" activeClassName="is-active" >
+          <ul className="navbar-nav" id="thenavbarmenumobilex">
+            <Link href="/home" eventKey="1" activeClassName="is-active" id="thenavbarmenumobile">
               <p className='thenavbarmenu thenavbarmenumobile  thenavbarmenumobile1'>
                 <Image style={{marginTop:"0px"}} className="" src="/images/home.svg" width="20" height="20"/> <span className="thenavbarmenuspan">   Home</span> </p>
             </Link>
 
-            <Link href="/loan" eventKey="1" activeClassName="is-active" >
+            <Link href="/loan" eventKey="1" activeClassName="is-active" id="thenavbarmenumobile">
               <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/loans.svg" width="24" height="24"/> <span className="thenavbarmenuspan"> Loans 
               <p style={{ float: "right" }} >
               <Image className="" src="/images/arrow-right2.svg" width="24" height="24"/>
@@ -249,7 +249,7 @@ const continueButton = () => {
               </p>
             </Link>
 
-            <Link href="/payments" eventKey="1" activeClassName="is-active">
+            <Link href="/payments" eventKey="1" activeClassName="is-active" id="thenavbarmenumobile">
               <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/payments.svg" width="24" height="24"/><span className="thenavbarmenuspan"> Payments 
               <p style={{ float: "right" }}>
               <Image  className="" src="/images/arrow-right2.svg" width="24" height="24"/>
@@ -259,7 +259,7 @@ const continueButton = () => {
               </p>
             </Link>
 
-            <Link href="/profileoptions" eventKey="1" activeClassName="is-active" >
+            <Link href="/profileoptions" eventKey="1" activeClassName="is-active" id="thenavbarmenumobile">
               <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/user2.svg" width="24" height="24"/> <span className="thenavbarmenuspan"> Profile 
               <p style={{ float: "right" }}>
               <Image  className="" src="/images/arrow-right2.svg" width="24" height="24"/>
@@ -268,7 +268,7 @@ const continueButton = () => {
               </span></p>
             </Link>
 
-            <Link href="/settings" eventKey="1" activeClassName="is-active" >
+            <Link href="/settings" eventKey="1" activeClassName="is-active" id="thenavbarmenumobile">
               <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/setting-2.svg" width="24" height="24"/><span className="thenavbarmenuspan"> Settings
                <p style={{ float: "right" }} >
                <Image className="" src="/images/arrow-right2.svg" width="24" height="24"/>
@@ -278,7 +278,7 @@ const continueButton = () => {
             </Link>
 
 
-            <Link href="/support" eventKey="1" activeClassName="is-active" >
+            <Link href="/support" eventKey="1" activeClassName="is-active" id="thenavbarmenumobile" >
               <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/support.svg" width="24" height="24"/><span className="thenavbarmenuspan"> Support 
               <p style={{ float: "right" }}>
               <Image  className="" src="/images/arrow-right2.svg" width="24" height="24"/>
@@ -288,16 +288,16 @@ const continueButton = () => {
             </Link>
 
 
-            <Link href="/about" eventKey="1" activeClassName="is-active" >
+            {/* <Link href="/about" eventKey="1" activeClassName="is-active" id="thenavbarmenumobile">
               <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="/images/about.svg" width="24" height="24"/> <span className="thenavbarmenuspan">About Credisol
               <p style={{ float: "right" }} >
               <Image className="" src="/images/arrow-right2.svg" width="24" height="24"/>
               </p>
               
               </span></p>
-            </Link>
+            </Link> */}
 
-            <Link href="/" eventKey="1" activeClassName="is-active" >
+            <Link href="/" eventKey="1" activeClassName="is-active" id="thenavbarmenumobile">
               <p className='thenavbarmenu thenavbarmenumobile'>
                 <Image className="" src="/images/logout.svg" width="24" height="24"/> <span className="thenavbarmenuspan">Sign Out</span>
                 </p>

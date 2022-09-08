@@ -27,7 +27,7 @@ const History = () => {
     $('#records_table').empty()
     if(loanTypeFilter === ""){
       var settingsthree = {
-        "url": "https://credisol-app.herokuapp.com/v1/loans/all/",
+        "url": `https://credisol-app.herokuapp.com/v1/wallet/${localStorage.getItem("providusid")}/virtual_accounts/`,
         "method": "GET",
         "timeout": 0,
         
@@ -44,46 +44,55 @@ const History = () => {
         console.log(responsethree)
   
         if(responsethree != ""){
-          $.each(responsethree, function (i) {
+          $.each(responsethree.transactions, function (i) {
               console.log(responsethree[i])
             var table = document.getElementById('records_table');
             // console.log(table)
             var tr = document.createElement('tr');
-            var defaultDates = responsethree[i].created_at
+            var defaultDates =  responsethree.transactions[i].created_at
             var d = new Date(defaultDates).toString();
             var actualdate = d.split(' ').splice(0, 5).join(' ')
   
             let loantype
-            let amount
-              let viewstatement
-  
-            if(responsethree[i].offer_code === "RO-VF-PF"){
-              loantype = "Travel loan";
+            let amount =  responsethree.transactions[i].amount
+            let arrow
+            let transactiontype
+            let remarks
+
+            if (responsethree.transactions[i].remarks === "providus inflow") {
+              remarks = "Deposit"
+              arrow = "<i class='fas fa-long-arrow-alt-right makegreen'></i>"
             }
-  
-            else  if(responsethree[i].offer_code === "RO-BL-BL"){
-              loantype = "Business loan";
+
+            else if (responsethree.transactions[i].remarks === "providus outflow") {
+              remarks = "Withdrawal"
+              arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
             }
+
+            else if (responsethree.transactions[i].remarks === "internal outflow") {
+              remarks = "Loan Disbursement"
+              arrow = "<i class='fas fa-long-arrow-alt-left makegreen'></i>"
+            }
+
+            else if (responsethree.transactions[i].remarks === "internal inflow") {
+              remarks = "Loan Repayment"
+              arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
+            }
+
 
          
   
             var td1 = document.createElement('td');
-            td1.innerText = responsethree[i].loan_id;
+            td1.innerHTML = arrow
             var td2 = document.createElement('td');
-            td2.innerHTML = "<span className='loanhistorytype'>" + loantype +"</span> "+ "<br/>" +  "<span class='loanhistorydate'>" + actualdate +"</span> "
+            td2.innerText = responsethree.transactions[i].id;
             var td3 = document.createElement('td');
-            td3.innerHTML =    "<span className='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].principal).toLocaleString()  +"</span> " + "<br/>" + "<span class='loanhistorydate'>" + responsethree[i].duration + " months / " + "4%" +"</span> "
+            td3.innerHTML = "<span class='loanhistorytype'>" + remarks + "</span> "
             var td4 = document.createElement('td');
-            td4.innerHTML =  "<span class='loanhistorytype loanstatushistory'>"+ responsethree[i].status  +"</span>" ;
-
-            if(responsethree[i].status === "pending"){
-              viewstatement = "No statement"
-            }
-            else{
-              viewstatement = `<Link target='_blank' href=/statement?loanid=${td1.innerText} class='loanhistorytype statementlink'> View statement</Link>`
-            }
+            td4.innerHTML = "<span class='loanhistorytype'> " + parseInt(amount).toLocaleString() + "</span> "
             var td5 = document.createElement('td');
-            td5.innerHTML = viewstatement        
+            td5.innerHTML = "<span class='loanhistorytype loanstatushistory'>" + actualdate + "</span>";
+            // td5.innerHTML = viewstatement        
             
             
             
@@ -124,7 +133,7 @@ const History = () => {
 
     else{
       var settingsthree = {
-        "url": "https://credisol-app.herokuapp.com/v1/loans/all?offer_code=" + loanTypeFilter,
+        "url": `https://credisol-app.herokuapp.com/v1/wallet/${localStorage.getItem("providusid")}/virtual_accounts?remarks=` + loanTypeFilter,
         "method": "GET",
         "timeout": 0,
         
@@ -141,47 +150,54 @@ const History = () => {
         console.log(responsethree)
   
         if(responsethree != ""){
-          $.each(responsethree, function (i) {
+          $.each(responsethree.transactions, function (i) {
               console.log(responsethree[i])
             var table = document.getElementById('records_table');
             // console.log(table)
             var tr = document.createElement('tr');
-            var defaultDates = responsethree[i].created_at
+            var defaultDates = responsethree.transactions[i].created_at
             var d = new Date(defaultDates).toString();
             var actualdate = d.split(' ').splice(0, 5).join(' ')
   
             let loantype
-            let amount
-            let viewstatement
-  
-            if(responsethree[i].offer_code === "RO-VF-PF"){
-              loantype = "Travel loan";
+            let amount =  responsethree.transactions[i].amount
+            let arrow
+            let transactiontype
+            let remarks
+
+            if (responsethree.transactions[i].remarks === "providus inflow") {
+              remarks = "Deposit"
+              arrow = "<i class='fas fa-long-arrow-alt-right makegreen'></i>"
             }
-  
-            else  if(responsethree[i].offer_code === "RO-BL-BL"){
-              loantype = "Business loan";
+
+            else if (responsethree.transactions[i].remarks === "providus outflow") {
+              remarks = "Withdrawal"
+              arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
+            }
+
+            else if (responsethree.transactions[i].remarks === "internal outflow") {
+              remarks = "Loan Disbursement"
+              arrow = "<i class='fas fa-long-arrow-alt-left makegreen'></i>"
+            }
+
+            else if (responsethree.transactions[i].remarks === "internal inflow") {
+              remarks = "Loan Repayment"
+              arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
             }
 
     
 
   
             var td1 = document.createElement('td');
-            td1.innerText = responsethree[i].loan_id;
+            td1.innerHTML = arrow
             var td2 = document.createElement('td');
-            td2.innerHTML = "<span className='loanhistorytype'>" + loantype +"</span> "+ "<br/>" +  "<span className='loanhistorydate'>" + actualdate +"</span> "
+            td2.innerText = responsethree.transactions[i].id;
             var td3 = document.createElement('td');
-            td3.innerHTML =    "<span className='loanhistorytype'> &#x20A6;" + parseInt(responsethree[i].principal).toLocaleString()  +"</span> " + "<br/>" + "<span class='loanhistorydate'>" + responsethree[i].duration + " months / " + "4%" +"</span> "
+            td3.innerHTML = "<span class='loanhistorytype'>" + remarks + "</span> "
             var td4 = document.createElement('td');
-            td4.innerHTML =  "<span className='loanhistorytype loanstatushistory'>"+ responsethree[i].status  +"</span>" ;
-
-            if(responsethree[i].status === "pending"){
-              viewstatement = "No statement"
-            }
-            else{
-              viewstatement = `<a target='_blank' href=/statement?loanid=${td1.innerText} className='loanhistorytype statementlink'> View statement</a>`
-            }
+            td4.innerHTML = "<span class='loanhistorytype'> " + parseInt(amount).toLocaleString() + "</span> "
             var td5 = document.createElement('td');
-            td5.innerHTML = viewstatement
+            td5.innerHTML = "<span class='loanhistorytype loanstatushistory'>" + actualdate + "</span>";
         
             
             
@@ -260,9 +276,11 @@ const History = () => {
               size="lg"
               width="100px"
               >
-              <option value="">All loans</option>
-  <option value="RO-VF-PF">Proof of Funds</option>
-  <option value="RO-BL-BL">Business Loan</option>
+                 <option value="">All Transactions</option>
+                    <option value="providus inflow">Deposit</option>
+                    <option value="providus outflow">Withdrawal</option>
+                    <option value="internal outflow">Loan Disbursement</option>
+                    <option value="internal inflow">Loan Repayment</option>
 
 </Form.Select>
 
@@ -271,12 +289,12 @@ const History = () => {
               <tr className="ippisschedulehead">
              
       
-                <th className="ippiscol0" scope="col">ID</th>
-      
-                <th className="ippiscol0" scope="col">TYPE/DATE</th>
-                <th className="ippiscol0" scope="col">AMOUNT/DURATION/INTEREST RATE</th>
-                <th className="ippiscol0" scope="col">STATUS</th>
-                <th className="ippiscol0" scope="col">STATEMENT</th>
+                       <th className="ippiscol0" scope="col"></th>
+                      <th className="ippiscol0" scope="col"> ID</th>
+
+                      <th className="ippiscol0" scope="col">TRANSACTION TYPE</th>
+                      <th className="ippiscol0" scope="col">AMOUNT (&#x20A6;)</th>
+                      <th className="ippiscol0" scope="col">DATE</th>
         
             
       

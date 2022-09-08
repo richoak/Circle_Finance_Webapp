@@ -41,12 +41,12 @@ const Sidebar = () => {
         </Link>
 
 
-        <Link className="" href="/about" activeClassName="is-active" >
+        {/* <Link className="" href="/about" activeClassName="is-active" >
           <p className={router.pathname == "/about" ? "thenavbarmenu thenavbaractive" : "thenavbarmenu"}>
            <Image className="" style={{marginTop:"2px"}}  src="/images/about.svg" width="24" height="24"/> 
           <span className={router.pathname == "/about" ? "thenavbarmenuspan thenavbarmenuspanactive" : "thenavbarmenuspan"}>   About</span>
            </p>
-        </Link>
+        </Link> */}
         
         </Fragment>
   

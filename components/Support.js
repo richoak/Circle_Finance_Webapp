@@ -167,7 +167,7 @@ const addbank = () =>{
 
         <Accordion>
   <Accordion.Item eventKey="0">
-    <Accordion.Header className="faqqheader">Who can get a loan from credisol? 
+    <Accordion.Header className="faqqheader">Who can get a loan from CREDISOL? 
 
 </Accordion.Header>
     <Accordion.Body>
@@ -183,7 +183,7 @@ const addbank = () =>{
 
 </Accordion.Header>
     <Accordion.Body>
-    You create an account via credisol.com an complete your credisol profile, to start accessing loans.
+    You create an account via credisol.com an complete your CREDISOL profile, to start accessing loans.
 
     </Accordion.Body>
   </Accordion.Item>
@@ -192,7 +192,7 @@ const addbank = () =>{
     <Accordion.Header className="faqqheader">Are loans only open to business owners alone?
 </Accordion.Header>
     <Accordion.Body>
-    Small businesses, salary earners, medium enterprises, large ventures that meet the criteria for a loan are also to access financing from credisol.
+    Small businesses, salary earners, medium enterprises, large ventures that meet the criteria for a loan are also to access financing from CREDISOL.
 
     </Accordion.Body>
   </Accordion.Item>

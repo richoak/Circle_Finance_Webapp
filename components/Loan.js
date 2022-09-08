@@ -117,7 +117,7 @@ console.log(authCtx.isLoggedIn)
 </div>
 
 <div className="col-md-3 col-7">
-<p > <span className="loansareavailable2">Loan History</span> <br/>
+<p > <span className="loansareavailable2">Transaction History</span> <br/>
 <span  className="loansareavailablenote2"> Fill up the necessary information to verify and have full access to your account.</span></p>  
 
 </div>
