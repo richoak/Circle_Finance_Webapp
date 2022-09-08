@@ -94,7 +94,7 @@ const sum = finalarray.reduce((accumulator, object) => {
       let loantype
       let amount
 
-      if(responsethree[i].offer_code === "RO-VF-PF"){
+      if(responsethree[i].offer_code === "RO-VF-POF"){
         loantype = "Travel loan";
       }
 

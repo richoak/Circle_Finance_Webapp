@@ -86,9 +86,9 @@ const Home = (props) => {
 
         // setloanstatus("Pending")
 
-        if (data[0].offer_code === "RO-VF-PF") {
+        if (data[0].offer_code === "RO-VF-POF") {
           setloantype("Travel loan")
-          let amount = parseInt(data[0].balance).toLocaleString()
+          let amount = parseInt(data[0].principal).toLocaleString()
           setloanamount(amount)
 
           var defaultDates = data[0].created_at
