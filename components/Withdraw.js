@@ -138,6 +138,8 @@ const Withdraw = () => {
   
   const nextstep1 = () => {
     localStorage.getItem('pin')
+    console.log(typeof(parseInt(amountRef.current.value)))
+    console.log(typeof(parseInt(walletRef.current.value)))
     if(amountRef.current.value === ""){
       setnotify("Input an amount")
   }
@@ -150,7 +152,7 @@ else if(pinRef.current.value === ""){
   setnotify("Input your 4 digit pin")
 }
 
-else if (amountRef.current.value > walletRef.current.value ){
+else if (parseInt(amountRef.current.value) > parseInt(walletRef.current.value) ){
   setnotify("You do not have enough to make this transfer")
 }
 
