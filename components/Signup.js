@@ -134,7 +134,8 @@ const Signup = () => {
 
 
   const register1 = () => {
-    var email = document.getElementById("emailaddress").value
+    var email = document.getElementById("emailaddress").value.toLowerCase()
+    console.log(email)
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (email.match(mailformat)) {
       setnotify("")
@@ -180,7 +181,7 @@ const Signup = () => {
         //  "headers": { "X-ApiKey": "SfeILETE0TcCFOziCtTXBPxfqsmTR6aO5F+3cJRmobMf/w8HEVw7xqAvAyNPlD0O"},
         "data":
         {
-        "email" : document.getElementById("emailaddress").value,
+        "email" : document.getElementById("emailaddress").value.toLowerCase(),
           "password" : document.getElementById("password").value,
           "confirm_password" : document.getElementById("password").value,
           "phone_number" : document.getElementById("phone").value,

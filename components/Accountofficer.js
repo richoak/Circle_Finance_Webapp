@@ -16,6 +16,7 @@ const Accountofficer = () => {
   const [name, setName] = useState("")
   const [phone, setPhoneNumber] = useState("")
   const [email, setEmail] = useState("")
+  const [phonecall, setPhoneCall] = useState("")
 
 
 
@@ -25,6 +26,7 @@ const Accountofficer = () => {
       setName(data.first_name + " " + data.last_name)
       setPhoneNumber(data.phone_number)
       setEmail("mailto:" + data.email)
+      setPhoneCall("tel:" + data.phone_number)
       $(".overlay").fadeOut(0);
   })
 
@@ -74,13 +76,13 @@ const Accountofficer = () => {
 
 
               <p className="" style={{ textAlign: "center" }} >
-                {/* <a href={phone}> */}
+                <a href={phonecall}>
                   <button className="callbutton">
                     <Image className="" src="/images/call.svg" height="20" width="20" style={{paddingTop:"7px"}}/>
                     <span className="accountofficernumber" style={{ fontWeight: "bold", paddingLeft: "10px", }}>{phone} </span>
 
                   </button>
-                {/* </a> */}
+                </a>
               </p>
 
               <p className="" style={{ textAlign: "center" }} >

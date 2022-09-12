@@ -42,6 +42,13 @@ const Repay = () => {
       
         setAmount("N" + parseInt(responsethree.principal).toLocaleString())
         setDuration(responsethree.duration)
+        // if(responsethree.offer_name === "proof_of_funds"){
+        //   setLoanType("Proof of funds")
+        // }
+
+        // else{
+          
+        // }
         setLoanType(responsethree.offer_name)
         setStartDate(actualdate)
 
@@ -70,9 +77,16 @@ const Repay = () => {
  
 <div className="col-md-5 col-10 repaystepone">
 
-<Link className="goback" href="/home"  eventKey="2" activeClassName="is-active" >
+{/* <Link className="goback" href="/home"  eventKey="2" activeClassName="is-active" >
               <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
                 <Image className="" src="/images/arrow-left.svg" width="24" height="24"/> <span className="gobackp">Back</span></p>
+              </Link> */}
+
+              <Link className="goback" href="/home" eventKey="2" activeClassName="is-active" >
+              <p className="loansareavailable2 " style={{paddingLeft:"0px", cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
               </Link>
        
 

@@ -476,9 +476,18 @@ const Home = (props) => {
 
                   <span style={{ float: "right" }}>
 
-                    <Link className="" href={currentLoanId} eventKey="6" activeClassName="is-active" >
-                      <button className="paynowbutton" style={{ float: "right" }}>Repay <i className="fas fa-long-arrow-alt-right"></i></button>
-                    </Link>
+{
+  loanstatus ==="PENDING" &&      
+  <button className="paynowbutton" style={{ float: "right" }}>Awaiting Approval </button>
+
+}
+
+{
+  loanstatus ==="ACTIVE" &&      <Link className="" href={currentLoanId} eventKey="6" activeClassName="is-active" >
+  <button className="paynowbutton" style={{ float: "right" }}>Repay <i className="fas fa-long-arrow-alt-right"></i></button>
+</Link>
+}
+               
 
 
                   </span>

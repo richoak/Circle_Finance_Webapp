@@ -247,7 +247,7 @@ const durationRef = useRef()
     }
 
     else if (document.getElementById("rcnumber").value === "") {
-      setnotify("Input your RC Number")
+      setnotify("Input your BN Number")
     }
 
     else if (document.getElementById("registrationdate").value === "") {
@@ -451,8 +451,8 @@ console.log(loanofferid)
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>RC Number</Form.Label>
-                <Form.Control id="rcnumber" width="60px" type="number" placeholder="Input RC Number" ref={rcnumberRef} />
+                <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>BN Number</Form.Label>
+                <Form.Control id="rcnumber" width="60px" type="number" placeholder="Input BN Number" ref={rcnumberRef} />
               </Form.Group>
 
               {/* <Form.Group className="mb-3" controlId="formBasicEmail">

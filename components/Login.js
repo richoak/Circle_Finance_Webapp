@@ -209,7 +209,8 @@ const Login = () => {
       $(".spinner-border").css({ 'display': 'inline-block' });
       setnotify("")
 
-      const email = emailRef.current.value
+      const email = emailRef.current.value.toLowerCase()
+      console.log(email)
       const password = passwordRef.current.value
 
       const loginResponse = ((data) => {
