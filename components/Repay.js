@@ -1,11 +1,11 @@
-import React, { useEffect, useState, useReducer} from 'react';
+import React, { useEffect, useState, useRef, useReducer} from 'react';
 import {Container, Row,Button, Nav, Form, Accordion, Col} from 'react-bootstrap'
 import Link from 'next/link';
 
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
 import Image from 'next/image';
-
+import { useRouter } from 'next/router';
 import "../js/main.js"
 import $ from 'jquery'
 
@@ -18,7 +18,11 @@ const Repay = () => {
   const [duration, setDuration] = useState("")
   const [loantype, setLoanType] = useState("")
   const [startDate, setStartDate] = useState("")
-
+const [availableBalance, setAvailableBalance] = useState()
+const [ walletBalance, setWalletBalance] = useState(0)
+const [providusID, setProvidusID] = useState("")
+const router = useRouter();
+const amountRef = useRef()
 
   useEffect(() => {
     var pathname = window.location.href;
@@ -51,10 +55,85 @@ const Repay = () => {
         // }
         setLoanType(responsethree.offer_name)
         setStartDate(actualdate)
+        setAvailableBalance(localStorage.getItem("walletbalance"))
+        setProvidusID(localStorage.getItem("providusid"))
 
-        console.log(amount)
+      
       })
-  },[])
+
+      var pid = localStorage.getItem("providusid")
+
+      var settingsfour = {
+        "url": `https://credisol-app.herokuapp.com/v1/wallet/${localStorage.getItem("providusid")}/virtual_accounts/`,
+        "method": "GET",
+        "timeout": 0,
+        "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
+        error: function (xhr, status, error) {
+        },
+      }
+
+      $.ajax(settingsfour).done(function (responsefour) {
+        console.log(responsefour)
+        setWalletBalance(responsefour.balance)
+      })
+
+
+  })
+
+
+
+
+
+  const repay =()=>{
+    // if(amountRef.current.value < walletBalance){
+    //   setnotify("An error occured, Please try again")
+    // }
+
+    const obj ={
+      
+      "amount": amountRef.current.value,
+      "remarks": "internal inflow",
+      "sender" : providusID,
+      
+  }
+  
+    console.log(obj)
+    var settingsthree = {
+      url: 'https://credisol-app.herokuapp.com/v1/wallet/value_transfer/',
+      "method": "POST",
+      "timeout": 0,
+      "headers": {  'Content-Type': 'application/json',
+      "Authorization": "Bearer " + localStorage.getItem("access_token", )},
+      "data": JSON.stringify(obj)
+  
+      
+      ,
+      error: function (xhr, status, error) {
+        console.log(xhr)
+        setnotify("An error occured, Please try again")
+           $(".spinner-border").css({ 'display': 'none' });
+        // if(xhr.status === 401){
+        //   window.location.replace("/");
+        // }
+      },
+    }
+
+    $.ajax(settingsthree).done(function (responsethree) {
+      console.log(responsethree)
+      if(responsethree.error_code){
+        setnotify(responsethree.message)
+      }
+      else{
+        setnotify("Repayment made successfully, Redirecting...")
+        $(".spinner-border").css({ 'display': 'none' });
+        setTimeout(() => {
+          router.push('/home');
+        }, 2000);
+      }})
+      
+   
+
+  }
 
 
 
@@ -99,6 +178,8 @@ const Repay = () => {
         <p className="summaryhead">{amount}</p>
         <p  className="loansareavailablenote2">Loan duration</p>
         <p className="summaryhead">{duration} Month(s)</p>
+        <p  className="loansareavailablenote2">Available Balance</p>
+        <p className="summaryhead">{availableBalance} </p>
         {/* <p  className="loansareavailablenote2">Loan repayment</p> */}
         {/* <p class="summaryhead">N204,000.00</p> */}
     </div>
@@ -111,8 +192,14 @@ const Repay = () => {
     
         </div>
 </div>
+<Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "5px" }}>Amount to repay (&#8358;) </Form.Label>
+                <Form.Control id="loanamount" width="60px" type="number" placeholder="Input Amount" ref={amountRef}/>
+              </Form.Group>
+<p className="" style={{ color:"#DD3737", fontWeight:"bold",textAlign:"center"}}>{notify}</p>
+
   <p className="" style={{textAlign:"center"}} >
-<button  className="loanbutton" >Repay
+<button  onClick={repay} className="loanbutton" >Repay
 <div className="spinner-border spinner-border-sm" role="status">
 <span className="sr-only">Loading...</span>
 </div>

@@ -3,7 +3,7 @@ import { Nav, Form } from 'react-bootstrap'
 import Link from 'next/link';
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
-
+import { useRouter } from 'next/router';
 import "../js/main.js"
 import $ from 'jquery'
 import Pageloader from './Pageloader';
@@ -17,7 +17,7 @@ const Withdraw = () => {
   const amountRef = useRef()
   const destinationRef = useRef()
   const pinRef = useRef()
-
+  const router = useRouter();
 
   const [notify, setnotify] = useState("")
   const [walletBalance, setWalletBalance ] = useState(0)
@@ -197,6 +197,8 @@ else if(pinRef.current.value !==  localStorage.getItem("pin")){
       
       
     }
+
+    console.log(obj)
 
     var settingsthree = {
       url: 'https://credisol-app.herokuapp.com/v1/wallet/nip_transfer/',

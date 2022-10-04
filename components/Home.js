@@ -55,6 +55,7 @@ const Home = (props) => {
     const transformWallet = ((data) => {
       console.log(data)
       setWalletBalance(data.balance)
+      localStorage.setItem("walletbalance", data.balance)
  
       $(".overlay").fadeOut(0);
 
@@ -186,12 +187,12 @@ const Home = (props) => {
               arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
             }
 
-            else if (responsethree.transactions[i].remarks === "internal outflow") {
+            else if (responsethree.transactions[i].remarks === "internal_outflow") {
               remarks = "Loan Disbursement"
               arrow = "<i class='fas fa-long-arrow-alt-left makegreen'></i>"
             }
 
-            else if (responsethree.transactions[i].remarks === "internal inflow") {
+            else if (responsethree.transactions[i].remarks === "internal_inflow") {
               remarks = "Loan Repayment"
               arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
             }
