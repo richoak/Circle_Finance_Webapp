@@ -307,12 +307,12 @@ const Home = (props) => {
               arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
             }
 
-            else if (responsethree.transactions[i].remarks === "internal outflow") {
+            else if (responsethree.transactions[i].remarks === "internal_outflow") {
               remarks = "Loan Disbursement"
               arrow = "<i class='fas fa-long-arrow-alt-left makegreen'></i>"
             }
 
-            else if (responsethree.transactions[i].remarks === "internal inflow") {
+            else if (responsethree.transactions[i].remarks === "internal_inflow") {
               remarks = "Loan Repayment"
               arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
             }
@@ -593,8 +593,8 @@ const Home = (props) => {
                     <option value="">All Transactions</option>
                     <option value="providus inflow">Deposit</option>
                     <option value="providus outflow">Withdrawal</option>
-                    <option value="internal outflow">Loan Disbursement</option>
-                    <option value="internal inflow">Loan Repayment</option>
+                    <option value="internal_outflow">Loan Disbursement</option>
+                    <option value="internal_inflow">Loan Repayment</option>
 
                   </Form.Select>
 

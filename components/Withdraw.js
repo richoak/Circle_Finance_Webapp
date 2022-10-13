@@ -15,6 +15,7 @@ const Withdraw = () => {
   
   const walletRef = useRef()
   const amountRef = useRef()
+  const receivableAmountRef = useRef()
   const destinationRef = useRef()
   const pinRef = useRef()
   const router = useRouter();
@@ -25,6 +26,22 @@ const Withdraw = () => {
   const [ bank, setBank ] = useState("")
   const [ providusaccountnumber, setprovidusaccountnumber ] = useState("")
   const [ pin, setPin ] = useState("")
+  const [ receivableBalance, setReceivableBanlance] = useState(0)
+
+  const calcReceivable = () => {
+    if(amountRef.current.value < "5000"){
+      const amount = +amountRef.current.value - 10
+      setReceivableBanlance(amount)
+    }
+    if(amountRef.current.value >= "5000" && amountRef.current.value <="50000" ){
+      const amount = +amountRef.current.value - 25
+      setReceivableBanlance(amount)
+    }
+    if(amountRef.current.value > "50000"){
+      const amount = +amountRef.current.value - 50
+      setReceivableBanlance(amount)
+    }
+  }
 
   useEffect(() => {
 
@@ -168,7 +185,7 @@ else if(pinRef.current.value !==  localStorage.getItem("pin")){
     const beneficiary_account_name = localStorage.getItem("lastname") + " " +   localStorage.getItem("firstname")
     const beneficiary_account_number = localStorage.getItem("accountnumber")
    
-    const transaction_amount = amountRef.current.value
+    const transaction_amount = receivableAmountRef.current.value
     const transaction_reference = "CS"
     const narration = "Transfer from credisol"
     const source_account_name = localStorage.getItem("lastname") + " " +   localStorage.getItem("firstname")
@@ -222,12 +239,16 @@ else if(pinRef.current.value !==  localStorage.getItem("pin")){
 
     $.ajax(settingsthree).done(function (responsethree) {
       console.log(responsethree)
+      if(responsethree.error_code){
+        setnotify("An error occured, Please try again")
+      }
+      else{
       $(".spinner-border").css({ 'display': 'none' });
       $(".withdrawstepone").slideDown();
       $(".withdrawstepone").css({ 'display': 'none' });
       $(".withdrawsteptwo").toggle( "slide" );
       $(".overlay").fadeOut(0);
-
+      }
       // window.location.replace("/profileoptions");
     })
 
@@ -270,11 +291,17 @@ window.location.replace("/home");
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Wallet Balance</Form.Label>
       <Form.Control   id="" width="60px" type="text" ref={walletRef} value={walletBalance} placeholder="Amount to withdraw" disabled/>
+
   </Form.Group>
   
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Amount to withdraw</Form.Label>
-      <Form.Control   id="amount" width="60px" ref={amountRef} type="text" placeholder="Amount to withdraw" />
+      <Form.Control   id="amount" width="60px"  onKeyUp={calcReceivable} ref={amountRef} type="text" placeholder="Amount to withdraw" />
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"0px",paddingBottom:"0px"}}>Receivable Amount</Form.Label>
+      <Form.Control   id="amount" width="60px"   ref={receivableAmountRef} type="text" value={receivableBalance} disabled />
   </Form.Group>
    
   <Form.Group className="mb-3" controlId="formBasicEmail">
