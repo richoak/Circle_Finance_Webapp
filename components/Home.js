@@ -53,7 +53,7 @@ const Home = (props) => {
     const providusid = localStorage.getItem("providusid")
     $(".overlay").fadeIn(1);
     const transformWallet = ((data) => {
-      console.log(data)
+      // console.log(data)
       setWalletBalance(data.balance)
       localStorage.setItem("walletbalance", data.balance)
  
@@ -112,6 +112,7 @@ const Home = (props) => {
           var status = (data[0].status).toUpperCase();
           setloanrequestdate(actualdate)
           setloanstatus(status)
+          console.log(loanstatus)
           setCurrentLoanId("/repay/?id=" + data[0].loan_id)
         }
       }
@@ -133,7 +134,7 @@ const Home = (props) => {
 
   // FILTER TRANSACTIONS
   const filterTransaction = (e) => {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     setPaymentsFilter(e.target.value)
   }
     // FILTER TRANSACTIONS
@@ -158,12 +159,12 @@ const Home = (props) => {
 
       $.ajax(settingsthree).done(function (responsethree) {
         if (responsethree != "") {
-          console.log(responsethree)
+          // console.log(responsethree)
           $(".homepagenotransactions").css({ 'display': 'none' });
           $(".homepagetransactions").css({ 'display': 'block' });
 
           $.each(responsethree.transactions, function (i) {
-            console.log(responsethree.transactions[i])
+            // console.log(responsethree.transactions[i])
             var table = document.getElementById('records_table');
             // console.log(table)
             var tr = document.createElement('tr');
@@ -270,7 +271,7 @@ const Home = (props) => {
 
         "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token") },
         error: function (xhr, status, error) {
-          console.log(xhr)
+          // console.log(xhr)
 
         },
       }
@@ -484,7 +485,7 @@ const Home = (props) => {
 }
 
 {
-  loanstatus ==="ACTIVE" &&      <Link className="" href={currentLoanId} eventKey="6" activeClassName="is-active" >
+  loanstatus ==="APPROVED" &&      <Link className="" href={currentLoanId} eventKey="6" activeClassName="is-active" >
   <button className="paynowbutton" style={{ float: "right" }}>Repay <i className="fas fa-long-arrow-alt-right"></i></button>
 </Link>
 }

@@ -18,6 +18,7 @@ const Repay = () => {
   const [duration, setDuration] = useState("")
   const [loantype, setLoanType] = useState("")
   const [startDate, setStartDate] = useState("")
+  const [loanID, setLoanID] = useState("")
 const [availableBalance, setAvailableBalance] = useState()
 const [ walletBalance, setWalletBalance] = useState(0)
 const [providusID, setProvidusID] = useState("")
@@ -55,6 +56,7 @@ const amountRef = useRef()
         // }
         setLoanType(responsethree.offer_name)
         setStartDate(actualdate)
+        setLoanID(responsethree.loan_id)
         setAvailableBalance(localStorage.getItem("walletbalance"))
         setProvidusID(localStorage.getItem("providusid"))
 
@@ -189,6 +191,8 @@ const amountRef = useRef()
     <p className="summaryhead">{loantype}</p>
     <p  className="loansareavailablenote2">Start Date</p>
     <p className="summaryhead">{startDate}</p>
+    <p  className="loansareavailablenote2">Loan ID</p>
+    <p className="summaryhead">{loanID}</p>
     
         </div>
 </div>
