@@ -73,7 +73,7 @@ const updatepinpage= () =>{
 }
 useEffect(() => {
   var settings = {
-    "url": "https://credisol-app.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
+    "url": "https://credisol-main.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
     "method": "GET",
     "timeout": 0,
     "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
@@ -158,7 +158,7 @@ else if ( oldpin === newpin){
 
 else{
   var settingsthree = {
-    "url": "https://credisol-app.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
+    "url": "https://credisol-main.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
     "method": "PATCH",
     "timeout": 0,
     "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
@@ -243,7 +243,7 @@ else if ( newpassword !== confirmpassword){
 
 else{
   var settingsthree = {
-    "url": "https://credisol-app.herokuapp.com/v1/registration/update_password/",
+    "url": "https://credisol-main.herokuapp.com/v1/registration/update_password/",
     "method": "PATCH",
     "timeout": 0,
     "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},

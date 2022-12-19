@@ -37,7 +37,7 @@ const continueButton = () => {
 
   useEffect(() => {
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
+      "url": "https://credisol-main.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
       "method": "GET",
       "timeout": 0,
 

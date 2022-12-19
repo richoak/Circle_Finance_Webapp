@@ -235,7 +235,7 @@ const dateRef = useRef()
   // GET LOAN OFFER ID
   useEffect(() =>{
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/loans/offers/business_loan/",
+      "url": "https://credisol-main.herokuapp.com/v1/loans/offers/business_loan/",
       "method": "GET",
       "timeout": 0,
       "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
@@ -257,7 +257,7 @@ const dateRef = useRef()
     // GET USER BVN
   useEffect(() => {
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
+      "url": "https://credisol-main.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
       "method": "GET",
       "timeout": 0,
       "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")}
@@ -418,7 +418,7 @@ const nextstep3 = () =>{
       
       console.log(JSON.stringify(obj))
           var settingsthree = {
-            "url": "https://credisol-app.herokuapp.com/v1/business_loans/",
+            "url": "https://credisol-main.herokuapp.com/v1/business_loans/",
             "method": "POST",
             "timeout": 0,
             "headers": {

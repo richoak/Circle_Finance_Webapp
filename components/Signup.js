@@ -175,7 +175,7 @@ const Signup = () => {
     }
     else {
       var settingsthree = {
-        "url": "https://credisol-app.herokuapp.com/v1/registration/sign_up/",
+        "url": "https://credisol-main.herokuapp.com/v1/registration/sign_up/",
         "method": "POST",
         "timeout": 0,
         //  "headers": { "X-ApiKey": "SfeILETE0TcCFOziCtTXBPxfqsmTR6aO5F+3cJRmobMf/w8HEVw7xqAvAyNPlD0O"},
@@ -282,7 +282,7 @@ setpin1(pin1)
     $(".registerbox5").css({ 'display': 'block' });
 
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/users/" + userid + "/",
+      "url": "https://credisol-main.herokuapp.com/v1/users/" + userid + "/",
       "method": "PATCH",
       "timeout": 0,
       error: function (xhr, status, error) {
@@ -319,7 +319,7 @@ setpin1(pin1)
     setnotify3("Requesting...")
     // console.log(email)
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/registration/resend_confirmation_pin/",
+      "url": "https://credisol-main.herokuapp.com/v1/registration/resend_confirmation_pin/",
       "method": "POST",
       "timeout": 0,
       "data":

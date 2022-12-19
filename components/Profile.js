@@ -67,7 +67,7 @@ const Profile = () => {
 
         document.getElementById("profilepictureid").src = data.url
         var settingsthree = {
-          "url": "https://credisol-app.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
+          "url": "https://credisol-main.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
           "method": "PATCH",
           "timeout": 0,
           "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
@@ -108,7 +108,7 @@ const Profile = () => {
 
   useEffect(() => {
     var settings = {
-      "url": "https://credisol-app.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
+      "url": "https://credisol-main.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
       "method": "GET",
       "timeout": 0,
       "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
@@ -191,7 +191,7 @@ const savechanges = () => {
   else{
     $(".spinner-border").css({ 'display': 'inline-block' });
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
+      "url": "https://credisol-main.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
       "method": "PATCH",
       "timeout": 0,
       "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},

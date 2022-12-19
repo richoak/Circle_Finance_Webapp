@@ -63,7 +63,7 @@ const Home = (props) => {
 
 
   fetchWallet({
-      url: `https://credisol-app.herokuapp.com/v1/wallet/${providusid}/virtual_accounts/`,
+      url: `https://credisol-main.herokuapp.com/v1/wallet/${providusid}/virtual_accounts/`,
       method: "GET",
       headers: { 
           'Content-Type': 'application/json',
@@ -89,21 +89,23 @@ const Home = (props) => {
 
         if (data[0].offer_code === "RO-VF-POF") {
           setloantype("Travel loan")
-          let amount = parseInt(data[0].principal).toLocaleString()
+          let amount = parseInt(data[0].balance).toLocaleString()
           setloanamount(amount)
 
           var defaultDates = data[0].created_at
           var d = new Date(defaultDates).toString();
           var actualdate = d.split(' ').splice(0, 5).join(' ')
           var status = (data[0].status).toUpperCase();
+          console.log(status)
           setloanrequestdate(actualdate)
           setloanstatus(status)
+          console.log(loanstatus)
           setCurrentLoanId("/repay/?id=" + data[0].loan_id)
         }
 
         else if (data[0].offer_code === "RO-BL-BL") {
           setloantype("Business loan")
-          let amount = parseInt(data[0].principal).toLocaleString()
+          let amount = parseInt(data[0].balance).toLocaleString()
           setloanamount(amount)
 
           var defaultDates = data[0].created_at
@@ -122,7 +124,7 @@ const Home = (props) => {
 
 
   fetchLoans({
-      url: 'https://credisol-app.herokuapp.com/v1/loans/all/',
+      url: 'https://credisol-main.herokuapp.com/v1/loans/all/',
       method: "GET",
       headers: { 
           'Content-Type': 'application/json',
@@ -146,7 +148,7 @@ const Home = (props) => {
 
     if (paymentsFilter === "") {
       var settingsthree = {
-        "url": `https://credisol-app.herokuapp.com/v1/wallet/${localStorage.getItem("providusid")}/virtual_accounts?remarks=` + paymentsFilter,
+        "url": `https://credisol-main.herokuapp.com/v1/wallet/${localStorage.getItem("providusid")}/virtual_accounts?limit=100&remarks=` + paymentsFilter,
         "method": "GET",
         "timeout": 0,
 
@@ -158,8 +160,9 @@ const Home = (props) => {
       }
 
       $.ajax(settingsthree).done(function (responsethree) {
+        console.log(responsethree)
         if (responsethree != "") {
-          // console.log(responsethree)
+          
           $(".homepagenotransactions").css({ 'display': 'none' });
           $(".homepagetransactions").css({ 'display': 'block' });
 
@@ -265,7 +268,7 @@ const Home = (props) => {
 
     else {
       var settingsthree = {
-        "url": `https://credisol-app.herokuapp.com/v1/wallet/${localStorage.getItem("providusid")}/virtual_accounts?remarks=` + paymentsFilter,
+        "url": `https://credisol-main.herokuapp.com/v1/wallet/${localStorage.getItem("providusid")}/virtual_accounts?limit0&remarks=` + paymentsFilter,
         "method": "GET",
         "timeout": 0,
 
@@ -481,12 +484,17 @@ const Home = (props) => {
 {
   loanstatus ==="PENDING" &&      
   <button className="paynowbutton" style={{ float: "right" }}>Awaiting Approval </button>
-
 }
 
 {
-  loanstatus ==="APPROVED" &&      <Link className="" href={currentLoanId} eventKey="6" activeClassName="is-active" >
+  loanstatus ==="APPROVED" || loanstatus === "ACTIVE" &&      <Link className="" href={currentLoanId} eventKey="6" activeClassName="is-active" >
   <button className="paynowbutton" style={{ float: "right" }}>Repay <i className="fas fa-long-arrow-alt-right"></i></button>
+</Link>
+}
+
+{
+  loanstatus ==="DECLINED" &&      <Link className="" href="/loanproducts" eventKey="6" activeClassName="is-active" >
+  <button className="paynowbutton" style={{ float: "right" }}>Request Again <i className="fas fa-long-arrow-alt-right"></i></button>
 </Link>
 }
                

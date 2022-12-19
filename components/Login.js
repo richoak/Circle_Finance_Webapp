@@ -55,7 +55,7 @@ const Login = () => {
       setnotify("Processing...")
 
       var settingsthree = {
-        "url": "https://credisol-app.herokuapp.com/v1/registration/password_reset_email/",
+        "url": "https://credisol-main.herokuapp.com/v1/registration/password_reset_email/",
         "method": "POST",
         "timeout": 0,
         "data":
@@ -161,7 +161,7 @@ const Login = () => {
       setnotify("Processing...")
       var settingsthree = {
 
-        "url": "https://credisol-app.herokuapp.com/v1/registration/reset_password/" + uid + "/" + pin1 + "/",
+        "url": "https://credisol-main.herokuapp.com/v1/registration/reset_password/" + uid + "/" + pin1 + "/",
         "method": "POST",
         "timeout": 0,
         "data":
@@ -246,7 +246,7 @@ const Login = () => {
     })
 
     sendLoginRequest({
-        "url": "https://credisol-app.herokuapp.com/v1/registration/sign_in/",
+        "url": "https://credisol-main.herokuapp.com/v1/registration/sign_in/",
         method: "POST",
         headers: { 
           'Content-Type': 'application/json',

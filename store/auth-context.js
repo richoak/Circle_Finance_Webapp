@@ -34,7 +34,7 @@ export const AuthContextProvider = (props) => {
 
     async function makeRequest() {
         try {
-          const response = await fetch('https://credisol-app.herokuapp.com/v1/registration/sign_in/', {
+          const response = await fetch('https://credisol-main.herokuapp.com/v1/registration/sign_in/', {
            method: 'POST',
             body: JSON.stringify({
                 email:email,

@@ -35,7 +35,7 @@ const Nextofkin = () => {
 // console.log(localStorage.getItem("access_token"))
   useEffect(() => {
     var settings = {
-      "url": "https://credisol-app.herokuapp.com/v1/user_nok/" + localStorage.getItem("userid") + "/",
+      "url": "https://credisol-main.herokuapp.com/v1/user_nok/" + localStorage.getItem("userid") + "/",
       "method": "GET",
       "timeout": 0,
       "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
@@ -135,7 +135,7 @@ else if ( document.getElementById("relationship").value === ""){
 
 else{
   var settingsthree = {
-    "url": "https://credisol-app.herokuapp.com/v1/user_nok/",
+    "url": "https://credisol-main.herokuapp.com/v1/user_nok/",
     "method": "POST",
     "timeout": 0,
     "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},

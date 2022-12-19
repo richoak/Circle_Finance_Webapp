@@ -27,7 +27,7 @@ const History = () => {
     $('#records_table').empty()
     if(loanTypeFilter === ""){
       var settingsthree = {
-        "url": `https://credisol-app.herokuapp.com/v1/wallet/${localStorage.getItem("providusid")}/virtual_accounts/`,
+        "url": `https://credisol-main.herokuapp.com/v1/wallet/${localStorage.getItem("providusid")}/virtual_accounts/`,
         "method": "GET",
         "timeout": 0,
         
@@ -133,7 +133,7 @@ const History = () => {
 
     else{
       var settingsthree = {
-        "url": `https://credisol-app.herokuapp.com/v1/wallet/${localStorage.getItem("providusid")}/virtual_accounts?remarks=` + loanTypeFilter,
+        "url": `https://credisol-main.herokuapp.com/v1/wallet/${localStorage.getItem("providusid")}/virtual_accounts?remarks=` + loanTypeFilter,
         "method": "GET",
         "timeout": 0,
         

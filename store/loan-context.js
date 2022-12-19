@@ -12,7 +12,7 @@ export const LoanContextProvider = (props) => {
   const addLoanHandler = (amount, duration) => {
     async function makeRequest() {
         try {
-          const response = await fetch('https://credisol-app.herokuapp.com/v1/loans/all/', {
+          const response = await fetch('https://credisol-main.herokuapp.com/v1/loans/all/', {
            method: 'POST',
             body: JSON.stringify({
                 email:amount,
@@ -41,7 +41,7 @@ export const LoanContextProvider = (props) => {
     console.log(accesstoken)
     async function makeRequest() {
         try {
-            const response = await fetch('https://credisol-app.herokuapp.com/v1/loans/all/', {
+            const response = await fetch('https://credisol-main.herokuapp.com/v1/loans/all/', {
                 headers: { 
                  'Content-Type': 'application/json',
                  "Authorization": "Bearer " + accesstoken

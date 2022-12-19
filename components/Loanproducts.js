@@ -15,7 +15,8 @@ const Loanproducts = () => {
 
   useEffect(() => {
     const transformLoans = ((data) => {
-      if(data.length!== 0){
+      console.log(data[0].stat)
+      if(data[0].status!== "declined"){
         setLoanExist(true);
     }
     else{
@@ -26,7 +27,7 @@ const Loanproducts = () => {
 
 
   fetchLoans({
-      url: 'https://credisol-app.herokuapp.com/v1/loans/all/',
+      url: 'https://credisol-main.herokuapp.com/v1/loans/all/',
       method: "GET",
       headers: { 
           'Content-Type': 'application/json',

@@ -83,7 +83,7 @@ const Travelloan = () => {
 
   useEffect(() =>{
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/loans/offers/proof_of_funds/",
+      "url": "https://credisol-main.herokuapp.com/v1/loans/offers/proof_of_funds/",
       "method": "GET",
       "timeout": 0,
       "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
@@ -213,7 +213,7 @@ const obj ={
 
 console.log(JSON.stringify(obj))
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/loans/pof/",
+      "url": "https://credisol-main.herokuapp.com/v1/loans/pof/",
       "method": "POST",
       "timeout": 0,
       "headers": {

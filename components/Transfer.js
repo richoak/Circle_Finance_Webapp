@@ -26,7 +26,7 @@ const Transfer = () => {
 //   useEffect(() => {
 //     $(".overlay").fadeIn(1);
 //     var settingsthree = {
-//       "url": "https://credisol-app.herokuapp.com/v1/loans/all/",
+//       "url": "https://credisol-main.herokuapp.com/v1/loans/all/",
 //       "method": "GET",
 //       "timeout": 0,
       

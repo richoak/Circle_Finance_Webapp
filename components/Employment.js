@@ -108,7 +108,7 @@ const Employment = () => {
 // GET PRESENT EMPLOYMENT DETAILS
   useEffect(() => {
     var settings = {
-      "url": "https://credisol-app.herokuapp.com/v1/user_employment/" + localStorage.getItem("userid") + "/",
+      "url": "https://credisol-main.herokuapp.com/v1/user_employment/" + localStorage.getItem("userid") + "/",
       "method": "GET",
       "timeout": 0,
       "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
@@ -181,7 +181,7 @@ const Employment = () => {
   
   else{
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/user_employment/",
+      "url": "https://credisol-main.herokuapp.com/v1/user_employment/",
       "method": "POST",
       "timeout": 0,
       "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
@@ -244,7 +244,7 @@ const Employment = () => {
   
   else{
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/user_employment/"  + localStorage.getItem("userid") + "/",
+      "url": "https://credisol-main.herokuapp.com/v1/user_employment/"  + localStorage.getItem("userid") + "/",
       "method": "PATCH",
       "timeout": 0,
       "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},

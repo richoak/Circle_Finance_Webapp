@@ -143,7 +143,7 @@ const Withdraw = () => {
 
 
   fetchWallet({
-      url: `https://credisol-app.herokuapp.com/v1/wallet/${providusid}/virtual_accounts/`,
+      url: `https://credisol-main.herokuapp.com/v1/wallet/${providusid}/virtual_accounts/`,
       method: "GET",
       headers: { 
           'Content-Type': 'application/json',
@@ -218,7 +218,7 @@ else if(pinRef.current.value !==  localStorage.getItem("pin")){
     console.log(obj)
 
     var settingsthree = {
-      url: 'https://credisol-app.herokuapp.com/v1/wallet/nip_transfer/',
+      url: 'https://credisol-main.herokuapp.com/v1/wallet/nip_transfer/',
       "method": "POST",
       "timeout": 0,
       "headers": {  'Content-Type': 'application/json',

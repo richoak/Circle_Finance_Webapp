@@ -46,7 +46,7 @@ const Statement = () => {
     console.log(loanid)
     $(".overlay").fadeIn(1);
     var settingsthree = {
-      "url": "https://credisol-app.herokuapp.com/v1/payments?loan_id=" + loanid,
+      "url": "https://credisol-main.herokuapp.com/v1/payments?loan_id=" + loanid,
       "method": "GET",
       "timeout": 0,
       

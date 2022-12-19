@@ -32,7 +32,7 @@ const Accountofficer = () => {
 
 
   fetchAccountOfficer({
-      url: "https://credisol-app.herokuapp.com/v1/users/" + localStorage.getItem("creditofficer") + "/",
+      url: "https://credisol-main.herokuapp.com/v1/users/" + localStorage.getItem("creditofficer") + "/",
       method: "GET",
       headers: { 
           'Content-Type': 'application/json',
