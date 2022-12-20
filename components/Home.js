@@ -192,12 +192,12 @@ const Home = (props) => {
             }
 
             else if (responsethree.transactions[i].remarks === "internal_outflow") {
-              remarks = "Loan Disbursement"
+              remarks = "Loan Repayment"
               arrow = "<i class='fas fa-long-arrow-alt-left makegreen'></i>"
             }
 
             else if (responsethree.transactions[i].remarks === "internal_inflow") {
-              remarks = "Loan Repayment"
+              remarks = "Loan Disbursement"
               arrow = "<i class='fas fa-long-arrow-alt-left makered'></i>"
             }
 
