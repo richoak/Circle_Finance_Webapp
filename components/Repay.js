@@ -94,6 +94,12 @@ const amountRef = useRef()
       return
     }
 
+    else if(amountRef.current.value <= availableBalance){
+      setnotify("An error occured, Please try again")
+      $(".spinner-border").css({ 'display': 'none' });
+      return
+    }
+
     const obj ={
       
       "amount": amountRef.current.value,
