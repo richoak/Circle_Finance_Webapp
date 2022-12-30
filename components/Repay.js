@@ -45,7 +45,7 @@ const amountRef = useRef()
         var actualdate = d.split(' ').splice(0, 5).join(' ')
         var actualdate2 = d.split(' ').splice(3, 1).join(' ')
       
-        setAmount("N" + parseInt(responsethree.balance).toLocaleString())
+        setAmount("N" + parseInt(responsethree.monthly_repayment).toLocaleString())
         setDuration(responsethree.duration)
         // if(responsethree.offer_name === "proof_of_funds"){
         //   setLoanType("Proof of funds")
@@ -188,7 +188,7 @@ const amountRef = useRef()
 <p  className="loansareavailablenote2 summarynote">Here is a summary of your loan application</p>
 <div className="row summarybox">
     <div className="col-md-6 col-6 summarydiv1">
-        <p  className="loansareavailablenote2">Loan amount</p>
+        <p  className="loansareavailablenote2">Repayment amount</p>
         <p className="summaryhead">{amount}</p>
         <p  className="loansareavailablenote2">Loan duration</p>
         <p className="summaryhead">{duration} Month(s)</p>

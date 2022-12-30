@@ -15,7 +15,7 @@ const Loanproducts = () => {
 
   useEffect(() => {
     const transformLoans = ((data) => {
-      console.log(data[0].stat)
+      // console.log(data[0].status)
       if(data[0].status!== "declined"){
         setLoanExist(true);
     }
