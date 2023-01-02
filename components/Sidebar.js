@@ -8,7 +8,7 @@ const Sidebar = () => {
 
     return(
         <Fragment>
-                  <p className="navbarlogo"> <Image className="brandlogo navbarlogo" src="/images/logo.svg" width="100" height="80"/></p>
+                  <p className="navbarlogo"> <Image className="brandlogo navbarlogo" src="/images/logo.jpeg" width="100" height="25"/></p>
        
        <Link className="" href="/home" activeClassName="is-active" >
           <p className={router.pathname == "/home" ? "thenavbarmenu thenavbaractive" : "thenavbarmenu"}>

@@ -13,7 +13,7 @@ return(
 
 <Navbar bg="light" expand="lg">
   <Container fluid>
-    <Navbar.Brand href="/"><Image className="brandlogo" width="100" height="20" src="/images/logo.svg" /></Navbar.Brand>
+    <Navbar.Brand href="/"><Image className="brandlogo" width="100" height="20" src="/images/logo.jpeg" /></Navbar.Brand>
 
 
     {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />

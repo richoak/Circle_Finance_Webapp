@@ -1,6 +1,7 @@
-import React, { useEffect, useState, useReducer } from 'react';
+import React, { useEffect, useState, useRef, useReducer } from 'react';
 import { Container, Row, Button, Nav, Form, Accordion, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 import Header from './Header';
 import Image from 'next/image';
@@ -30,6 +31,12 @@ const Signup = () => {
   const [pin2, setpin2] = useState("")
 
 
+  const gobacktostep1 = () => {
+    $(".registerbox2").slideDown();
+    $(".registerbox2").css({ 'display': 'none' });
+    $(".registerbox1").toggle("slide");
+  }
+  
   const inputemail = () => {
     // $('.emaillabel').css("color", "#DD3737");
     $(".continuebutton").removeClass("accessbutton2");
@@ -506,12 +513,24 @@ setpin1(pin1)
 
 
                 </p>
+                <p style={{fontSize:"14px", }}>Have An Account? 
 
+<Link href="/" style={{ textDecoration: "none" }}> 
+<span style={{paddingLeft:"5px", color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px", cursor:"pointer" }}>
+  Sign in now</span>
+  </Link> 
+  {/* <span style={{ float: "right", color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px", cursor: "pointer" }} 
+  onClick={forgotpassword0} >Forgot password</span> */}
+  </p>
 
               </div>
 
               <div className="registerbox2">
-
+              <p onClick={gobacktostep1}  className="loansareavailable2" style={{cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
+                
                 <h1 className="letsgetstartedstepheading">
                   Step 1/3
                 </h1>

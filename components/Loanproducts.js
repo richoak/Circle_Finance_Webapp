@@ -16,13 +16,26 @@ const Loanproducts = () => {
   useEffect(() => {
     const transformLoans = ((data) => {
       // console.log(data[0].status)
-      if(data[0].status!== "declined"){
-        setLoanExist(true);
+      console.log(data)
+      console.log(typeof(data))
+  
+
+    if (data.length === 0){
+      // console.log("kk")
+      setLoanExist(false);
+      $(".overlay").fadeOut(0);
+      return
     }
+    else if(data[0].status!== "declined"){
+      setLoanExist(true);
+      $(".overlay").fadeOut(0);
+  }
+
     else{
       setLoanExist(false);
+      $(".overlay").fadeOut(0);
     }
-    $(".overlay").fadeOut(0);
+    // $(".overlay").fadeOut(0);
   })
 
 
@@ -35,7 +48,7 @@ const Loanproducts = () => {
       }
   }, transformLoans)
    
-  }, [])
+  }, [fetchLoans])
   
     return (
       
