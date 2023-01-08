@@ -80,7 +80,10 @@ const Travelloan = () => {
   const [ additionaldocumenturl, setadditionaldocumenturl ] = useState("");
   // const [employmentletter, setemploymentletter ] = useState("/images/employmentletter.svg");
   // const [admissionletter, setadmissionletter ] = useState("/images/admissionletter.svg");
-
+  const [ internationalpassport, setinternationalpassport ] = useState(false);
+  const [ signedofferletter, setsignedofferletter ] = useState(false)
+    const [ internationalpassporturl, setinternationalpassporturl ] = useState();
+  const [ signedofferletterurl, setsignedofferletterurl ] = useState()
   useEffect(() =>{
     var settingsthree = {
       "url": "https://credisol-main.herokuapp.com/v1/loans/offers/proof_of_funds/",
@@ -266,17 +269,29 @@ window.location.replace("/home");
       .then(resp => resp.json())
       .then(data => {
       setpassporturl(data.url)
-      console.log(data)
+
+     
       if(data.error){
         document.getElementById("passport").src = "/images/passport.svg"
         $(".overlay").fadeOut(0);
         // $('.loading').css("visibility", "hidden");
       }
       else{
-        document.getElementById("passport").src = data.url
-        $(".overlay").fadeOut(0);
-        // localStorage.setItem("songart", data.secure_url);
-        // $('.loading').css("visibility", "hidden");
+        var getextension = data.url.split(/[#?]/)[0].split('.').pop().trim();
+        if(getextension === "pdf"){
+          document.getElementById("passport").src = "/images/tick-circle.svg"
+          $(".overlay").fadeOut(0);
+          setinternationalpassport(true)
+          setinternationalpassporturl(data.url)
+        }
+        else {
+          document.getElementById("passport").src = data.url
+          $(".overlay").fadeOut(0);
+          setinternationalpassport(true)
+          setinternationalpassporturl(data.url)
+        }
+  
+
       }
   
   
@@ -314,10 +329,21 @@ window.location.replace("/home");
         // $('.loading').css("visibility", "hidden");
       }
       else{
-        document.getElementById("additionaldocument").src = data.url
-        $(".overlay").fadeOut(0);
-        // localStorage.setItem("songart", data.secure_url);
-        // $('.loading').css("visibility", "hidden");
+        var getextension = data.url.split(/[#?]/)[0].split('.').pop().trim();
+        if(getextension === "pdf"){
+          document.getElementById("additionaldocument").src =  "/images/tick-circle.svg"
+          $(".overlay").fadeOut(0);
+          setsignedofferletter(true)
+          setsignedofferletterurl(data.url)
+        }
+        else{
+          document.getElementById("additionaldocument").src = data.url
+          $(".overlay").fadeOut(0);
+          setsignedofferletter(true)
+          setsignedofferletterurl(data.url)
+        }
+   
+     
       }
       })
       .catch(err => console.log(err))
@@ -689,7 +715,9 @@ window.location.replace("/home");
         <p className="summaryhead">1,500.00</p>
         </div>
 </div>
+<p style={{fontSize:"14px", textAlign:"center", paddingTop:"20px"}}> On clicking the button below you agree to the <a target="_blank" href="/images/loanagreement.pdf">Terms and Conditions</a></p>
   <p className="" style={{textAlign:"center"}} >
+   
 <button  className="loanbutton" onClick={nextstep3}>Finalize loan application
 <div className="spinner-border spinner-border-sm" role="status">
 <span className="sr-only">Loading...</span>
@@ -718,10 +746,11 @@ window.location.replace("/home");
     <div className="image-upload empimgupload">
     <p style={{fontSize:"12px"}}>- International Passport</p>
   <label htmlFor="file">
-    <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <Image className="mobileuploadimages" alt="" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="passport"  width="183" height="100" src={ passport} />
   </label>
   <input type="file" id="file" onChange= {(e)=> setpassport(e.target.files[0])}></input>
+  {internationalpassport ? <a style={{textDecoration:"none", color:"#DD3737", fontSize:"12px"}} target="_blank" rel="noreferrer" href={internationalpassporturl}>Preview Passport</a> : <p></p>}
 </div>
     </div>
 
@@ -729,11 +758,11 @@ window.location.replace("/home");
     <div className="image-upload empimgupload">
     <p style={{fontSize:"12px"}}>- Signed offer letter</p>
   <label htmlFor="file2">
-    <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <Image className="mobileuploadimages" alt="" style={{marginBottom:"40px", cursor:"pointer "}} 
      id="additionaldocument"  width="183" height="100" src={additionaldocument} />
   </label>
   <input type="file" id="file2" onChange= {(e)=> setadditionaldocument(e.target.files[0])}></input>
-
+  {signedofferletter ? <a  style={{textDecoration:"none", color:"#DD3737", fontSize:"12px"}}  target="_blank"  rel="noreferrer"  href={signedofferletterurl}>Preview Offer Letter</a> : <p></p>}
 </div>
 </div>
 

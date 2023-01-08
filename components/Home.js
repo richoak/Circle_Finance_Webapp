@@ -10,6 +10,10 @@ import useHttp from '../hooks/use-http';
 
 import Image from 'next/image';
 import LoanContext from '../store/loan-context';
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+
+
 
 
 
@@ -40,6 +44,9 @@ const Home = (props) => {
   const [duedate, setduedate] = useState("")
   const [loanstatus, setloanstatus] = useState("")
   const [loanamount, setloanamount] = useState(0)
+  const [interestamount, setinterestamount] = useState(0)
+  const [interestrate, setinterestrate] = useState(0)
+  const [defaultbalance, setdefaultbalance] = useState(0)
   const [loanrequestdate, setloanrequestdate] = useState("DD/MM/YYYY")
   const [paymentsFilter, setPaymentsFilter] = useState("")
   const [currentLoanId, setCurrentLoanId] = useState("")
@@ -106,7 +113,14 @@ const Home = (props) => {
         else if (data[0].offer_code === "RO-BL-BL") {
           setloantype("Business loan")
           let amount = parseInt(data[0].balance).toLocaleString()
+          let interestamount = parseInt(data[0].interest_amount).toLocaleString()
+          let interestrate = parseInt(data[0].interest_rate)
+          let defaultbalance = parseInt(data[0].default_balance).toLocaleString()
+
           setloanamount(amount)
+          setinterestamount(interestamount)
+          setinterestrate(interestrate)
+          setdefaultbalance(defaultbalance)
 
           var defaultDates = data[0].created_at
           var d = new Date(defaultDates).toString();
@@ -390,11 +404,22 @@ const Home = (props) => {
   }, [paymentsFilter])
   // GET TRANSACTIONS
 
+// LOAN BREAKDOWN
+let loanBreakDown 
+if(loantype === "Business loan"){
+  loanBreakDown = `Principal: N${loanamount} \n Interest Amount: N${interestamount}   \n  Interest Rate: ${interestrate}%   \n  Default Balance: N${defaultbalance}  `
+}
+
+else{
+  loanBreakDown = `Principal: N${loanamount} \n Interest Amount: N${interestamount}   \n  Interest Rate: ${interestrate}% `
+
+}
 
   return (
 
     <div>
       <Pageloader />
+
       <div className="row thesidebarrow">
         <div className="col-md-2 thesidebar">
           <Sidebar/>
@@ -463,7 +488,18 @@ const Home = (props) => {
             <div className="boxc" id="boxc">
               <div className="row" style={{ marginTop: "24px" }}>
                 <div className="col-md-4 col-4">
-                  <p style={{ color: "#FFF", textAlign: "center", fontSize: "12px" }}>{loanstatus}</p>
+              
+                  <p  id="loanbreakdown" 
+                  style={{ color: "#FFF", textAlign: "center", fontSize: "12px", paddingLeft:"20px"}}>
+                    {loanstatus} (Click to view loan breakdown)
+
+                <ReactTooltip
+                  anchorId="loanbreakdown"
+                  place="bottom"
+                  content= {loanBreakDown}
+                />
+
+                  </p>
                 </div>
                 <div className="col-md-4 col-4">
                   <p style={{ color: "#FFF", textAlign: "center", fontSize: "12px" }}>{duedate}</p>
@@ -473,7 +509,11 @@ const Home = (props) => {
                 </div>
               </div>
               <div style={{ marginTop: "20px" }}>
-                <p className="amount" style={{ color: "#FFF", paddingLeft: "20px" }}>&#8358; {loanamount}</p>
+                <p className="amount" style={{ color: "#FFF", paddingLeft: "20px" }}>&#8358; {loanamount}               
+
+                </p>
+
+               
               </div>
 
               <div style={{ marginTop: "40px" }}>
@@ -487,7 +527,7 @@ const Home = (props) => {
 }
 
 {
-  loanstatus ==="APPROVED" || loanstatus === "ACTIVE" &&      <Link className="" href={currentLoanId} eventKey="6" activeClassName="is-active" >
+  loanstatus ==="APPROVED" || loanstatus === "ACTIVE" && loantype =="Business loan"  &&      <Link className="" href={currentLoanId} eventKey="6" activeClassName="is-active" >
   <button className="paynowbutton" style={{ float: "right" }}>Repay <i className="fas fa-long-arrow-alt-right"></i></button>
 </Link>
 }

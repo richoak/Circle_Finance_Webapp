@@ -37,6 +37,18 @@ const Limited = () => {
   const [ photographurl, setphotographurl ] = useState("");
   const [ identificationurl, setidentificationurl ] = useState("");
 
+  const [ caccertificate, setcaccertificate ] = useState(false);
+  const [ proofofcollateral, setproofofcollateral ] = useState(false)
+  const [ recentphotograph, setrecentphotograph ] = useState(false);
+  const [ meansofid, setmeansofid ] = useState(false)
+  const [ ownershipcollateral, setownershipcollateral ] = useState(false)
+
+  const [ caccertificateurl, setcaccertificateurl ] = useState();
+  const [ proofofcollateralurl, setproofofcollateralurl ] = useState()
+  const [ recentphotographurl, setrecentphotographurl ] = useState();
+  const [ meansofidurl, setmeansofidurl ] = useState()
+  const [ ownershipcollateralurl, setownershipcollateralurl ] = useState()
+
   const businessnameRef = useRef();
 const rcnumberRef = useRef();
 const registrationRef = useRef();
@@ -78,10 +90,18 @@ const dateRef = useRef()
         // $('.loading').css("visibility", "hidden");
       }
       else{
-        document.getElementById("certificate").src = data.url
+        var getextension = data.url.split(/[#?]/)[0].split('.').pop().trim();
+        if(getextension === "pdf"){
+          document.getElementById("certificate").src = "/images/tick-circle.svg"
+        
+        }
+        else {
+          document.getElementById("certificate").src = data.url
+        
+        }
         $(".overlay").fadeOut(0);
-        // localStorage.setItem("songart", data.secure_url);
-        // $('.loading').css("visibility", "hidden");
+          setcaccertificate(true)
+          setcaccertificateurl(data.url)
       }
   
   
@@ -117,10 +137,16 @@ const dateRef = useRef()
         // $('.loading').css("visibility", "hidden");
       }
       else{
-        document.getElementById("collateral").src = data.url
+        var getextension = data.url.split(/[#?]/)[0].split('.').pop().trim();
+        if(getextension === "pdf"){
+          document.getElementById("collateral").src = "/images/tick-circle.svg"
+        }
+        else {
+          document.getElementById("collateral").src = data.url
+        }
         $(".overlay").fadeOut(0);
-        // localStorage.setItem("songart", data.secure_url);
-        // $('.loading').css("visibility", "hidden");
+        setproofofcollateral(true)
+        setproofofcollateralurl(data.url)
       }
       })
       .catch(err => console.log(err))
@@ -152,10 +178,17 @@ const dateRef = useRef()
             // $('.loading').css("visibility", "hidden");
           }
           else{
-            document.getElementById("ownership").src = data.url
+            var getextension = data.url.split(/[#?]/)[0].split('.').pop().trim();
+            if(getextension === "pdf"){
+              document.getElementById("ownership").src = "/images/tick-circle.svg"
+            }
+            else {
+              document.getElementById("ownership").src = data.url
+            }
             $(".overlay").fadeOut(0);
-            // localStorage.setItem("songart", data.secure_url);
-            // $('.loading').css("visibility", "hidden");
+            setownershipcollateral(true)
+            setownershipcollateralurl(data.url)
+            $(".overlay").fadeOut(0);
           }
           })
           .catch(err => console.log(err))
@@ -187,10 +220,16 @@ const dateRef = useRef()
                   // $('.loading').css("visibility", "hidden");
                 }
                 else{
-                  document.getElementById("photograph").src = data.url
+                  var getextension = data.url.split(/[#?]/)[0].split('.').pop().trim();
+                  if(getextension === "pdf"){
+                    document.getElementById("photograph").src = "/images/tick-circle.svg"
+                  }
+                  else {
+                    document.getElementById("photograph").src = data.url
+                  }
                   $(".overlay").fadeOut(0);
-                  // localStorage.setItem("songart", data.secure_url);
-                  // $('.loading').css("visibility", "hidden");
+                  setrecentphotograph(true)
+                  setrecentphotographurl(data.url)
                 }
                 })
                 .catch(err => console.log(err))
@@ -222,10 +261,17 @@ const dateRef = useRef()
                   // $('.loading').css("visibility", "hidden");
                 }
                 else{
-                  document.getElementById("identification").src = data.url
+                  var getextension = data.url.split(/[#?]/)[0].split('.').pop().trim();
+                  if(getextension === "pdf"){
+                    document.getElementById("identification").src = "/images/tick-circle.svg"
+                  }
+                  else {
+                    document.getElementById("identification").src = data.url
+               
+                  }
                   $(".overlay").fadeOut(0);
-                  // localStorage.setItem("songart", data.secure_url);
-                  // $('.loading').css("visibility", "hidden");
+                  setmeansofid(true)
+                  setmeansofidurl(data.url)
                 }
                 })
                 .catch(err => console.log(err))
@@ -564,7 +610,7 @@ window.location.replace("/home");
 <div className="col-md-4 col-11 tabs loanapplysteptwo">
     
               <p onClick={gobacktostep1} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg" alt="" height="24" width="24"/> <span className="gobackp">Back</span></p>
        
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -611,7 +657,7 @@ window.location.replace("/home");
 
 <div className="col-md-12 col-10 loanapplystepthree">
 <p onClick={gobacktostep2} className="loansareavailable2 goback " style={{paddingLeft:"0px"}}>
-                <Image className="" src="/images/arrow-left.svg" height="24" width="24"/> <span className="gobackp">Back</span></p>
+                <Image className="" src="/images/arrow-left.svg"  alt=""  height="24" width="24"/> <span className="gobackp">Back</span></p>
        
 {/* <p  className="loansareavailablenote2 summarynote">Business/Management Profile</p>
 <div class="form-group">
@@ -624,11 +670,13 @@ window.location.replace("/home");
     <div className="image-upload empimgupload">
     <p style={{fontSize:"12px"}}>- CAC Certificate</p>
   <label htmlFor="file">
-    <Image class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <Image class="mobileuploadimages"  alt=""  style={{marginBottom:"40px", cursor:"pointer "}} 
      id="certificate"  width="183" height="100" src={certificate} />
   </label>
   <input type="file" id="file" onChange= {(e)=> setcertificate(e.target.files[0])}></input>
 </div>
+{caccertificate ? <a style={{textDecoration:"none", color:"#DD3737", fontSize:"12px"}} target="_blank" rel="noreferrer" href={caccertificateurl}>Preview Certificate</a> : <p></p>}
+
     </div>
 
     <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
@@ -636,61 +684,69 @@ window.location.replace("/home");
     <div className="image-upload empimgupload">
     <p style={{fontSize:"12px"}}>- Collateral</p>
   <label htmlFor="file2">
-    <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <Image className="mobileuploadimages"  alt=""  style={{marginBottom:"40px", cursor:"pointer "}} 
      id="collateral"  width="183" height="100" src={collateral} />
   </label>
   <input type="file" id="file2" onChange= {(e)=> setcollateral(e.target.files[0])}></input>
 
 </div>
-</div>
-
-
+{proofofcollateral ? <a style={{textDecoration:"none", color:"#DD3737", fontSize:"12px"}} target="_blank" rel="noreferrer" href={proofofcollateralurl}>Preview Proof of collateral</a> : <p></p>}
 
 </div>
 
-<div className="row">
+
+
+</div>
+
+<div className="row" style={{marginTop:"20px"}}>
 
 <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
     <div className="image-upload empimgupload">
     <p style={{fontSize:"12px"}}>- Photograph</p>
   <label htmlFor="file4">
-    <Image class="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <Image class="mobileuploadimages"  alt=""  style={{marginBottom:"40px", cursor:"pointer "}} 
      id="photograph"  width="183" height="100" src={photograph} />
   </label>
   <input type="file" id="file4" onChange= {(e)=> setphotograph(e.target.files[0])}></input>
 
 </div>
+{recentphotograph ? <a style={{textDecoration:"none", color:"#DD3737", fontSize:"12px"}} target="_blank" rel="noreferrer" href={recentphotographurl}>Preview Recent Photograph</a> : <p></p>}
+
 </div>
 
 <div className="col-md-2 col-6" style={{marginLeft:"0px"}}>
     <div className="image-upload empimgupload">
     <p style={{fontSize:"12px"}}>- Means of identification</p>
   <label htmlFor="file5">
-    <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <Image className="mobileuploadimages"  alt=""  style={{marginBottom:"40px", cursor:"pointer "}} 
      id="identification"  width="183" height="100" src={identification} />
   </label>
   <input type="file" id="file5" onChange= {(e)=> setidentification(e.target.files[0])}></input>
 
 </div>
-</div>
-
-
-
+{meansofid ? <a style={{textDecoration:"none", color:"#DD3737", fontSize:"12px"}} target="_blank" rel="noreferrer" href={meansofidurl}>Preview Means of ID</a> : <p></p>}
 
 </div>
 
-<div className="row">
+
+
+
+</div>
+
+<div className="row" style={{marginTop:"20px"}}>
 <div className="col-md-3" style={{marginLeft:"0px"}}>
     <div className="image-upload empimgupload">
     <p style={{fontSize:"12px"}}>- Collateral Ownership</p>
   <label htmlFor="file3">
-    <Image className="mobileuploadimages" style={{marginBottom:"40px", cursor:"pointer "}} 
+    <Image className="mobileuploadimages"  alt=""  style={{marginBottom:"40px", cursor:"pointer "}} 
      id="ownership"  width="183" height="100" src={ownership} />
   </label>
   <input type="file" id="file3" onChange= {(e)=> setownership(e.target.files[0])}></input>
 
 </div>
 </div>
+{ownershipcollateral ? <a style={{textDecoration:"none", color:"#DD3737", fontSize:"12px"}} target="_blank" rel="noreferrer" href={ownershipcollateralurl}>Preview Ownership of Collateral</a> : <p></p>}
+
 </div>
 {/* </div> */}
 
@@ -722,6 +778,8 @@ window.location.replace("/home");
         </div>
 </div> */}
   <p className="" style={{ color:"#DD3737", fontWeight:"bold"}}>{notify2}</p>
+  <p style={{fontSize:"14px", paddingTop:"20px"}}> On clicking the button below you agree to the <a target="_blank" href="/images/loanagreement.pdf">Terms and Conditions</a></p>
+
   <p className="" style={{textAlign:""}} >
 <button  className="loanbutton" onClick={nextstep3}>Finalize loan application
 <div className="spinner-border spinner-border-sm" role="status">

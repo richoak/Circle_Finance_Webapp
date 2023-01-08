@@ -21,6 +21,7 @@ const Repay = () => {
   const [loanID, setLoanID] = useState("")
 const [availableBalance, setAvailableBalance] = useState()
 const [ walletBalance, setWalletBalance] = useState(0)
+const [ outstandingBalance, setOutstandingBalance ] = useState(0)
 const [providusID, setProvidusID] = useState("")
 const router = useRouter();
 const amountRef = useRef()
@@ -45,20 +46,14 @@ const amountRef = useRef()
         var actualdate = d.split(' ').splice(0, 5).join(' ')
         var actualdate2 = d.split(' ').splice(3, 1).join(' ')
       
-        setAmount("N" + parseInt(responsethree.monthly_repayment).toLocaleString())
+        setAmount(parseInt(responsethree.monthly_repayment).toLocaleString())
         setDuration(responsethree.duration)
-        // if(responsethree.offer_name === "proof_of_funds"){
-        //   setLoanType("Proof of funds")
-        // }
-
-        // else{
-          
-        // }
         setLoanType(responsethree.offer_name)
         setStartDate(actualdate)
         setLoanID(responsethree.loan_id)
         setAvailableBalance(localStorage.getItem("walletbalance"))
         setProvidusID(localStorage.getItem("providusid"))
+        setOutstandingBalance(responsethree.balance)
 
       
       })
@@ -87,22 +82,22 @@ const amountRef = useRef()
 
 
   const repay =()=>{
-    $(".spinner-border").css({ 'display': 'inherit' });
-    if(amountRef.current.value <= 0){
-      setnotify("An error occured, Please try again")
-      $(".spinner-border").css({ 'display': 'none' });
-      return
-    }
+    $(".spinnermonthly").css({ 'display': 'inherit' });
+    // if(amount <= 0){
+    //   setnotify("An error occured, Please try again")
+    //   $(".spinner-border").css({ 'display': 'none' });
+    //   return
+    // }
 
-    else if(amountRef.current.value <= availableBalance){
-      setnotify("An error occured, Please try again")
-      $(".spinner-border").css({ 'display': 'none' });
+     if(amount < availableBalance){
+      setnotify("You do not have enough money to perform the trnsaction")
+      $(".spinnermonthly").css({ 'display': 'none' });
       return
     }
 
     const obj ={
       
-      "amount": amountRef.current.value,
+      "amount": amount,
       "remarks": "internal inflow",
       "sender" : providusID,
       "loan_id":loanID
@@ -123,7 +118,7 @@ const amountRef = useRef()
       error: function (xhr, status, error) {
         console.log(xhr)
         setnotify("An error occured, Please try again")
-           $(".spinner-border").css({ 'display': 'none' });
+           $(".spinnermonthly").css({ 'display': 'none' });
         // if(xhr.status === 401){
         //   window.location.replace("/");
         // }
@@ -134,12 +129,12 @@ const amountRef = useRef()
       console.log(responsethree)
       if(responsethree.error_code){
         setnotify(responsethree.message)
-        $(".spinner-border").css({ 'display': 'none' });
+        $(".spinnermonthly").css({ 'display': 'none' });
       }
       else{
         
         setnotify("Repayment made successfully, Redirecting...")
-        $(".spinner-border").css({ 'display': 'none' });
+        $(".spinnermonthly").css({ 'display': 'none' });
         setTimeout(() => {
           router.push('/home');
         }, 2000);
@@ -148,6 +143,70 @@ const amountRef = useRef()
    
 
   }
+
+  const repayAll =()=>{
+    $(".spinnerall").css({ 'display': 'inherit' });
+    // if(amount <= 0){
+    //   setnotify("An error occured, Please try again")
+    //   $(".spinner-border").css({ 'display': 'none' });
+    //   return
+    // }
+
+     if(outstandingBalance < availableBalance){
+      setnotify("You do not have enough money to perform the trnsaction")
+      $(".spinner-border").css({ 'display': 'none' });
+      return
+    }
+
+    const obj ={
+      
+      "amount": outstandingBalance,
+      "remarks": "internal inflow",
+      "sender" : providusID,
+      "loan_id":loanID
+      
+  }
+  
+    console.log(obj)
+    var settingsthree = {
+      url: 'https://credisol-main.herokuapp.com/v1/wallet/value_transfer/',
+      "method": "POST",
+      "timeout": 0,
+      "headers": {  'Content-Type': 'application/json',
+      "Authorization": "Bearer " + localStorage.getItem("access_token", )},
+      "data": JSON.stringify(obj)
+  
+      
+      ,
+      error: function (xhr, status, error) {
+        console.log(xhr)
+        setnotify("An error occured, Please try again")
+           $(".spinnerall").css({ 'display': 'none' });
+        // if(xhr.status === 401){
+        //   window.location.replace("/");
+        // }
+      },
+    }
+
+    $.ajax(settingsthree).done(function (responsethree) {
+      console.log(responsethree)
+      if(responsethree.error_code){
+        setnotify(responsethree.message)
+        $(".spinnerall").css({ 'display': 'none' });
+      }
+      else{
+        
+        setnotify("Repayment made successfully, Redirecting...")
+        $(".spinnerall").css({ 'display': 'none' });
+        setTimeout(() => {
+          router.push('/home');
+        }, 2000);
+      }})
+      
+   
+
+  }
+
 
 
 
@@ -189,18 +248,19 @@ const amountRef = useRef()
 <div className="row summarybox">
     <div className="col-md-6 col-6 summarydiv1">
         <p  className="loansareavailablenote2">Repayment amount</p>
-        <p className="summaryhead">{amount}</p>
+        <p className="summaryhead">&#x20A6;{amount}</p>
         <p  className="loansareavailablenote2">Loan duration</p>
         <p className="summaryhead">{duration} Month(s)</p>
         <p  className="loansareavailablenote2">Available Balance</p>
-        <p className="summaryhead">{availableBalance} </p>
-        {/* <p  className="loansareavailablenote2">Loan repayment</p> */}
-        {/* <p class="summaryhead">N204,000.00</p> */}
+        <p className="summaryhead">&#x20A6;{availableBalance} </p>
+      
     </div>
 
     <div className="col-md-6 col-6"style={{paddingLeft:"50px"}}>
-    <p  className="loansareavailablenote2">Loan Type</p>
-    <p className="summaryhead">{loantype}</p>
+    <p  className="loansareavailablenote2">Outstanding Balance</p>
+        <p className="summaryhead">&#x20A6; {outstandingBalance}</p>
+    {/* <p  className="loansareavailablenote2">Loan Type</p>
+    <p className="summaryhead">{loantype}</p> */}
     <p  className="loansareavailablenote2">Start Date</p>
     <p className="summaryhead">{startDate}</p>
     <p  className="loansareavailablenote2">Loan ID</p>
@@ -208,15 +268,28 @@ const amountRef = useRef()
     
         </div>
 </div>
-<Form.Group className="mb-3" controlId="formBasicEmail">
+{/* <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "5px" }}>Amount to repay (&#8358;) </Form.Label>
-                <Form.Control id="loanamount" width="60px" type="number" placeholder="Input Amount" ref={amountRef}/>
-              </Form.Group>
+                <Form.Control id="loanamount" 
+                width="60px" 
+                type="number" 
+                placeholder="Input Amount" 
+                value= {amount} 
+                ref={amountRef} 
+                disabled 
+                />
+              </Form.Group> */}
 <p className="" style={{ color:"#DD3737", fontWeight:"bold",textAlign:"center"}}>{notify}</p>
 
   <p className="" style={{textAlign:"center"}} >
-<button  onClick={repay} className="loanbutton" >Repay
-<div className="spinner-border spinner-border-sm" role="status">
+<button  onClick={repay} className="loanbutton" >Repay monthly balance
+<div className="spinnermonthly spinner-border spinner-border-sm" role="status">
+<span className="sr-only">Loading...</span>
+</div>
+</button>
+
+<button  onClick={repayAll} className="loanbutton" >Clear off loan
+<div className="spinnerall spinner-border spinner-border-sm" role="status">
 <span className="sr-only">Loading...</span>
 </div>
 </button>
