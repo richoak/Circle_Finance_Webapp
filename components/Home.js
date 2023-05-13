@@ -10,7 +10,7 @@ import useHttp from '../hooks/use-http';
 
 import Image from 'next/image';
 import LoanContext from '../store/loan-context';
-import "react-tooltip/dist/react-tooltip.css";
+
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import HomeWallet from "./home/Wallet"
 import Homeinvestment from './home/Investments'
