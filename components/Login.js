@@ -625,7 +625,7 @@ const Login = () => {
                   <Link href="/signup" style={{ textDecoration: "none" }}> 
                   <span style={{paddingLeft:"5px", color: "#2F6D67", fontWeight:"600", cursor:"pointer" }}>
                     Sign up here</span></Link> 
-                    <i style={{marginLeft:"5px"}} class="fas fa-chevron-right"></i>
+                    <i style={{marginLeft:"5px"}} className="fas fa-chevron-right"></i>
                     <span style={{ float: "right", color: "#2F6D67", fontWeight:"600", cursor: "pointer" }} 
                     onClick={forgotpassword0} >Forgot password</span>
                     </p>

@@ -739,7 +739,7 @@ else{
               <h1 className="letsgetstartedstepheading">
                   Step 1/3
                 </h1>
-              <img className="" style={{marginBottom:"40px"}}  alt="logo" src="/images/logo.svg" />
+              <Image className="" style={{marginBottom:"40px"}}  alt="logo" src="/images/logo.svg" />
            
                 <h1 className="letsgetstarted">
                   Hi there! Lets get started
@@ -836,7 +836,7 @@ else{
 <span style={{paddingLeft:"5px", color: "#2F6D67", fontWeight:"600", cursor:"pointer" }}>
   Log In</span>
   </Link> 
-  <i style={{marginLeft:"5px"}} class="fas fa-chevron-right"></i>
+  <i style={{marginLeft:"5px"}} className="fas fa-chevron-right"></i>
   {/* <span style={{ float: "right", color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px", cursor: "pointer" }} 
   onClick={forgotpassword0} >Forgot password</span> */}
   </p>
@@ -853,7 +853,7 @@ else{
                   Step 1/3
                 </h1> */}
                 <p className="imageverify" style={{textAlign:"center"}}>
-                <img  src="/images/emailverify.svg" alt="" />
+                <Image  src="/images/emailverify.svg" alt="" />
                 </p>
                
                 <h1 className="letsgetstarted">
