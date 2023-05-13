@@ -241,7 +241,7 @@ goal. The least monthly balance to invest is N5000 and you can earn up to 12% in
                            <div className="col-md-12" style={{marginTop:"30px"}}>
                            <p>Investment Summary</p>  
                             <p className={classes.investmentinfodrawer}>
-                            This investment plan is targeted at HNI's with a goal to optimizing value from their finances.</p>
+                            This investment plan is targeted at HNIs with a goal to optimizing value from their finances.</p>
                       
                             </div>
                             <div className="row summarybox">
@@ -458,7 +458,7 @@ goal. The least monthly balance to invest is N5000 and you can earn up to 12% in
 <h1 className="letsgetstartedstepheading fordesktoponly">
              
                 </h1>
-                <p style={{textAlign:"center"}}><img src="/images/badge-check.svg" alt="" /></p>
+                <p style={{textAlign:"center"}}><Image src="/images/badge-check.svg" alt="" /></p>
                 <h1 style={{ textAlign: "center" }} className="letsgetstarted">
                   Successful
                 </h1>

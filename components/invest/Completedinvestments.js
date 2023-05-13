@@ -91,7 +91,7 @@ const goback = () => {
                     </span>
                 
                     </p>
-                    <p className={classes.moresubtitle}>This investment plan is targeted at HNI's with a goal to optimizing value from their finances. This product is ideal for clients seeking wealth management, cash flow management and specialized financial advisory services.</p>
+                    <p className={classes.moresubtitle}>This investment plan is targeted at HNIs with a goal to optimizing value from their finances. This product is ideal for clients seeking wealth management, cash flow management and specialized financial advisory services.</p>
                     <hr />
                     <p  className={classes.moretitle2}>Investment Summary</p>
 
