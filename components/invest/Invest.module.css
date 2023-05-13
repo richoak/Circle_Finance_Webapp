@@ -1,0 +1,334 @@
+.personalprofileboxes{
+
+}
+
+.personalprofileboxes{
+    display: inline-block;
+    /* margin-left:15px; */
+    margin-top:30px
+    /* float:left */
+}
+
+.button{
+    background: #EEEFF2;
+    border-radius: 4px;
+    padding-top:10px;
+    color:#687181;
+    font-weight:bold
+}
+
+.buttonactive{
+    background: #FFF2F2;
+    border-radius: 4px;
+    padding-top:10px;
+    color: #DD3636;
+}
+
+.goback{
+    padding-top:30px
+}
+
+.continuebutton{
+    background-color: #2F6D67;
+    color:#FFF;
+    font-weight:600;
+    border-radius:8px;
+    padding-top:12px;
+    padding-bottom:12px;
+    padding-left: 20px;
+    padding-right:20px;
+    text-decoration: none;
+    font-size:14px;
+    cursor:pointer;
+    width:80%;
+    margin-top:20px
+}
+
+.submitbutton{
+    background-color: #2F6D67;
+    color:#FFF;
+    font-weight:600;
+    border-radius:8px;
+    padding-top:12px;
+    padding-bottom:12px;
+    padding-left: 20px;
+    padding-right:20px;
+    text-decoration: none;
+    font-size:14px;
+    cursor:pointer;
+    width:30%;
+    margin-top:20px
+}
+
+
+
+
+.optiontitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+color: #A8B0BF;
+padding-top:30px
+}
+
+
+.noinvestmenttitle{
+
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+color: #323740;
+padding-top:30px
+}
+
+.noinvestmentsubtitle{
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #687181;
+    padding-top:0px
+    }
+
+    .noinvestmentimage{
+        margin-top:50px
+    }
+
+    .trending{
+        color:#687181;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 120%;
+    }
+
+    .completedinvestmentduration{
+          color:#687181;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 120%;
+        float:right
+    }
+
+    .vehicletitle{
+        color:#333333;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        padding-bottom:10px
+    }
+
+    .investmentamount{
+        color:#434E61;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 120%;
+        font-size:32px
+    }
+
+        .investmentrate{
+        color:#7D8799;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        background-color: #EEEFF2;
+        border-radius: 45px;
+        padding-left:17px;
+        width:36%
+
+     
+    }
+
+    .completedinvestmentrate{
+        color:#7D8799;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 24px;
+        background-color: #EEEFF2;
+        border-radius: 45px;
+        padding-left:17px;
+        width:74%;
+        margin-top:-12px
+     
+    }
+
+    .completedinvestmentbox{
+        box-shadow: 0px 0px 56px rgba(0, 0, 0, 0.05), 0px 4.02054px 17.869px rgba(0, 0, 0, 0.0417275);
+border-radius: 16px;
+    }
+
+
+    .trendingname{
+        color:#434E61;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-top:-13px
+    }
+
+    .investmentbalance {
+        color:#687181;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-top:-13px
+    }
+
+    .summarytext{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        color:#687181
+    }
+
+    .dot {
+        height: 50px;
+        width: 50px;
+        background-color: #FFF;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .trendinginvestment1{
+        background-color: #C2E9E5;
+        padding-top:26px;
+        padding-bottom:10px;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+
+      .trendinginvestment2 {
+        background-color: #F4F2D7;
+        padding-top:26px;
+        padding-bottom:10px;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+
+      .investmentvehicle1{
+        background-color: #E0EBFF;
+        padding-top:26px;
+        padding-bottom:10px;
+        border-radius: 12px;
+      }
+
+      .investmentvehicle2{
+        background-color: #E0FFE6;
+        padding-top:26px;
+        padding-bottom:10px;
+        border-radius: 12px;
+      }
+
+      .investmentvehicle3{
+        background-color: #FFF1E0;
+        padding-top:26px;
+        padding-bottom:10px;
+        border-radius: 12px;
+        margin-top:30px
+      }
+
+      .investmentvehicle4{
+        background-color: #F1F2F5;
+        padding-top:26px;
+        padding-bottom:10px;
+        border-radius: 12px;
+        margin-top:30px
+      }
+
+
+      .summarybox{
+        background-color: #EEEFF2;
+        padding-top:26px;
+        padding-bottom:10px;
+        border-radius: 12px;
+      }
+
+
+.statementtitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+color: #A8B0BF;
+padding-top:0px;
+padding-bottom:20px
+}
+
+.securitytitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 120%;
+color: #A8B0BF;
+/* padding-top:30px */
+}
+
+.loantitle{
+    font-weight: 700;
+    font-size: 20px;
+    color: #323740;
+}
+
+.loansubtitle{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #7D8799;
+    margin-top:-10px
+}
+
+.goicon{
+    float:right;
+    margin-top:20px
+}
+
+.investmentdiv{
+    cursor: pointer;
+}
+
+.status{
+    font-size:14px;
+    padding-left:10px
+}
+
+.statuspan{
+    margin-left:20px;
+     padding-left:10px;
+      padding-right:10px;
+
+       border-radius:24px;
+        margin-top: -14px!important;
+         /* background-color:#EDFFF0 */
+}
+
+.moretitle{
+    font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 120%;
+color: #434E61;
+}
+
+.moretitle2{
+    font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 120%;
+color: #687181;
+padding-top:25px;
+padding-bottom:10px
+}
+
+.moresubtitle{
+    font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 150%;
+color:#687181;
+padding-bottom:30px
+}

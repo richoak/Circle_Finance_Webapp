@@ -10,10 +10,13 @@ const Header = () => {
 return(
   <header>
 
-
+<Container>
 <Navbar bg="light" expand="lg">
   <Container fluid>
-    <Navbar.Brand href="/"><Image className="brandlogo" width="100" height="20" src="/images/logo.jpeg" /></Navbar.Brand>
+    <Navbar.Brand href="/">
+      <img className="brandlogo" 
+      src="/images/logo.svg" alt="" />
+      </Navbar.Brand>
 
 
     {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -136,6 +139,8 @@ return(
     
   </Container>
 </Navbar>
+</Container>
+
 <hr/>
   </header>
 )

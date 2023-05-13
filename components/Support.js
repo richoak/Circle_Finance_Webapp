@@ -2,7 +2,7 @@ import React, { useEffect, useState, useReducer} from 'react';
 import {Container, Row,Button, Nav, Form, Accordion, Col} from 'react-bootstrap'
 import Link from 'next/link';
 import Image from 'next/image';
-
+import classes from './Support.module.css'
 import Topbar from './Topbar';
 import Sidebar from './Sidebar'
 
@@ -50,211 +50,124 @@ const addbank = () =>{
               <div className="col-md-10">
               <Topbar/>
 
-           
-<div className="row">
- 
-    <div className="col-md-10 tabs tabsmobile">
 
+              <div className="row">
+              {/* <div className="col-md-1"></div> */}
 
-    <div className="row director1row">
-    <div className="col-md-5 ">
-    <p className="wallethead" >Contact us </p>
-
-    <div className="row">
-            <div className="col-md-1 col-1">
-              <p style={{float:"right", marginLeft:"20px"}}>
-              <Image  src="/images/phone.svg" layout='fill'/>
-              </p>
-            
-              </div>
-            <div className="col-md-8 col-8">
-            <a href="tel:07061875167" style={{textDecoration:"none"}}>
-              <p className="phone">
-              +234 901 685 4815 
-              </p>
-              </a>
-              </div>
-        </div>
-
-        <div className="row" style={{paddingTop:"15px"}}>
-            <div className="col-md-1 col-1">
-            <Image  src="/images/email.svg" layout='fill'/>
-            </div>
-
-            <div className="col-md-8 col-9">
-            <a style={{textDecoration:"none"}} href="mailto:info@credisol.com">
-            <p className="sendamail">
-          
-            Send a mail to customer support
-     
-             </p>
-             </a>
+              <div className="col-md-9">
+              <div className="accountbox">
+                
         
-            {/* <p className="walletbank2">Send a mail to customer support </p> */}
-            </div>
 
-        </div>
-
-<hr/>
-
- <div className="row officemap">
-            <div className="col-md-9 col-8">
-            <p className="officeaddress">Rich-Oak, Plot 1072 Grand Pela Hotel  Street <br/> Durumi, Abuja</p>
-            </div>
-
-            <div className="col-md-3 col-4">
-           
-            <a target="_blank" href="https://www.google.com/maps/place/Rich-Oak,+Abuja" rel="noreferrer"
-                       style={{textDecoration:"none", color:"#666666"}} > <Image width="24" height="24" src="/images/location.svg"/></a>
-            </div>
-
-        </div>
-<hr/>
-<p className="smtitle">Visit our social media pages</p>
-
-<div className="row">
-    <div className="col-md-4 col-4">
-    <div className="row">
-            <div className="col-md-1">
-              {/* <Image layout='fill' height="10" src="/images/facebook.svg"/> */}
+            <div style={{marginTop:"40px", width:"400px", paddingBottom:"20px"}}>
+            <p  className={classes.statementtitle}>Contact Us</p>
+         
+            <div className={classes.callbox}>
+            <div className="row">
+              <div className="col-md-2">
+              <Image style={{cursor:"pointer"}} src="/images/call.svg" width="35" height="35" layout="intrinsic" alt="" />
               </div>
-           <div className="col-md-8">
-           <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://facebook.com/credi-sol">
-             <p className="smtext">Facebook </p>
-             </a>
-             </div>
-        </div>
+              <div className="col-md-10">
+              <a href="tel:07061875167" style={{textDecoration:"none"}}>
+                <p className={classes.phonenumber}>+234 801 234 5678</p>
+                </a>
+              </div>
+            </div>
+            </div>
+
+            <div className={classes.mailbox}>
+            <div className="row">
+              <div className="col-md-2">
+              <Image style={{cursor:"pointer"}} src="/images/email.svg" width="35" height="35" layout="intrinsic" alt="" />
+              </div>
+              <div className="col-md-10">
+              <a style={{textDecoration:"none"}} href="mailto:info@credisol.com">
+                <p className={classes.phonenumber}>Send a mail to customer support</p>
+                </a>
+              </div>
+            </div>
+            </div>
     </div>
 
-    <div className="col-md-4 col-4">
+    <div style={{marginTop:"40px", width:"400px", paddingBottom:"20px"}}>
     <div className="row">
-            <div className="col-md-1">
-              {/* <Image  layout='fill' src="/images/instagram.svg"/> */}
-              </div>
             
-            <div className="col-md-8">
+              <div className="col-md-10">
+              <a target="_blank" href="https://www.google.com/maps/place/Rich-Oak,+Abuja" style={{textDecoration:"none"}} rel="noreferrer">
+                <p className={classes.visitus}>
+
+                    Visit us at <span style={{fontWeight:"bold"}}>Rich-Oak, Plot 1072 Grand<br/> Pela Hotel Street, Durumi, Abuja</span>
+          
+                  </p>
+                  </a>
+              </div>
+              <div className="col-md-2">
+              <Image style={{cursor:"pointer"}} src="/images/externallink.svg" width="18" height="18" layout="intrinsic" alt="" />
+              </div>
+            </div>
+            <hr/>
+
+            <p className={classes.connect}> Connect with us</p>
+
+            <div>
             <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://facebook.com/credi-sol">
-              <p className="smtext">Instagram </p>
-              </a>
-              </div>
-        </div>
+            <Image style={{cursor:"pointer",paddingLeft:"2px"}} src="/images/facebook.svg" width="30" height="30" layout="intrinsic" alt="" />
+            </a>
+
+            <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://facebook.com/credi-sol">
+            <Image style={{cursor:"pointer", paddiingLeft:"5px"}} src="/images/instagram.svg" width="30" height="30" layout="intrinsic" alt="" />
+            </a>
+
+            <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://facebook.com/credi-sol">
+            <Image style={{cursor:"pointer", paddingLeft:"5px"}} src="/images/twitter.svg" width="30" height="30" layout="intrinsic" alt="" />
+            </a>
+
+            <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://facebook.com/credi-sol">
+            <Image style={{cursor:"pointer",paddinigLeft:"5px"}} src="/images/whatsapp.svg" width="30" height="30" layout="intrinsic" alt="" />
+            </a>
+
+            <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://facebook.com/credi-sol">
+            <Image style={{cursor:"pointer",paddingLeft:"5px"}} src="/images/telegram.svg" width="30" height="30" layout="intrinsic" alt="" />
+            </a>
+
+            </div>
     </div>
 
-    <div className="col-md-4 col-4">
-    <div className="row">
-            <div className="col-md-1">
-              {/* <Image  layout='fill' src="/images/twitter.svg"/> */}
+    <div style={{marginTop:"0px", width:"400px", paddingBottom:"20px"}}>
+            <p  className={classes.abouttitle}>About Credisol</p>
+         
+            <div className="row">   
+              <div className="col-md-10">
+                <p>Frequently asked questions</p>
               </div>
-            <div className="col-md-8">
-            <a style={{textDecoration:"none"}} target="_blank" rel="noreferrer" href="https://twitter.com/credi-sol">
-              <p className="smtext">Twitter </p>
-              </a>
+              <div className="col-md-2">
+              <Image style={{cursor:"pointer"}} src="/images/externallink.svg" width="18" height="18" layout="intrinsic" alt="" />
               </div>
-        </div>
+
+              <hr/>
+              <div className="col-md-10">
+                <p>Visit our website</p>
+              </div>
+              <div className="col-md-2">
+              <Image style={{cursor:"pointer"}} src="/images/externallink.svg" width="18" height="18" layout="intrinsic" alt="" />
+              </div>
+
+              <hr/>
+              <div className="col-md-10">
+                <p>Terms of use</p>
+              </div>
+              <div className="col-md-2">
+              <Image style={{cursor:"pointer"}} src="/images/externallink.svg" width="18" height="18" layout="intrinsic" alt="" />
+              </div>
+
+            </div>
     </div>
 
 
-    <div className="col-md-5"></div>
-</div>
-    </div>
 
-    <div className="col-md-6 col-12 smrow2">
-    <p className="wallethead faqmobile" >Frequently asked questions </p>
-    <div className="row">
-            <div className="col-md-1 col-1"><Image layout='fill' src="/images/question.svg"/></div>
-            <div className="col-md-10 col-10"><p className="faqtext">This section will help give you insights and answers to some of our most commonly asked questions. </p></div>
-        </div>
-
-        <Accordion>
-  <Accordion.Item eventKey="0">
-    <Accordion.Header className="faqqheader">Who can get a loan from CREDISOL? 
-
-</Accordion.Header>
-    <Accordion.Body>
-
-    Business owners, salary earners, and visa applicants.
-
-
-    </Accordion.Body>
-  </Accordion.Item>
-
-  <Accordion.Item eventKey="1">
-    <Accordion.Header className="faqqheader">How can I get a loan?
-
-</Accordion.Header>
-    <Accordion.Body>
-    You create an account via credisol.com an complete your CREDISOL profile, to start accessing loans.
-
-    </Accordion.Body>
-  </Accordion.Item>
-
-  <Accordion.Item eventKey="2">
-    <Accordion.Header className="faqqheader">Are loans only open to business owners alone?
-</Accordion.Header>
-    <Accordion.Body>
-    Small businesses, salary earners, medium enterprises, large ventures that meet the criteria for a loan are also to access financing from CREDISOL.
-
-    </Accordion.Body>
-  </Accordion.Item>
-
-  <Accordion.Item eventKey="3">
-    <Accordion.Header className="faqqheader">How much is the interest rate:
-</Accordion.Header>
-    <Accordion.Body>
-    5% on travel loans and 6-10% on business depending on the type of business.
-
-    </Accordion.Body>
-  </Accordion.Item>
-
-  <Accordion.Item eventKey="4">
-    <Accordion.Header className="faqqheader">Do you finance visa application?
-</Accordion.Header>
-    <Accordion.Body>
-    No, we don’t we only help finance proof of funds in the individual or corporate account.
-
-    </Accordion.Body>
-  </Accordion.Item>
-
-  {/* <Accordion.Item eventKey="5">
-    <Accordion.Header className="faqqheader">How can I schedule a site Inspection?
-
-</Accordion.Header>
-    <Accordion.Body>
-    You can schedule a site Inspection by filling this form here 
-
-
-    </Accordion.Body>
-  </Accordion.Item>
-
-
-  <Accordion.Item eventKey="6">
-    <Accordion.Header className="faqqheader">Who can I speak to for further assistance?
-
-
-</Accordion.Header>
-    <Accordion.Body>
-    You can call us on 09016854815 or send an email to info@earthvii.org
-
-
-
-    </Accordion.Body>
-  </Accordion.Item> */}
-
-
-</Accordion>
-
-
-        </div>
-</div>
-</div>
-
-
-
-
-</div>
-
-
-
+            </div>
+            </div>
+            </div>
 
 
 

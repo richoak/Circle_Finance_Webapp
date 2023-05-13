@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext, useRef } from 'react';
 import { Container, Row, Button, Nav, Form, Accordion, Col } from 'react-bootstrap'
 import Link from 'next/link';
+import jwt from 'jsonwebtoken';
 // import Footer from './Footer';
 import Header from './Header';
 import Image from 'next/image';
@@ -12,7 +13,9 @@ import { useRouter } from 'next/router';
 import useHttp from '../hooks/use-http';
 
 const Login = () => {
+  
   const emailRef = useRef()
+   const resetemailRef = useRef()
   const passwordRef = useRef()
   const router = useRouter();
   const authCtx = useContext(AuthContext)
@@ -22,6 +25,43 @@ const Login = () => {
   const [email, setemail] = useState("")
   const [uid, setuid] = useState("")
 
+  const [loading, setLoading ] = useState(false)
+  const [deviceId, setdeviceId ] = useState()
+  const [deviceType, setdeviceType ] = useState()
+  const [verifytoken, setverifytoken ] = useState()
+
+
+
+  const newpasswordRef = useRef()
+  const confirmresetpasswordRef = useRef()
+  const verifycode1Ref = useRef()
+  const verifycode2Ref = useRef()
+  const verifycode3Ref = useRef()
+  const verifycode4Ref = useRef()
+
+
+  useEffect(() => {
+    setdeviceId(window.navigator.userAgent)
+
+    let userAgent = navigator.userAgent;
+    let browserName;
+    
+    if(userAgent.match(/chrome|chromium|crios/i)){
+        browserName = "chrome";
+      }else if(userAgent.match(/firefox|fxios/i)){
+        browserName = "firefox";
+      }  else if(userAgent.match(/safari/i)){
+        browserName = "safari";
+      }else if(userAgent.match(/opr\//i)){
+        browserName = "opera";
+      } else if(userAgent.match(/edg/i)){
+        browserName = "edge";
+      }else{
+        browserName="No browser detection";
+      }
+      setdeviceType(browserName)
+  }, [])
+  
   const forgotpassword0 = () => {
     setnotify("")
     $(".forgotpassword0").toggle("slide");
@@ -36,8 +76,17 @@ const Login = () => {
 
   const gobackforgotpassword1 = () => {
     setnotify("")
+    $(".forgotpassword2").css({ 'display': 'none' });
     $(".forgotpassword2").toggle("slide");
     $(".forgotpassword1").css({ 'display': 'block' });
+  }
+
+  const gobackforgotpassword1a = () => {
+    setnotify("")
+  
+    $(".forgotpassword2a").toggle("slide");
+    $(".forgotpassword2a").css({ 'display': 'none' });
+    $(".forgotpassword2").css({ 'display': 'block' });
   }
 
   const gobackforgotpassword2 = () => {
@@ -46,55 +95,118 @@ const Login = () => {
     $(".forgotpassword0").css({ 'display': 'block' });
   }
 
-  const forgotpassword1 = () => {
-
-    // $(".spinner-border").css({ 'display': 'block' });
-    var email = document.getElementById("resetemailaddress").value
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (email.match(mailformat)) {
-      setnotify("Processing...")
-
-      var settingsthree = {
-        "url": "https://credisol-main.herokuapp.com/v1/registration/password_reset_email/",
-        "method": "POST",
-        "timeout": 0,
-        "data":
-        {
-          "email": document.getElementById("resetemailaddress").value,
-
-        },
-        error: function (xhr, status, error) {
-          // console.log(xhr)
-          if (xhr.status === 404) {
-            setnotify("Email not found")
-            $(".spinner-border").css({ 'display': 'none' });
+  useEffect(() => {
+    $(document).ready(function() {
+      $("#show_hide_password a").on('click', function(event) {
+          event.preventDefault();
+          if($('#show_hide_password input').attr("type") == "text"){
+              $('#show_hide_password input').attr('type', 'password');
+              $('#show_hide_password i').addClass( "fa-eye-slash" );
+              $('#show_hide_password i').removeClass( "fa-eye" );
+          }else if($('#show_hide_password input').attr("type") == "password"){
+              $('#show_hide_password input').attr('type', 'text');
+              $('#show_hide_password i').removeClass( "fa-eye-slash" );
+              $('#show_hide_password i').addClass( "fa-eye" );
           }
-        },
-      }
-      $.ajax(settingsthree).done(function (responsetwo) {
-        // console.log(responsetwo)
-        setuid(responsetwo.uid)
+      });
+  });
+  }, [])
 
+
+  async function resetpasswordstep1 () {
+    setLoading(true)
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if (!resetemailRef.current.value.match(mailformat)) {
+      setnotify("Invalid email")
+      setLoading(false)
+      return
+    }
+    let obj = {
+       email:resetemailRef.current.value,
+    }
+    console.log("obj", obj)
+    const privateKey = "3jvtGHNk5HPtDilbacHZCiT2LFxEEd0SLza3hInX9-A"
+    const data = jwt.sign(obj, privateKey)
+    let response
+    let responsedata
+    try{
+      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/reset-password",{
+        method: "POST",
+         body: JSON.stringify({data}),
+        headers: {
+             'Content-Type': 'application/json',
+             'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj'
+            },
+      })
+      responsedata = await response.json()
+            console.log("data",responsedata)
+       if (response.status == "400"){
+        setnotify(responsedata.message)
+        setLoading(false)
+        return
+      }
+      else{
         setnotify("")
-        setemail(document.getElementById("resetemailaddress").value)
+        setLoading(false)
         $(".forgotpassword1").toggle("slide");
         $(".forgotpassword2").css({ 'display': 'block' });
         $(".spinner-border").css({ 'display': 'none' });
-
-
-      })
-      return true;
-
-    }
-    else {
-      setnotify("Invalid E-mail Address")
-      $(".spinner-border").css({ 'display': 'none' });
-      return false;
+      }
+} catch (error){
+        // console.log(error)
+      return
     }
   }
 
+  const forgotpassword1 = () => {
+    resetpasswordstep1()
+    // $(".spinner-border").css({ 'display': 'block' });
+    // var email = document.getElementById("resetemailaddress").value
+    // var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    // if (email.match(mailformat)) {
+    //   setnotify("Processing...")
+
+    //   var settingsthree = {
+    //     "url": "https://credisol-main.herokuapp.com/v1/registration/password_reset_email/",
+    //     "method": "POST",
+    //     "timeout": 0,
+    //     "data":
+    //     {
+    //       "email": document.getElementById("resetemailaddress").value,
+
+    //     },
+    //     error: function (xhr, status, error) {
+    //       // console.log(xhr)
+    //       if (xhr.status === 404) {
+    //         setnotify("Email not found")
+    //         $(".spinner-border").css({ 'display': 'none' });
+    //       }
+    //     },
+    //   }
+    //   $.ajax(settingsthree).done(function (responsetwo) {
+    //     // console.log(responsetwo)
+    //     setuid(responsetwo.uid)
+
+    //     setnotify("")
+    //     setemail(document.getElementById("resetemailaddress").value)
+    //     $(".forgotpassword1").toggle("slide");
+    //     $(".forgotpassword2").css({ 'display': 'block' });
+    //     $(".spinner-border").css({ 'display': 'none' });
+
+
+    //   })
+    //   return true;
+
+    // }
+    // else {
+    //   setnotify("Invalid E-mail Address")
+    //   $(".spinner-border").css({ 'display': 'none' });
+    //   return false;
+    // }
+  }
+
   const inputpassword = () => {
-    var password = document.getElementById("newpassword").value
+    var password = newpasswordRef.current.value
     // console.log(password)
 
     if (password.length >= 8) {
@@ -139,61 +251,193 @@ const Login = () => {
     }
   })
 
-  const forgotpassword2 = () => {
+  async function handleResetPassword() {
+    setLoading(true)
+    var pinone = verifycode1Ref.current.value
+    + verifycode2Ref.current.value
+    + verifycode3Ref.current.value
+    + verifycode4Ref.current.value
 
-    var pin1 = document.getElementById("otpstep1one").value
-      + document.getElementById("otpstep1two").value
-      + document.getElementById("otpstep1three").value
-      + document.getElementById("otpstep1four").value
-
-    var confirmpassword = document.getElementById("confirmpassword").value
-    var password = document.getElementById("newpassword").value
-
-    if (pin1 === "") {
-      setnotify("Input your OTP")
+    if(pinone === "" || pinone < 4){
+      setnotify("Input a 4 digit pin")
+      setLoading(false)
+      return
     }
-
-    else if (confirmpassword !== password) {
-      setnotify("Passwords do not match")
+    // console.log(pinone)
+    let obj = {
+        code:pinone,
+        email:resetemailRef.current.value
     }
-
-    else {
-      setnotify("Processing...")
-      var settingsthree = {
-
-        "url": "https://credisol-main.herokuapp.com/v1/registration/reset_password/" + uid + "/" + pin1 + "/",
-        "method": "POST",
-        "timeout": 0,
-        "data":
-        {
-
-          "password": document.getElementById("newpassword").value,
-        },
-        error: function (xhr, status, error) {
-          // console.log(xhr)
-          if (xhr.status === 401) {
-            setnotify("Incorrect OTP")
-
-          }
-        },
-      }
-
-      $.ajax(settingsthree).done(function (responsetwo) {
-        // console.log(responsetwo)
-        setnotify("")
-        // $(".forgotpassword2").toggle("slide");
-        // $(".forgotpassword0").css({ 'display': 'block' });
-        window.location.replace("/");
+    console.log("obj", obj)
+    const privateKey = "3jvtGHNk5HPtDilbacHZCiT2LFxEEd0SLza3hInX9-A"
+    const data = jwt.sign(obj, privateKey)
+    let response
+    let responsedata
+    try{
+      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/verify-code",{
+        method: "POST",
+         body: JSON.stringify({data}),
+        headers: {
+             'Content-Type': 'application/json',
+             'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj'
+            },
       })
-      // $(".forgotpassword1").toggle("slide");
-      // $(".forgotpassword2").css({ 'display': 'block' });
-    }
+      responsedata = await response.json()
+      console.log(responsedata.data)
+      setverifytoken(responsedata.data.token)
+ 
 
+       if (response.status == "400"){
+        setnotify(responsedata.message)
+        setLoading(false)
+        return
+      }
+      else{
+        setLoading(false)
+        $(".forgotpassword2").toggle("slide");
+        $(".forgotpassword2a").css({ 'display': 'block' });
+      }
+} catch (error){
+        // console.log(error)
+      return
+    }
+  }
+
+
+  const forgotpassword2 = () => {
+    handleResetPassword()
+   
+    
+
+  }
+
+  async function handleResetPassword2() {
+    setLoading(true)
+
+    // console.log(pinone)
+    let obj = {
+      password: confirmresetpasswordRef.current.value,
+      uuid: resetemailRef.current.value,
+      token:verifytoken
+    }
+    console.log("obj", obj)
+    const privateKey = "3jvtGHNk5HPtDilbacHZCiT2LFxEEd0SLza3hInX9-A"
+    const data = jwt.sign(obj, privateKey)
+    let response
+    let responsedata
+    try{
+      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/update-password",{
+        method: "POST",
+         body: JSON.stringify({data}),
+        headers: {
+             'Content-Type': 'application/json',
+             'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj'
+            },
+      })
+      responsedata = await response.json()
+      // console.log(responsedata)
+ 
+
+       if (response.status == "400"){
+        setnotify(responsedata.message)
+        setLoading(false)
+        return
+      }
+      else{
+        setLoading(false)
+        $(".forgotpassword2a").toggle("slide");
+        $(".forgotpassword2a").css({ 'display': 'none' });
+        $(".forgotpassword3").css({ 'display': 'block' });
+      }
+} catch (error){
+        // console.log(error)
+      return
+    }
+  }
+
+  const forgotpassword2a = () => {
+        // console.log(passwordpass)
+        var pattern = new RegExp(
+          "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?]).+$"
+        );
+    
+    
+    
+        if(newpasswordRef.current.value == ""){
+          setnotify("Input a password")
+          return
+        }
+    
+        // else if(!passwordpass){
+        //   setnotify3("Password not secure enough")
+        // }
+    
+        else if(confirmresetpasswordRef.current.value == ""){
+          setnotify("Repeat your password")
+          return
+        }
+    
+        else if(confirmresetpasswordRef.current.value !== newpasswordRef.current.value){
+          setnotify("Passwords do not match")
+          return
+        }
+    
+      if (pattern.test(passwordRef.current.value)) {
+      handleResetPassword2()
+      setnotify("")
+      }   
+    
+        else {
+          setnotify3("Password not secure enough")
+         
+        }
 
   }
 
 
   const { isLoading, error, sendRequest:sendLoginRequest }  = useHttp();
+
+  async function handleSignIn() {
+    setLoading(true)
+    let obj = {
+       email:emailRef.current.value,
+        password:passwordRef.current.value,
+        deviceId,
+        deviceType
+    }
+    console.log("obj", obj)
+    const privateKey = "3jvtGHNk5HPtDilbacHZCiT2LFxEEd0SLza3hInX9-A"
+    const data = jwt.sign(obj, privateKey)
+    let response
+    let responsedata
+    try{
+      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/login",{
+        method: "POST",
+         body: JSON.stringify({data}),
+        headers: {
+             'Content-Type': 'application/json',
+             'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj'
+            },
+      })
+      responsedata = await response.json()
+            console.log("data",responsedata)
+       if (response.status == "400"){
+        setnotify(responsedata.message)
+        setLoading(false)
+        return
+      }
+      else{
+        console.log(responsedata)
+        setnotify("")
+          localStorage.setItem("accesstoken", responsedata.data.accessToken)
+        router.push(`/home`)
+      }
+} catch (error){
+        // console.log(error)
+      return
+    }
+  }
+
 
   const signin = () => {
 
@@ -206,56 +450,56 @@ const Login = () => {
     }
 
     else {
-      $(".spinner-border").css({ 'display': 'inline-block' });
+      setLoading(true)
       setnotify("")
+      handleSignIn()
 
-      const email = emailRef.current.value.toLowerCase()
-      console.log(email)
-      const password = passwordRef.current.value
+    //   const email = emailRef.current.value.toLowerCase()
+    //   const password = passwordRef.current.value
 
-      const loginResponse = ((data) => {
-        console.log(data.error_code)
-        if(data.error_code === "validation_error"){
-          setnotify("Email account does not exist")
-          $(".spinner-border").css({ 'display': 'none' });
-        }
+    //   const loginResponse = ((data) => {
+    //     console.log(data.error_code)
+    //     if(data.error_code === "validation_error"){
+    //       setnotify("Email account does not exist")
+    //       $(".spinner-border").css({ 'display': 'none' });
+    //     }
 
-        else if (data.error_code === "unconfirmed_user"){
-          setnotify("Email account not confirmed yet")
-          $(".spinner-border").css({ 'display': 'none' });
-        }
-        else{
-          localStorage.setItem("email", data.user.email)
-          localStorage.setItem("firstname", data.user.first_name)
-          localStorage.setItem("lastname", data.user.last_name)
-          localStorage.setItem("phone", data.user.phone_number)
-          localStorage.setItem("creditofficer", data.user.credit_officer)
-          localStorage.setItem("userid", data.user.id)
-          localStorage.setItem("access_token", data.tokens.access)
-          localStorage.setItem("pin", data.user.transaction_pin)
-          localStorage.setItem("bank", data.user.bank_name)
-          localStorage.setItem("providusid", data.user.va_id)
-          localStorage.setItem("providusaccountnumber", data.user.va_acc_num)
-          localStorage.setItem("accountnumber", data.user.account_number)
+    //     else if (data.error_code === "unconfirmed_user"){
+    //       setnotify("Email account not confirmed yet")
+    //       $(".spinner-border").css({ 'display': 'none' });
+    //     }
+    //     else{
+    //       localStorage.setItem("email", data.user.email)
+    //       localStorage.setItem("firstname", data.user.first_name)
+    //       localStorage.setItem("lastname", data.user.last_name)
+    //       localStorage.setItem("phone", data.user.phone_number)
+    //       localStorage.setItem("creditofficer", data.user.credit_officer)
+    //       localStorage.setItem("userid", data.user.id)
+    //       localStorage.setItem("access_token", data.tokens.access)
+    //       localStorage.setItem("pin", data.user.transaction_pin)
+    //       localStorage.setItem("bank", data.user.bank_name)
+    //       localStorage.setItem("providusid", data.user.va_id)
+    //       localStorage.setItem("providusaccountnumber", data.user.va_acc_num)
+    //       localStorage.setItem("accountnumber", data.user.account_number)
 
-          setnotify2("")
-          $(".spinner-border").css({ 'display': 'none' });
-          router.push('/home');
-        }
+    //       setnotify2("")
+    //       $(".spinner-border").css({ 'display': 'none' });
+    //       router.push('/home');
+    //     }
           
-    })
+    // })
 
-    sendLoginRequest({
-        "url": "https://credisol-main.herokuapp.com/v1/registration/sign_in/",
-        method: "POST",
-        headers: { 
-          'Content-Type': 'application/json',
-      },
-        body: {
-                    email:email,
-                    password:password
-                },
-    }, loginResponse)
+    // sendLoginRequest({
+    //     "url": "https://credisol-main.herokuapp.com/v1/registration/sign_in/",
+    //     method: "POST",
+    //     headers: { 
+    //       'Content-Type': 'application/json',
+    //   },
+    //     body: {
+    //                 email:email,
+    //                 password:password
+    //             },
+    // }, loginResponse)
    
 } 
     }
@@ -268,25 +512,24 @@ const Login = () => {
         <div>
           <Row>
             <div className="col-md-6 homepage1box fordesktoponly">
-              <p style={{ textAlign: "center" }} ><Image src="/images/signupbg.svg"width="375" height="309" /></p>
+              <p style={{ textAlign: "center" }} ><Image src="/images/signupbg.svg" width="375" height="309" /></p>
               <h1 className="homepageherotitle fordesktoponly">
-                Seamless loans now at the lowest interest rates.
+                Building <span className='makereddish'>Wealth</span>, the easy <br/>and reliable way.
               </h1>
 
               <h1 className="homepageherotitle formobileonly">
-                Get seamless loans at
-                the <span className="spanred">lowest</span> interest rates.
+              Building <span className='makereddish'>Wealth</span>, the easy <br/>and reliable way.
               </h1>
               <p style={{ textAlign: "center" }} className="homepagesubtitle fordesktoponly hideipad">
-                We take care of you financially, assisting you with funds and the best business advice to grow and scale your business at affordable interest rates.
-              </p>
+              Building wealth should not be nerve racking. With Oak Finance, <br/>you can now make the most of your finances and <br/>build wealth with ease.
+                            </p>
 
               <p style={{ textAlign: "center" }} className="homepagesubtitle foripadonly">
-                We take care of you financially, assisting you with funds and the best business advice to grow and scale your business at affordable interest rates.
-              </p>
+              Building wealth should not be nerve racking. With Oak Finance, you can now make the most of your finances and build wealth with ease.
+               </p>
 
               <p style={{ textAlign: "center" }} className="homepagesubtitle formobileonly">
-                We take care of you financially, assisting you with funds and the best business advice to grow and scale your business at affordable interest rates.
+              Building wealth should not be nerve racking. With Circle Finance, you can now make the most of your finances and build wealth with ease.
               </p>
 
               {/* <div class="accessbuttons">
@@ -314,32 +557,28 @@ const Login = () => {
             <div className="col-md-4 forgotpassword0">
               <div className="signinbox1">
 
-
+              <img className="" style={{marginBottom:"30px"}}  alt="logo" src="/images/logo.svg" />
                 <h1 className="letsgetstarted ">
-                  Welcome back !
+                  Welcome back
                 </h1>
                 <p className="homepagesubtitle fordesktoponly hideipad">
-                  Please type in your email address to continue to your account
+                Please fill in your information below to access your account.
                 </p>
 
                 <p className="homepagesubtitle foripadonly">
-                  Please type in your email address to continue to your account
+                Please fill in your information below to access your account.
                 </p>
 
                 <p className="homepagesubtitle formobileonly">
-                  Please type in your email address to continue to your account
+                Please fill in your information below to access your account.
                 </p>
 
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Your Email Address</Form.Label>
                   <div className="row">
-                    <div className="col-md-1 col-1">
-                    <div className="loginlock" >
-                      <Image style={{ marginTop: "8px" }} src="/images/sms.svg" height="24px" width="24px" />
-                      </div>
-                    </div>
-                    <div className="col-md-11 col-11">
+            
+                    <div className="col-md-12 col-12">
                       <Form.Control ref={emailRef} id="emailaddress" type="text" placeholder="Enter your email address" />
 
                     </div>
@@ -350,16 +589,19 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Password</Form.Label>
                   <div className="row">
-                    <div className="col-md-1 col-1">
-                      <div className="loginlock" >
-                      <Image style={{ marginTop: "8px" }} 
-                      src="/images/lock.svg" width="24" height="24"
-                      />
-                      </div>
-                    </div>
-                    <div className="col-md-11 col-11">
-                      <Form.Control ref={passwordRef} id="password" type="password" placeholder="Enter your password" />
-
+                 
+                    <div className="col-md-12 col-12">
+                      {/* <Form.Control ref={passwordRef} id="password" type="password" placeholder="Enter your password" /> */}
+                      <div className="form-group">
+              
+               <div className="input-group" id="show_hide_password">
+      <input className="form-control" type="password"  ref={passwordRef}  placeholder="Enter a password" />
+      <div className="input-group-addon"  style={{paddingTop:"4px", paddingLeft:"10px"}}>
+        <a  href=""><i className="fa fa-eye-slash" aria-hidden="true"></i></a>
+      </div>
+    </div>
+              
+                </div>
                     </div>
                   </div>
                 </Form.Group>
@@ -369,18 +611,22 @@ const Login = () => {
                 <p className="" style={{ textAlign: "center" }}>
 
                   <button style={{ marginTop: "25px", marginBottom: "20px" }} onClick={signin} className="continuebutton accessbutton">Login
-                    <div className="spinner-border spinner-border-sm" role="status">
-                      <span className="sr-only">Loading...</span>
-                    </div>
+                  {loading && (
+                 <div className= {`spinner-border spinner-border-sm spinner`} role="status">
+                <span className="sr-only">Loading...</span>
+                </div>
+                )}
 
                   </button>
 
                 </p>
-                <p style={{fontSize:"14px", }}>No Account? 
+                <p style={{fontSize:"14px", color:"#687181" }}>Dont have an account? 
 
                   <Link href="/signup" style={{ textDecoration: "none" }}> 
-                  <span style={{paddingLeft:"5px", color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px", cursor:"pointer" }}>
-                    Sign up now</span></Link> <span style={{ float: "right", color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px", cursor: "pointer" }} 
+                  <span style={{paddingLeft:"5px", color: "#2F6D67", fontWeight:"600", cursor:"pointer" }}>
+                    Sign up here</span></Link> 
+                    <i style={{marginLeft:"5px"}} class="fas fa-chevron-right"></i>
+                    <span style={{ float: "right", color: "#2F6D67", fontWeight:"600", cursor: "pointer" }} 
                     onClick={forgotpassword0} >Forgot password</span>
                     </p>
 
@@ -399,33 +645,30 @@ const Login = () => {
             <div className="col-md-4  forgotpassword1">
               <div className="signinbox1">
 
+              <p onClick={gobackforgotpassword0}  className="loansareavailable2 forgotpasswordbackbutton1" style={{cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
 
                 <p className="homepagesubtitle fordesktoponly hideipad">
-                  Please type in your email address to continue to your account
+                  Please type in your email address to reset your account
                 </p>
 
                 <p className="homepagesubtitle foripadonly">
-                  Please type in your email address to continue to your account
+                  Please type in your email address to reset your account
                 </p>
 
                 <p className="homepagesubtitle formobileonly">
-                  Please type in your email address to continue to your account
+                  Please type in your email address to reset your account
                 </p>
 
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>Your Email Address</Form.Label>
                   <div className="row">
-                    <div className="col-md-1 col-1">
-                      {/* <Image style={{ marginTop: "8px" }} src="/images/sms.svg" layout="fill" /> */}
-                      <div className="loginlock" >
-                      <Image style={{ marginTop: "8px" }} 
-                      src="/images/sms.svg" width="24" height="24"
-                      />
-                      </div>
-                    </div>
-                    <div className="col-md-11 col-11">
-                      <Form.Control id="resetemailaddress" type="text" placeholder="Enter your email address" />
+              
+                    <div className="col-md-12 col-12">
+                      <Form.Control id="resetemailaddress" type="text" placeholder="Enter your email address" ref={resetemailRef} />
 
                     </div>
                   </div>
@@ -446,16 +689,18 @@ const Login = () => {
      </button> */}
 
                   <button style={{ marginTop: "25px", marginBottom: "20px" }} onClick={forgotpassword1} className="continuebutton accessbutton">Continue
-                    <div className="spinner-border spinner-border-sm" role="status">
-                      <span className="sr-only">Loading...</span>
-                    </div>
+                  {loading && (
+                 <div className= {`spinner-border spinner-border-sm spinner`} role="status">
+                <span className="sr-only">Loading...</span>
+                </div>
+                )}
 
                   </button>
 
                 </p>
-                <p> <a style={{ textDecoration: "none", cursor: "pointer" }}> <span onClick={gobackforgotpassword0} style={{ color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px" }}>Go back</span>
+                {/* <p> <a style={{ textDecoration: "none", cursor: "pointer" }}> <span onClick={gobackforgotpassword0} style={{ color: "#DD3737", textDecoration: "underline", textUnderlineOffset: "2px" }}>Go back</span>
                 </a>
-                </p>
+                </p> */}
 
               </div>
 
@@ -463,31 +708,65 @@ const Login = () => {
 
             <div className="col-md-4 forgotpassword2">
               <div className="">
-
+              <p onClick={gobackforgotpassword1}  className="loansareavailable2 forgotpasswordbackbutton2" style={{cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
 
                 <p className="homepagesubtitle fordesktoponly hideipad">
-                  An OTP has been sent to <span style={{ fontWeight: "bold" }}>{email}</span>. kindly input it below.
+                  An OTP has been sent to your email, Kindly input it below.
                 </p>
 
                 <p className="homepagesubtitle foripadonly">
-                  An OTP has been sent to <span style={{ fontWeight: "bold" }}>{email}</span>. kindly input it below.
+                  An OTP has been sent to your email, Kindly input it below.
                 </p>
 
                 <p className="homepagesubtitle formobileonly">
-                  An OTP has been sent to<span style={{ fontWeight: "bold" }}>{email}</span>. kindly input it below.
+                  An OTP has been sent to your email. Kindly input it below.
                 </p>
 
 
                 <div className="row otp-screen" id="otp-screen">
 
-                  <input type="text" className="otp1" id="otpstep1one" placeholder="0" maxLength="1" />
-                  <input type="text" className="otp1" id="otpstep1two" placeholder="0" maxLength="1" />
-                  <input type="text" className="otp1" id="otpstep1three" placeholder="0" maxLength="1" />
-                  <input type="text" className="otp1" id="otpstep1four" placeholder="0" maxLength="1" />
+                  <input type="password" className="otp1" id="otpstep1one"  ref={verifycode1Ref}  placeholder="" maxLength="1" />
+                  <input type="password" className="otp1" id="otpstep1two" ref={verifycode2Ref}  placeholder="" maxLength="1" />
+                  <input type="password" className="otp1" id="otpstep1three" ref={verifycode3Ref}  placeholder="" maxLength="1" />
+                  <input type="password" className="otp1" id="otpstep1four" ref={verifycode4Ref}  placeholder="" maxLength="1" />
 
 
                 </div>
 
+                <p className="" style={{ textAlign: "center", color: "#DD3737", fontWeight: "bold" }}>{notify}</p>
+
+<p className="" style={{ textAlign: "center" }}>
+
+  <button style={{ marginTop: "25px", marginBottom: "20px" }} onClick={forgotpassword2} className="continuebutton accessbutton">Continue
+  {loading && (
+                 <div className= {`spinner-border spinner-border-sm spinner`} role="status">
+                <span className="sr-only">Loading...</span>
+                </div>
+                )}
+
+  </button>
+
+</p>
+
+
+
+
+
+              </div>
+
+            </div>
+
+            <div className="col-md-4 forgotpassword2a">
+              <div className="">
+              <p onClick={gobackforgotpassword1a}  className="loansareavailable2 forgotpasswordbackbutton3" style={{cursor:"pointer"}}>
+                {/* <Image className="" style={{marginTop:"7px"}} src="/images/arrow-left.svg" height="24" width="24"/>  */}
+                <span className=""><i className="fas fa-long-arrow-alt-left" style={{color:"#DD3737"}}></i> Back</span>
+                </p>
+
+      
                 <div className="">
 
                   <p className="homepagesubtitle fordesktoponly hideipad">
@@ -506,12 +785,21 @@ const Login = () => {
                   <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "20px" }}>New Password</Form.Label>
                     <div className="row">
-                      <div className="col-md-1 col-1">
+                      {/* <div className="col-md-1 col-1">
                         <Image style={{ marginTop: "8px" }} src="/images/lock.svg" layout="fill" />
-                      </div>
-                      <div className="col-md-11 col-11">
-                        <Form.Control id="newpassword" onKeyUp={inputpassword} type="password" placeholder="Enter your password" />
-
+                      </div> */}
+                      <div className="col-md-12 col-12">
+                        {/* <Form.Control id="newpassword" onKeyUp={inputpassword} type="password" placeholder="Enter your password" /> */}
+                        <div className="form-group">
+              
+              <div className="input-group" id="show_hide_password">
+     <input className="form-control" type="password" onKeyUp={inputpassword}   ref={newpasswordRef}  placeholder="Enter a password" />
+     <div className="input-group-addon"  style={{paddingTop:"4px", paddingLeft:"10px"}}>
+       <a  href=""><i className="fa fa-eye-slash" aria-hidden="true"></i></a>
+     </div>
+   </div>
+             
+               </div>
                       </div>
                     </div>
                   </Form.Group>
@@ -519,12 +807,21 @@ const Login = () => {
                   <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="emaillabel" style={{ color: "#666666", paddingTop: "10px", paddingBottom: "0px" }}>Confirm Password</Form.Label>
                     <div className="row">
-                      <div className="col-md-1 col-1">
+                      {/* <div className="col-md-1 col-1">
                         <Image style={{ marginTop: "8px" }} src="/images/lock.svg" layout="fill" />
-                      </div>
-                      <div className="col-md-11 col-11">
-                        <Form.Control id="confirmpassword" type="password" placeholder="Enter your password" />
-
+                      </div> */}
+                      <div className="col-md-12 col-12">
+                        {/* <Form.Control id="confirmpassword" type="password" placeholder="Enter your password" /> */}
+                        <div className="form-group">
+              
+              <div className="input-group" id="show_hide_password">
+     <input className="form-control" type="password"  ref={confirmresetpasswordRef}  placeholder="Confirm password" />
+     <div className="input-group-addon"  style={{paddingTop:"4px", paddingLeft:"10px"}}>
+       <a  href=""><i className="fa fa-eye-slash" aria-hidden="true"></i></a>
+     </div>
+   </div>
+             
+               </div>
                       </div>
                     </div>
                   </Form.Group>
@@ -538,10 +835,12 @@ const Login = () => {
 
                   <p className="" style={{ textAlign: "center" }}>
 
-                    <button style={{ marginTop: "25px", marginBottom: "20px" }} onClick={forgotpassword2} className="continuebutton accessbutton">Next
-                      <div className="spinner-border spinner-border-sm" role="status">
-                        <span className="sr-only">Loading...</span>
-                      </div>
+                    <button style={{ marginTop: "25px", marginBottom: "20px" }} onClick={forgotpassword2a} className="continuebutton accessbutton">Continue
+                    {loading && (
+                 <div className= {`spinner-border spinner-border-sm spinner`} role="status">
+                <span className="sr-only">Loading...</span>
+                </div>
+                )}
 
                     </button>
 
@@ -560,21 +859,27 @@ const Login = () => {
 
 
             <div className="col-md-4  forgotpassword3">
-              <div className="signinbox1">
+              <div className="signinbox1 successfulbox">
 
 
-                <p className="homepagesubtitle fordesktoponly hideipad">
-                  Your password has been reset successfully. Click the button below to login
-                </p>
+          
 
-                <p className="homepagesubtitle foripadonly">
-                  Your password has been reset successfully. Click the button below to login
-                </p>
+           
+                <p style={{textAlign:"center"}}><img src="/images/badge-check.svg" alt="" /></p>
+                <h1 style={{ textAlign: "center" }} className="letsgetstarted">
+                  Successful
+                </h1>
+                <p style={{ textAlign: "center" }} className="homepagesubtitle fordesktoponly hideipad">
+                Your password has been reset successfully. Click the button below to login
+                                </p>
 
-                <p className="homepagesubtitle formobileonly">
-                  Your password has been reset successfully. Click the button below to login
-                </p>
+                <p style={{ textAlign: "center" }} className="homepagesubtitle foripadonly">
+                Your password has been reset successfully. Click the button below to login
+                                </p>
 
+                <p style={{ textAlign: "center" }} className="homepagesubtitle formobileonly">
+                Your password has been reset successfully. Click the button below to login
+                                </p>
 
 
 
@@ -582,9 +887,11 @@ const Login = () => {
                 <p className="" style={{ textAlign: "center" }}>
 
                   <button style={{ marginTop: "25px", marginBottom: "20px" }} onClick={gobackforgotpassword2} className="continuebutton accessbutton">Sign In
-                    <div className="spinner-border spinner-border-sm" role="status">
-                      <span className="sr-only">Loading...</span>
-                    </div>
+                  {loading && (
+                 <div className= {`spinner-border spinner-border-sm spinner`} role="status">
+                <span className="sr-only">Loading...</span>
+                </div>
+                )}
 
                   </button>
 

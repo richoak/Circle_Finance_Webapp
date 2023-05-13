@@ -1,0 +1,53 @@
+.statementtitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+color: #A8B0BF;
+padding-top:56px;
+padding-bottom:0px
+}
+
+.abouttitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+color: #A8B0BF;
+padding-top:56px;
+padding-bottom:20px
+}
+
+.phonenumber{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 120%;
+    padding-top:8px;
+    color:#323740
+}
+
+.mailbox{
+    margin-top:30px;
+    background: #F4F5F7;
+    border-radius: 4px;
+    padding:20px 10px 10px 10px
+}
+
+.callbox{
+    margin-top:30px;
+    background: #F4F5F7;
+    border-radius: 4px;
+    padding:20px 10px 10px 10px
+}
+
+.visitus{
+    color:#434E61!important
+}
+
+.connect{
+    color:#687181;
+    font-weight: 700;
+font-size: 17px;
+}

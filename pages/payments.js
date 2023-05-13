@@ -1,6 +1,6 @@
 import React, {Fragment} from "react"
 import Head from "next/head"
-import Payments from "../components/Payments"
+import HomeTab from "../components/payments/HomeTab"
 
 const PaymentsPage = () => {
   return (
@@ -11,7 +11,7 @@ const PaymentsPage = () => {
     name="description" 
     content="Quick Loans"/>  
     </Head>  
-    <Payments/>
+    <HomeTab/>
 </Fragment>
    
   )

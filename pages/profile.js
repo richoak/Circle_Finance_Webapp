@@ -1,6 +1,6 @@
 import React, {Fragment} from "react"
 import Head from "next/head"
-import Profile from "../components/Profile"
+import Profile from "../components/account/Profile"
 
 const ProfilePage = () => {
   return (

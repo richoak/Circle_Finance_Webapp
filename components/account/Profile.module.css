@@ -1,0 +1,92 @@
+.personalprofileboxes{
+
+}
+
+.personalprofileboxes{
+    display: inline-block;
+    /* margin-left:15px; */
+    margin-top:30px
+    /* float:left */
+}
+
+.button{
+    background: #EEEFF2;
+    border-radius: 4px;
+    padding-top:10px;
+    color:#687181;
+    font-weight:bold
+}
+
+.buttonactive{
+    background: #FFF2F2;
+    border-radius: 4px;
+    padding-top:10px;
+    color: #DD3636;
+}
+
+.goback{
+    padding-top:30px
+}
+
+.continuebutton{
+    background-color: #2F6D67;
+    color:#FFF;
+    font-weight:600;
+    border-radius:8px;
+    padding-top:12px;
+    padding-bottom:12px;
+    padding-left: 20px;
+    padding-right:20px;
+    text-decoration: none;
+    font-size:14px;
+    cursor:pointer;
+    width:100%;
+    margin-top:20px
+}
+
+.securitybutton{
+    background-color: #2F6D67;
+    color:#FFF;
+    font-weight:600;
+    border-radius:8px;
+    padding-top:12px;
+    padding-bottom:12px;
+    padding-left: 20px;
+    padding-right:20px;
+    text-decoration: none;
+    font-size:14px;
+    cursor:pointer;
+    width:67%;
+    margin-top:20px
+}
+
+.optiontitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+color: #A8B0BF;
+padding-top:30px
+}
+
+
+.statementtitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+color: #A8B0BF;
+padding-top:0px
+}
+
+.securitytitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 120%;
+color: #A8B0BF;
+/* padding-top:30px */
+}

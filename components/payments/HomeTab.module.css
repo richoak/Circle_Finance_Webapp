@@ -1,0 +1,246 @@
+.personalprofileboxes{
+
+}
+
+.personalprofileboxes{
+    display: inline-block;
+    /* margin-left:15px; */
+    margin-top:30px
+    /* float:left */
+}
+
+.button{
+    background: #EEEFF2;
+    border-radius: 4px;
+    padding-top:10px;
+    color:#687181;
+    font-weight:bold
+}
+
+.buttonactive{
+    background: #FFF2F2;
+    border-radius: 4px;
+    padding-top:10px;
+    color: #DD3636;
+}
+
+.goback{
+    padding-top:30px
+}
+
+.continuebutton{
+    background-color: #2F6D67;
+    color:#FFF;
+    font-weight:600;
+    border-radius:8px;
+    padding-top:12px;
+    padding-bottom:12px;
+    padding-left: 20px;
+    padding-right:20px;
+    text-decoration: none;
+    font-size:14px;
+    cursor:pointer;
+    width:100%;
+    margin-top:20px
+}
+
+.securitybutton{
+    background-color: #2F6D67;
+    color:#FFF;
+    font-weight:600;
+    border-radius:8px;
+    padding-top:12px;
+    padding-bottom:12px;
+    padding-left: 20px;
+    padding-right:20px;
+    text-decoration: none;
+    font-size:14px;
+    cursor:pointer;
+    width:67%;
+    margin-top:20px
+}
+
+.optiontitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+color: #A8B0BF;
+padding-top:30px
+}
+
+
+.statementtitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+color: #A8B0BF;
+padding-top:0px
+}
+
+.securitytitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 120%;
+color: #A8B0BF;
+/* padding-top:30px */
+}
+
+.walletdiv{
+    border-right:1px solid #E1E4EB;
+    background-image: url("/images/walletbg.svg");
+    background-repeat: no-repeat;
+}
+
+.savedcard{
+    background-image: url("/images/bankcard.svg");
+    background-repeat: no-repeat;
+}
+
+.availablebalance{
+    font-size:14px;
+    color:#FFF;
+    padding-top:15px;
+    padding-left:30px
+    /* font-weight:bold */
+}
+
+.walletamount{
+     padding-left:30px;
+     color:#FFF;
+}
+
+.walletname{
+    margin-top:30px;
+    color:#FFF;
+    padding-left:30px;
+    
+}
+
+.bankname{
+    font-size:12px;
+    margin-top:-17px
+}
+
+.preamount{
+    font-size:12px;
+    font-weight:bold
+}
+
+.amount{
+    padding-left:2px;
+    padding-right:2px;
+    font-size:20px;
+    font-weight:bold
+}
+
+.accountnumber{
+    margin-top:-17px;
+    padding-bottom:20px!important;
+      color:#FFF
+}
+
+.bank{
+    padding-right:110px;
+    padding-top:20px;
+    color:#FFF
+}
+
+.accountname{
+    font-size: 16px;
+    color:#FFF
+}
+
+.copyicon{
+    margin-top:1px!important;
+    cursor:pointer
+}
+
+.transactionlist{
+    font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 120%;
+color: #687181;
+}
+
+.transactiondate{
+    color:#7D8799;
+    font-size:12px;
+    margin-top:-15px
+}
+
+.transactiontype {
+    color:#434E61;
+    font-size:16px
+}
+
+.addbank{
+    font-weight: 700;
+    font-size: 18px;
+    text-align:center;
+    margin-top:40px
+}
+
+
+.addcard {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.filterbutton{
+    border:1px solid#CCCCCC;
+    background: #FFF;
+    border-radius: 4px;
+    color:#333333;
+    font-size:14px;  
+    padding:6px 20px ;
+    cursor:pointer; 
+    transition:all ease-in-out .2s;
+    
+}
+
+.sortbutton{
+    border:1px solid#CCCCCC;
+    background: #FFF;
+    border-radius: 4px;
+    font-size:14px;  
+    padding:5px 10px ;
+    cursor:pointer; 
+    transition:all ease-in-out .2s;
+    
+}
+
+.filterhr{
+    margin-top:40px;
+    margin-bottom:30px;
+    border:4px solid #F2F2F2;
+    color:#F2F2F2
+}
+
+
+.filteroptions{
+    color:#808080;
+    cursor: pointer;
+}
+
+.transactionmethod{
+    padding-bottom:15px;
+    font-style: normal;
+font-weight: 700;
+font-size: 20px;
+}
+
+.sortbutton{
+margin-top:20px!important
+}
+
+
+.controller{
+    margin-top:-20px
+}

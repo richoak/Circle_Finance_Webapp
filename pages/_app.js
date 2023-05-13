@@ -27,8 +27,8 @@ function MyApp({ Component, pageProps, router }) {
   integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
   crossOrigin="anonymous"/>
   
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;402&display=swap" rel="stylesheet"  crossOrigin="anonymous"/>
-
+  {/* <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;402&display=swap" rel="stylesheet"  crossOrigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/> */}
 
   <link
     rel="stylesheet"

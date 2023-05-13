@@ -1,6 +1,6 @@
 import React, {Fragment} from "react"
 import Head from "next/head"
-import Statement from "../components/Statement"
+import Statement from "../components/account/Statement"
 
 const StatementPage = () => {
   return (

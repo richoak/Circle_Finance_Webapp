@@ -9,6 +9,8 @@ import "../js/main.js"
 const Topbar = () => {
 
   const [firstname, setfirstname] = useState("")
+  const [email, setemail] = useState("")
+  const [name, setname] = useState("")
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
   const [greeting, setGreeting] = useState()
@@ -107,6 +109,11 @@ const continueButton = () => {
     // }
   }, [])
 
+  useEffect(() => {
+    setname(localStorage.getItem("firstname") + " " + localStorage.getItem("lastname"))
+  setemail(localStorage.getItem("email"))
+  },[])
+
   // AUTOLOGOUT
   // useEffect(() => {
   //   var IDLE_TIMEOUT = 180; //seconds
@@ -195,66 +202,15 @@ const continueButton = () => {
         </Modal.Body>
 
       </Modal>
-      {/* <Navbar bg="light" expand="lg">
-  <Container fluid>
 
-    <p className='username1'>
-    <span class="username">Hi </span>
-    <span class="usernamespan">Username</span>
-    <br/><span class="usernamespan2">Welcome to your credisol account</span></p>
-    
-    <Navbar.Toggle aria-controls="navbarScroll" />
-    <Navbar.Collapse id="navbarScroll">
-     
-      <Nav
-        className="me-auto my-2 my-lg-0"
-        style={{ maxHeight: '200px' }}
-        navbarScroll
-      >
-        <Nav.Link>
-        <p className='thenavbarmenu thenavbarmenumobile  thenavbarmenumobile1'> <Image className="" src="images/home.svg"/> <span className="thenavbarmenuspan">   Home</span> </p>
-            </Link>
-
-            <Nav.Link>
-            <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="images/loans.svg"/> <span className="thenavbarmenuspan"> Loans</span></p>
-            </Link>
-
-            <Nav.Link>
-            <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="images/payments.svg"/><span className="thenavbarmenuspan"> Payments</span></p>
-            </Link>
-
-            <Nav.Link>
-            <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="images/support.svg"/><span className="thenavbarmenuspan"> Support</span></p>
-            </Link>
-
-            <Nav.Link>
-            <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="images/referrals.svg"/> <span className="thenavbarmenuspan">Referrals</span></p>
-            </Link>
-
-            <Nav.Link>
-            <p className='thenavbarmenu thenavbarmenumobile'><Image className="" src="images/about.svg"/> <span className="thenavbarmenuspan">About Credisol</span></p>
-            </Link>
-
-            <ul class="navbar-nav mr-auto">
-
-</ul>
-
-     
-     
-      </Nav>
-    </Navbar.Collapse>
-  </Container>
-  
-</Navbar>
-<hr style={{marginTop:"0px"}} /> */}
 
 
 
       <nav className="navbar navbar-expand-lg navbar-light bg-light thenavbar">
-        <p className='username1'>
+        {/* <p className='username1'>
           <span className="username">Hi </span>
           <span className="usernamespan">{firstname}</span>
-          <br /><span className="usernamespan2">{greeting}</span></p>
+          <br /><span className="usernamespan2">{greeting}</span></p> */}
 
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -342,7 +298,7 @@ const continueButton = () => {
       </li> */}
 
 
-            <li className="nav-item dropdown dropdownmobile">
+            {/* <li className="nav-item dropdown dropdownmobile">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
               </a>
@@ -361,16 +317,26 @@ const continueButton = () => {
                 </Link>
 
               </div>
-            </li>
+            </li> */}
 
             <li className="nav-item dropdownmobile">
-              <a className="nav-link" href="#"> <Image className="avatar" src="/images/user.svg" width="24" height="24" /></a>
+      
+            <div className="row">
+              <div className="col-md-4 col-3">
+                <Image  className="" src="/images/userface.svg" width="40" height="40" alt=""/>
+              </div>
+
+              <div className="col-md-8 col-4" style={{paddingTop:"5px"}}>
+              <p > <span className="headername" style={{textTransform:"capitalize"}}>{name}</span>
+               </p>  
+              </div>
+              </div>
 
             </li>
           </ul>
         </div>
       </nav>
-      <hr style={{ marginTop: "0px" }} />
+      {/* <hr style={{ marginTop: "0px" }} /> */}
     </header>
   )
 

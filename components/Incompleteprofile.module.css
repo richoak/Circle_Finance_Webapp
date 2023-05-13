@@ -1,0 +1,482 @@
+.personalprofileboxes{
+
+}
+
+.personalprofileboxes{
+    display: inline-block;
+    /* margin-left:15px; */
+    margin-top:30px
+    /* float:left */
+}
+
+.button{
+    background: #EEEFF2;
+    border-radius: 4px;
+    padding-top:10px;
+    color:#687181;
+    font-weight:bold
+}
+
+.buttonactive{
+    background: #FFF2F2;
+    border-radius: 4px;
+    padding-top:10px;
+    color: #DD3636;
+}
+
+.goback{
+    padding-top:30px
+}
+
+.continuebutton{
+    background-color: #2F6D67;
+    color:#FFF;
+    font-weight:600;
+    border-radius:8px;
+    padding-top:12px;
+    padding-bottom:12px;
+    padding-left: 20px;
+    padding-right:20px;
+    text-decoration: none;
+    font-size:14px;
+    cursor:pointer;
+    width:100%;
+    margin-top:20px
+}
+
+.securitybutton{
+    background-color: #2F6D67;
+    color:#FFF;
+    font-weight:600;
+    border-radius:8px;
+    padding-top:12px;
+    padding-bottom:12px;
+    padding-left: 20px;
+    padding-right:20px;
+    text-decoration: none;
+    font-size:14px;
+    cursor:pointer;
+    width:67%;
+    margin-top:20px
+}
+
+.optiontitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+color: #A8B0BF;
+padding-top:30px
+}
+
+
+.statementtitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+color: #A8B0BF;
+padding-top:0px
+}
+
+.securitytitle{
+    font-family: 'Hanken Grotesk';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 120%;
+color: #A8B0BF;
+/* padding-top:30px */
+}
+
+.walletdiv{
+    background-image: url("/images/walletbg.svg");
+ 
+    /* height: 500px; */
+    /* background-position: center; */
+    background-repeat: no-repeat;
+
+    /* background-size: cover; */
+    /* position: relative; */
+    /* border-right:1px solid #E1E4EB; */
+}
+
+.availablebalance{
+    font-size:14px;
+    color:#F2F2F2;
+    padding-top:17px
+    /* font-weight:bold */
+}
+
+.walletamount{
+    color:#FFF;
+    margin-top:-18px
+}
+
+.bankname{
+    font-size:12px;
+    margin-top:-17px;
+    color:#FFF
+  
+}
+
+.preamount{
+    font-size:12px;
+    font-weight:bold
+}
+
+.amount{
+    padding-left:2px;
+    padding-right:2px;
+    font-size:27px;
+    font-weight:bold
+}
+
+.accountnumber{
+    margin-top:-15px;
+    color:#EAF0FA
+}
+
+.accountname{
+    font-size: 14px;
+    color:#EAF0FA
+}
+
+.copyicon{
+    margin-top:1px!important;
+    cursor:pointer
+}
+
+.transactionlist{
+    font-style: normal;
+font-weight: 700;
+font-size: 15px;
+line-height: 120%;
+color: #687181;
+}
+
+.transactiondate{
+    color:#7D8799;
+    font-size:12px;
+    margin-top:-15px
+}
+
+.transactiontype {
+    color:#434E61;
+    font-size:16px
+}
+
+.addbank{
+    font-weight: 700;
+    font-size: 18px;
+    text-align:center;
+    margin-top:40px
+}
+
+
+.addcard {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.filterbutton{
+    border:1px solid#CCCCCC;
+    padding-top:2px;
+    padding-bottom:2px
+}
+
+.filterhr{
+    margin-top:40px;
+    margin-bottom:30px;
+    border:4px solid #F2F2F2;
+    color:#F2F2F2
+}
+
+
+.filteroptions{
+    color:#808080;
+    cursor: pointer;
+}
+
+.transactionmethod{
+    padding-bottom:15px;
+    font-style: normal;
+font-weight: 700;
+font-size: 20px;
+}
+
+.sortbutton{
+margin-top:20px!important
+}
+
+.walletbox{
+    background-color:#FFF;
+    height:100vh;
+    padding-left:6px
+    /* position:fixed */
+}
+
+.wallettitle{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: #687181;
+    padding-top:10px
+}
+
+.wallettransactions{
+    margin-top:40px
+}
+
+.downloadapp{
+    border: 1px solid #C1C8D6;
+    border-radius: 8px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:20px;
+    padding-top:20px;
+    padding-bottom:-20px
+}
+
+.downloadapp2{
+    /* border: 1px solid #C1C8D6; */
+    border-radius: 8px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:20px;
+    padding-top:20px;
+    padding-bottom:-20px
+}
+
+
+.downloadapptitle{
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: #333333;
+}
+
+/* .noinvestmenttitle{
+    font-weight: 700;
+    font-size: 20px;
+    color: #333333;
+} */
+
+.nonotificationtitle{
+    font-weight: 700;
+    font-size: 20px;
+    color: #333333;
+    text-align:center
+}
+
+.noinvestmenttitle{
+    font-weight: 700;
+    font-size: 17px;
+     color:#DD3636;
+     line-height: 120%;
+        cursor: pointer;
+}
+
+.noinvestmentsubtitle{
+
+    font-weight: 400;
+    font-size: 14px;
+    color: #828282;
+    margin-top:-10px
+}
+
+.noinvestmentbox{
+    background-color:#FFF;
+    padding-top:30px;
+    padding-left:20px;
+    padding-bottom:20px;
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.04), 0px 1.19702px 5.32008px rgba(0, 0, 0, 0.0282725);
+border-radius: 12px;
+
+
+}
+
+.noactivitiesbox{
+    background: #FFF2F2;
+    padding-top:16px;
+    padding-bottom:10px;
+ 
+    /* box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.04), 0px 1.19702px 5.32008px rgba(0, 0, 0, 0.0282725); */
+border-radius: 12px;
+}
+
+.nonotificationbox{
+    background-color:#FFF;
+    padding-top:100px;
+    padding-left:0px;
+    padding-bottom:100px;
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.04), 0px 1.19702px 5.32008px rgba(0, 0, 0, 0.0282725);
+border-radius: 12px;
+}
+
+
+
+
+
+.downloadappsubtitle{
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: #828282;
+    margin-bottom:-20px
+}
+
+.downloadappsubtitle2{
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    color: #828282;
+    margin-top:-20px
+}
+
+
+.download{
+    margin-bottom:-5px;
+    text-align: center;
+}
+
+.download2{
+    margin-bottom:0px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+/* INVESTMENT */
+
+.homebody{
+    margin-left:40px
+}
+
+.investmenttitle{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    color: #687181;
+    padding-top:30px
+}
+
+.investmenttitle2{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 120%;
+    color: #7D8799;
+    padding-top:10px
+}
+
+.investmentamount{
+    margin-top:-10px;
+    
+}
+
+.investmentbox{
+    margin-top:40px;
+    /* cursor: pointer; */
+}
+
+.investmentbox2{
+    background-color:#FFF;
+    padding-top:20px;
+    padding-left:20px;
+    padding-bottom:15px;
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.04), 0px 1.19702px 5.32008px rgba(0, 0, 0, 0.0282725);
+border-radius: 12px;
+}
+
+.homenotifications{
+    background-color:#FFF;
+    padding-top:20px;
+    padding-left:20px;
+    padding-bottom:15px;
+    box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.04), 0px 1.19702px 5.32008px rgba(0, 0, 0, 0.0282725);
+border-radius: 12px;
+height:287px;
+overflow:scroll
+}
+
+.notificationtitle{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #434E61;
+    text-transform: capitalize;
+}
+
+.notificationsubtitle{
+    margin-top:-10px;
+    color: #7D8799;
+    font-weight: 400;
+font-size: 14px;
+line-height: 120%;
+}
+
+.singlenotification{
+cursor: pointer;
+border:none;
+background-color: #FFF;
+margin-top:10px
+    /* padding-bottom:40px */
+}
+
+.chartbox{
+    margin-top:-57px
+}
+
+.analyticsinner{
+    padding-top:60px
+}
+
+.percent{
+    font-weight:bold;
+    float:right
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    padding-left:10px
+  }
+
+  .activitiesdot {
+    height: 10px;
+    width: 10px;
+    background-color: #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    padding-left:10px
+  }
+
+  .tablehead{
+    background-color: #EEEFF2;
+    margin-bottom:10px
+  }
+
+  .tableheadinner{
+    text-align: center;
+    font-weight:bold;
+    padding-top:12px;
+    color:#4F4F4F;
+   
+  
+  }
+
+  .tablebodyinner{
+    text-align: center;
+    padding-top:10px;
+    margin-bottom:5px;
+    color:#4F4F4F;
+  }
+
+
