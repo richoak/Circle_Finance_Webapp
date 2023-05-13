@@ -8,12 +8,14 @@ import classes from './HomeTab.module.css'
 import jwt from 'jsonwebtoken';
 import { useRouter } from 'next/router';
 import $ from 'jquery'
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 // import "../js/main.js"
 
 
 const WalletTab = () => {
   const router = useRouter();
-
+  const notify = () => toast("Account number copied!");
     const startdateRef = useRef() 
     const enddateRef= useRef() 
 
@@ -31,7 +33,9 @@ const WalletTab = () => {
   },[])
 
   const copyClipboard = () => {
+    notify()
     navigator.clipboard.writeText('0127602360')
+
   }
 
 
@@ -193,6 +197,45 @@ const saveChanges = () => {
 // submitData()
 // }
 
+async function loadStatement() {
+  let response
+  let data
+
+  try{
+    response = await fetch('http://3.209.81.171:8000/api/v1/payment/wallet?page=1',{
+      method: "GET",     
+      headers: {
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
+        'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj',
+        "Authorization": `Bearer ${localStorage.getItem("accesstoken")}`
+          },
+    })
+    data = await response.json()
+    console.log(data)
+    // setallsavedcards(data.data.cards)
+    // if(data.data.cards.length >0){
+    //   setiscarddetails(true)
+  
+    // }
+    // else{
+    //   setiscarddetails(false)
+    // }
+
+
+      
+  } catch (error){
+      console.log(error)
+    return
+  }
+
+}
+
+useEffect(() => {
+  loadStatement()
+}, [])
+
+
 
 
 
@@ -209,13 +252,13 @@ const saveChanges = () => {
                             <p className={classes.availablebalance}>Available balance</p>
                         <p className={classes.walletamount}>
                             <span className={classes.preamount}>N</span>
-                            <span className={classes.amount}>2,157,000</span>
-                            <span className={classes.preamount}>.56</span>
+                            <span className={classes.amount}>0</span>
+                            <span className={classes.preamount}>.00</span>
                         </p>
                             </div>
                             <div className="col-md-6">
                               <div className={classes.bank}>
-                              <p style={{textAlign:"center"}}><Image src="/images/providusbank.svg" layout="intrinsic" width="30" height="30" alt="" /></p> 
+                              <p style={{textAlign:"center"}}><Image src="/images/providusbank.svg" layout="intrinsic" width="20" height="20" alt="" /></p> 
                             <p style={{textAlign:"center"}} className={classes.bankname}>PROVIDUS BANK</p>
                               </div>
                           
@@ -231,6 +274,11 @@ const saveChanges = () => {
                         </div>
                        
                     </div>
+
+                    <div>
+        
+        <ToastContainer />
+      </div>
                 </div>
             </div>
 

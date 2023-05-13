@@ -4,19 +4,23 @@ import Link from 'next/link';
 
 import Image from 'next/image';
 import classes from './Home.module.css'
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const Homewallet  = () => {
     const [name, setname]= useState()
     const [ istransaction, setistransaction ] = useState(false)
+      const notify = () => toast("Account number copied!");
 
     useEffect(() => {
         setname(localStorage.getItem("firstname") + " " + localStorage.getItem("lastname"))
       },[])
 
     const copyClipboard = () => {
-        navigator.clipboard.writeText('0127602360')
+           notify()
+    navigator.clipboard.writeText('0127602360')
       }
 
       const transactions = [
@@ -55,6 +59,7 @@ const Homewallet  = () => {
       
     return (
         <>
+                <ToastContainer />
         <div className={classes.walletbox}>
         <p className={classes.wallettitle}>Wallet</p>
         <div style={{marginTop:"10px",  width:""}}>

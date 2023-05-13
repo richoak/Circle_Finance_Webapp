@@ -145,7 +145,8 @@ color: #A8B0BF;
 .accountnumber{
     margin-top:-15px;
     padding-bottom:20px!important;
-      color:#FFF
+      color:#FFF;
+      font-size: 13px;
 }
 
 .bank{
@@ -155,7 +156,12 @@ color: #A8B0BF;
 }
 
 .accountname{
-    font-size: 12px;
+    font-size: 16px;
+    color:#FFF
+}
+
+.accountname2{
+    font-size: 13px;
     color:#FFF
 }
 
