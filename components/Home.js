@@ -11,7 +11,7 @@ import useHttp from '../hooks/use-http';
 import Image from 'next/image';
 import LoanContext from '../store/loan-context';
 
-import { Tooltip as ReactTooltip } from "react-tooltip";
+
 import HomeWallet from "./home/Wallet"
 import Homeinvestment from './home/Investments'
 import Homeanalytics from './home/Analytics'
