@@ -1,6 +1,6 @@
 import React, {Fragment} from "react"
 import Head from "next/head"
-import Invest from "../../components/Invest/Invest"
+import Invest from "../../components/invest/Invest"
 
 const InvestPage = () => {
   return (
