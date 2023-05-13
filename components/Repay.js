@@ -38,7 +38,7 @@ const Repay = () => {
               </div>
 
               <div className="col-md-2 col-4">
-              <p > <span className="loansareavailable2" style={{textTransform:"capitalize"}}>{name}</span> <br/><span  className="accountemail">{email}</span></p>  
+              {/* <p > <span className="loansareavailable2" style={{textTransform:"capitalize"}}>{name}</span> <br/><span  className="accountemail">{email}</span></p>   */}
               </div>
               </div>
       <hr style={{width:"350px", color:"#E1E4EB",marginTop:"-5px"}}/>
