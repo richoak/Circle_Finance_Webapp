@@ -23,8 +23,7 @@
     "react-image-responsive": "^2.0.2",
     "react-paystack": "^4.0.3",
     "react-router-dom": "^6.3.0",
-    "react-spring": "^8.0.27",
-    "react-tooltip": "^5.4.0"
+    "react-spring": "^8.0.27"
   },
   "devDependencies": {
     "eslint": "8.23.0",
