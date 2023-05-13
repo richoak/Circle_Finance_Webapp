@@ -241,7 +241,7 @@ goal. The least monthly balance to invest is N5000 and you can earn up to 12% in
                            <div className="col-md-12" style={{marginTop:"30px"}}>
                            <p>Investment Summary</p>  
                             <p className={classes.investmentinfodrawer}>
-                            This investment plan is targeted at HNIs with a goal to optimizing value from their finances.</p>
+                            This investment plan is targeted at investors with a goal to optimizing value from their finances.</p>
                       
                             </div>
                             <div className="row summarybox">
