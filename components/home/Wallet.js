@@ -117,7 +117,8 @@ const Homewallet  = () => {
                     (
                         <div className="row" key={item.amount}>
                         <div className="col-md-2">
-                            <Image  src= {`${item.type == "Withdrawal" ? "/images/withdrawal.svg " : "/images/funding.svg" }`}
+                            <Image  
+                            src= {`${item.type == "Withdrawal" ? "/images/withdrawal.svg " : "/images/funding.svg" }`}
                             width="35" height="35" layout="intrinsic" alt=""/>
                         </div>
     

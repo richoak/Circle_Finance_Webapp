@@ -19,6 +19,7 @@
     "next": "12.2.5",
     "react": "^16.14.0",
     "react-bootstrap": "^2.7.4",
+    "react-data-table-component": "^7.5.3",
     "react-dom": "^16.14.0",
     "react-image-responsive": "^2.0.2",
     "react-paystack": "^4.0.3",

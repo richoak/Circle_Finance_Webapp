@@ -10,6 +10,8 @@ import { useRouter } from 'next/router';
 import $ from 'jquery'
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+
+import DataTable from 'react-data-table-component';
 // import "../js/main.js"
 
 
@@ -22,6 +24,7 @@ const WalletTab = () => {
 
   const [name, setname]= useState()
   const [ transactionselection , settransactionselection] = useState()
+  const [ transactions , settransactions] = useState([])
   const [ filteramount , setfilteramount ] = useState()
   const [ filterdate , setfilterdate ] = useState()
   const [ filterdiv , setfilterdiv] = useState()
@@ -45,22 +48,7 @@ const WalletTab = () => {
   
    }
 
-     // $(document).ready(function () {
-//    $('html').click(function (e) {
-//     console.log(e.target.id)
-//     if (e.target.id == 'filterbutton') {
-//         $(".cardcontainer").show();
-//         var left = $('#card').offset().left;
-//         $("#card").css({left:left}).animate({"left":"0px"}, "slow");
-//     } else {
-//         // $(".cardcontainer").hide();
-//         var right = $('#card').offset().right;
-//         $("#card").css({left:right}).animate({"left":"0px"}, "slow");
-//     }
-// });
-//    $(".cardcontainer").blur(function(){
-//     $(".cardcontainer").hide();
-//   });
+
 
 useEffect(() => {
     var button = document.getElementById('filterbutton');
@@ -112,90 +100,6 @@ const saveChanges = () => {
 }
 
 
-  
-  const transactions = [
-    {
-        "type":"Withdrawal",
-        "amount":"420,000",
-        "date": "23 March, 2023",
-        "description":"Bank transfer"
-    },
-    {
-        "type":"Funding",
-        "amount":"300,000",
-        "date": "23 January, 2023",
-        "description":"Bank transfer"
-    },
-    {
-        "type":"Withdrawal",
-        "amount":"410,000",
-        "date": "23 March, 2023",
-        "description":"Bank transfer"
-    },
-  ]
-// async function submitData() {
-//   setLoading(true)
-//   let obj = {
-//     "firstName": firstnameRef.current.value,
-//     "lastName": lastnameRef.current.value,
-//     "email": emailRef.current.value,
-//     "phoneNumber": phoneRef.current.value,
-//     "relationship": relationshipRef.current.value,
-//     "gender": genderRef.current.value,
-//     "address": addressRef.current.value,
-//     "state": stateRef.current.value
-// }
-  
-//   console.log("obj", obj)
-//   const privateKey = "3jvtGHNk5HPtDilbacHZCiT2LFxEEd0SLza3hInX9-A"
-//   const data = jwt.sign(obj, privateKey)
-//   let response
-//   let responsedata
-//   try{
-//     response = await fetch("http://3.209.81.171:8000/api/v1/account/next-of-kin",{
-//       method: "POST",
-//        body: JSON.stringify({data}),
-//       headers: {
-//            'Content-Type': 'application/json',
-//            'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj',
-//            "Authorization": `Bearer ${localStorage.getItem("accesstoken")}`
-//           },
-//     })
-//     responsedata = await response.json()
-//           console.log("data",responsedata)
-//      if (response.status == "400"){
-//       setnotify(responsedata.message)
-//       setLoading(false)
-//       return
-//     }
-//     else{
-//       setnotify(responsedata.message)
-//       router.push(`/account`)
-//     }
-// } catch (error){
-//       // console.log(error)
-//     return
-//   }
-// }
-
-
-// const saveChanges = () => {
-//  if(firstnameRef.current.value == "" 
-//  || lastnameRef.current.value == ""
-//  || relationshipRef.current.value == ""
-//  || genderRef.current.value == ""
-//  || emailRef.current.value == ""
-//  || phoneRef.current.value == ""
-//  || addressRef.current.value == ""
-//  || stateRef.current.value == ""
-//  ){
-//   setnotify("Missing details")
-//   setLoading(false)
-//   return
-//  }
-//  setnotify("")
-// submitData()
-// }
 
 async function loadStatement() {
   let response
@@ -212,7 +116,9 @@ async function loadStatement() {
           },
     })
     data = await response.json()
-    console.log(data)
+    // console.log(data.data.results)
+    settransactions(data.data.results)
+    console.log(transactions)
     // setallsavedcards(data.data.cards)
     // if(data.data.cards.length >0){
     //   setiscarddetails(true)
@@ -234,6 +140,32 @@ async function loadStatement() {
 useEffect(() => {
   loadStatement()
 }, [])
+
+const columns = [
+  {
+      name: 'Title',
+      selector: row => row.title,
+      sortable: true,
+  },
+  {
+      name: 'Year',
+      selector: row => row.year,
+      sortable: true,
+  },
+];
+
+const data = [
+  {
+      id: 1,
+      title: 'Beetlejuice',
+      year: '1988',
+  },
+  {
+      id: 2,
+      title: 'Ghostbusters',
+      year: '1984',
+  },
+]
 
 
 
@@ -320,20 +252,25 @@ useEffect(() => {
                         </div>
     
                             <div className="col-md-4">
-                            <p className={classes.transactiontype}>{item.type}</p>
-                            <p className={classes.transactiondate}>{item.date}</p>
+                            <p style={{textTransform:"capitalize"}}  className={classes.transactiontype}>{item.activity}</p>
+                            <p className={classes.transactiondate}>{new Date(item.createdAt).toLocaleDateString()}</p>
                             </div>
     
                             <div className="col-md-1">
                             </div>
     
                             <div className="col-md-5">
-                            <p className={classes.transactiontype}>&#x20A6;{item.amount}</p>
-                                <p className={classes.transactiondate}>{item.description}</p>
+                            <p className={classes.transactiontype}>&#x20A6;{parseInt(item.amount).toLocaleString()}</p>
+                                <p style={{textTransform:"capitalize"}} className={classes.transactiondate}>{item.type}</p>
                             </div>
                         </div>
                     ))
                   }
+
+{/* <DataTable
+            columns={columns}
+            data={data}
+        /> */}
                   
                 </div>
 

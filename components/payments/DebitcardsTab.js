@@ -59,10 +59,11 @@ const DebitcardsTab = () => {
     reference: (new Date()).getTime().toString(),
     email: "user@example.com",
     amount: 20000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
-    publicKey: 'pk_test_bb7131a279680c8dbc99a66390bc7542fbd958e1',
+    publicKey: 'pk_test_65adc04fd6396de1e9600816bb332b6c1c1ef5a5',
   };
   
   const handleSuccess = (reference) => {
+    console.log(reference)
   console.log(reference.reference);
   var reference2 = reference.reference
   // setcardreference(reference.reference)
@@ -99,6 +100,7 @@ async function loadDebitCard() {
           },
     })
     data = await response.json()
+    console.log(data)
     setallsavedcards(data.data.cards)
     if(data.data.cards.length >0){
       setiscarddetails(true)
@@ -125,16 +127,27 @@ useEffect(() => {
 
     return (
       <>
- {  iscarddetails &&   <div style={{marginTop:"40px", width:"400px"}}>
+ { 
+  iscarddetails &&   
+  <>
+          {
+      allsavedcards.map((item) =>
+      (
+        <>
+    <div style={{marginTop:"40px", width:"400px"}}>
       <div className="row">
         <div className="col-md-2">
-        <Image src="/images/mastercard.svg" layout="intrinsic" width="30" height="30" alt="" />
+        <Image 
+        // src="/images/mastercard.svg"
+                  src= {item.brand === "visa" ? "/images/visa.svg " : "/images/mastercard.svg"}
+
+         layout="intrinsic" width="30" height="30" alt="" />
         </div>
         <div className="col-md-2">
-          ****5890
+          ****{item.last4}
         </div>
         <div className="col-md-4">
-          <p style={{fontWeight:"bold"}}>- Unity Bank</p>
+          <p style={{fontWeight:"bold"}}>- {item.bank}</p>
         </div>
 
         <div className="col-md-2">
@@ -155,7 +168,13 @@ useEffect(() => {
         </div>
       </div>
 
-    </div>}
+    </div>
+    </>
+      ))}
+  </>
+
+    
+    }
 
 
     <div style={{marginTop:"40px", width:"400px"}}>
