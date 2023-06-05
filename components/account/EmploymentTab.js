@@ -7,6 +7,7 @@ import Image from 'next/image';
 import classes from './Profile.module.css'
 import jwt from 'jsonwebtoken';
 import { useRouter } from 'next/router';
+import Pageloader from '../Pageloader';
 // import "../js/main.js"
 
 
@@ -100,14 +101,14 @@ const EmploymentTab = () => {
     else{
       setstate(localStorage.getItem("stateofoffice") )
     }
-
+    $(".overlay").fadeOut(0);
   },[])
 
 
   // UPLOAD IMAGES
 
     const uploadFrontCopy = (e) => {
-
+      $(".overlay").fadeIn(1);
       let uploadedFile = e.target.files[0]
     setLoading(true)
     setnotify("Uploading...")
@@ -135,7 +136,7 @@ const EmploymentTab = () => {
       setnotify("")
     }
 
-
+    $(".overlay").fadeOut(0);
     })
     .catch(err => console.log(err))
      
@@ -152,7 +153,7 @@ const EmploymentTab = () => {
 //     data.append("file", uploadedFile)
 //     data.append("upload_preset", "wzqbt0tn")
 //     data.append("cloud_name","dbvhyaqgg")
-//     fetch("  https://api.cloudinary.com/v1_1/dbvhyaqgg/upload",{
+//     fetch("  https://api.cloudinary.com/v1_1/dbvhyaqgg/upload`,{
 //     method:"post",
 //     body: data
 //     })
@@ -197,7 +198,7 @@ async function submitData() {
   let response
   let responsedata
   try{
-    response = await fetch("http://3.209.81.171:8000/api/v1/account/employment",{
+    response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}account/employment`,{
       method: "POST",
        body: JSON.stringify({data}),
       headers: {
@@ -246,6 +247,7 @@ const saveChanges = () => {
 
     return (
       <>
+                <Pageloader/>
          <div style={{marginTop:"40px", width:"400px"}}>
          <p  className={classes.optiontitle}>Legal ID Information</p>
 

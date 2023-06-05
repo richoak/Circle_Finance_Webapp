@@ -23,7 +23,7 @@ const Profileoptions = () => {
     let data
 
     try{
-      response = await fetch('http://3.209.81.171:8000/api/v1/account/profile',{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/account/profile`,{
         method: "GET",     
         headers: {
           // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -58,7 +58,7 @@ const Profileoptions = () => {
     let data
 
     try{
-      response = await fetch('http://3.209.81.171:8000/api/v1/account/next-of-kin',{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/account/next-of-kin`,{
         method: "GET",     
         headers: {
           // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -90,7 +90,7 @@ const Profileoptions = () => {
     let data
 
     try{
-      response = await fetch('http://3.209.81.171:8000/api/v1/account/government-id',{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/account/government-id`,{
         method: "GET",     
         headers: {
           // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -120,7 +120,7 @@ const Profileoptions = () => {
     let data
 
     try{
-      response = await fetch('http://3.209.81.171:8000/api/v1/account/employment',{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/account/employment`,{
         method: "GET",     
         headers: {
           // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -228,7 +228,7 @@ const Profileoptions = () => {
           </Link>
           </div>
           <div className="col-md-2">
-          <Image style={{marginTop:"10px"}} alt= "" className="" src="/images/external.svg" width="20" height="12"/>
+          <Image style={{marginTop:"10px"}} alt= "" className="" src="/images/arrow-right.svg" width="20" height="12"/>
           </div>
       </div>
 
@@ -237,12 +237,12 @@ const Profileoptions = () => {
           <Image  className="" alt="" src="/images/learning.svg" width="22.4" height="24"/>
           </div>
           <div className="col-md-8">
-          <Link className="" href="/statement"  eventKey="2" >
+          {/* <Link className="" href="/statement"  eventKey="2" > */}
           <p className={classes.accountboxtext}>Learning Center</p>
-          </Link>
+          {/* </Link> */}
           </div>
           <div className="col-md-2">
-          <Image style={{marginTop:"10px"}} alt= "" className="" src="/images/arrow-right.svg" width="20" height="12"/>
+          <Image style={{marginTop:"10px"}} alt= "" className="" src="/images/external.svg" width="20" height="12"/>
           </div>
       </div>
        

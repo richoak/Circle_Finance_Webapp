@@ -37,7 +37,7 @@ const BusinessLoan = () => {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/account/send-statement",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/account/send-statement`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {
@@ -113,7 +113,7 @@ const requestStatement = () => {
 
          <div className="row"  style={{marginTop:"24px"}}>
           <div className="col-md-12">
-         <p className={classes.loantitle}>Business Name
+         <p className={classes.loantitle}>Business Loan
          <span  className={classes.goicon} >
         <Image style={{marginTop:"0px"}} alt= ""src="/images/arrow-right.svg" width="20" height="12"/>
         </span>
@@ -130,7 +130,7 @@ const requestStatement = () => {
          <div style={{marginTop:"40px", width:"400px", paddingBottom:"0px", cursor:"pointer"}}>
          <div className="row"  style={{marginTop:"24px"}}>
           <div className="col-md-12">
-         <p className={classes.loantitle}>Business Name
+         <p className={classes.loantitle}>Business Loan
          <span  className={classes.goicon} >
         <Image style={{marginTop:"0px"}} alt= ""src="/images/arrow-right.svg" width="20" height="12"/>
         </span>

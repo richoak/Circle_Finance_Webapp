@@ -71,9 +71,9 @@ const loadDebitCards = () => {
               </div>
               </div> */}
               <div className={classes.goback}>
-              <Link className="" href="/account"  eventKey="2" >
+              {/* <Link className="" href="/account"  eventKey="2" >
               <Image style={{cursor:"pointer"}} src="/images/back.svg" width="20" height="20" layout="intrinsic" alt="" />
-              </Link>
+              </Link> */}
               </div>
     
     <div className={classes.personalprofileboxes}>

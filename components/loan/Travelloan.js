@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer} from 'react';
+import React, { useEffect, useState, useRef} from 'react';
 import {Container, Row,Button, Nav, Form, Accordion, Col} from 'react-bootstrap'
 import Link from 'next/link';
 
@@ -6,6 +6,7 @@ import Topbar from '../Topbar';
 import Sidebar from '../Sidebar'
 import classes from './Loan.module.css'
 import Image from 'next/image';
+import jwt from 'jsonwebtoken';
 
 // import "../js/main.js"
 import $ from 'jquery'
@@ -63,6 +64,12 @@ const Travelloan = () => {
    
 // TABS
 
+const countryRef = useRef();
+const reasonRef = useRef();
+const foreigncurrencyRef = useRef();
+const localamountRef = useRef();
+const foreignamountRef = useRef();
+const durationRef = useRef();
 
 
  
@@ -91,25 +98,7 @@ const Travelloan = () => {
   const [isdocumentationactive, setisdocumentationactive ] = useState(false)
 
 
-  useEffect(() =>{
-    var settingsthree = {
-      "url": "https://credisol-main.herokuapp.com/v1/loans/offers/proof_of_funds/",
-      "method": "GET",
-      "timeout": 0,
-      "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
-      error: function (xhr, status, error) {
-        console.log(xhr)
-     
-      },
-    }
-    
-    $.ajax(settingsthree).done(function (responsethree) {
-      console.log(responsethree)
-      setLoanofferid(responsethree.id)
-      $(".overlay").fadeOut(0);
-    })
-  },[])
-  
+
   const nextstep1 = () =>{
 
     $(".loanapplystepone").slideDown();
@@ -200,6 +189,63 @@ const gobacktostep3 = () =>{
       setisdocumentationactive(false)
 }
 
+
+async function postLoan() {
+  // setLoading(true)
+  let response
+  let responsedata
+
+  let obj = {
+    "Country": countryRef.current.value,
+    "Reason": reasonRef.current.value,
+    "Currency": foreigncurrencyRef.current.value,
+    "AmountLocal": localamountRef.current.value,
+    "AmountForeign": foreignamountRef.current.value,
+    "Duration": durationRef.current.value,
+    "InternationalPassport": internationalpassporturl,
+    "SignedOfferLetter": signedofferletterurl
+  }
+
+
+  const privateKey = "3jvtGHNk5HPtDilbacHZCiT2LFxEEd0SLza3hInX9-A"
+  const data = jwt.sign(obj, privateKey)
+  console.log(obj)
+
+  try{
+    response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/loans/travel/create`,{
+      method: "POST",     
+      body: JSON.stringify({data}),
+      headers: {
+        'Content-Type': 'application/json',
+        'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj',
+        "Authorization": `Bearer ${localStorage.getItem("accesstoken")}`
+          },
+    })
+    responsedata = await response.json()
+    console.log(responsedata)
+    setnotify(responsedata.message)
+
+    if (response.status == "400"){
+      setnotify(responsedata.message)
+      setLoading(false)
+      return
+    }
+    else{
+      $(".loanapplystepfour").slideDown();
+      $(".loanapplystepfour").css({ 'display': 'none' });
+      $(".loanapplystepfive").toggle("slide");
+    }
+
+
+
+    // setLoading(false)
+  } catch (error){
+      console.log(error)
+    return
+  }
+
+}
+
 const submitbutton = () =>{
   console.log(passporturl)
   console.log(typeof(additionaldocumenturl))
@@ -214,54 +260,7 @@ const submitbutton = () =>{
   else{
     setnotify("Processing...")
 console.log(duration)
-let adoc = [{
-  'name': 'Additional Document',
-  'document_url': additionaldocumenturl
-}]
-
-const obj ={
-  "principal" : document.getElementById("amountlocal").value,
-  "duration" : document.getElementById("duration").value,
-  "country_of_visit" : document.getElementById("country").value,
-  "travel_reason" : document.getElementById("reason").value,
-  "foreign_currency" : document.getElementById("currency").value,
-  "amount_requested_local" : document.getElementById("amountlocal").value,
-  "principal" : document.getElementById("amountlocal").value,
-  "amount_requested_foreign" : document.getElementById("amountforeign").value,
-  "loan_offer" : loanofferid,
-  "user":  localStorage.getItem("userid"),
-  "passport": passporturl,
-  "additional_documents":  [{
-    'name': 'Additional Document',
-    'document_url': additionaldocumenturl
-  }]
-}
-
-console.log(JSON.stringify(obj))
-    var settingsthree = {
-      "url": "https://credisol-main.herokuapp.com/v1/loans/pof/",
-      "method": "POST",
-      "timeout": 0,
-      "headers": {
-         "Authorization": "Bearer " + localStorage.getItem("access_token"),
-       
-        },
-        "processData": false,
-       "contentType": "application/json; charset=UTF-8",
-      "data": JSON.stringify(obj),
-      error: function (xhr, status, error) {
-        console.log(xhr)
-     
-      },
-    }
-    
-    $.ajax(settingsthree).done(function (responsethree) {
-      console.log(responsethree)
-      $(".loanapplystepfour").slideDown();
-      $(".loanapplystepfour").css({ 'display': 'none' });
-      $(".loanapplystepfive").toggle( "slide" );
-    })
-
+postLoan()
     
   }
 
@@ -401,7 +400,7 @@ window.location.replace("/home");
 <div className="col-md-5 col-11  tabs webapptabs loanapplystepone">
     
              <div className={classes.goback} style={{marginBottom:"40px"}}>
-            <Link className="" href="/loan/businessloan"  eventKey="2" >
+            <Link className="" href="/loan"  eventKey="2" >
             <Image style={{cursor:"pointer"}} src="/images/back.svg" width="20" height="20" layout="intrinsic" alt="" />
             </Link>
             </div>
@@ -421,7 +420,7 @@ window.location.replace("/home");
 
   <div className="form-group">
   <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Country of visit</label>
-  <select className="form-control" id="country">
+  <select className="form-control" id="country" ref={countryRef}>
     <option value="">- Select Country -</option>
     <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
@@ -672,12 +671,12 @@ window.location.replace("/home");
 
 <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Reason for travelling </Form.Label>
-      <Form.Control   id="reason" width="60px" type="text" placeholder="Reason for travelling" />
+      <Form.Control   id="reason" width="60px" type="text" placeholder="Reason for travelling" ref={reasonRef}/>
   </Form.Group>
 
 <div className="form-group">
   <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Select Foreign Currency</label>
-  <select className="form-control" id="currency">
+  <select className="form-control" id="currency"  ref={foreigncurrencyRef}>
     <option>- Select Currency -</option>
     <option value="dollar">Dollars</option>
     <option value="pounds">Pounds</option>
@@ -688,17 +687,17 @@ window.location.replace("/home");
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label className="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Amount Requested (in local currency) </Form.Label>
-      <Form.Control   id="amountlocal" width="60px" type="number" placeholder="Input amount in local currency" />
+      <Form.Control   id="amountlocal" width="60px" type="number" placeholder="Input amount in local currency" ref={localamountRef}/>
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicEmail">
     <Form.Label class="emaillabel" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Amount Requested (in foreign currency) </Form.Label>
-      <Form.Control   id="amountforeign" width="60px" type="number" placeholder="Input amount in foreign currency" />
+      <Form.Control   id="amountforeign" width="60px" type="number" placeholder="Input amount in foreign currency" ref={foreignamountRef}/>
   </Form.Group>
 
   <div className="form-group">
   <label htmlFor="sel1" style={{color:"#666666",paddingTop:"20px",paddingBottom:"0px"}}>Loan Duration (Months)</label>
-  <select className="form-control" id="duration">
+  <select className="form-control" id="duration" ref={durationRef}>
   <option value="">- Select Duration -</option>
     <option value="1">1</option>
     <option value="2">2</option>
@@ -753,8 +752,8 @@ window.location.replace("/home");
         <p  className="loansareavailablenote2">Loan duration</p>
         <p className="summaryhead">{duration} Month(s)</p>
      
-        <p  className="loansareavailablenote2">Loan repayment</p>
-        <p className="summaryhead">{loanrepayment}</p>
+        <p  className="loansareavailablenote2">Processing Fee</p>
+        <p className="summaryhead">1,500.00</p>
     </div>
 
     <div className="col-md-6 col-6 summarybox2">
@@ -762,8 +761,7 @@ window.location.replace("/home");
     <p className="summaryhead">Travel Loan</p>
     <p  className="loansareavailablenote2">Loan interest</p>
         <p className="summaryhead">5.0%</p>
-        <p  className="loansareavailablenote2">Processing Fee</p>
-        <p className="summaryhead">1,500.00</p>
+     
         </div>
 </div>
 <p style={{fontSize:"14px", textAlign:"center", paddingTop:"20px"}}> On clicking the button below you agree to the <a target="_blank" href="/images/loanagreement.pdf">Terms and Conditions</a></p>
@@ -847,7 +845,7 @@ window.location.replace("/home");
 
 </div>
 
-<div className="col-md-5 col-11 loanapplystepfive">
+<div className="col-md-5 col-11 loanapplystepfive" style={{paddingTop:"35px"}}>
        <div className="successfulbox">
 <h1 className="letsgetstartedstepheading fordesktoponly">
                   {/* Step 2/3 */}

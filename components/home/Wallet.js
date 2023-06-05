@@ -11,7 +11,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const Homewallet  = () => {
     const [name, setname]= useState()
-    const [ istransaction, setistransaction ] = useState(false)
+    const [ istransaction, setistransaction ] = useState(true)
       const notify = () => toast("Account number copied!");
 
     useEffect(() => {

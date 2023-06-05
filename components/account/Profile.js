@@ -8,6 +8,7 @@ import ProfileTab from './ProfileTab'
 import NextofkinTab from './NextofkinTab'
 import GovernmentTab from './GovernmentTab'
 import EmploymentTab from './EmploymentTab'
+
 // import "../js/main.js"
 
 

@@ -8,6 +8,7 @@ import classes from './HomeTab.module.css'
 import jwt from 'jsonwebtoken';
 import { useRouter } from 'next/router';
 import { PaystackConsumer } from 'react-paystack';
+import Pageloader from '../Pageloader';
 // import "../js/main.js"
 
 
@@ -22,9 +23,10 @@ const DebitcardsTab = () => {
 
   async function postCard(cardreference) {
     // setLoading(true)
+    $(".overlay").fadeIn(1);
     let response
     let responsedata
-    console.log("card reference", cardreference)
+
     let obj = {
       reference:cardreference,
     }
@@ -32,10 +34,9 @@ const DebitcardsTab = () => {
   
     const privateKey = "3jvtGHNk5HPtDilbacHZCiT2LFxEEd0SLza3hInX9-A"
     const data = jwt.sign(obj, privateKey)
-    console.log(obj)
   
     try{
-      response = await fetch('http://3.209.81.171:8000/api/v1/payment/cards',{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/payment/cards`,{
         method: "POST",     
         body: JSON.stringify({data}),
         headers: {
@@ -45,9 +46,8 @@ const DebitcardsTab = () => {
             },
       })
       responsedata = await response.json()
-      console.log(responsedata)
       setnotify(responsedata.message)
-      // setLoading(false)
+      $(".overlay").fadeOut(0);
     } catch (error){
         console.log(error)
       return
@@ -63,8 +63,6 @@ const DebitcardsTab = () => {
   };
   
   const handleSuccess = (reference) => {
-    console.log(reference)
-  console.log(reference.reference);
   var reference2 = reference.reference
   // setcardreference(reference.reference)
   postCard(reference2)
@@ -90,7 +88,7 @@ async function loadDebitCard() {
   let data
 
   try{
-    response = await fetch('http://3.209.81.171:8000/api/v1/payment/cards',{
+    response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/payment/cards`,{
       method: "GET",     
       headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -110,7 +108,7 @@ async function loadDebitCard() {
       setiscarddetails(false)
     }
 
-
+    $(".overlay").fadeOut(0);
       
   } catch (error){
       console.log(error)
@@ -127,6 +125,7 @@ useEffect(() => {
 
     return (
       <>
+           <Pageloader/>
  { 
   iscarddetails &&   
   <>
@@ -139,7 +138,7 @@ useEffect(() => {
         <div className="col-md-2">
         <Image 
         // src="/images/mastercard.svg"
-                  src= {item.brand === "visa" ? "/images/visa.svg " : "/images/mastercard.svg"}
+                  src= {item.brand === "visa" ? "/images/visa.svg" : "/images/mastercard.svg"}
 
          layout="intrinsic" width="30" height="30" alt="" />
         </div>

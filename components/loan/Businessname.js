@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Topbar from '../Topbar';
 import Sidebar from '../Sidebar'
 import classes from './Loan.module.css'
+import jwt from 'jsonwebtoken';
 
 // import "../js/main.js"
 import $ from 'jquery'
@@ -257,47 +258,9 @@ const durationRef = useRef()
   }, [identification])
   // UPLOAD IDENTIFICATION
 
-  // GET LOAN OFFER ID
-  useEffect(() => {
-    var settingsthree = {
-      "url": "https://credisol-main.herokuapp.com/v1/loans/offers/business_loan/",
-      "method": "GET",
-      "timeout": 0,
-      "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token") },
-      error: function (xhr, status, error) {
-        console.log(xhr)
 
-      },
-    }
 
-    $.ajax(settingsthree).done(function (responsethree) {
-      console.log(responsethree)
-      // setLoanofferid(responsethree.id)
-      setLoanofferid(responsethree.id)
-      $(".overlay").fadeOut(0);
-    })
-  }, [])
-  // GET LOAN OFFER ID
 
-  // GET USERS BVN
-  useEffect(() => {
-    var settingsthree = {
-      "url": "https://credisol-main.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
-      "method": "GET",
-      "timeout": 0,
-      "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token") }
-    }
-
-    $.ajax(settingsthree).done(function (responsethree) {
-      console.log(responsethree)
-      var name = responsethree.first_name + " " + responsethree.last_name
-      setFirstname(name)
-      setBvn(responsethree.bvn)
-
-    })
-
-  }, [])
-  // GET USER BVN
 
 
   // SWAP STEPS WITH JQUERY
@@ -357,6 +320,67 @@ const durationRef = useRef()
     }
   }
 
+
+  async function postLoan() {
+    // setLoading(true)
+    let response
+    let responsedata
+
+    let obj = {
+      "BusinessName": businessnameRef.current.value,
+      "BNNumber": rcnumberRef.current.value,
+      "DateOfRegistration": registrationRef.current.value,
+      "CityOfCorporation": cityRef.current.value,
+      "AnnualTurnOver": annualRef.current.value,
+      "Amount": amountRef.current.value,
+      "Purpose": purposeRef.current.value,
+      "Duration": durationRef.current.value,
+      "CACCertificate": caccertificateurl,
+      "ProofOfCollateral": proofofcollateralurl,
+      "Photograph": recentphotographurl,
+      "MeansOfId": meansofidurl,
+      "OwnershipCollateral": ownershipcollateralurl
+    }
+  
+  
+    const privateKey = "3jvtGHNk5HPtDilbacHZCiT2LFxEEd0SLza3hInX9-A"
+    const data = jwt.sign(obj, privateKey)
+    console.log(obj)
+  
+    try{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/loans/business/create`,{
+        method: "POST",     
+        body: JSON.stringify({data}),
+        headers: {
+          'Content-Type': 'application/json',
+          'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj',
+          "Authorization": `Bearer ${localStorage.getItem("accesstoken")}`
+            },
+      })
+      responsedata = await response.json()
+      console.log(responsedata)
+      setnotify(responsedata.message)
+
+      if (response.status == "400"){
+        setnotify(responsedata.message)
+        setLoading(false)
+        return
+      }
+      else{
+        $(".loanapplystepthree").slideDown();
+        $(".loanapplystepthree").css({ 'display': 'none' });
+        $(".loanapplystepfive").toggle("slide");
+      }
+
+
+  
+      // setLoading(false)
+    } catch (error){
+        console.log(error)
+      return
+    }
+  
+  }
   const nextstep3 = () => {
     if (certificateurl === undefined) {
       setnotify2("Upload your CAC certificate")
@@ -380,80 +404,8 @@ const durationRef = useRef()
     else {
       setnotify2("Processing...")
       setLoading(true)
-
-console.log(loanofferid)
-
-      const obj = {
-        "user": localStorage.getItem("userid"),
-        "loan_offer": loanofferid,
-        "principal": amountRef.current.value,
-        "duration": durationRef.current.value,
-        "annual_turnover": annualRef.current.value,
-        "loan_purpose": purposeRef.current.value,
-        "registration_type": "bn",
-        "name_of_business": businessnameRef.current.value,
-        "reg_number": rcnumberRef.current.value,
-        "registration_date": registrationRef.current.value,
-        "number_of_directors": "1",
-        "city_of_incorporation": cityRef.current.value,
-
-        "additional_documents": [
-          {
-            'name': 'certificate',
-            'document_url': certificateurl
-          },
-          {
-            'name': 'collateral',
-            'document_url': collateralurl
-          },
-          {
-            'name': 'ownership',
-            'document_url': ownershipurl
-          },
-          {
-            'name': 'photograph',
-            'document_url': photographurl
-          },
-          {
-            'name': 'identification',
-            'document_url': identificationurl
-          }
-
-
-        ],
-        "directors": [
-          {
-            'full_name': firstname,
-            'bvn': bvn
-          },
-
-        ]
-      }
-
-      console.log(JSON.stringify(obj))
-      var settingsthree = {
-        "url": 'https://credisol-main.herokuapp.com/v1/business_loans/',
-        "method": "POST",
-        "timeout": 0,
-        "headers": {
-          "Authorization": "Bearer " + localStorage.getItem("access_token"),
-
-        },
-        "processData": false,
-        "contentType": "application/json; charset=UTF-8",
-        "data": JSON.stringify(obj),
-        error: function (xhr, status, error) {
-          console.log(xhr)
-
-        },
-      }
-
-      $.ajax(settingsthree).done(function (responsethree) {
-        console.log(responsethree)
-        $(".loanapplystepthree").slideDown();
-        $(".loanapplystepthree").css({ 'display': 'none' });
-        $(".loanapplystepfive").toggle("slide");
-      })
+      postLoan()
+      
 
     }
 
@@ -806,8 +758,8 @@ console.log(loanofferid)
 
 
 
-            <div className="col-md-5 col-11 loanapplystepfive">
-            <div className="successfulbox">
+            <div className="col-md-5 col-11 loanapplystepfive" style={{paddingTop:"35px"}}>
+            <div className="successfulbox" >
 <h1 className="letsgetstartedstepheading fordesktoponly">
                   {/* Step 2/3 */}
                 </h1>

@@ -7,6 +7,7 @@ import Image from 'next/image';
 import classes from './Profile.module.css'
 import jwt from 'jsonwebtoken';
 import { useRouter } from 'next/router';
+import Pageloader from '../Pageloader';
 // import "../js/main.js"
 
 
@@ -87,7 +88,7 @@ useEffect(() => {
   else{
     setstate(localStorage.getItem("state"))
   }
-
+  $(".overlay").fadeOut(0);
 }, [])
 
 
@@ -108,7 +109,7 @@ useEffect(() => {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/account/profile",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/account/profile`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {
@@ -153,6 +154,7 @@ const saveChanges = () => {
 
     return (
       <>
+          <Pageloader/>
          <div style={{marginTop:"40px", width:"400px"}}>
          <p  className={classes.optiontitle}>Personal Information</p>
 

@@ -221,7 +221,7 @@ const Signup = () => {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/register",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/onboarding/register`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {
@@ -366,7 +366,7 @@ const Signup = () => {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/verify-user",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/onboarding/verify-user`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {
@@ -416,7 +416,7 @@ const Signup = () => {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/create-account",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/onboarding/create-account`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {
@@ -545,7 +545,7 @@ else{
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/set-pin",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/onboarding/set-pin`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {
@@ -605,7 +605,7 @@ else{
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/request-code",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/onboarding/request-code`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {

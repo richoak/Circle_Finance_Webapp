@@ -9,6 +9,22 @@
     /* float:left */
 }
 
+.transactiondate{
+    color:#7D8799;
+    font-size:12px;
+    margin-top:-16px
+}
+
+.transactiontype {
+    color:#434E61;
+    font-size:16px
+}
+
+.status{
+    color:#434E61;
+    font-size:14px
+}
+
 .button{
     background: #EEEFF2;
     border-radius: 4px;
@@ -80,7 +96,7 @@ font-style: normal;
 font-weight: 700;
 font-size: 22px;
 line-height: 120%;
-color: #A8B0BF;
+color: #687181;
 padding-top:0px;
 padding-bottom:20px
 }

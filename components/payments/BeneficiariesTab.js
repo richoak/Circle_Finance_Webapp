@@ -7,6 +7,7 @@ import Image from 'next/image';
 import classes from './Beneficiaries.module.css'
 import jwt from 'jsonwebtoken';
 import { useRouter } from 'next/router';
+import Pageloader from '../Pageloader';
 // import "../js/main.js"
 
 
@@ -45,7 +46,7 @@ async function loadAllBanks() {
 
 
   try{
-    response = await fetch('http://3.209.81.171:8000/api/v1/payment/banks',{
+    response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/payment/banks`,{
       method: "GET",     
       headers: {
         'Content-Type': 'application/json',
@@ -56,6 +57,7 @@ async function loadAllBanks() {
     data = await response.json()
     // console.log(data.data.banks)
     setallbanks(data.data.banks)
+    $(".overlay").fadeOut(0);
   //  setallbanks(allbanks)
 
       
@@ -79,7 +81,7 @@ async function loadBankData() {
   let data
 
   try{
-    response = await fetch('http://3.209.81.171:8000/api/v1/payment/beneficiaries',{
+    response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/payment/beneficiaries`,{
       method: "GET",     
       headers: {
         'Content-Type': 'application/json',
@@ -97,6 +99,7 @@ async function loadBankData() {
     else{
       setisbankdetails(false)
     }
+    $(".overlay").fadeOut(0);
       
   } catch (error){
       console.log(error)
@@ -119,6 +122,7 @@ const addBank = () => {
 
 async function submitBank() {
   setLoading(true)
+  $(".overlay").fadeIn(1);
 
   let obj = {
     bankCode:bankcode,
@@ -133,7 +137,7 @@ async function submitBank() {
   let response
   let responsedata
   try{
-    response = await fetch("http://3.209.81.171:8000/api/v1/payment/banks",{
+    response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/payment/banks`,{
       method: "POST",
        body: JSON.stringify({data}),
       headers: {
@@ -147,7 +151,7 @@ async function submitBank() {
      if (response.status == "400"){
       setLoading(false)
       setnotify(responsedata.message)
-   
+      $(".overlay").fadeOut(0);
       return
     }
     else{
@@ -157,6 +161,7 @@ async function submitBank() {
       setstagetwo(false)
       setLoading(false)
       setnotify(false)
+      $(".overlay").fadeOut(0);
     }
 } catch (error){
       // console.log(error)
@@ -183,6 +188,7 @@ else{
 // RESOLVE BANK DETAILS
 async function resolveBank() {
   setLoading(true)
+  $(".overlay").fadeIn(1);
   let response
   let responsedata
 
@@ -196,7 +202,7 @@ async function resolveBank() {
   const data = jwt.sign(obj, privateKey)
 
   try{
-    response = await fetch('http://3.209.81.171:8000/api/v1/payment/resolve-account',{
+    response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/payment/resolve-account`,{
       method: "POST",     
       body: JSON.stringify({data}),
       headers: {
@@ -210,6 +216,7 @@ async function resolveBank() {
     setnotify(responsedata.data.message)
     nameRef.current.value = responsedata.data.accountName
     setLoading(false)
+    $(".overlay").fadeIn(0);
   } catch (error){
       console.log(error)
     return
@@ -230,6 +237,7 @@ setbankname(e.nativeEvent.target[id].text)
 return (
 
         <>
+             <Pageloader/>
      {  stageone && isbankdetails &&  
      <div>
            {

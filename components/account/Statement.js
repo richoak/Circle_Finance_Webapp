@@ -37,7 +37,7 @@ const Statement = () => {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/account/send-statement",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/account/send-statement`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {

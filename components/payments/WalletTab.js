@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import $ from 'jquery'
 import { ToastContainer, toast } from 'react-toastify';
   import 'react-toastify/dist/ReactToastify.css';
+  import Pageloader from '../Pageloader';
 
 import DataTable from 'react-data-table-component';
 // import "../js/main.js"
@@ -42,22 +43,9 @@ const WalletTab = () => {
   }
 
 
-// console.log(transactionselection)
-   const showFilter = () => {
-
-  
-   }
-
-
-
 useEffect(() => {
     var button = document.getElementById('filterbutton');
     var container =  document.getElementById('cardcontainer');
-
-
-
-console.log(button)
-console.log(container)
 button.addEventListener('click', function(e){
     console.log("open div")
     setfilterdiv(true)
@@ -106,7 +94,7 @@ async function loadStatement() {
   let data
 
   try{
-    response = await fetch('http://3.209.81.171:8000/api/v1/payment/wallet?page=1',{
+    response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/payment/wallet?page=1`,{
       method: "GET",     
       headers: {
         // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -116,9 +104,10 @@ async function loadStatement() {
           },
     })
     data = await response.json()
-    // console.log(data.data.results)
+    console.log(data.data.results)
     settransactions(data.data.results)
-    console.log(transactions)
+    // console.log(transactions)
+    $(".overlay").fadeOut(0);
     // setallsavedcards(data.data.cards)
     // if(data.data.cards.length >0){
     //   setiscarddetails(true)
@@ -141,31 +130,31 @@ useEffect(() => {
   loadStatement()
 }, [])
 
-const columns = [
-  {
-      name: 'Title',
-      selector: row => row.title,
-      sortable: true,
-  },
-  {
-      name: 'Year',
-      selector: row => row.year,
-      sortable: true,
-  },
-];
+// const columns = [
+//   {
+//       name: 'Title',
+//       selector: row => row.title,
+//       sortable: true,
+//   },
+//   {
+//       name: 'Year',
+//       selector: row => row.year,
+//       sortable: true,
+//   },
+// ];
 
-const data = [
-  {
-      id: 1,
-      title: 'Beetlejuice',
-      year: '1988',
-  },
-  {
-      id: 2,
-      title: 'Ghostbusters',
-      year: '1984',
-  },
-]
+// const data = [
+//   {
+//       id: 1,
+//       title: 'Beetlejuice',
+//       year: '1988',
+//   },
+//   {
+//       id: 2,
+//       title: 'Ghostbusters',
+//       year: '1984',
+//   },
+// ]
 
 
 
@@ -174,6 +163,7 @@ const data = [
 
     return (
       <>
+          <Pageloader/>
          <div style={{marginTop:"40px", width:"900px"}}>
         <div className="row">
             <div className="col-md-6">
@@ -247,7 +237,7 @@ const data = [
                     (
                         <div className="row" key={item.amount}>
                         <div className="col-md-2">
-                            <Image  src= {`${item.type == "Withdrawal" ? "/images/withdrawal.svg " : "/images/funding.svg" }`}
+                            <Image  src= {item.type == "bank transfer" ? "/images/withdrawal.svg" : "/images/funding.svg"}
                             width="35" height="35" layout="intrinsic" alt=""/>
                         </div>
     

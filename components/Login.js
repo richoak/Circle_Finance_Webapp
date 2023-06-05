@@ -130,7 +130,7 @@ const Login = () => {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/reset-password",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/onboarding/reset-password`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {
@@ -274,7 +274,7 @@ const Login = () => {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/verify-code",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/onboarding/verify-code`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {
@@ -326,7 +326,7 @@ const Login = () => {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/update-password",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/onboarding/update-password`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {
@@ -411,7 +411,7 @@ const Login = () => {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/onboarding/login",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/onboarding/login`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {

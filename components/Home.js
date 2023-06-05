@@ -51,7 +51,7 @@ const Home = (props) => {
     let data
 
     try{
-      response = await fetch('http://3.209.81.171:8000/api/v1/account/profile',{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/account/profile`,{
         method: "GET",     
         headers: {
           // 'Content-Type': 'application/x-www-form-urlencoded',

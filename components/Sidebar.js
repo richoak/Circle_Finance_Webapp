@@ -49,7 +49,11 @@ const Sidebar = () => {
         </Link>
 
         <Link className="" href="/account" activeClassName="is-active" >
-          <p className={router.pathname == "/account" ? "thenavbarmenu thenavbaractive" : "thenavbarmenu"}>
+          <p className={router.pathname == "/account" 
+            || router.pathname == "/profile" 
+            || router.pathname == "/security" 
+            || router.pathname == "/statement" 
+          ? "thenavbarmenu thenavbaractive" : "thenavbarmenu"}>
            <Image className=""  alt="" style={{marginTop:"2px"}}  src="/images/account.svg" width="20" height="20"/> 
           <span className={router.pathname == "/account" ? "thenavbarmenuspan thenavbarmenuspanactive" : "thenavbarmenuspan"}>   Account</span>
            </p>

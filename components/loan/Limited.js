@@ -6,6 +6,7 @@ import Topbar from '../Topbar';
 import Sidebar from '../Sidebar'
 import Image from 'next/image';
 import classes from './Loan.module.css'
+import jwt from 'jsonwebtoken';
 
 // import "../js/main.js"
 import $ from 'jquery'
@@ -24,9 +25,9 @@ const Limited = () => {
   const [notify2, setnotify2] = useState("")
   const [notify3, setnotify3] = useState("")
   const [email, setemail] = useState("")
-  const [firstname, setFirstname] = useState("")
+  const [firstname, setFirstname] = useState(localStorage.getItem("firstname") + localStorage.getItem("lastname"))
   const [lastname, setLastname] = useState("")
-  const [bvn, setBvn] = useState("")
+  const [bvn, setBvn] = useState(localStorage.getItem("bvn"))
   const [loanofferid, setLoanofferid] = useState("")
 
   const [certificate, setcertificate ] = useState("/images/caccertificate.svg");
@@ -287,49 +288,7 @@ const dateRef = useRef()
               },[identification])
               // UPLOAD IDENTIFICATION
 
-  // GET LOAN OFFER ID
-  useEffect(() =>{
-    var settingsthree = {
-      "url": "https://credisol-main.herokuapp.com/v1/loans/offers/business_loan/",
-      "method": "GET",
-      "timeout": 0,
-      "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")},
-      error: function (xhr, status, error) {
-        console.log(xhr)
-     
-      },
-    }
-    
-    $.ajax(settingsthree).done(function (responsethree) {
-      console.log(responsethree)
-      // setLoanofferid(responsethree.id)
-      setLoanofferid(responsethree.id)
-      $(".overlay").fadeOut(0);
-    })
-  },[])
-  // GET LOAN OFFER ID
 
-    // GET USER BVN
-  useEffect(() => {
-    var settingsthree = {
-      "url": "https://credisol-main.herokuapp.com/v1/users/" + localStorage.getItem("userid") + "/",
-      "method": "GET",
-      "timeout": 0,
-      "headers": { "Authorization": "Bearer " + localStorage.getItem("access_token")}
-    }
-    
-    $.ajax(settingsthree).done(function (responsethree) {
-      console.log(responsethree)
-      var name = responsethree.first_name + " " + responsethree.last_name
- setFirstname(name)
- setBvn(responsethree.bvn)
- 
-    })
-    
-  }, [])
-    // GET USER BVN
-
-    
   const nextstep1 = () =>{
     if(document.getElementById("businessname").value === ""){
       setnotify("Input your business name")
@@ -394,6 +353,72 @@ const nextstep2 = () =>{
     }
 }
 
+async function postLoan() {
+  // setLoading(true)
+  let response
+  let responsedata
+
+  let obj = {
+    "BusinessName": businessnameRef.current.value,
+    "RCNumber": rcnumberRef.current.value,
+    "NumberOfDirectors": noofdirectorsRef.current.value,
+    "Director1Name": firstname,
+    "Director1BVN": bvn,
+    "Director2Name": director2name.current.value,
+    "Director2BVN": director2bvn.current.value,
+    "DateOfRegistration": dateRef.current.value,
+    "CityOfCorporation": cityRef.current.value,
+    "AnnualTurnOver": annualRef.current.value,
+    "Amount": amountRef.current.value,
+    "Purpose": purposeRef.current.value,
+    "Duration": durationRef.current.value,
+    "CACCertificate": caccertificateurl,
+    "ProofOfCollateral": proofofcollateralurl,
+    "Photograph": recentphotographurl,
+    "MeansOfId": meansofidurl,
+    "OwnershipCollateral": ownershipcollateralurl
+  }
+
+console.log(obj)
+  const privateKey = "3jvtGHNk5HPtDilbacHZCiT2LFxEEd0SLza3hInX9-A"
+  const data = jwt.sign(obj, privateKey)
+  console.log(obj)
+
+  try{
+    response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/loans/businessV2/create`,{
+      method: "POST",     
+      body: JSON.stringify({data}),
+      headers: {
+        'Content-Type': 'application/json',
+        'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj',
+        "Authorization": `Bearer ${localStorage.getItem("accesstoken")}`
+          },
+    })
+    responsedata = await response.json()
+    console.log(responsedata)
+    setnotify(responsedata.message)
+
+    if (response.status == "400"){
+      setnotify(responsedata.message)
+      setLoading(false)
+      return
+    }
+    else{
+      $(".loanapplystepthree").slideDown();
+      $(".loanapplystepthree").css({ 'display': 'none' });
+      $(".loanapplystepfive").toggle("slide");
+    }
+
+
+
+    // setLoading(false)
+  } catch (error){
+      console.log(error)
+    return
+  }
+
+}
+
 const nextstep3 = () =>{
   console.log(document.getElementById("noofdirectors").value)
 
@@ -419,91 +444,11 @@ const nextstep3 = () =>{
   }
     else{
       setnotify2("Processing...")
+      setLoading(true)
+      postLoan()
       
 
-      console.log(dateRef.current.value)
-      const obj ={
-     
-        // "country_of_visit" : document.getElementById("country").value,
-        // "travel_reason" : document.getElementById("reason").value,
-        // "foreign_currency" : document.getElementById("currency").value,
-        // "amount_requested_local" : document.getElementById("amountlocal").value,
-        // "principal" : document.getElementById("amountlocal").value,
-        // "amount_requested_foreign" : document.getElementById("amountforeign").value,
-     
-        "user":  localStorage.getItem("userid"),
-        "loan_offer" : loanofferid,
-        "principal" : amountRef.current.value,
-        "duration" : durationRef.current.value,
-        "annual_turnover" : annualRef.current.value,
-        "loan_purpose" :  purposeRef.current.value,
-        "registration_type" : "ltd",
-        "name_of_business" : businessnameRef.current.value,
-        "reg_number" : rcnumberRef.current.value,
-        "registration_date" : dateRef.current.value,
-        "number_of_directors" : parseInt(document.getElementById("noofdirectors").value),
-        "city_of_incorporation" : cityRef.current.value,
-       
-        "additional_documents":  [
-          {
-           'name': 'certificate',
-            'document_url': certificateurl
-        },
-        {
-          'name': 'collateral',
-           'document_url': collateralurl
-       },
-       {
-        'name': 'ownership',
-         'document_url': ownershipurl
-     },
-     {
-      'name': 'photograph',
-       'document_url': photographurl
-   },
-   {
-    'name': 'identification',
-     'document_url': identificationurl
- }
-      ],
-
-      "directors":  [
-        {
-         'full_name': document.getElementById("director1name").value,
-          'bvn': document.getElementById("director1bvn").value
-      },
-      {
-        'full_name': document.getElementById("director2name").value,
-         'bvn': document.getElementById("director2bvn").value
-     },
-    ]
-      }
-      
-      console.log(JSON.stringify(obj))
-          var settingsthree = {
-            "url": "https://credisol-main.herokuapp.com/v1/business_loans/",
-            "method": "POST",
-            "timeout": 0,
-            "headers": {
-               "Authorization": "Bearer " + localStorage.getItem("access_token"),
-             
-              },
-              "processData": false,
-             "contentType": "application/json; charset=UTF-8",
-            "data": JSON.stringify(obj),
-            error: function (xhr, status, error) {
-              console.log(xhr)
-           
-            },
-          }
-          
-          $.ajax(settingsthree).done(function (responsethree) {
-            console.log(responsethree)
-            $(".loanapplystepthree").slideDown();
-            $(".loanapplystepthree").css({ 'display': 'none' });
-            $(".loanapplystepfive").toggle( "slide" );
-          })
-
+  
     }
   
 }
@@ -736,6 +681,7 @@ window.location.replace("/home");
 
     <div className="col-md-3 col-6">
     <div className="image-upload empimgupload">
+
     <p style={{fontSize:"14px", color:"#687181", textAlign:"center"}}>- CAC Certificate</p>
   <label htmlFor="file">
     <Image class="mobileuploadimages"  alt=""  style={{marginBottom:"40px", cursor:"pointer "}} 
@@ -763,8 +709,6 @@ window.location.replace("/home");
 {proofofcollateral ? <a style={{textDecoration:"none", color:"#DD3737", fontSize:"12px"}} target="_blank" rel="noreferrer" href={proofofcollateralurl}>Preview Proof of collateral</a> : <p></p>}
 </p>
 </div>
-
-
 
 </div>
 
@@ -799,11 +743,11 @@ window.location.replace("/home");
 {meansofid ? <a style={{textDecoration:"none", color:"#DD3737", fontSize:"12px"}} target="_blank" rel="noreferrer" href={meansofidurl}>Preview Means of ID</a> : <p></p>}
 </p>
 </div>
-
-
-
-
 </div>
+
+
+
+
 
 <div className="row" style={{marginTop:"20px"}}>
 <div className="col-md-3" style={{marginLeft:"0px"}}>
@@ -873,7 +817,7 @@ window.location.replace("/home");
 
 
 
-<div className="col-md-5 col-10 loanapplystepfive">
+<div className="col-md-5 col-10 loanapplystepfive" style={{paddingTop:"35px"}}>
 <div className="successfulbox">
 <h1 className="letsgetstartedstepheading fordesktoponly">
                   {/* Step 2/3 */}

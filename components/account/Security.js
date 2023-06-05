@@ -180,7 +180,7 @@ $(document).ready(function() {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/account/update-pin",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/account/update-pin`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {
@@ -249,7 +249,7 @@ $(document).ready(function() {
     let response
     let responsedata
     try{
-      response = await fetch("http://3.209.81.171:8000/api/v1/account/update-password",{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/account/update-password`,{
         method: "POST",
          body: JSON.stringify({data}),
         headers: {
@@ -320,7 +320,7 @@ $(document).ready(function() {
             <Image style={{cursor:"pointer"}} src="/images/back.svg" width="20" height="20" layout="intrinsic" alt="" />
             </Link>
             </div>
-            <div style={{marginTop:"40px", width:"400px"}}>
+            <div style={{marginTop:"0px", width:"400px"}}>
          <p  className={classes.optiontitle}>Update your password</p>
 
      
