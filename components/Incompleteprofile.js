@@ -19,11 +19,11 @@ const Incompleteprofile  = () => {
     <div style={{marginTop:"0px",  width:""}}>
     <div className="row">
         
-            <div className="col-md-6">
+            <div className="col-md-7">
             <div className={classes.noactivitiesbox}>
                 <div className="row">
                 <div className="col-md-2">
-                    <p style={{textAlign:"center"}}>
+                    <p style={{textAlign:"center"}} className={classes.noinvestmenttitleimage}>
                          <Image src="/images/redinfo.svg" layout="intrinsic" width="30" height="30" alt="" /></p>
                
                     </div>

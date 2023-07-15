@@ -7,51 +7,56 @@ import classes from './Home.module.css'
 
 
 
-const Credittable  = () => {
+const Credittable  = (props) => {
     const [name, setname]= useState()
-    const [ isinvestment, setisinvestment ] = useState(false)
+    // const [ isinvestment, setisinvestment ] = useState(false)
+    // const [ transactions, settransactions ] = useState([])
+
 
     useEffect(() => {
         setname(localStorage.getItem("firstname") + " " + localStorage.getItem("lastname"))
       },[])
 
-      const transactions = [
-        {
-            "type":"Premium",
-            "amount":"420,000",
-            "date": "23 March, 2023",
-            "duration":"5",
-            "status":"Active"
-        },
-        {
-            "type":"Premium plus",
-            "amount":"300,000",
-            "date": "23 January, 2023",
-            "duration":"2",
-            "status":"Active"
-        },
-        {
-            "type":"R.E.I.F",
-            "amount":"410,000",
-            "date": "23 March, 2023",
-            "duration":"3",
-            "status":"Completed"
-        },
-        {
-            "type":"Premium",
-            "amount":"210,000",
-            "date": "23 March, 2023",
-            "duration":"4",
-            "status":"Completed"
-        },
-        {
-            "type":"Premium plus",
-            "amount":"110,000",
-            "date": "23 March, 2023",
-            "duration":"6",
-            "status":"Completed"
-        },
-      ]
+
+
+
+    //   const transactions = [
+    //     {
+    //         "type":"Premium",
+    //         "amount":"420,000",
+    //         "date": "23 March, 2023",
+    //         "duration":"5",
+    //         "status":"Active"
+    //     },
+    //     {
+    //         "type":"Premium plus",
+    //         "amount":"300,000",
+    //         "date": "23 January, 2023",
+    //         "duration":"2",
+    //         "status":"Active"
+    //     },
+    //     {
+    //         "type":"R.E.I.F",
+    //         "amount":"410,000",
+    //         "date": "23 March, 2023",
+    //         "duration":"3",
+    //         "status":"Completed"
+    //     },
+    //     {
+    //         "type":"Premium",
+    //         "amount":"210,000",
+    //         "date": "23 March, 2023",
+    //         "duration":"4",
+    //         "status":"Completed"
+    //     },
+    //     {
+    //         "type":"Premium plus",
+    //         "amount":"110,000",
+    //         "date": "23 March, 2023",
+    //         "duration":"6",
+    //         "status":"Completed"
+    //     },
+    //   ]
 
 
 
@@ -65,7 +70,7 @@ const Credittable  = () => {
         <div className="row">
             
 
-       {   isinvestment &&
+       {   props.isinvestment &&
        <>
      
 
@@ -73,7 +78,7 @@ const Credittable  = () => {
             }
 
             {
-                !isinvestment && 
+                !props.isinvestment && 
                 <>
                 <div className="col-md-7">
                 <div className={classes.noactivitiesbox}>
@@ -96,7 +101,7 @@ const Credittable  = () => {
             }
 
 {
-                isinvestment && 
+                props.isinvestment && 
                 <>
                 <div className="col-md-11">
                 <div className={classes.noactivitiesbox}>
@@ -126,7 +131,7 @@ const Credittable  = () => {
                 </div>
 
             {  
-            transactions.map((item) =>
+            props.transactions.map((item) =>
                     (
                     <>
                     <div className="row">
@@ -135,11 +140,11 @@ const Credittable  = () => {
                     </div>
 
                     <div className="col-md-2">
-                    <p className={classes.tablebodyinner}>N{item.amount}</p>
+                    <p className={classes.tablebodyinner}>N{item.balance}</p>
                     </div>
 
                     <div className="col-md-2">
-                    <p className={classes.tablebodyinner}>{item.date}</p>
+                    <p className={classes.tablebodyinner}>date</p>
                     </div>
 
                     <div className="col-md-2">
@@ -149,7 +154,7 @@ const Credittable  = () => {
                     <div className="col-md-2">
                     <p className={classes.tablebodyinner}
                         style={{
-                            backgroundColor: `${item.status =="Completed" ? "#E6F0FF" : item.status =="Active" ? "#EDFFF0" :   "#000"    }`,
+                            backgroundColor: `${item.status =="pending" ? "#E6F0FF" : item.status =="Active" ? "#EDFFF0" :   "#000"    }`,
                             borderRadius:"24px",
                             paddingBottom:"5px",
                             paddingTop:"5px"

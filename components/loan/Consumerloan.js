@@ -421,7 +421,7 @@ window.location.replace("/home");
               <div className="col-md-9">
               <div className="accountbox">
  
-    <div className="col-md-6 tabs webapptabs  loanapplystepone">
+    <div className="col-md-7 tabs webapptabs  loanapplystepone">
                <div className={classes.goback} style={{marginBottom:"40px"}}>
             <Link className="" href="/loan"  eventKey="2" >
             <Image style={{cursor:"pointer"}} src="/images/back.svg" width="20" height="20" layout="intrinsic" alt="" />
@@ -483,7 +483,7 @@ window.location.replace("/home");
 </div>
 
 
-<div className="col-md-6 loanapplysteptwo">
+<div className="col-md-7 loanapplysteptwo">
     
     <div className={classes.goback} onClick={gobacktostep1}   style={{marginBottom:"40px"}}>
         
@@ -559,7 +559,7 @@ window.location.replace("/home");
 </p>
 </div>
 
-<div className="col-md-6 loanapplystepthree">
+<div className="col-md-7 loanapplystepthree">
 <div className={classes.goback} onClick={gobacktostep2}   style={{marginBottom:"40px"}}>
         
             <Image style={{cursor:"pointer"}} src="/images/back.svg" width="20" height="20" layout="intrinsic" alt="" />

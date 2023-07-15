@@ -14,6 +14,8 @@ const Credit  = () => {
 
     const [show, setShow] = useState();
     const [showPremiumplus, setShowPremiumplus] = useState();
+    const [ iscarddetails, setiscarddetails ] = useState(false) 
+    const [allsavedcards, setallsavedcards ] = useState([])
 
     const transitions = useTransition(show, null, {
 
@@ -29,7 +31,43 @@ const Credit  = () => {
         leave: { opacity: 0, width: 0 }
       });
 
-    
+      async function loadDebitCard() {
+        let response
+        let data
+      
+        try{
+          response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/payment/cards`,{
+            method: "GET",     
+            headers: {
+              // 'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Type': 'application/json',
+              'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj',
+              "Authorization": `Bearer ${localStorage.getItem("accesstoken")}`
+                },
+          })
+          data = await response.json()
+          console.log(data.data.cards)
+          setallsavedcards(data.data.cards)
+          if(data.data.cards.length >0){
+            setiscarddetails(true)
+        
+          }
+          else{
+            setiscarddetails(false)
+          }
+      
+          $(".overlay").fadeOut(0);
+            
+        } catch (error){
+            console.log(error)
+          return
+        }
+      
+      }
+      
+      useEffect(() => {
+        loadDebitCard()
+      }, [])
 
 
     return (
@@ -94,7 +132,7 @@ const Credit  = () => {
                         <p className={classes.vehicletitle}>Premium</p>
                         </div>
                         <div className="col-md-8">
-                        <p className={classes.investmentrate}>9.4% Annual Return.</p>
+                        <p className={classes.investmentrate}>12% Annual Return.</p>
                         </div>
 
                         <div className="col-md-4">
@@ -104,7 +142,7 @@ const Credit  = () => {
                         </div>
                         <div className="col-md-4">
                         <p className={classes.trendingname}>Minimum Amount</p>
-                        <p className={classes.trending}>10,000,000.00</p>
+                        <p className={classes.trending}>&#x20A6;5,000.00</p>
                         </div>
                         <div className="col-md-4">
                         <p className={classes.trendingname}>Minimum Duration</p>
@@ -138,7 +176,7 @@ const Credit  = () => {
                         <p className={classes.vehicletitle}>Premium plus</p>
                         </div>
                         <div className="col-md-8">
-                        <p className={classes.investmentrate}>9.4% Annual Return.</p>
+                        <p className={classes.investmentrate}>14% Annual Return.</p>
                         </div>
 
                         <div className="col-md-4">
@@ -148,7 +186,7 @@ const Credit  = () => {
                         </div>
                         <div className="col-md-4">
                         <p className={classes.trendingname}>Minimum Amount</p>
-                        <p className={classes.trending}>10,000,000.00</p>
+                        <p className={classes.trending}>&#x20A6;50,000.00</p>
                         </div>
                         <div className="col-md-4">
                         <p className={classes.trendingname}>Minimum Duration</p>
@@ -172,7 +210,7 @@ const Credit  = () => {
               className="overlay"
             >
               <animated.div style={{ width: props.width }} className="drawer">
-                <Premiumdrawer/>                
+                <Premiumdrawer iscarddetails={iscarddetails} allsavedcards={allsavedcards}/>                
               </animated.div>
               <div className="fill" onClick={() => setShow(false)} />
             </animated.div>
@@ -188,7 +226,7 @@ const Credit  = () => {
               className="overlay"
             >
               <animated.div style={{ width: props.width }} className="drawer">
-                <Premiumplusdrawer/>                
+                <Premiumplusdrawer iscarddetails={iscarddetails} allsavedcards={allsavedcards}/>                
               </animated.div>
               <div className="fill" onClick={() => setShowPremiumplus(false)} />
             </animated.div>

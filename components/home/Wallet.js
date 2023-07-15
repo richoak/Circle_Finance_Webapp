@@ -104,7 +104,7 @@ const Homewallet  = () => {
 <div className={classes.wallettransactions}>
 <div className="col-md-12">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-12">
                         <p className={classes.transactionlist}>Wallet Transactions</p>
                     </div>
                     

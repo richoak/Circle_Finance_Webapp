@@ -6,11 +6,13 @@ import Realestatetable from './Realestatetable'
 
 
 
-const Homeactivities  = () => {
+const Homeactivities  = (props) => {
     const [name, setname]= useState()
     const [ iscredit, setiscredit ] = useState(true)
     const [ isagriculture, setisagriculture ] = useState(false)
     const [ isrealestate, setisrealestate ] = useState(false)
+    const [ isinvestment, setisinvestment ] = useState(false)
+    const [ transactions, settransactions ] = useState([])
 
     useEffect(() => {
         setname(localStorage.getItem("firstname") + " " + localStorage.getItem("lastname"))
@@ -34,6 +36,42 @@ const Homeactivities  = () => {
         setisagriculture(false)
         setisrealestate(true)
     }
+
+    async function loadInvestmentData() {
+        console.log("running")
+        let response
+        let data
+    
+        try{
+          response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/investment/index`,{
+            method: "GET",     
+            headers: {
+              // 'Content-Type': 'application/x-www-form-urlencoded',
+              'Content-Type': 'application/json',
+              'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj',
+              "Authorization": `Bearer ${localStorage.getItem("accesstoken")}`
+                },
+          })
+          data = await response.json()
+          console.log("data",data.data.savings)
+          
+          if(data.data.savings.length > 0 && data.data.savings.type !=="realestate"){
+            setisinvestment(true)
+            settransactions(data.data.savings)
+          }
+    
+            
+        } catch (error){
+            console.log(error)
+          return
+        }
+    
+      }
+
+      useEffect(() => {
+
+        loadInvestmentData()
+    }, [])
     
 
 
@@ -53,9 +91,9 @@ const Homeactivities  = () => {
     > 
     Credit</button>
 
-    <button onClick={loadAgriculture}  
+    {/* <button onClick={loadAgriculture}  
     className={isagriculture ? "profiletabbuttonsactive": "profiletabbuttons"}
-    > Agriculture</button>
+    > Agriculture</button> */}
 
     <button onClick={loadRealestate} 
     className={isrealestate ? "profiletabbuttonsactive": "profiletabbuttons"}
@@ -64,19 +102,19 @@ const Homeactivities  = () => {
 </div>
 {
     iscredit && (
-        <Credittable/>
+        <Credittable  isinvestment={isinvestment} transactions={transactions}/>
     )
 }
 
 {
     isagriculture && (
-        <Agriculturetable/>
+        <Agriculturetable  isinvestment={isinvestment} transactions={transactions}/>
     )
 }
 
 {
     isrealestate && (
-        <Realestatetable/>
+        <Realestatetable  isinvestment={isinvestment} transactions={transactions}/>
     )
 }
     </div>

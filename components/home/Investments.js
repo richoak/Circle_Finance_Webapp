@@ -7,7 +7,7 @@ import classes from './Home.module.css'
 
 
 
-const Homeinvestment  = () => {
+const Homeinvestment  = (props) => {
     const [name, setname]= useState()
     const [ isinvestment, setisinvestment ] = useState(false)
 
@@ -27,7 +27,7 @@ const Homeinvestment  = () => {
         <div className="row">
             
 
-       {   isinvestment &&
+       {   props.isinvestment &&
        <>
      
        <div className="col-md-4">
@@ -37,8 +37,8 @@ const Homeinvestment  = () => {
                 <p className={classes.investmenttitle2}>Credit Investment</p>
                 <p className={classes.investmentamount}>
                             <span className={classes.preamount}>N</span>
-                            <span className={classes.amount}>2,157,000</span>
-                            <span className={classes.preamount}>.56</span>
+                            <span className={classes.amount}>{props.creditsum}</span>
+                            <span className={classes.preamount}>.00</span>
                         </p>
                 </div>
                 <div className="col-md-2">
@@ -56,8 +56,8 @@ const Homeinvestment  = () => {
                 <p className={classes.investmenttitle2}>Real Estate</p>
                 <p className={classes.investmentamount}>
                             <span className={classes.preamount}>N</span>
-                            <span className={classes.amount}>2,157,000</span>
-                            <span className={classes.preamount}>.56</span>
+                            <span className={classes.amount}>{props.realestatesum}</span>
+                            <span className={classes.preamount}>.00</span>
                         </p>
                 </div>
                 <div className="col-md-2">
@@ -75,8 +75,8 @@ const Homeinvestment  = () => {
                 <p className={classes.investmenttitle2}>Agriculture</p>
                 <p className={classes.investmentamount}>
                             <span className={classes.preamount}>N</span>
-                            <span className={classes.amount}>2,157,000</span>
-                            <span className={classes.preamount}>.56</span>
+                            <span className={classes.amount}>0.0</span>
+                            <span className={classes.preamount}>.00</span>
                         </p>
                 </div>
                 <div className="col-md-2">
@@ -90,7 +90,7 @@ const Homeinvestment  = () => {
             }
 
             {
-                !isinvestment && 
+                !props.isinvestment && 
                 <>
                 <div className="col-md-7">
                 <div className={classes.noinvestmentbox}>
@@ -100,9 +100,10 @@ const Homeinvestment  = () => {
                         <p className={classes.noinvestmentsubtitle}>Click on the button to pick an investment vehicle</p>
                   
                         </div>
+                        
                         <Link className="" href="/invest"  eventKey="2" >
-                        <div style={{cursor:"pointer"}} className="col-md-3">
-                        <Image src="/images/addinvestment.svg" layout="intrinsic" width="60" height="60" alt="" />
+                        <div style={{cursor:"pointer"}} className={`col-md-3 ${classes.addimage}`}>
+                        <Image src="/images/addinvestment.svg"  layout="intrinsic" width="60" height="60" alt="" />
                             </div>
                             </Link>
                     </div>

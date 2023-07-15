@@ -9,6 +9,11 @@
     /* float:left */
 }
 
+.trendinginvestments{
+    width:700px;
+    margin-top: 60px;
+  }
+
 .button{
     background: #EEEFF2;
     border-radius: 4px;
@@ -119,7 +124,6 @@ color: #A8B0BF;
     font-size:12px;
     margin-top:-17px;
     color:#FFF
-  
 }
 
 .preamount{
@@ -151,10 +155,10 @@ color: #A8B0BF;
 
 .transactionlist{
     font-style: normal;
-font-weight: 700;
-font-size: 15px;
-line-height: 120%;
-color: #687181;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 120%;
+    color: #687181;
 }
 
 .transactiondate{
@@ -224,7 +228,7 @@ margin-top:20px!important
     font-size: 16px;
     line-height: 120%;
     color: #687181;
-    padding-top:10px
+    padding-top:30px
 }
 
 .wallettransactions{
@@ -468,6 +472,51 @@ margin-top:10px
     padding-top:10px;
     margin-bottom:5px;
     color:#4F4F4F;
+    text-transform: capitalize;
   }
 
 
+  @media  screen and (max-width: 1440px) {
+    .transactionlist {
+        font-size:15px
+    }
+
+    .bankname{
+        font-size:10px; 
+    }
+
+    .transactiondate{
+        font-size:9px;
+    }
+
+
+  }
+  
+  @media  screen and (max-width: 1366px) {
+  
+  }
+  
+  @media  screen and (max-width: 1024px) {
+    .noinvestmenttitle{
+        font-weight: 700;
+        font-size: 14px;
+        color: #333333;
+    }
+
+    .addimage{
+      padding-right: 20px;
+    }
+
+    .tablebodyinner{
+        text-align: center;
+        padding-top:10px;
+        margin-bottom:5px;
+        color:#4F4F4F;
+        font-size:11px
+      }
+
+  
+    }
+  @media screen and (max-width: 833px) {  
+
+  }

@@ -464,7 +464,7 @@ const durationRef = useRef()
           <div className="row">
           <div className="col-md-9">
               <div className="accountbox">
-            <div className="col-md-5 col-11 tabs webapptabs  loanapplystepone">
+            <div className="col-md-6 col-11 tabs webapptabs  loanapplystepone">
                  <div className={classes.goback} style={{marginBottom:"40px"}}>
             <Link className="" href="/loan/businessloan"  eventKey="2" >
             <Image style={{cursor:"pointer"}} src="/images/back.svg" width="20" height="20" layout="intrinsic" alt="" />
@@ -526,7 +526,7 @@ const durationRef = useRef()
             </div>
 
 
-            <div className="col-md-5  col-11  tabs loanapplysteptwo">
+            <div className="col-md-6  col-11  tabs loanapplysteptwo">
 
               {/* <p onClick={gobacktostep1} className="loansareavailable2 goback " style={{ paddingLeft: "0px" }}>
                 <Image className="" src="/images/arrow-left.svg" height="24" width="24"/>

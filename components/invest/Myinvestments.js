@@ -25,9 +25,10 @@ const CompletedInvestments  = () => {
     <p className={classes.noinvestmentsubtitle}>Choose an investment vehicle to get started</p>
     </div>
 
-    <div style={{marginTop:"60px", width:"700px"}}>
+    <div className={classes.trendinginvestments}>
         <p className={classes.trending}>Trending Investments</p>
         <div className="row">
+
         <Link href="/invest/credit" style={{cursor:"pointer"}}  eventKey="2" >
         <div className="col-md-6">
             <div className={classes.trendinginvestment1}>
@@ -54,6 +55,8 @@ const CompletedInvestments  = () => {
                 <div className="col-md-2">
                 <span className={classes.dot}></span>
                 </div>
+
+
                 <div className="col-md-6">
                 <p className={classes.trending}>Premium</p>
                 <p className={classes.trendingname}>Credit Investment</p>

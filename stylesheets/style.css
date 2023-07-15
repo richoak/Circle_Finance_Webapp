@@ -137,13 +137,9 @@
     background-color:#FFF;
     padding-left:40px;
     padding-bottom:40px;
-    /* border-radius:24px; */
     margin-left:30px;
     height:100vh
-    /* margin-top:40px; */
-   
-    /* padding-top:40px */
-    /* padding: 40px */
+
 }
 
 .accounttop{
@@ -2566,6 +2562,9 @@ font-size: 17px;
     .thenavbarmenu{
         padding-left:30px;
     }
+    .loanaccountbox{
+        padding-left:12px;
+    }
 }
 
 @media  screen and (max-width: 1366px) {
@@ -2602,6 +2601,11 @@ font-size: 17px;
 
 .smtext{
     font-size:14px;
+}
+
+.loanaccountbox{
+    margin-left:10px;
+    padding-left:10px;
 }
 
 }
@@ -2751,7 +2755,9 @@ font-size: 17px;
       
       
     }
-
+    .summarybox{
+        width:98%
+    }
 }
 
 

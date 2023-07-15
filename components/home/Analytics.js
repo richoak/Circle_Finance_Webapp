@@ -8,7 +8,8 @@ import ReactEcharts from "echarts-for-react";
 
 
 
-const Homeanalytics  = () => {
+const Homeanalytics  = (props) => {
+  console.log(props)
     const [name, setname]= useState()
     const [ isnotifications, setisnotifications ] = useState(true)
     const [locations, setLocations ] = useState([])
@@ -20,77 +21,17 @@ const Homeanalytics  = () => {
       },[])
 
 
-//   useEffect(() => {
-//     const getLocation = ((data) => {
-//       setLocations(data.top_sources)
-      
-//       for (const key in data.top_sources){
-//         chartvalues.push({
-//             value: data.top_sources[key].percent,
-//            name: data.top_sources[key].source,  
-//         })
-//     }
-//     setChartValues2(chartvalues)
-    
-//   })
-
-//   fetchWallet({
-//       url: `https://vast-bastion-98389.herokuapp.com/https://fe-task-api.mainstack.io/`,
-//       method: "GET",
-//       headers: { 
-//           'Content-Type': 'application/json',
-      
-//       }
-//   }, getLocation)
-//   }, [])
-
-  async function loadData() {
-    let response
-    let data
-
-    try{
-      response = await fetch('https://vast-bastion-98389.herokuapp.com/https://fe-task-api.mainstack.io/',{
-        method: "GET",     
-        headers: {
-          // 'Content-Type': 'application/x-www-form-urlencoded',
-          'Content-Type': 'application/json',
-        //   'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj',
-        //   "Authorization": `Bearer ${localStorage.getItem("accesstoken")}`
-            },
-      })
-      data = await response.json()
-    //   console.log("data",data,top_sources)
-      setLocations(data.top_sources)
-      
-      for (const key in data.top_sources){
-        chartvalues.push({
-            value: data.top_sources[key].percent,
-           name: data.top_sources[key].source,  
-        })
-    }
-
-    const demo = [
-        { name:"Credit" , value: "20"},
-        { name:"Agriculture" , value: "40"},
-        { name:"Real Estate" , value: "10"},
-
-    ]
-    // setChartValues2(chartvalues)
-    setChartValues2(demo)
-      console.log(chartvalues2)
-        
-    } catch (error){
-        console.log(error)
-      return
-    }
-
-  }
-
   useEffect(() => {
-    loadData()
-  }, [])
-  
 
+    const demo = ([
+      { name:"Credit" , value: props.credit},
+      { name:"Real Estate" , value: props.realestate},
+
+  ])
+  setChartValues2(demo)
+  console.log("chartvalues", chartvalues2)
+  }, [props])
+  
 const option = {
   tooltip: {
     trigger: 'item'

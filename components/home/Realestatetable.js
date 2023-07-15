@@ -9,7 +9,7 @@ import classes from './Home.module.css'
 
 const Realestatetable  = () => {
     const [name, setname]= useState()
-    const [ isinvestment, setisinvestment ] = useState(true)
+    const [ isinvestment, setisinvestment ] = useState(false)
 
     useEffect(() => {
         setname(localStorage.getItem("firstname") + " " + localStorage.getItem("lastname"))
@@ -19,35 +19,35 @@ const Realestatetable  = () => {
         {
             "type":"Premium",
             "amount":"420,000",
-            "date": "23 March, 2023",
+            "date": "01/01/2023",
             "duration":"5",
             "status":"Active"
         },
         {
             "type":"Premium plus",
             "amount":"300,000",
-            "date": "23 January, 2023",
+            "date": "01/01/2023",
             "duration":"2",
             "status":"Active"
         },
         {
             "type":"R.E.I.F",
             "amount":"410,000",
-            "date": "23 March, 2023",
+            "date": "01/01/2023",
             "duration":"3",
             "status":"Completed"
         },
         {
             "type":"Premium",
             "amount":"210,000",
-            "date": "23 March, 2023",
+            "date": "01/01/2023",
             "duration":"4",
             "status":"Completed"
         },
         {
             "type":"Premium plus",
             "amount":"110,000",
-            "date": "23 March, 2023",
+            "date": "01/01/2023",
             "duration":"6",
             "status":"Completed"
         },
@@ -146,7 +146,7 @@ const Realestatetable  = () => {
                     <p className={classes.tablebodyinner}>{item.duration} Months</p>
                     </div>
 
-                    <div className="col-md-2">
+                    <div className="col-md-4">
                     <p className={classes.tablebodyinner}
                         style={{
                             backgroundColor: `${item.status =="Completed" ? "#E6F0FF" : item.status =="Active" ? "#EDFFF0" :   "#000"    }`,

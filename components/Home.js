@@ -44,6 +44,13 @@ const Home = (props) => {
   const [currentLoanId, setCurrentLoanId] = useState("")
   const [ walletBalance, setWalletBalance] = useState(0)
 
+  const [ credit, setcredit ] = useState(0)
+  const [ realestate, setisrealestate ] = useState(0)
+  const [ isinvestment, setisinvestment ] = useState(false)
+  const [ creditsum, setcreditsum ] = useState(0)
+  const [ realestatesum, setrealestatesum ] = useState(0)
+
+
 
 //  GET USER DETAILS
   async function loadUserData() {
@@ -81,8 +88,49 @@ const Home = (props) => {
 
   }
 
+  async function loadInvestmentData() {
+    console.log("running")
+    let response
+    let data
+
+    try{
+      response = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_URL}/investment/index`,{
+        method: "GET",     
+        headers: {
+          // 'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
+          'ClientKey':'RHVmtYMS8xWkdZU1hOREpQY3JjRVczVj',
+          "Authorization": `Bearer ${localStorage.getItem("accesstoken")}`
+            },
+      })
+      data = await response.json()
+      console.log("data",data.data.savings)
+
+      setcreditsum(data.data.total_investment)
+      setrealestatesum(data.data.total_investment)
+
+
+      if(data.data.savings.type !=="realestate"){
+       setcredit(data.data.savings.length)
+      }
+
+      else{
+        setisrealestate(data.data.savings.length)
+      }
+
+ 
+
+        
+    } catch (error){
+        console.log(error)
+      return
+    }
+
+  }
+
   useEffect(() => {
     loadUserData()
+    loadInvestmentData()
 }, [])
 
   return (
@@ -104,7 +152,7 @@ const Home = (props) => {
               <Incompleteprofile/>
 
               <div style={{marginTop:"20px", marginBottom:"0px"}}>
-              <Homeinvestment/>
+              <Homeinvestment  isinvestment={isinvestment} creditsum={creditsum} realestatesum={realestatesum}/>
               </div>
 
               <div style={{marginTop:"20px", marginBottom:"30px"}}>
@@ -114,7 +162,7 @@ const Home = (props) => {
 
               <div className="row">
               <div className="col-md-6">
-              <Homeanalytics/>
+              <Homeanalytics  credit={credit} realestate={realestate}/>
               </div>
               <div className="col-md-6">
                 <Homenotifications/>

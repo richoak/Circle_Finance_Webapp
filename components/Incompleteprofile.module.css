@@ -480,3 +480,28 @@ margin-top:10px
   }
 
 
+  @media  screen and (max-width: 1440px) {
+
+  }
+  
+  @media  screen and (max-width: 1366px) {
+  
+  }
+  
+  @media  screen and (max-width: 1024px) {
+    .noinvestmenttitle{
+        font-weight: 700;
+        font-size: 13px;
+        padding-top:13px
+        
+    }
+
+    .noinvestmenttitleimage{
+        padding-top:13px;
+        padding-left:5px
+    }
+  }
+  
+  @media screen and (max-width: 833px) {  
+  
+  }

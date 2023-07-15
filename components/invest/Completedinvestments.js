@@ -51,8 +51,6 @@ const goback = () => {
                <div className="col-md-12">
                     <Image src="/images/pplus.svg" style={{borderRadius:"10px"}} width="300" height="200" layout="intrinsic" alt="" />
                     <p className={classes.vehicletitle}>Premium plus</p>
-                   
-                    </div>
                     <div className="col-md-10">
                     <p className={classes.completedinvestmentrate}>9.4% Annual Return</p>  
 
@@ -64,7 +62,12 @@ const goback = () => {
                     <p className={classes.completedinvestmentduration}>12 Month(s)</p>
                     </div>
                 </div>
-                    </div>            
+                    </div>    
+                    </div>
+
+                  
+
+
                 </div>        
                     </div>   
                       }
